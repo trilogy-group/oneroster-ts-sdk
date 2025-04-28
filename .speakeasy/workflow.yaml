@@ -1,0 +1,20 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    OneRoster API:
+        inputs:
+            - location: .speakeasy/openapi-fixes.yaml
+        overlays:
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
+        registry:
+            location: registry.speakeasyapi.dev/emu-farm/timeback/one-roster-api
+targets:
+    one-roster:
+        target: typescript
+        source: OneRoster API
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/emu-farm/timeback/one-roster-api-typescript-code-samples
+            labelOverride:
+                fixedValue: Typescript (SDK)
+            blocking: false

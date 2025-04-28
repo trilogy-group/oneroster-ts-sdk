@@ -1,0 +1,63 @@
+# GetTeachersForClassInSchoolUser
+
+## Example Usage
+
+```typescript
+import { GetTeachersForClassInSchoolUser } from "oneroster/models/operations";
+
+let value: GetTeachersForClassInSchoolUser = {
+  sourcedId: "<id>",
+  status: "tobedeleted",
+  enabledUser: false,
+  givenName: "<value>",
+  familyName: "<value>",
+  roles: [
+    {
+      roleType: "primary",
+      role: "parent",
+      org: {
+        href: "https://coarse-descendant.info",
+        sourcedId: "<id>",
+        type: "<value>",
+      },
+      beginDate: "<value>",
+      endDate: "<value>",
+    },
+  ],
+  agents: [
+    {
+      href: "https://stale-scrap.com/",
+      sourcedId: "<id>",
+      type: "demographics",
+    },
+  ],
+};
+```
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `sourcedId`                                                                                                          | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `status`                                                                                                             | [operations.GetTeachersForClassInSchoolStatus](../../models/operations/getteachersforclassinschoolstatus.md)         | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `dateLastModified`                                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                        | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `metadata`                                                                                                           | Record<string, *any*>                                                                                                | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `userMasterIdentifier`                                                                                               | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `username`                                                                                                           | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `userIds`                                                                                                            | [operations.GetTeachersForClassInSchoolUserId](../../models/operations/getteachersforclassinschooluserid.md)[]       | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `enabledUser`                                                                                                        | *boolean*                                                                                                            | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `givenName`                                                                                                          | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `familyName`                                                                                                         | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `middleName`                                                                                                         | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `roles`                                                                                                              | [operations.GetTeachersForClassInSchoolRole](../../models/operations/getteachersforclassinschoolrole.md)[]           | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `agents`                                                                                                             | [operations.GetTeachersForClassInSchoolAgent](../../models/operations/getteachersforclassinschoolagent.md)[]         | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `primaryOrg`                                                                                                         | [operations.GetTeachersForClassInSchoolPrimaryOrg](../../models/operations/getteachersforclassinschoolprimaryorg.md) | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `email`                                                                                                              | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `preferredFirstName`                                                                                                 | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `preferredMiddleName`                                                                                                | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `preferredLastName`                                                                                                  | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `pronouns`                                                                                                           | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `grades`                                                                                                             | *string*[]                                                                                                           | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `password`                                                                                                           | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `sms`                                                                                                                | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |
+| `phone`                                                                                                              | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | N/A                                                                                                                  |

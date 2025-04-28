@@ -1,0 +1,38 @@
+speakeasyVersion: 1.540.1
+sources:
+    OneRoster API:
+        sourceNamespace: one-roster-api
+        sourceRevisionDigest: sha256:d12283f7845bf8881f242edbd670dcc924429e29a1b718381fd230acf5491200
+        sourceBlobDigest: sha256:bbc46961179653def558588e971c9b91f2a4e12d2b3218fb12a08465d7c01529
+        tags:
+            - latest
+            - 1.0.0
+targets:
+    one-roster:
+        source: OneRoster API
+        sourceNamespace: one-roster-api
+        sourceRevisionDigest: sha256:d12283f7845bf8881f242edbd670dcc924429e29a1b718381fd230acf5491200
+        sourceBlobDigest: sha256:bbc46961179653def558588e971c9b91f2a4e12d2b3218fb12a08465d7c01529
+        codeSamplesNamespace: one-roster-api-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:261b26b6256b7ed0f044ed76641951eafb87cee91569de59f921db23a397058a
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        OneRoster API:
+            inputs:
+                - location: .speakeasy/openapi-fixes.yaml
+            overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
+            registry:
+                location: registry.speakeasyapi.dev/emu-farm/timeback/one-roster-api
+    targets:
+        one-roster:
+            target: typescript
+            source: OneRoster API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/emu-farm/timeback/one-roster-api-typescript-code-samples
+                labelOverride:
+                    fixedValue: Typescript (SDK)
+                blocking: false
