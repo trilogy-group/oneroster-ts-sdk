@@ -39,12 +39,12 @@ export function demographicsUpdate(
   Result<
     components.Demographics,
     | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError1
-    | errors.ForbiddenResponseError1
+    | errors.UnauthorizedRequestResponseError2
+    | errors.ForbiddenResponseError2
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError1
     | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse2
+    | errors.InternalServerErrorResponse1
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -70,12 +70,12 @@ async function $do(
     Result<
       components.Demographics,
       | errors.BadRequestResponseError1
-      | errors.UnauthorizedRequestResponseError1
-      | errors.ForbiddenResponseError1
+      | errors.UnauthorizedRequestResponseError2
+      | errors.ForbiddenResponseError2
       | errors.NotFoundResponseError1
       | errors.UnprocessableEntityResponseError1
       | errors.TooManyRequestsResponseError1
-      | errors.InternalServerErrorResponse2
+      | errors.InternalServerErrorResponse1
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -163,12 +163,12 @@ async function $do(
   const [result] = await M.match<
     components.Demographics,
     | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError1
-    | errors.ForbiddenResponseError1
+    | errors.UnauthorizedRequestResponseError2
+    | errors.ForbiddenResponseError2
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError1
     | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse2
+    | errors.InternalServerErrorResponse1
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -179,12 +179,12 @@ async function $do(
   >(
     M.json(200, components.Demographics$inboundSchema),
     M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
-    M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError2$inboundSchema),
+    M.jsonErr(403, errors.ForbiddenResponseError2$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
     M.jsonErr(422, errors.UnprocessableEntityResponseError1$inboundSchema),
     M.jsonErr(429, errors.TooManyRequestsResponseError1$inboundSchema),
-    M.jsonErr(500, errors.InternalServerErrorResponse2$inboundSchema),
+    M.jsonErr(500, errors.InternalServerErrorResponse1$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });

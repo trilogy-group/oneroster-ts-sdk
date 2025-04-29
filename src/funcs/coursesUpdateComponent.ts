@@ -44,7 +44,7 @@ export function coursesUpdateComponent(
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError1
     | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse2
+    | errors.InternalServerErrorResponse1
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -75,7 +75,7 @@ async function $do(
       | errors.NotFoundResponseError1
       | errors.UnprocessableEntityResponseError1
       | errors.TooManyRequestsResponseError1
-      | errors.InternalServerErrorResponse2
+      | errors.InternalServerErrorResponse1
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -168,7 +168,7 @@ async function $do(
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError1
     | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse2
+    | errors.InternalServerErrorResponse1
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -184,7 +184,7 @@ async function $do(
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
     M.jsonErr(422, errors.UnprocessableEntityResponseError1$inboundSchema),
     M.jsonErr(429, errors.TooManyRequestsResponseError1$inboundSchema),
-    M.jsonErr(500, errors.InternalServerErrorResponse2$inboundSchema),
+    M.jsonErr(500, errors.InternalServerErrorResponse1$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });
