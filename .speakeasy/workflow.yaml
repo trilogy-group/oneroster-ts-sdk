@@ -12,6 +12,9 @@ targets:
     one-roster:
         target: typescript
         source: OneRoster API
+        publish:
+            npm:
+                token: $npm_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/emu-farm/timeback/one-roster-api-typescript-code-samples
