@@ -13621,53 +13621,18 @@ paths:
     get:
       operationId: getAllAcademicSessions
       summary: Get all academic sessions
-      description: Returns a collection of academic sessions with pagination
+      description: Returns a collection of academic sessions
       tags: &ref_48
         - Rostering - Academic Sessions
-      parameters:
-        - name: offset
-          in: query
-          description: Offset for pagination
-          required: false
-          schema:
-            type: integer
-            default: 0
-        - name: limit
-          in: query
-          description: Number of items per page
-          required: false
-          schema:
-            type: integer
-            default: 100
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  academicSessions:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/AcademicSession'
-                  totalCount:
-                    type: integer
-                  pageCount:
-                    type: integer
-                  pageNumber:
-                    type: integer
-                  offset:
-                    type: integer
-                  limit:
-                    type: integer
-                required:
-                  - academicSessions
-                  - totalCount
-                  - pageCount
-                  - pageNumber
-                  - offset
-                  - limit
+                type: array
+                items:
+                  $ref: '#/components/schemas/AcademicSession'
         '400':
           description: Bad Request
           content:
@@ -13710,18 +13675,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorResponse'
-      x-speakeasy-pagination:
-        type: offsetLimit
-        inputs:
-          - name: offset
-            in: parameters
-            type: offset
-          - name: limit
-            in: parameters
-            type: limit
-        outputs:
-          results: $.academicSessions
-          numPages: $.pageCount
     post:
       operationId: postAcademicSession
       summary: Create an academic session

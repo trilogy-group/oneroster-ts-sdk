@@ -3,23 +3,16 @@
  */
 
 import { academicSessionsGetAll } from "../../funcs/academicSessionsGetAll.js";
-import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
-const args = {
-  request: operations.GetAllAcademicSessionsRequest$inboundSchema,
-};
-
-export const tool$academicSessionsGetAll: ToolDefinition<typeof args> = {
+export const tool$academicSessionsGetAll: ToolDefinition = {
   name: "academic-sessions-get-all",
   description: `Get all academic sessions
 
-Returns a collection of academic sessions with pagination`,
-  args,
-  tool: async (client, args, ctx) => {
+Returns a collection of academic sessions`,
+  tool: async (client, ctx) => {
     const [result, apiCall] = await academicSessionsGetAll(
       client,
-      args.request,
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
@@ -30,7 +23,7 @@ Returns a collection of academic sessions with pagination`,
       };
     }
 
-    const value = result.value.result;
+    const value = result.value;
 
     return formatResult(value, apiCall);
   },

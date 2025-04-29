@@ -45,7 +45,6 @@ export * from "./deleteschool.js";
 export * from "./deletescorescale.js";
 export * from "./deleteuser.js";
 export * from "./getacademicsession.js";
-export * from "./getallacademicsessions.js";
 export * from "./getallassessmentlineitems.js";
 export * from "./getallassessmentresults.js";
 export * from "./getallcategories.js";

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a3ef2627-6a46-4073-b2e2-f674a3c84580
 management:
-  docChecksum: 80693f5d70f11827a5764c59a6f1995c
+  docChecksum: d11c5c92bd8bad8a2c3bb6989d4891ec
   docVersion: 1.0.0
   speakeasyVersion: 1.540.1
   generationVersion: 2.593.4
-  releaseVersion: 0.3.1
-  configChecksum: cbf24de64dad369b8227500f9b276112
+  releaseVersion: 0.3.0
+  configChecksum: a7d2e1b7091eb889275992ca52ab918f
   repoURL: https://github.com/trilogy-group/oneroster-ts.git
   installationURL: https://github.com/trilogy-group/oneroster-ts
   published: true
@@ -306,9 +306,6 @@ generatedFiles:
   - docs/models/operations/deletescorescalerequest.md
   - docs/models/operations/deleteuserrequest.md
   - docs/models/operations/getacademicsessionrequest.md
-  - docs/models/operations/getallacademicsessionsrequest.md
-  - docs/models/operations/getallacademicsessionsresponse.md
-  - docs/models/operations/getallacademicsessionsresponsebody.md
   - docs/models/operations/getallassessmentlineitemsorderby.md
   - docs/models/operations/getallassessmentlineitemsrequest.md
   - docs/models/operations/getallassessmentlineitemsresponse.md
@@ -1131,7 +1128,6 @@ generatedFiles:
   - src/models/operations/deletescorescale.ts
   - src/models/operations/deleteuser.ts
   - src/models/operations/getacademicsession.ts
-  - src/models/operations/getallacademicsessions.ts
   - src/models/operations/getallassessmentlineitems.ts
   - src/models/operations/getallassessmentresults.ts
   - src/models/operations/getallcategories.ts
@@ -4145,13 +4141,9 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
   getAllAcademicSessions:
     speakeasy-default-get-all-academic-sessions:
-      parameters:
-        query:
-          offset: 0
-          limit: 100
       responses:
         "200":
-          application/json: {"academicSessions": [{"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "schoolYear", "schoolYear": 6512.03, "org": {"href": "https://left-omelet.com/", "sourcedId": "<id>", "type": "term"}}], "totalCount": 789553, "pageCount": 151768, "pageNumber": 217828, "offset": 996861, "limit": 177843}
+          application/json: [{"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "semester", "schoolYear": 4101.16, "org": {"href": "https://spherical-jump.net/", "sourcedId": "<id>", "type": "enrollment"}}]
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
