@@ -157,17 +157,17 @@ export function createMCPServer(deps: {
   scopes?: MCPScope[] | undefined;
   serverURL?: string | undefined;
   security?: SDKOptions["security"] | undefined;
-  serverIdx?: SDKOptions["serverIdx"] | undefined;
+  server?: SDKOptions["server"] | undefined;
 }) {
   const server = new McpServer({
     name: "OneRoster",
-    version: "0.2.5",
+    version: "0.3.0",
   });
 
   const client = new OneRosterCore({
     security: deps.security,
     serverURL: deps.serverURL,
-    serverIdx: deps.serverIdx,
+    server: deps.server,
   });
 
   const scopes = new Set(deps.scopes);

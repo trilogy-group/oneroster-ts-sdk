@@ -2,20 +2,20 @@ speakeasyVersion: 1.540.1
 sources:
     OneRoster API:
         sourceNamespace: one-roster-api
-        sourceRevisionDigest: sha256:6d935439318765e52b0a41d4af25c73e63c37a2888a5f417b099da4be6e9e1ba
-        sourceBlobDigest: sha256:bbc46961179653def558588e971c9b91f2a4e12d2b3218fb12a08465d7c01529
+        sourceRevisionDigest: sha256:fb6a020c065b7e053e2dcd72537dbe48b080e10950e08a054df2479ba5fc1992
+        sourceBlobDigest: sha256:8c1b497b3955dbfb6e88a10667b5386631a3c2def4d2aa319601aa7da541a69b
         tags:
             - latest
-            - speakeasy-sdk-regen-1745941826
+            - speakeasy-sdk-regen-1745958504
             - 1.0.0
 targets:
     one-roster:
         source: OneRoster API
         sourceNamespace: one-roster-api
-        sourceRevisionDigest: sha256:6d935439318765e52b0a41d4af25c73e63c37a2888a5f417b099da4be6e9e1ba
-        sourceBlobDigest: sha256:bbc46961179653def558588e971c9b91f2a4e12d2b3218fb12a08465d7c01529
+        sourceRevisionDigest: sha256:fb6a020c065b7e053e2dcd72537dbe48b080e10950e08a054df2479ba5fc1992
+        sourceBlobDigest: sha256:8c1b497b3955dbfb6e88a10667b5386631a3c2def4d2aa319601aa7da541a69b
         codeSamplesNamespace: one-roster-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:01a4fb214f1dec504915b52202ee860e1f0209b4a412844ab06f02b58e4567bb
+        codeSamplesRevisionDigest: sha256:93697aa3eed3adc5e26e5f7d004514e78a62dab8f376636ce20a9d19577885ec
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

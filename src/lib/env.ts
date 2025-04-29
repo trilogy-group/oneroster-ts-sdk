@@ -18,7 +18,7 @@ export const envSchema: z.ZodType<Env, z.ZodTypeDef, unknown> = z.object({
   ONEROSTER_CLIENT_ID: z.string().optional(),
   ONEROSTER_CLIENT_SECRET: z.string().optional(),
   ONEROSTER_TOKEN_URL: z.string().default(
-    "https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
+    "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
   ),
 
   ONEROSTER_DEBUG: z.coerce.boolean().optional(),

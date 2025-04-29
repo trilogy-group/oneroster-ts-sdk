@@ -936,14 +936,46 @@ In some rare cases, the SDK can fail to get a response from the server or even m
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-### Override Server URL Per-Client
+### Select Server by Name
 
-The default server can be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
+You can override the default server globally by passing a server name to the `server: keyof typeof ServerList` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the names associated with the available servers:
+
+| Name      | Server                                  | Description                   |
+| --------- | --------------------------------------- | ----------------------------- |
+| `staging` | `https://api.staging.alpha-1edtech.com` | OneRoster staging environment |
+
+#### Example
+
 ```typescript
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  serverURL: "https://api.alpha-1edtech.com",
+  server: "staging",
+  security: {
+    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
+    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
+  },
+});
+
+async function run() {
+  const result = await oneRoster.scoreScales.list();
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+
+```
+
+### Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
+```typescript
+import { OneRoster } from "@superbuilders/oneroster";
+
+const oneRoster = new OneRoster({
+  serverURL: "https://api.staging.alpha-1edtech.com",
   security: {
     clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
     clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",

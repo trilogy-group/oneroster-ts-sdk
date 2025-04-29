@@ -23,7 +23,7 @@ interface StartCommandFlags {
   readonly "client-secret"?: string | undefined;
   readonly "token-url": string;
   readonly "server-url"?: string;
-  readonly "server-index"?: SDKOptions["serverIdx"];
+  readonly server?: SDKOptions["server"];
   readonly "log-level": ConsoleLoggerLevel;
   readonly env?: [string, string][];
 }
@@ -56,10 +56,10 @@ async function startStdio(flags: StartCommandFlags) {
       clientID: flags["client-id"],
       clientSecret: flags["client-secret"],
       tokenURL: flags["token-url"]
-        ?? "https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
+        ?? "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
     },
     serverURL: flags["server-url"],
-    serverIdx: flags["server-index"],
+    server: flags.server,
   });
   await server.connect(transport);
 
@@ -82,10 +82,10 @@ async function startSSE(flags: StartCommandFlags) {
       clientID: flags["client-id"],
       clientSecret: flags["client-secret"],
       tokenURL: flags["token-url"]
-        ?? "https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
+        ?? "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
     },
     serverURL: flags["server-url"],
-    serverIdx: flags["server-index"],
+    server: flags.server,
   });
   let transport: SSEServerTransport | undefined;
   const controller = new AbortController();

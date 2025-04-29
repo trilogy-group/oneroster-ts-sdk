@@ -3,8 +3,8 @@
  */
 
 import { buildCommand } from "@stricli/core";
-import { numberParser } from "@stricli/core";
 import * as z from "zod";
+import { ServerList } from "../../../lib/config.js";
 import { consoleLoggerLevels } from "../../console-logger.js";
 import { mcpScopes } from "../../scopes.js";
 
@@ -70,10 +70,10 @@ export const startCommand = buildCommand({
         brief: "Sets the tokenURL auth field for the API",
         optional: false,
         default:
-          "https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
+          "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
         parse: (value) => {
           return z.string().default(
-            "https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
+            "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
           ).parse(value);
         },
       },
@@ -83,11 +83,11 @@ export const startCommand = buildCommand({
         optional: true,
         parse: (value) => new URL(value).toString(),
       },
-      "server-index": {
-        kind: "parsed",
+      server: {
+        kind: "enum",
         brief: "Selects a predefined server used by the SDK",
         optional: true,
-        parse: numberParser,
+        values: Object.keys(ServerList) as Array<keyof typeof ServerList>,
       },
       "log-level": {
         kind: "enum",

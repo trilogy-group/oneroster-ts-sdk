@@ -22,7 +22,7 @@ export const Security$inboundSchema: z.ZodType<
   clientID: z.string().optional(),
   clientSecret: z.string().optional(),
   tokenURL: z.string().default(
-    "https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
+    "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
   ),
 });
 
@@ -42,7 +42,7 @@ export const Security$outboundSchema: z.ZodType<
   clientID: z.string().optional(),
   clientSecret: z.string().optional(),
   tokenURL: z.string().default(
-    "https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
+    "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
   ),
 });
 

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a3ef2627-6a46-4073-b2e2-f674a3c84580
 management:
-  docChecksum: d1832d368cde210758abebb0d4b3f56c
+  docChecksum: d11c5c92bd8bad8a2c3bb6989d4891ec
   docVersion: 1.0.0
   speakeasyVersion: 1.540.1
   generationVersion: 2.593.4
-  releaseVersion: 0.2.5
-  configChecksum: 37cb952e16fa66d8eb64cb358c1cc057
+  releaseVersion: 0.3.0
+  configChecksum: a7d2e1b7091eb889275992ca52ab918f
   repoURL: https://github.com/trilogy-group/oneroster-ts.git
   installationURL: https://github.com/trilogy-group/oneroster-ts
   published: true
@@ -31,6 +31,7 @@ features:
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.2.0
+    serverIDs: 2.81.2
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
