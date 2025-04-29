@@ -49,7 +49,7 @@ typescript:
   methodArguments: require-security-and-request
   moduleFormat: dual
   outputModelSuffix: output
-  packageName: oneroster
+  packageName: '@superbuilders/oneroster'
   responseFormat: flat
   templateVersion: v2
   useIndexModules: true
