@@ -121,8 +121,12 @@ info:
 
     ```
 servers:
-  - url: https://api.alpha-1edtech.com
-    description: OneRoster API
+  - url: https://api.staging.alpha-1edtech.com
+    description: OneRoster staging environment
+    x-speakeasy-server-id: staging
+  # - url: https://api.alpha-1edtech.com
+  #   description: OneRoster prod environment
+  #   x-speakeasy-server-id: prod
 tags:
   - name: Assessment Line Items Management
     description: >-
@@ -14056,7 +14060,7 @@ components:
             https://purl.imsglobal.org/spec/powerpath/v1p1/scope/powerpath.createput: Create and update access to powerpath
             https://purl.imsglobal.org/spec/powerpath/v1p1/scope/powerpath.admin: Admin access to powerpath
           tokenUrl: >-
-            https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com/oauth2/token
+            https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token
   schemas:
     ScoreScale:
       type: object
