@@ -11,19 +11,24 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class AcademicSessions extends ClientSDK {
   /**
    * Get all academic sessions
    *
    * @remarks
-   * Returns a collection of academic sessions
+   * Returns a collection of academic sessions with pagination
    */
   async getAll(
+    request: operations.GetAllAcademicSessionsRequest,
     options?: RequestOptions,
-  ): Promise<Array<components.AcademicSession>> {
-    return unwrapAsync(academicSessionsGetAll(
+  ): Promise<
+    PageIterator<operations.GetAllAcademicSessionsResponse, { offset: number }>
+  > {
+    return unwrapResultIterator(academicSessionsGetAll(
       this,
+      request,
       options,
     ));
   }
