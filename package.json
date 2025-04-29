@@ -1,5 +1,5 @@
 {
-  "name": "oneroster",
+  "name": "@superbuilders/oneroster",
   "version": "0.2.3",
   "author": "Speakeasy",
   "type": "module",
@@ -8,7 +8,7 @@
   },
   "tshy": {
     "sourceDialects": [
-      "oneroster/source"
+      "@superbuilders/oneroster/source"
     ],
     "exports": {
       ".": "./src/index.ts",
@@ -56,7 +56,7 @@
   "exports": {
     ".": {
       "import": {
-        "oneroster/source": "./src/index.ts",
+        "@superbuilders/oneroster/source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
       },
@@ -68,7 +68,7 @@
     "./package.json": "./package.json",
     "./types": {
       "import": {
-        "oneroster/source": "./src/types/index.ts",
+        "@superbuilders/oneroster/source": "./src/types/index.ts",
         "types": "./dist/esm/types/index.d.ts",
         "default": "./dist/esm/types/index.js"
       },
@@ -79,7 +79,7 @@
     },
     "./models/errors": {
       "import": {
-        "oneroster/source": "./src/models/errors/index.ts",
+        "@superbuilders/oneroster/source": "./src/models/errors/index.ts",
         "types": "./dist/esm/models/errors/index.d.ts",
         "default": "./dist/esm/models/errors/index.js"
       },
@@ -90,7 +90,7 @@
     },
     "./models/components": {
       "import": {
-        "oneroster/source": "./src/models/components/index.ts",
+        "@superbuilders/oneroster/source": "./src/models/components/index.ts",
         "types": "./dist/esm/models/components/index.d.ts",
         "default": "./dist/esm/models/components/index.js"
       },
@@ -101,7 +101,7 @@
     },
     "./models/operations": {
       "import": {
-        "oneroster/source": "./src/models/operations/index.ts",
+        "@superbuilders/oneroster/source": "./src/models/operations/index.ts",
         "types": "./dist/esm/models/operations/index.d.ts",
         "default": "./dist/esm/models/operations/index.js"
       },
@@ -112,7 +112,7 @@
     },
     "./*.js": {
       "import": {
-        "oneroster/source": "./src/*.ts",
+        "@superbuilders/oneroster/source": "./src/*.ts",
         "types": "./dist/esm/*.d.ts",
         "default": "./dist/esm/*.js"
       },
@@ -123,7 +123,7 @@
     },
     "./*": {
       "import": {
-        "oneroster/source": "./src/*.ts",
+        "@superbuilders/oneroster/source": "./src/*.ts",
         "types": "./dist/esm/*.d.ts",
         "default": "./dist/esm/*.js"
       },
