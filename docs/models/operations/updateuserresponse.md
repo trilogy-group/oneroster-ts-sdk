@@ -5,7 +5,7 @@ User successfully updated
 ## Example Usage
 
 ```typescript
-import { UpdateUserResponse } from "oneroster/models/operations";
+import { UpdateUserResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateUserResponse = {
   user: {

@@ -5,7 +5,7 @@ Successfully created
 ## Example Usage
 
 ```typescript
-import { CreateEnrollmentResponse } from "oneroster/models/operations";
+import { CreateEnrollmentResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateEnrollmentResponse = {
   sourcedIdPairs: {

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetAllUsersOrg } from "oneroster/models/operations";
+import { GetAllUsersOrg } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllUsersOrg = {
   href: "https://decent-privilege.net",

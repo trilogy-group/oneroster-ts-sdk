@@ -5,7 +5,7 @@ Represents a digital resource of some kind.
 ## Example Usage
 
 ```typescript
-import { Resource } from "oneroster/models/components";
+import { Resource } from "@superbuilders/oneroster/models/components";
 
 let value: Resource = {
   sourcedId: "<id>",

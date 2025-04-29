@@ -5,7 +5,7 @@ Successful response containing a collection of results for the specified line it
 ## Example Usage
 
 ```typescript
-import { GetResultsForLineItemForClassResponse } from "oneroster/models/operations";
+import { GetResultsForLineItemForClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResultsForLineItemForClassResponse = {
   results: [

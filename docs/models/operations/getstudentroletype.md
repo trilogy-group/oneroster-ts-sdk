@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetStudentRoleType } from "oneroster/models/operations";
+import { GetStudentRoleType } from "@superbuilders/oneroster/models/operations";
 
 let value: GetStudentRoleType = "secondary";
 ```

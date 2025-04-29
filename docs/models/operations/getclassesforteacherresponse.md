@@ -5,7 +5,7 @@ Successful response containing a collection of classes for the teacher
 ## Example Usage
 
 ```typescript
-import { GetClassesForTeacherResponse } from "oneroster/models/operations";
+import { GetClassesForTeacherResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetClassesForTeacherResponse = {
   classes: [

@@ -5,7 +5,7 @@ Successful response containing a collection of categories for the class
 ## Example Usage
 
 ```typescript
-import { GetCategoriesForClassResponse } from "oneroster/models/operations";
+import { GetCategoriesForClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetCategoriesForClassResponse = {
   categories: [

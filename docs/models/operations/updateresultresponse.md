@@ -5,7 +5,7 @@ Result successfully updated
 ## Example Usage
 
 ```typescript
-import { UpdateResultResponse } from "oneroster/models/operations";
+import { UpdateResultResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateResultResponse = {
   result: {

@@ -5,7 +5,7 @@ Successful response with the assessment line item
 ## Example Usage
 
 ```typescript
-import { GetAssessmentLineItemResponse } from "oneroster/models/operations";
+import { GetAssessmentLineItemResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAssessmentLineItemResponse = {
   assessmentLineItem: {

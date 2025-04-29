@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AssessmentLineItemClass } from "oneroster/models/components";
+import { AssessmentLineItemClass } from "@superbuilders/oneroster/models/components";
 
 let value: AssessmentLineItemClass = {
   sourcedId: "<id>",

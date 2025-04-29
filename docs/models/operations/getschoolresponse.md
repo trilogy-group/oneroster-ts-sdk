@@ -5,7 +5,7 @@ School successfully retrieved
 ## Example Usage
 
 ```typescript
-import { GetSchoolResponse } from "oneroster/models/operations";
+import { GetSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetSchoolResponse = {
   org: {

@@ -5,7 +5,7 @@ Successful response containing a collection of resources for the user
 ## Example Usage
 
 ```typescript
-import { GetResourcesForUserResponse } from "oneroster/models/operations";
+import { GetResourcesForUserResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResourcesForUserResponse = {
   resources: [

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateUserAgentResponse } from "oneroster/models/operations";
+import { CreateUserAgentResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateUserAgentResponse = {
   href: "https://dead-tectonics.info/",

@@ -5,7 +5,7 @@ Successful response containing a collection of classes for the term
 ## Example Usage
 
 ```typescript
-import { GetClassesForTermResponse } from "oneroster/models/operations";
+import { GetClassesForTermResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetClassesForTermResponse = {
   classes: [

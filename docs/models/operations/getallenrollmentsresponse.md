@@ -5,7 +5,7 @@ Successful response
 ## Example Usage
 
 ```typescript
-import { GetAllEnrollmentsResponse } from "oneroster/models/operations";
+import { GetAllEnrollmentsResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllEnrollmentsResponse = {
   enrollments: [

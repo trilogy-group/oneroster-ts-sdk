@@ -5,7 +5,7 @@ Represents an organization.
 ## Example Usage
 
 ```typescript
-import { Org } from "oneroster/models/components";
+import { Org } from "@superbuilders/oneroster/models/components";
 
 let value: Org = {
   sourcedId: "<id>",

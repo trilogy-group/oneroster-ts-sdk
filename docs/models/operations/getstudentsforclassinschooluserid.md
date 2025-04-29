@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetStudentsForClassInSchoolUserId } from "oneroster/models/operations";
+import { GetStudentsForClassInSchoolUserId } from "@superbuilders/oneroster/models/operations";
 
 let value: GetStudentsForClassInSchoolUserId = {
   type: "<value>",

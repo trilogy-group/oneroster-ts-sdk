@@ -5,7 +5,7 @@ Successful response containing a collection of assessment line items
 ## Example Usage
 
 ```typescript
-import { GetAllAssessmentLineItemsResponseBody } from "oneroster/models/operations";
+import { GetAllAssessmentLineItemsResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllAssessmentLineItemsResponseBody = {
   assessmentLineItems: [

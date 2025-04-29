@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetResourcesForCourseRequest } from "oneroster/models/operations";
+import { GetResourcesForCourseRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResourcesForCourseRequest = {
   courseSourcedId: "<id>",

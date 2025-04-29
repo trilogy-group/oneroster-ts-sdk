@@ -5,7 +5,7 @@ User successfully created
 ## Example Usage
 
 ```typescript
-import { CreateUserResponse } from "oneroster/models/operations";
+import { CreateUserResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateUserResponse = {
   user: {

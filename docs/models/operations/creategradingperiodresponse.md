@@ -5,7 +5,7 @@ Grading period created successfully
 ## Example Usage
 
 ```typescript
-import { CreateGradingPeriodResponse } from "oneroster/models/operations";
+import { CreateGradingPeriodResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateGradingPeriodResponse = {
   sourcedIdPairs: {

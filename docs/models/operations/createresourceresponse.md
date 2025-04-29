@@ -5,7 +5,7 @@ Resource successfully created
 ## Example Usage
 
 ```typescript
-import { CreateResourceResponse } from "oneroster/models/operations";
+import { CreateResourceResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateResourceResponse = {
   sourcedIdPairs: {

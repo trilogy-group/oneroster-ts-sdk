@@ -38,7 +38,7 @@ export function assessmentResultsCreate(
   Result<
     operations.CreateAssessmentResultResponse,
     | errors.BadRequestResponseError2
-    | errors.UnauthorizedRequestResponseError2
+    | errors.UnauthorizedRequestResponseError1
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError1
@@ -69,7 +69,7 @@ async function $do(
     Result<
       operations.CreateAssessmentResultResponse,
       | errors.BadRequestResponseError2
-      | errors.UnauthorizedRequestResponseError2
+      | errors.UnauthorizedRequestResponseError1
       | errors.ForbiddenResponseError1
       | errors.NotFoundResponseError1
       | errors.UnprocessableEntityResponseError1
@@ -154,7 +154,7 @@ async function $do(
   const [result] = await M.match<
     operations.CreateAssessmentResultResponse,
     | errors.BadRequestResponseError2
-    | errors.UnauthorizedRequestResponseError2
+    | errors.UnauthorizedRequestResponseError1
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError1
@@ -170,7 +170,7 @@ async function $do(
   >(
     M.json(201, operations.CreateAssessmentResultResponse$inboundSchema),
     M.jsonErr(400, errors.BadRequestResponseError2$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError2$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
     M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
     M.jsonErr(422, errors.UnprocessableEntityResponseError1$inboundSchema),

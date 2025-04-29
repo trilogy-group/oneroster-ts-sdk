@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { NotFoundResponseImsxCodeMinor } from "oneroster/models/errors";
+import { NotFoundResponseImsxCodeMinor } from "@superbuilders/oneroster/models/errors";
 
 let value: NotFoundResponseImsxCodeMinor = {
   imsxCodeMinorField: [

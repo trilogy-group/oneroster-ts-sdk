@@ -5,7 +5,7 @@ Represents an academic session.
 ## Example Usage
 
 ```typescript
-import { AcademicSession } from "oneroster/models/components";
+import { AcademicSession } from "@superbuilders/oneroster/models/components";
 
 let value: AcademicSession = {
   sourcedId: "<id>",

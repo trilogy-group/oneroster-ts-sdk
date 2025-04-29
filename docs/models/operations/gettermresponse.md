@@ -5,7 +5,7 @@ Successful response with the term
 ## Example Usage
 
 ```typescript
-import { GetTermResponse } from "oneroster/models/operations";
+import { GetTermResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetTermResponse = {
   term: {

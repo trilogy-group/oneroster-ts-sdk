@@ -5,7 +5,7 @@ Collection of classes successfully retrieved
 ## Example Usage
 
 ```typescript
-import { GetClassesForSchoolResponse } from "oneroster/models/operations";
+import { GetClassesForSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetClassesForSchoolResponse = {
   classes: [

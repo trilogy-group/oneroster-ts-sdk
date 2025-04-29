@@ -5,7 +5,7 @@ Collection of Course Components
 ## Example Usage
 
 ```typescript
-import { GetAllCourseComponentsResponseBody } from "oneroster/models/operations";
+import { GetAllCourseComponentsResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllCourseComponentsResponseBody = {
   courseComponents: [

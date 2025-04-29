@@ -5,7 +5,7 @@ Successful response with the assessment result
 ## Example Usage
 
 ```typescript
-import { GetAssessmentResultResponse } from "oneroster/models/operations";
+import { GetAssessmentResultResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAssessmentResultResponse = {
   assessmentResult: {

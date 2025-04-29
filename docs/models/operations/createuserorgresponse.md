@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateUserOrgResponse } from "oneroster/models/operations";
+import { CreateUserOrgResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateUserOrgResponse = {
   href: "https://devoted-hoof.biz/",

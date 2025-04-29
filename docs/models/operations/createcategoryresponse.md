@@ -5,7 +5,7 @@ Category successfully created
 ## Example Usage
 
 ```typescript
-import { CreateCategoryResponse } from "oneroster/models/operations";
+import { CreateCategoryResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateCategoryResponse = {
   sourcedIdPairs: {

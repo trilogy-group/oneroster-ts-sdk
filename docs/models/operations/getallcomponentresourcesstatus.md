@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetAllComponentResourcesStatus } from "oneroster/models/operations";
+import { GetAllComponentResourcesStatus } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllComponentResourcesStatus = "tobedeleted";
 ```

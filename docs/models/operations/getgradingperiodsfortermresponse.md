@@ -5,7 +5,7 @@ Successful response containing a collection of grading periods for the term
 ## Example Usage
 
 ```typescript
-import { GetGradingPeriodsForTermResponse } from "oneroster/models/operations";
+import { GetGradingPeriodsForTermResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetGradingPeriodsForTermResponse = {
   gradingPeriods: [

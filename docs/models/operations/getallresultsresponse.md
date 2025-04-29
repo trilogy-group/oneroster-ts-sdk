@@ -5,7 +5,7 @@ Successful response containing a collection of results
 ## Example Usage
 
 ```typescript
-import { GetAllResultsResponse } from "oneroster/models/operations";
+import { GetAllResultsResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllResultsResponse = {
   results: [

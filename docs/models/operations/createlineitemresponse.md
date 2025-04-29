@@ -5,7 +5,7 @@ Line item successfully created
 ## Example Usage
 
 ```typescript
-import { CreateLineItemResponse } from "oneroster/models/operations";
+import { CreateLineItemResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateLineItemResponse = {
   sourcedIdPairs: {

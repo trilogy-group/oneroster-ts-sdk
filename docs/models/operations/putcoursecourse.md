@@ -5,7 +5,7 @@ Represents a course.
 ## Example Usage
 
 ```typescript
-import { PutCourseCourse } from "oneroster/models/operations";
+import { PutCourseCourse } from "@superbuilders/oneroster/models/operations";
 
 let value: PutCourseCourse = {
   status: "tobedeleted",

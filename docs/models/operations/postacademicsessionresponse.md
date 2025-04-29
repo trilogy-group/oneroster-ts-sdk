@@ -5,7 +5,7 @@ Academic session created
 ## Example Usage
 
 ```typescript
-import { PostAcademicSessionResponse } from "oneroster/models/operations";
+import { PostAcademicSessionResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: PostAcademicSessionResponse = {
   sourcedIdPairs: {

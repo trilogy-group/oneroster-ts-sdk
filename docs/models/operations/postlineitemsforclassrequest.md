@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PostLineItemsForClassRequest } from "oneroster/models/operations";
+import { PostLineItemsForClassRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: PostLineItemsForClassRequest = {
   classSourcedId: "<id>",

@@ -5,7 +5,7 @@ Resource successfully assigned to class
 ## Example Usage
 
 ```typescript
-import { AssignResourceToClassResponse } from "oneroster/models/operations";
+import { AssignResourceToClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: AssignResourceToClassResponse = {
   sourcedIdPairs: {

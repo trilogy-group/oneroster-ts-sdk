@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AssignResourceToUserRequestBody } from "oneroster/models/operations";
+import { AssignResourceToUserRequestBody } from "@superbuilders/oneroster/models/operations";
 
 let value: AssignResourceToUserRequestBody = {
   resource: {

@@ -5,7 +5,7 @@ Organization retrieved successfully
 ## Example Usage
 
 ```typescript
-import { GetOrgResponse } from "oneroster/models/operations";
+import { GetOrgResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetOrgResponse = {
   org: {

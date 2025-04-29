@@ -5,7 +5,7 @@ Assessment result successfully created
 ## Example Usage
 
 ```typescript
-import { CreateAssessmentResultResponse } from "oneroster/models/operations";
+import { CreateAssessmentResultResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateAssessmentResultResponse = {
   sourcedIdPairs: {

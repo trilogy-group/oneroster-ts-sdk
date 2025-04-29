@@ -5,7 +5,7 @@ Line item successfully created
 ## Example Usage
 
 ```typescript
-import { PostLineItemsForClassResponse } from "oneroster/models/operations";
+import { PostLineItemsForClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: PostLineItemsForClassResponse = {
   sourcedIdPairs: {

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { UpdateUserRoleResponse } from "oneroster/models/operations";
+import { UpdateUserRoleResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateUserRoleResponse = {
   roleType: "primary",

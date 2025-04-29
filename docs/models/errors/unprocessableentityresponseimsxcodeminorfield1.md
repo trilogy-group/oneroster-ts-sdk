@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { UnprocessableEntityResponseImsxCodeMinorField1 } from "oneroster/models/errors";
+import { UnprocessableEntityResponseImsxCodeMinorField1 } from "@superbuilders/oneroster/models/errors";
 
 let value: UnprocessableEntityResponseImsxCodeMinorField1 = {};
 ```

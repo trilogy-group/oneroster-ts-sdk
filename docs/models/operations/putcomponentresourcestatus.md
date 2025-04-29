@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PutComponentResourceStatus } from "oneroster/models/operations";
+import { PutComponentResourceStatus } from "@superbuilders/oneroster/models/operations";
 
 let value: PutComponentResourceStatus = "active";
 ```

@@ -5,7 +5,7 @@ Demographics record created successfully
 ## Example Usage
 
 ```typescript
-import { PostDemographicsResponse } from "oneroster/models/operations";
+import { PostDemographicsResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: PostDemographicsResponse = {
   sourcedIdPairs: {

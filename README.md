@@ -123,25 +123,25 @@ The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https
 ### NPM
 
 ```bash
-npm add oneroster
+npm add @superbuilders/oneroster
 ```
 
 ### PNPM
 
 ```bash
-pnpm add oneroster
+pnpm add @superbuilders/oneroster
 ```
 
 ### Bun
 
 ```bash
-bun add oneroster
+bun add @superbuilders/oneroster
 ```
 
 ### Yarn
 
 ```bash
-yarn add oneroster zod
+yarn add @superbuilders/oneroster zod
 
 # Note that Yarn does not install peer dependencies automatically. You will need
 # to install zod as shown above.
@@ -169,7 +169,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
     "OneRoster": {
       "command": "npx",
       "args": [
-        "-y", "--package", "oneroster",
+        "-y", "--package", "@superbuilders/oneroster",
         "--",
         "mcp", "start",
         "--client-id", "...",
@@ -194,7 +194,7 @@ Create a `.cursor/mcp.json` file in your project root with the following content
     "OneRoster": {
       "command": "npx",
       "args": [
-        "-y", "--package", "oneroster",
+        "-y", "--package", "@superbuilders/oneroster",
         "--",
         "mcp", "start",
         "--client-id", "...",
@@ -235,7 +235,7 @@ If the repo is a private repo you must add your Github PAT to download a release
 For a full list of server arguments, run:
 
 ```sh
-npx -y --package oneroster -- mcp start --help
+npx -y --package @superbuilders/oneroster -- mcp start --help
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -251,7 +251,7 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 ### Example
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -285,7 +285,7 @@ This SDK supports the following security scheme globally:
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -721,7 +721,7 @@ syntax.
 Here's an example of one such pagination call:
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -754,7 +754,7 @@ Some of the endpoints in this SDK support retries.  If you use the SDK without a
 
 To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -787,7 +787,7 @@ run();
 
 If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   retryConfig: {
@@ -837,7 +837,7 @@ Some methods specify known errors which can be thrown. All the known errors are 
 If the method throws an error and it is not captured by the known errors, it will default to throwing a `APIError`.
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 import {
   BadRequestResponseError1,
   ForbiddenResponseError1,
@@ -847,7 +847,7 @@ import {
   TooManyRequestsResponseError1,
   UnauthorizedRequestResponseError1,
   UnprocessableEntityResponseError1,
-} from "oneroster/models/errors";
+} from "@superbuilders/oneroster/models/errors";
 
 const oneRoster = new OneRoster({
   security: {
@@ -940,7 +940,7 @@ In some rare cases, the SDK can fail to get a response from the server or even m
 
 The default server can be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   serverURL: "https://api.alpha-1edtech.com",
@@ -980,8 +980,8 @@ custom header and a timeout to requests and how to use the `"requestError"` hook
 to log errors:
 
 ```typescript
-import { OneRoster } from "oneroster";
-import { HTTPClient } from "oneroster/lib/http";
+import { OneRoster } from "@superbuilders/oneroster";
+import { HTTPClient } from "@superbuilders/oneroster/lib/http";
 
 const httpClient = new HTTPClient({
   // fetcher takes a function that has the same signature as native `fetch`.
@@ -1022,7 +1022,7 @@ You can pass a logger that matches `console`'s interface as an SDK option.
 > Beware that debug logging will reveal secrets, like API tokens in headers, in log messages printed to a console or files. It's recommended to use this feature only during local development and not in production.
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const sdk = new OneRoster({ debugLogger: console });
 ```

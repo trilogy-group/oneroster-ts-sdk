@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DeleteSchoolRequest } from "oneroster/models/operations";
+import { DeleteSchoolRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: DeleteSchoolRequest = {
   sourcedId: "<id>",

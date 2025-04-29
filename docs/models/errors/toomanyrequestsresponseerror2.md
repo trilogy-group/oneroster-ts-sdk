@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TooManyRequestsResponseError2 } from "oneroster/models/errors";
+import { TooManyRequestsResponseError2 } from "@superbuilders/oneroster/models/errors";
 
 // No examples available for this model
 ```

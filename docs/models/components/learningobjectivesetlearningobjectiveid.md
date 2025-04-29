@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { LearningObjectiveSetLearningObjectiveId } from "oneroster/models/components";
+import { LearningObjectiveSetLearningObjectiveId } from "@superbuilders/oneroster/models/components";
 
 let value: LearningObjectiveSetLearningObjectiveId = {
   learningObjectiveId: "<id>",

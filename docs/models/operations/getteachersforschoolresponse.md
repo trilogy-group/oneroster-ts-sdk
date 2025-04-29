@@ -5,7 +5,7 @@ Collection of teachers successfully retrieved
 ## Example Usage
 
 ```typescript
-import { GetTeachersForSchoolResponse } from "oneroster/models/operations";
+import { GetTeachersForSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetTeachersForSchoolResponse = {
   users: [

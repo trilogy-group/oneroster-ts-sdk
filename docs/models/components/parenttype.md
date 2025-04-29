@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ParentType } from "oneroster/models/components";
+import { ParentType } from "@superbuilders/oneroster/models/components";
 
 let value: ParentType = "courseComponent";
 ```

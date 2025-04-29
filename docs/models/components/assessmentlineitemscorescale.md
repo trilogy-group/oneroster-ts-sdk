@@ -5,7 +5,7 @@ Represents a score scale.
 ## Example Usage
 
 ```typescript
-import { AssessmentLineItemScoreScale } from "oneroster/models/components";
+import { AssessmentLineItemScoreScale } from "@superbuilders/oneroster/models/components";
 
 let value: AssessmentLineItemScoreScale = {
   sourcedId: "<id>",

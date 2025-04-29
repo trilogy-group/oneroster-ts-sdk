@@ -5,7 +5,7 @@ Score scale successfully created
 ## Example Usage
 
 ```typescript
-import { CreateScoreScaleResponse } from "oneroster/models/operations";
+import { CreateScoreScaleResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateScoreScaleResponse = {
   sourcedIdPairs: {

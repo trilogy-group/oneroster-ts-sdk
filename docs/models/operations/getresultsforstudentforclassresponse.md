@@ -5,7 +5,7 @@ Successful response containing a collection of results for the specified student
 ## Example Usage
 
 ```typescript
-import { GetResultsForStudentForClassResponse } from "oneroster/models/operations";
+import { GetResultsForStudentForClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResultsForStudentForClassResponse = {
   results: [

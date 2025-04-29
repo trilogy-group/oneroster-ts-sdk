@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ClassSchool } from "oneroster/models/components";
+import { ClassSchool } from "@superbuilders/oneroster/models/components";
 
 let value: ClassSchool = {
   href: "https://vague-devastation.name",

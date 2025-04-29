@@ -5,7 +5,7 @@ Successful response containing a collection of score scales
 ## Example Usage
 
 ```typescript
-import { GetScoreScalesForSchoolResponse } from "oneroster/models/operations";
+import { GetScoreScalesForSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetScoreScalesForSchoolResponse = {
   scoreScales: [

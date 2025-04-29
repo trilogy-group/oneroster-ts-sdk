@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateSchoolRequest } from "oneroster/models/operations";
+import { CreateSchoolRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateSchoolRequest = {
   org: {

@@ -5,7 +5,7 @@ Successful response containing a collection of resources for the class
 ## Example Usage
 
 ```typescript
-import { GetResourcesForClassResponse } from "oneroster/models/operations";
+import { GetResourcesForClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResourcesForClassResponse = {
   resources: [

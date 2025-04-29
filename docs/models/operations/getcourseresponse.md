@@ -5,7 +5,7 @@ Single Course
 ## Example Usage
 
 ```typescript
-import { GetCourseResponse } from "oneroster/models/operations";
+import { GetCourseResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetCourseResponse = {
   course: {

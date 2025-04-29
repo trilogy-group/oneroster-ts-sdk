@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PutAcademicSessionParent } from "oneroster/models/operations";
+import { PutAcademicSessionParent } from "@superbuilders/oneroster/models/operations";
 
 let value: PutAcademicSessionParent = {
   sourcedId: "<id>",

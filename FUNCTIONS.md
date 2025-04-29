@@ -19,9 +19,9 @@ specific category of applications.
 ## Example
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { scoreScalesList } from "oneroster/funcs/scoreScalesList.js";
-import { SDKValidationError } from "oneroster/models/errors/sdkvalidationerror.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { scoreScalesList } from "@superbuilders/oneroster/funcs/scoreScalesList.js";
+import { SDKValidationError } from "@superbuilders/oneroster/models/errors/sdkvalidationerror.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

@@ -5,7 +5,7 @@ Collection of terms successfully retrieved
 ## Example Usage
 
 ```typescript
-import { GetTermsForSchoolResponse } from "oneroster/models/operations";
+import { GetTermsForSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetTermsForSchoolResponse = {
   terms: [

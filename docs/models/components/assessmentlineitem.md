@@ -5,7 +5,7 @@ Represents an assessment line item.
 ## Example Usage
 
 ```typescript
-import { AssessmentLineItem } from "oneroster/models/components";
+import { AssessmentLineItem } from "@superbuilders/oneroster/models/components";
 
 let value: AssessmentLineItem = {
   status: "tobedeleted",

@@ -5,7 +5,7 @@ Successful response with the category
 ## Example Usage
 
 ```typescript
-import { GetCategoryResponse } from "oneroster/models/operations";
+import { GetCategoryResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetCategoryResponse = {
   category: {

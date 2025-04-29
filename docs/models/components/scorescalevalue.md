@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ScoreScaleValue } from "oneroster/models/components";
+import { ScoreScaleValue } from "@superbuilders/oneroster/models/components";
 
 let value: ScoreScaleValue = {
   itemValueLHS: "<value>",

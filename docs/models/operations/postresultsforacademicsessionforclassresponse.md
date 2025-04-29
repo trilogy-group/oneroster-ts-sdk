@@ -5,7 +5,7 @@ Results successfully created
 ## Example Usage
 
 ```typescript
-import { PostResultsForAcademicSessionForClassResponse } from "oneroster/models/operations";
+import { PostResultsForAcademicSessionForClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: PostResultsForAcademicSessionForClassResponse = {
   sourcedIdPairs: {

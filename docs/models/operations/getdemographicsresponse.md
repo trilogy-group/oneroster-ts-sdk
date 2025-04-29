@@ -5,7 +5,7 @@ Demographics record retrieved successfully
 ## Example Usage
 
 ```typescript
-import { GetDemographicsResponse } from "oneroster/models/operations";
+import { GetDemographicsResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetDemographicsResponse = {
   demographics: {

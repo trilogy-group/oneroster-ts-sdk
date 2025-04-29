@@ -5,7 +5,7 @@ Successful response containing a collection of results for the class
 ## Example Usage
 
 ```typescript
-import { GetResultsForClassResponse } from "oneroster/models/operations";
+import { GetResultsForClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResultsForClassResponse = {
   results: [

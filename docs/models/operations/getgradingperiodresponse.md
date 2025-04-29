@@ -5,7 +5,7 @@ Success
 ## Example Usage
 
 ```typescript
-import { GetGradingPeriodResponse } from "oneroster/models/operations";
+import { GetGradingPeriodResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetGradingPeriodResponse = {
   gradingPeriod: {

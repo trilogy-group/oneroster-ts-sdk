@@ -5,7 +5,7 @@ Class successfully created
 ## Example Usage
 
 ```typescript
-import { CreateClassResponse } from "oneroster/models/operations";
+import { CreateClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateClassResponse = {
   sourcedIdPairs: {
