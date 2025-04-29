@@ -38,11 +38,11 @@ export function schoolsDelete(
 ): APIPromise<
   Result<
     { [k: string]: any },
-    | errors.BadRequestResponseError1
+    | errors.BadRequestResponseError2
     | errors.UnauthorizedRequestResponseError1
     | errors.ForbiddenResponseError2
     | errors.NotFoundResponseError1
-    | errors.UnprocessableEntityResponseError2
+    | errors.UnprocessableEntityResponseError1
     | errors.TooManyRequestsResponseError1
     | errors.InternalServerErrorResponse1
     | APIError
@@ -69,11 +69,11 @@ async function $do(
   [
     Result<
       { [k: string]: any },
-      | errors.BadRequestResponseError1
+      | errors.BadRequestResponseError2
       | errors.UnauthorizedRequestResponseError1
       | errors.ForbiddenResponseError2
       | errors.NotFoundResponseError1
-      | errors.UnprocessableEntityResponseError2
+      | errors.UnprocessableEntityResponseError1
       | errors.TooManyRequestsResponseError1
       | errors.InternalServerErrorResponse1
       | APIError
@@ -161,11 +161,11 @@ async function $do(
 
   const [result] = await M.match<
     { [k: string]: any },
-    | errors.BadRequestResponseError1
+    | errors.BadRequestResponseError2
     | errors.UnauthorizedRequestResponseError1
     | errors.ForbiddenResponseError2
     | errors.NotFoundResponseError1
-    | errors.UnprocessableEntityResponseError2
+    | errors.UnprocessableEntityResponseError1
     | errors.TooManyRequestsResponseError1
     | errors.InternalServerErrorResponse1
     | APIError
@@ -177,11 +177,11 @@ async function $do(
     | ConnectionError
   >(
     M.json(204, z.record(z.any())),
-    M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError2$inboundSchema),
     M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
     M.jsonErr(403, errors.ForbiddenResponseError2$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
-    M.jsonErr(422, errors.UnprocessableEntityResponseError2$inboundSchema),
+    M.jsonErr(422, errors.UnprocessableEntityResponseError1$inboundSchema),
     M.jsonErr(429, errors.TooManyRequestsResponseError1$inboundSchema),
     M.jsonErr(500, errors.InternalServerErrorResponse1$inboundSchema),
     M.fail("4XX"),
