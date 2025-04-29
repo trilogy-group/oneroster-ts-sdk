@@ -5,8 +5,11 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.540.1
   generationVersion: 2.593.4
-  releaseVersion: 0.2.3
-  configChecksum: e65703bdbdc447e6897a75b50da522d9
+  releaseVersion: 0.2.4
+  configChecksum: 2e3a97bff85d0cd6e71adece75b643c4
+  repoURL: https://github.com/trilogy-group/oneroster-ts.git
+  installationURL: https://github.com/trilogy-group/oneroster-ts
+  published: true
 features:
   typescript:
     additionalDependencies: 0.1.0

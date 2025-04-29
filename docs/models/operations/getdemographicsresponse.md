@@ -11,7 +11,7 @@ let value: GetDemographicsResponse = {
   demographics: {
     sourcedId: "<id>",
     status: "active",
-    birthDate: "1965-06-24",
+    birthDate: "1965-06-25",
     sex: "unspecified",
     americanIndianOrAlaskaNative: "<value>",
     asian: "<value>",

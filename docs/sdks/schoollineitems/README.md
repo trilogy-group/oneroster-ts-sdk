@@ -87,7 +87,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
+| errors.BadRequestResponseError2          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError2           | 403                                      | application/json                         |
 | errors.NotFoundResponseError2            | 404                                      | application/json                         |

@@ -161,7 +161,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "OneRoster",
-    version: "0.2.3",
+    version: "0.2.4",
   });
 
   const client = new OneRosterCore({

@@ -35,13 +35,13 @@ export function classesGetAll(
 ): APIPromise<
   Result<
     Array<components.Class>,
-    | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError2
-    | errors.ForbiddenResponseError2
+    | errors.BadRequestResponseError2
+    | errors.UnauthorizedRequestResponseError1
+    | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError2
     | errors.UnprocessableEntityResponseError1
-    | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse1
+    | errors.TooManyRequestsResponseError2
+    | errors.InternalServerErrorResponse2
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -64,13 +64,13 @@ async function $do(
   [
     Result<
       Array<components.Class>,
-      | errors.BadRequestResponseError1
-      | errors.UnauthorizedRequestResponseError2
-      | errors.ForbiddenResponseError2
+      | errors.BadRequestResponseError2
+      | errors.UnauthorizedRequestResponseError1
+      | errors.ForbiddenResponseError1
       | errors.NotFoundResponseError2
       | errors.UnprocessableEntityResponseError1
-      | errors.TooManyRequestsResponseError1
-      | errors.InternalServerErrorResponse1
+      | errors.TooManyRequestsResponseError2
+      | errors.InternalServerErrorResponse2
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -135,13 +135,13 @@ async function $do(
 
   const [result] = await M.match<
     Array<components.Class>,
-    | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError2
-    | errors.ForbiddenResponseError2
+    | errors.BadRequestResponseError2
+    | errors.UnauthorizedRequestResponseError1
+    | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError2
     | errors.UnprocessableEntityResponseError1
-    | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse1
+    | errors.TooManyRequestsResponseError2
+    | errors.InternalServerErrorResponse2
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -151,13 +151,13 @@ async function $do(
     | ConnectionError
   >(
     M.json(200, z.array(components.Class$inboundSchema)),
-    M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError2$inboundSchema),
-    M.jsonErr(403, errors.ForbiddenResponseError2$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError2$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
+    M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError2$inboundSchema),
     M.jsonErr(422, errors.UnprocessableEntityResponseError1$inboundSchema),
-    M.jsonErr(429, errors.TooManyRequestsResponseError1$inboundSchema),
-    M.jsonErr(500, errors.InternalServerErrorResponse1$inboundSchema),
+    M.jsonErr(429, errors.TooManyRequestsResponseError2$inboundSchema),
+    M.jsonErr(500, errors.InternalServerErrorResponse2$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });
