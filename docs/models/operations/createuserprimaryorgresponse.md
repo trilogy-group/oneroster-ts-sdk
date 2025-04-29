@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateUserPrimaryOrgResponse } from "oneroster/models/operations";
+import { CreateUserPrimaryOrgResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateUserPrimaryOrgResponse = {
   href: "https://brown-integer.biz/",

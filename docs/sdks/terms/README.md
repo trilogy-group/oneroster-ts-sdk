@@ -17,7 +17,7 @@ Returns a collection of all terms.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -41,8 +41,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { termsList } from "oneroster/funcs/termsList.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { termsList } from "@superbuilders/oneroster/funcs/termsList.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -85,8 +85,8 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError2 | 401                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
+| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
@@ -101,7 +101,7 @@ Returns a specific term by sourcedId.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -127,8 +127,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { termsGet } from "oneroster/funcs/termsGet.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { termsGet } from "@superbuilders/oneroster/funcs/termsGet.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -174,7 +174,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
@@ -190,7 +190,7 @@ Returns a collection of grading periods associated with the term.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -216,8 +216,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { termsGetGradingPeriods } from "oneroster/funcs/termsGetGradingPeriods.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { termsGetGradingPeriods } from "@superbuilders/oneroster/funcs/termsGetGradingPeriods.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -264,8 +264,8 @@ run();
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | errors.BadRequestResponseError2          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError2           | 403                                      | application/json                         |
+| errors.UnauthorizedRequestResponseError2 | 401                                      | application/json                         |
+| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
@@ -279,7 +279,7 @@ Returns a collection of classes associated with the term.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -305,8 +305,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { termsGetClasses } from "oneroster/funcs/termsGetClasses.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { termsGetClasses } from "@superbuilders/oneroster/funcs/termsGetClasses.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

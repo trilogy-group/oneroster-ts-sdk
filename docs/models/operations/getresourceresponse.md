@@ -5,7 +5,7 @@ Successful response with the resource
 ## Example Usage
 
 ```typescript
-import { GetResourceResponse } from "oneroster/models/operations";
+import { GetResourceResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResourceResponse = {
   resource: {

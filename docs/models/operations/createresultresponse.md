@@ -5,7 +5,7 @@ Result successfully created
 ## Example Usage
 
 ```typescript
-import { CreateResultResponse } from "oneroster/models/operations";
+import { CreateResultResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateResultResponse = {
   sourcedIdPairs: {

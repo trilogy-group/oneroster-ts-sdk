@@ -39,7 +39,7 @@ export function classesGetStudents(
 ): APIPromise<
   Result<
     Array<components.Class>,
-    | errors.BadRequestResponseError2
+    | errors.BadRequestResponseError1
     | errors.UnauthorizedRequestResponseError2
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
@@ -70,7 +70,7 @@ async function $do(
   [
     Result<
       Array<components.Class>,
-      | errors.BadRequestResponseError2
+      | errors.BadRequestResponseError1
       | errors.UnauthorizedRequestResponseError2
       | errors.ForbiddenResponseError1
       | errors.NotFoundResponseError1
@@ -163,7 +163,7 @@ async function $do(
 
   const [result] = await M.match<
     Array<components.Class>,
-    | errors.BadRequestResponseError2
+    | errors.BadRequestResponseError1
     | errors.UnauthorizedRequestResponseError2
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
@@ -179,7 +179,7 @@ async function $do(
     | ConnectionError
   >(
     M.json(200, z.array(components.Class$inboundSchema)),
-    M.jsonErr(400, errors.BadRequestResponseError2$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
     M.jsonErr(401, errors.UnauthorizedRequestResponseError2$inboundSchema),
     M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),

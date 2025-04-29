@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AssessmentResultScoreStatus } from "oneroster/models/components";
+import { AssessmentResultScoreStatus } from "@superbuilders/oneroster/models/components";
 
 let value: AssessmentResultScoreStatus = "exempt";
 ```

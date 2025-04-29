@@ -5,7 +5,7 @@ Organization created successfully
 ## Example Usage
 
 ```typescript
-import { CreateOrgResponse } from "oneroster/models/operations";
+import { CreateOrgResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateOrgResponse = {
   sourcedIdPairs: {

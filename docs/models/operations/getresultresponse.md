@@ -5,7 +5,7 @@ Successful response with the result
 ## Example Usage
 
 ```typescript
-import { GetResultResponse } from "oneroster/models/operations";
+import { GetResultResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResultResponse = {
   result: {

@@ -5,7 +5,7 @@ Successful response with the student
 ## Example Usage
 
 ```typescript
-import { GetStudentResponse } from "oneroster/models/operations";
+import { GetStudentResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetStudentResponse = {
   user: {

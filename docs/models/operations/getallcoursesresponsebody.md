@@ -5,7 +5,7 @@ Collection of Courses
 ## Example Usage
 
 ```typescript
-import { GetAllCoursesResponseBody } from "oneroster/models/operations";
+import { GetAllCoursesResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllCoursesResponseBody = {
   courses: [

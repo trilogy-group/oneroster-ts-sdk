@@ -5,7 +5,7 @@ Category successfully updated
 ## Example Usage
 
 ```typescript
-import { UpdateCategoryResponse } from "oneroster/models/operations";
+import { UpdateCategoryResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateCategoryResponse = {
   category: {

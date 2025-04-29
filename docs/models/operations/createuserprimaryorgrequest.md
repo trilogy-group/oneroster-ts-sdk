@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateUserPrimaryOrgRequest } from "oneroster/models/operations";
+import { CreateUserPrimaryOrgRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateUserPrimaryOrgRequest = {
   sourcedId: "<id>",

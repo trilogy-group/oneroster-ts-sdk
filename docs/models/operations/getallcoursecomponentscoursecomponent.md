@@ -5,7 +5,7 @@ Represents a component of a course.
 ## Example Usage
 
 ```typescript
-import { GetAllCourseComponentsCourseComponent } from "oneroster/models/operations";
+import { GetAllCourseComponentsCourseComponent } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllCourseComponentsCourseComponent = {
   status: "active",

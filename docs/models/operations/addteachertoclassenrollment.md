@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AddTeacherToClassEnrollment } from "oneroster/models/operations";
+import { AddTeacherToClassEnrollment } from "@superbuilders/oneroster/models/operations";
 
 let value: AddTeacherToClassEnrollment = {
   user: {

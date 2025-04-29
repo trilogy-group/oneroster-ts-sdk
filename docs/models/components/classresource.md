@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ClassResource } from "oneroster/models/components";
+import { ClassResource } from "@superbuilders/oneroster/models/components";
 
 let value: ClassResource = {
   href: "https://happy-slide.name",

@@ -18,7 +18,7 @@ Returns a collection of all score scales.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { scoreScalesList } from "oneroster/funcs/scoreScalesList.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { scoreScalesList } from "@superbuilders/oneroster/funcs/scoreScalesList.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -102,7 +102,7 @@ Creates a new score scale with the provided information.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -145,8 +145,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { scoreScalesCreate } from "oneroster/funcs/scoreScalesCreate.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { scoreScalesCreate } from "@superbuilders/oneroster/funcs/scoreScalesCreate.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,10 +211,10 @@ run();
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
+| errors.ForbiddenResponseError2           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
+| errors.TooManyRequestsResponseError2     | 429                                      | application/json                         |
 | errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
 
@@ -225,7 +225,7 @@ Returns a specific score scale by sourcedId.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -251,8 +251,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { scoreScalesGet } from "oneroster/funcs/scoreScalesGet.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { scoreScalesGet } from "@superbuilders/oneroster/funcs/scoreScalesGet.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -298,7 +298,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
@@ -314,7 +314,7 @@ Updates an existing score scale with the provided information.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -364,8 +364,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { scoreScalesUpdate } from "oneroster/funcs/scoreScalesUpdate.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { scoreScalesUpdate } from "@superbuilders/oneroster/funcs/scoreScalesUpdate.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -451,7 +451,7 @@ Deletes a score scale with the specified sourcedId.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -476,8 +476,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { scoreScalesDelete } from "oneroster/funcs/scoreScalesDelete.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { scoreScalesDelete } from "@superbuilders/oneroster/funcs/scoreScalesDelete.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -522,11 +522,11 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
+| errors.TooManyRequestsResponseError2     | 429                                      | application/json                         |
 | errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |

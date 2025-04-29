@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateLineItemRequest } from "oneroster/models/operations";
+import { CreateLineItemRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateLineItemRequest = {
   lineItem: {

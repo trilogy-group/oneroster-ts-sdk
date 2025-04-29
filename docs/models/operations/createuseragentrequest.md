@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateUserAgentRequest } from "oneroster/models/operations";
+import { CreateUserAgentRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateUserAgentRequest = {
   sourcedId: "<id>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { LearningObjectiveSet } from "oneroster/models/components";
+import { LearningObjectiveSet } from "@superbuilders/oneroster/models/components";
 
 let value: LearningObjectiveSet = {
   source: "<value>",

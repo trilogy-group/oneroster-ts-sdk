@@ -5,7 +5,7 @@ Reference to the Component Resource that this assessment line item is associated
 ## Example Usage
 
 ```typescript
-import { ComponentResource } from "oneroster/models/components";
+import { ComponentResource } from "@superbuilders/oneroster/models/components";
 
 let value: ComponentResource = {
   sourcedId: "<id>",

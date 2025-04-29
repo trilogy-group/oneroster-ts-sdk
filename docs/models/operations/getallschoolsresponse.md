@@ -5,7 +5,7 @@ Collection of schools successfully retrieved
 ## Example Usage
 
 ```typescript
-import { GetAllSchoolsResponse } from "oneroster/models/operations";
+import { GetAllSchoolsResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllSchoolsResponse = {
   orgs: [

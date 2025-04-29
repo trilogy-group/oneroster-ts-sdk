@@ -5,7 +5,7 @@ Assessment line item successfully updated
 ## Example Usage
 
 ```typescript
-import { UpdateAssessmentLineItemResponse } from "oneroster/models/operations";
+import { UpdateAssessmentLineItemResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateAssessmentLineItemResponse = {
   assessmentLineItem: {

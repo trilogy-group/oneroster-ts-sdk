@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PostDemographicsDemographicRaceTwoOrMoreRaces } from "oneroster/models/operations";
+import { PostDemographicsDemographicRaceTwoOrMoreRaces } from "@superbuilders/oneroster/models/operations";
 
 let value: PostDemographicsDemographicRaceTwoOrMoreRaces = "true";
 ```

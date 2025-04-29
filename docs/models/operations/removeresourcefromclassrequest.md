@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { RemoveResourceFromClassRequest } from "oneroster/models/operations";
+import { RemoveResourceFromClassRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: RemoveResourceFromClassRequest = {
   classSourcedId: "<id>",

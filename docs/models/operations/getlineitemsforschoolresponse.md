@@ -5,7 +5,7 @@ Successful response containing a collection of line items
 ## Example Usage
 
 ```typescript
-import { GetLineItemsForSchoolResponse } from "oneroster/models/operations";
+import { GetLineItemsForSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetLineItemsForSchoolResponse = {
   lineItems: [

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetTeachersForSchoolOrg } from "oneroster/models/operations";
+import { GetTeachersForSchoolOrg } from "@superbuilders/oneroster/models/operations";
 
 let value: GetTeachersForSchoolOrg = {
   href: "https://punctual-conversation.info/",

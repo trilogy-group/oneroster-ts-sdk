@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateClassClass } from "oneroster/models/operations";
+import { CreateClassClass } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateClassClass = {
   title: "<value>",

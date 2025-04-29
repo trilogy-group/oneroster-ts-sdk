@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { LineItemStatus } from "oneroster/models/components";
+import { LineItemStatus } from "@superbuilders/oneroster/models/components";
 
 let value: LineItemStatus = "tobedeleted";
 ```

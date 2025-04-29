@@ -5,7 +5,7 @@ Collection of enrollments successfully retrieved
 ## Example Usage
 
 ```typescript
-import { GetEnrollmentsForSchoolResponse } from "oneroster/models/operations";
+import { GetEnrollmentsForSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetEnrollmentsForSchoolResponse = {
   enrollments: [

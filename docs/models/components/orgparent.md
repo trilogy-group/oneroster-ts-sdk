@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OrgParent } from "oneroster/models/components";
+import { OrgParent } from "@superbuilders/oneroster/models/components";
 
 let value: OrgParent = {
   href: "https://sour-passport.info/",

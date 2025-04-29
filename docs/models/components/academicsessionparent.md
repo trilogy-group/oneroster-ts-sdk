@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AcademicSessionParent } from "oneroster/models/components";
+import { AcademicSessionParent } from "@superbuilders/oneroster/models/components";
 
 let value: AcademicSessionParent = {
   href: "https://squiggly-substitution.org/",

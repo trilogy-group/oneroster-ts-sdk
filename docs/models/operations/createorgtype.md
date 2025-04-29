@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateOrgType } from "oneroster/models/operations";
+import { CreateOrgType } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateOrgType = "district";
 ```

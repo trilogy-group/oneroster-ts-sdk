@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { BadRequestResponseError1 } from "oneroster/models/errors";
+import { BadRequestResponseError1 } from "@superbuilders/oneroster/models/errors";
 
 // No examples available for this model
 ```

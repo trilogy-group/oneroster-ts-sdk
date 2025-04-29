@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { UpdateScoreScaleRequest } from "oneroster/models/operations";
+import { UpdateScoreScaleRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateScoreScaleRequest = {
   sourcedId: "<id>",

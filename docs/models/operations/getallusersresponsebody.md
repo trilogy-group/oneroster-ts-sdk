@@ -5,7 +5,7 @@ Successful response containing a collection of users
 ## Example Usage
 
 ```typescript
-import { GetAllUsersResponseBody } from "oneroster/models/operations";
+import { GetAllUsersResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllUsersResponseBody = {
   users: [

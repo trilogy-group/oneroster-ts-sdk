@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateGradingPeriodForTermOrg } from "oneroster/models/operations";
+import { CreateGradingPeriodForTermOrg } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateGradingPeriodForTermOrg = {
   sourcedId: "<id>",

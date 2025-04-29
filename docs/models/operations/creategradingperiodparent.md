@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateGradingPeriodParent } from "oneroster/models/operations";
+import { CreateGradingPeriodParent } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateGradingPeriodParent = {
   sourcedId: "<id>",

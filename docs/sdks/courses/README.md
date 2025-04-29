@@ -27,7 +27,7 @@ Returns a collection of resources associated with the course.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -53,8 +53,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesGetResources } from "oneroster/funcs/coursesGetResources.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesGetResources } from "@superbuilders/oneroster/funcs/coursesGetResources.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -100,7 +100,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
@@ -116,7 +116,7 @@ Assigns an existing resource to the specified course.
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -147,8 +147,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesAssignResource } from "oneroster/funcs/coursesAssignResource.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesAssignResource } from "@superbuilders/oneroster/funcs/coursesAssignResource.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -199,11 +199,11 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
+| errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
 | errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
@@ -215,7 +215,7 @@ Returns a collection of all courses
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -244,8 +244,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesGetAll } from "oneroster/funcs/coursesGetAll.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesGetAll } from "@superbuilders/oneroster/funcs/coursesGetAll.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -294,10 +294,10 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
+| errors.NotFoundResponseError2            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
 | errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
@@ -310,7 +310,7 @@ Used when creating a new course
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -334,8 +334,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesCreate } from "oneroster/funcs/coursesCreate.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesCreate } from "@superbuilders/oneroster/funcs/coursesCreate.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -379,9 +379,9 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError2           | 403                                      | application/json                         |
+| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
@@ -395,7 +395,7 @@ Returns a specific course by sourcedId
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -421,8 +421,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesGet } from "oneroster/funcs/coursesGet.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesGet } from "@superbuilders/oneroster/funcs/coursesGet.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -468,10 +468,10 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError2 | 401                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
+| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError2            | 404                                      | application/json                         |
+| errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
 | errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
@@ -484,7 +484,7 @@ Updates an existing course
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -510,8 +510,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesUpdate } from "oneroster/funcs/coursesUpdate.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesUpdate } from "@superbuilders/oneroster/funcs/coursesUpdate.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -557,13 +557,13 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse2      | 500                                      | application/json                         |
+| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
 
 ## delete
@@ -573,7 +573,7 @@ Deletes a specific course by sourcedId
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -599,8 +599,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesDelete } from "oneroster/funcs/coursesDelete.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesDelete } from "@superbuilders/oneroster/funcs/coursesDelete.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -646,13 +646,13 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
+| errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
+| errors.InternalServerErrorResponse2      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
 
 ## createComponentResource
@@ -662,7 +662,7 @@ Used when creating a new component resource
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -686,8 +686,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesCreateComponentResource } from "oneroster/funcs/coursesCreateComponentResource.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesCreateComponentResource } from "@superbuilders/oneroster/funcs/coursesCreateComponentResource.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -731,7 +731,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
@@ -747,7 +747,7 @@ Returns a specific component resource by sourcedId
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -773,8 +773,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesGetComponentResource } from "oneroster/funcs/coursesGetComponentResource.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesGetComponentResource } from "@superbuilders/oneroster/funcs/coursesGetComponentResource.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -820,7 +820,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
@@ -836,7 +836,7 @@ Updates an existing component resource
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -862,8 +862,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesUpdateComponentResource } from "oneroster/funcs/coursesUpdateComponentResource.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesUpdateComponentResource } from "@superbuilders/oneroster/funcs/coursesUpdateComponentResource.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -909,10 +909,10 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError2            | 404                                      | application/json                         |
+| errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
 | errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
@@ -925,7 +925,7 @@ Deletes a specific component resource by sourcedId
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -951,8 +951,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesDeleteComponentResource } from "oneroster/funcs/coursesDeleteComponentResource.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesDeleteComponentResource } from "@superbuilders/oneroster/funcs/coursesDeleteComponentResource.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -998,13 +998,13 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse2      | 500                                      | application/json                         |
+| errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
+| errors.TooManyRequestsResponseError2     | 429                                      | application/json                         |
+| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
 
 ## createComponent
@@ -1014,7 +1014,7 @@ Used when creating a new course component or module
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -1048,8 +1048,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesCreateComponent } from "oneroster/funcs/coursesCreateComponent.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesCreateComponent } from "@superbuilders/oneroster/funcs/coursesCreateComponent.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1103,13 +1103,13 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
+| errors.InternalServerErrorResponse2      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
 
 ## getComponent
@@ -1119,7 +1119,7 @@ Returns a specific course component by sourcedId
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -1145,8 +1145,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesGetComponent } from "oneroster/funcs/coursesGetComponent.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesGetComponent } from "@superbuilders/oneroster/funcs/coursesGetComponent.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1192,7 +1192,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
@@ -1208,7 +1208,7 @@ Updates an existing course component
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -1245,8 +1245,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { coursesUpdateComponent } from "oneroster/funcs/coursesUpdateComponent.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { coursesUpdateComponent } from "@superbuilders/oneroster/funcs/coursesUpdateComponent.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1303,7 +1303,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |

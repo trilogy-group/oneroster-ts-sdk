@@ -5,7 +5,7 @@ Created Course Component Successfully
 ## Example Usage
 
 ```typescript
-import { CreateCourseComponentResponse } from "oneroster/models/operations";
+import { CreateCourseComponentResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateCourseComponentResponse = {
   sourcedIdPairs: {

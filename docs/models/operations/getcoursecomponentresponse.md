@@ -5,7 +5,7 @@ Single Course Component
 ## Example Usage
 
 ```typescript
-import { GetCourseComponentResponse } from "oneroster/models/operations";
+import { GetCourseComponentResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetCourseComponentResponse = {
   courseComponent: {

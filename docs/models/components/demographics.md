@@ -5,7 +5,7 @@ Represents a student's demographics information.
 ## Example Usage
 
 ```typescript
-import { Demographics } from "oneroster/models/components";
+import { Demographics } from "@superbuilders/oneroster/models/components";
 
 let value: Demographics = {
   sourcedId: "<id>",

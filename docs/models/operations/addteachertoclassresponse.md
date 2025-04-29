@@ -5,7 +5,7 @@ Teacher successfully assigned to class
 ## Example Usage
 
 ```typescript
-import { AddTeacherToClassResponse } from "oneroster/models/operations";
+import { AddTeacherToClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: AddTeacherToClassResponse = {
   sourcedIdPairs: {

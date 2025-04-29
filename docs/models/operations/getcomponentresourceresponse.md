@@ -5,7 +5,7 @@ Single Component Resource
 ## Example Usage
 
 ```typescript
-import { GetComponentResourceResponse } from "oneroster/models/operations";
+import { GetComponentResourceResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetComponentResourceResponse = {
   componentResource: {

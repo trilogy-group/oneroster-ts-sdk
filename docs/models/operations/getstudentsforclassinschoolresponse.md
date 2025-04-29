@@ -5,7 +5,7 @@ Collection of students successfully retrieved
 ## Example Usage
 
 ```typescript
-import { GetStudentsForClassInSchoolResponse } from "oneroster/models/operations";
+import { GetStudentsForClassInSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetStudentsForClassInSchoolResponse = {
   users: [

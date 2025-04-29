@@ -5,7 +5,7 @@ Represents a line item.
 ## Example Usage
 
 ```typescript
-import { LineItem } from "oneroster/models/components";
+import { LineItem } from "@superbuilders/oneroster/models/components";
 
 let value: LineItem = {
   status: "active",

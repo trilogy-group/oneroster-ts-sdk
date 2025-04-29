@@ -19,7 +19,7 @@ Returns a collection of all enrollment records
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -43,8 +43,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { enrollmentsGetAll } from "oneroster/funcs/enrollmentsGetAll.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { enrollmentsGetAll } from "@superbuilders/oneroster/funcs/enrollmentsGetAll.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -87,7 +87,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
@@ -103,7 +103,7 @@ Creates a new enrollment with the provided data
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -139,8 +139,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { enrollmentsCreate } from "oneroster/funcs/enrollmentsCreate.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { enrollmentsCreate } from "@superbuilders/oneroster/funcs/enrollmentsCreate.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -196,11 +196,11 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
+| errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
 | errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
@@ -212,7 +212,7 @@ Returns the enrollment record matching the sourcedId
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -238,8 +238,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { enrollmentsGet } from "oneroster/funcs/enrollmentsGet.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { enrollmentsGet } from "@superbuilders/oneroster/funcs/enrollmentsGet.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -285,7 +285,7 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
@@ -301,7 +301,7 @@ Updates an existing enrollment with the provided data
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -342,8 +342,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { enrollmentsUpdate } from "oneroster/funcs/enrollmentsUpdate.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { enrollmentsUpdate } from "@superbuilders/oneroster/funcs/enrollmentsUpdate.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -404,13 +404,13 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse2      | 500                                      | application/json                         |
+| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
 
 ## delete
@@ -420,7 +420,7 @@ Deletes the enrollment with the specified sourcedId
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -445,8 +445,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { enrollmentsDelete } from "oneroster/funcs/enrollmentsDelete.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { enrollmentsDelete } from "@superbuilders/oneroster/funcs/enrollmentsDelete.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -492,7 +492,7 @@ run();
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
+| errors.UnauthorizedRequestResponseError2 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
 | errors.NotFoundResponseError1            | 404                                      | application/json                         |
 | errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
@@ -507,7 +507,7 @@ Returns a collection of enrollments for a specific class within a school
 ### Example Usage
 
 ```typescript
-import { OneRoster } from "oneroster";
+import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
   security: {
@@ -534,8 +534,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { OneRosterCore } from "oneroster/core.js";
-import { enrollmentsGetForClass } from "oneroster/funcs/enrollmentsGetForClass.js";
+import { OneRosterCore } from "@superbuilders/oneroster/core.js";
+import { enrollmentsGetForClass } from "@superbuilders/oneroster/funcs/enrollmentsGetForClass.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -582,11 +582,11 @@ run();
 
 | Error Type                               | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
+| errors.BadRequestResponseError1          | 400                                      | application/json                         |
 | errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
 | errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError2            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
+| errors.NotFoundResponseError1            | 404                                      | application/json                         |
+| errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
 | errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
 | errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
 | errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |

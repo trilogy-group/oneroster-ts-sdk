@@ -5,7 +5,7 @@ Assessment line item successfully created
 ## Example Usage
 
 ```typescript
-import { CreateAssessmentLineItemResponse } from "oneroster/models/operations";
+import { CreateAssessmentLineItemResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateAssessmentLineItemResponse = {
   sourcedIdPairs: {

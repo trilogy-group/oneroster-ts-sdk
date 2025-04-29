@@ -5,7 +5,7 @@ The order to sort the response by
 ## Example Usage
 
 ```typescript
-import { GetAllComponentResourcesOrderBy } from "oneroster/models/operations";
+import { GetAllComponentResourcesOrderBy } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllComponentResourcesOrderBy = "asc";
 ```

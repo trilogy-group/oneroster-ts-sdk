@@ -5,7 +5,7 @@ Represents an enrollment.
 ## Example Usage
 
 ```typescript
-import { Enrollment } from "oneroster/models/components";
+import { Enrollment } from "@superbuilders/oneroster/models/components";
 
 let value: Enrollment = {
   sourcedId: "<id>",

@@ -5,7 +5,7 @@ Created Component Resource Successfully
 ## Example Usage
 
 ```typescript
-import { CreateComponentResourceResponse } from "oneroster/models/operations";
+import { CreateComponentResourceResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateComponentResourceResponse = {
   sourcedIdPairs: {

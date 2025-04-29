@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CreateUserUserRequest } from "oneroster/models/operations";
+import { CreateUserUserRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateUserUserRequest = {
   enabledUser: false,

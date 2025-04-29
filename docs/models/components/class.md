@@ -5,7 +5,7 @@ Represents a class.
 ## Example Usage
 
 ```typescript
-import { Class } from "oneroster/models/components";
+import { Class } from "@superbuilders/oneroster/models/components";
 
 let value: Class = {
   sourcedId: "<id>",

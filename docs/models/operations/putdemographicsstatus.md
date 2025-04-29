@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PutDemographicsStatus } from "oneroster/models/operations";
+import { PutDemographicsStatus } from "@superbuilders/oneroster/models/operations";
 
 let value: PutDemographicsStatus = "tobedeleted";
 ```

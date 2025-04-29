@@ -5,7 +5,7 @@ Student successfully enrolled in class
 ## Example Usage
 
 ```typescript
-import { AddStudentToClassResponse } from "oneroster/models/operations";
+import { AddStudentToClassResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: AddStudentToClassResponse = {
   sourcedIdPairs: {

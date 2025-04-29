@@ -5,7 +5,7 @@ Represents a category.
 ## Example Usage
 
 ```typescript
-import { Category } from "oneroster/models/components";
+import { Category } from "@superbuilders/oneroster/models/components";
 
 let value: Category = {
   status: "tobedeleted",

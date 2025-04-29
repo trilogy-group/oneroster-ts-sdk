@@ -5,7 +5,7 @@ Represents a resource associated with a course component.
 ## Example Usage
 
 ```typescript
-import { GetAllComponentResourcesComponentResource } from "oneroster/models/operations";
+import { GetAllComponentResourcesComponentResource } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllComponentResourcesComponentResource = {
   sourcedId: "<id>",

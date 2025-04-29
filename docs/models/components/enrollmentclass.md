@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EnrollmentClass } from "oneroster/models/components";
+import { EnrollmentClass } from "@superbuilders/oneroster/models/components";
 
 let value: EnrollmentClass = {
   href: "https://clear-cut-tray.net",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { UpdateUserAgentResponse } from "oneroster/models/operations";
+import { UpdateUserAgentResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateUserAgentResponse = {
   href: "https://astonishing-descent.info/",

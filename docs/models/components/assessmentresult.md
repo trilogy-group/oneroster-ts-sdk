@@ -5,7 +5,7 @@ Represents an assessment result.
 ## Example Usage
 
 ```typescript
-import { AssessmentResult } from "oneroster/models/components";
+import { AssessmentResult } from "@superbuilders/oneroster/models/components";
 
 let value: AssessmentResult = {
   status: "active",

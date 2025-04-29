@@ -5,7 +5,7 @@ Collection of organizations retrieved successfully
 ## Example Usage
 
 ```typescript
-import { GetAllOrgsResponseBody } from "oneroster/models/operations";
+import { GetAllOrgsResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllOrgsResponseBody = {
   orgs: [

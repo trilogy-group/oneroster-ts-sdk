@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { UpdateClassRequestBody } from "oneroster/models/operations";
+import { UpdateClassRequestBody } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateClassRequestBody = {
   class: {},

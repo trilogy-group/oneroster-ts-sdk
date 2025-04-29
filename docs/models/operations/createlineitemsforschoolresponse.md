@@ -5,7 +5,7 @@ Line items successfully created for school
 ## Example Usage
 
 ```typescript
-import { CreateLineItemsForSchoolResponse } from "oneroster/models/operations";
+import { CreateLineItemsForSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateLineItemsForSchoolResponse = {
   sourcedIdPairs: {

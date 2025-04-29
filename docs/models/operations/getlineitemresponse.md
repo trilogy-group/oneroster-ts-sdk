@@ -5,7 +5,7 @@ Successful response with the line item
 ## Example Usage
 
 ```typescript
-import { GetLineItemResponse } from "oneroster/models/operations";
+import { GetLineItemResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetLineItemResponse = {
   lineItem: {

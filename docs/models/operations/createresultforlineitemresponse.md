@@ -5,7 +5,7 @@ Result successfully created
 ## Example Usage
 
 ```typescript
-import { CreateResultForLineItemResponse } from "oneroster/models/operations";
+import { CreateResultForLineItemResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateResultForLineItemResponse = {
   sourcedIdPairs: {

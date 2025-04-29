@@ -5,7 +5,7 @@ Collection of Component Resources
 ## Example Usage
 
 ```typescript
-import { GetAllComponentResourcesResponseBody } from "oneroster/models/operations";
+import { GetAllComponentResourcesResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllComponentResourcesResponseBody = {
   componentResources: [

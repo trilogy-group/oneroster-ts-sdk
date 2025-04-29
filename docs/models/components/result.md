@@ -5,7 +5,7 @@ Represents a result.
 ## Example Usage
 
 ```typescript
-import { Result } from "oneroster/models/components";
+import { Result } from "@superbuilders/oneroster/models/components";
 
 let value: Result = {
   status: "tobedeleted",

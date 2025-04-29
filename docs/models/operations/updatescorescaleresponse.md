@@ -5,7 +5,7 @@ Score scale successfully updated
 ## Example Usage
 
 ```typescript
-import { UpdateScoreScaleResponse } from "oneroster/models/operations";
+import { UpdateScoreScaleResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateScoreScaleResponse = {
   scoreScale: {
