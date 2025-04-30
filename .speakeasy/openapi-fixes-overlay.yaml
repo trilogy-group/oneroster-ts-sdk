@@ -1,0 +1,715 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Overlay .speakeasy/openapi.yaml => .speakeasy/openapi-fixed.yaml
+  version: 0.0.0
+actions:
+  - target: $["tags"][*]
+    remove: true
+  - target: $["tags"]
+    update:
+      - name: Academic Sessions Management
+        description: >-
+          This enables the management of academic sessions i.e. periods of academic activity such as terms, semesters, grading periods, and school years. Academic sessions can have hierarchical relationships (e.g., a school year containing terms, terms containing grading periods).
+      - name: Assessment Line Items Management
+        description: >-
+          This enables the management of the assessment line items i.e. line items that are used to store results about tests/assessments and where these test/assessments are not aligned to a class.
+      - name: Assessment Results Management
+        description: >-
+          This enables the management of the assessment results i.e. results that are used to store scores for tests/assessments and where these test/assessments are not aligned to a class.
+      - name: Categories Management
+        description: This enables the management of Categories i.e. collections of LineItems.
+      - name: Classes Management
+        description: >-
+          This enables the management of Classes i.e. scheduled learning of courses, with respect to scoreScales. For this service this is the collection of operations that provide gradebook data in the context of a class identifier.
+      - name: Course Component Resources Management
+        description: >-
+          This enables the management of Course Component Resources i.e. resources for a course component.
+      - name: Course Components Management
+        description: >-
+          This enables the management of Course Components i.e. components of a course.
+      - name: Courses Management
+        description: This enables the management of Courses i.e. programme of study.
+      - name: Demographics Management
+        description: >-
+          This enables the management of demographics information (each assigned to a specific user). The sourcedIds for the user and the demographics records should be the same.
+      - name: Enrollments Management
+        description: >-
+          This enables the management of the enrollments of users (teachers, students, etc.) on classes supplied by schools.
+      - name: Grading Periods Management
+        description: >-
+          This enables the management of grading periods i.e. specific academic sessions.
+      - name: Line Items Management
+        description: >-
+          This enables the management of lineItems i.e. the set of results for the assessment of some activity.
+      - name: Organizations Management
+        description: >-
+          This enables the management of orgs i.e. an organization involved in the learning in some form or other.
+      - name: Resources Classes Management
+        description: This enables the management of resources for classes.
+      - name: Resources Courses Management
+        description: This enables the management of resources for courses.
+      - name: Resources Management
+        description: This enables the management of resources
+      - name: Resources Users Management
+        description: This enables the management of resources for users.
+      - name: Results Management
+        description: >-
+          This enables the management of results i.e. the score allocated to a learner from the assessent of a learning activity. Results are collected as a set of 'lineItems'.
+      - name: Schools Management
+        description: >-
+          This enables the management of information about schools with respect to scoreScales. A school is a type of 'org'. For this service this is the collection of operations that provide gradebook data in the context of a school identifier.
+      - name: Score Scales Management
+        description: >-
+          This enables the management of scoreScales i.e. the set of scales for the results and lineItems.
+      - name: Students Management
+        description: >-
+          This enables the management of information about students (a student is a type of 'user').
+      - name: Teachers Management
+        description: >-
+          This enables the management of information about teachers (a teacher is a type of 'user').
+      - name: Terms Management
+        description: >-
+          This enables the management of information about terms (a term is a type of 'academicSession').
+      - name: Users Management
+        description: >-
+          This enables the management of information about users (including students and teachers).
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/scoreScales/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.scoreScales
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/schools/{sourcedId}/scoreScales"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.scoreScales
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.orgs
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/results/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.results
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/lineItems/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.lineItems
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/schools/{sourcedId}/lineItems"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.lineItems
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/classes/{classSourcedId}/lineItems/{lineItemSourcedId}/results"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.results
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/classes/{classSourcedId}/students/{studentSourcedId}/results"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.results
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/classes/{sourcedId}/categories"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.categories
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/classes/{sourcedId}/lineItems"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.lineItems
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/classes/{sourcedId}/results"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.results
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/classes/{sourcedId}/scoreScales"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.scoreScales
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/classes/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.classes
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/{schoolSourcedId}/classes"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.classes
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/categories/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.categories
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/assessmentResults/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.assessmentResults
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/assessmentLineItems/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.assessmentLineItems
+  - target: $["paths"]["/ims/oneroster/resources/v1p2/resources/courses/{courseSourcedId}/resources"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.resources
+  - target: $["paths"]["/ims/oneroster/resources/v1p2/resources/classes/{classSourcedId}/resources"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.resources
+  - target: $["paths"]["/ims/oneroster/resources/v1p2/resources/users/{userSourcedId}/resources"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.resources
+  - target: $["paths"]["/ims/oneroster/resources/v1p2/resources/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.resources
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/users/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.users
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/users/{userSourcedId}/classes"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.classes
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/{schoolSourcedId}/terms"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.terms
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/terms/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.terms
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/terms/{termSourcedId}/classes"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.classes
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/classes/{classSourcedId}/teachers"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.teachers
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/{schoolSourcedId}/classes/{classSourcedId}/teachers"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.users
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/{schoolSourcedId}/teachers"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.users
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/teachers/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.users
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/teachers/{teacherSourcedId}/classes"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.classes
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/classes/{classSourcedId}/students"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.students
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/{schoolSourcedId}/classes/{classSourcedId}/students"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.users
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/{schoolSourcedId}/students"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.users
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/students/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.users
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/students/{studentSourcedId}/classes"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.classes
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/orgs/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.orgs
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/gradingPeriods/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.gradingPeriods
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/terms/{termSourcedId}/gradingPeriods"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.gradingPeriods
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/enrollments/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.enrollments
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/{schoolSourcedId}/classes/{classSourcedId}/enrollments"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: classes
+            type: offset
+          - name: limit
+            in: classes
+            type: limit
+        outputs:
+          results: $.enrollments
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/{schoolSourcedId}/enrollments"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.enrollments
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/demographics/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.demographics
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/courses/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.courses
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/courses/{courseSourcedId}/classes"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.classes
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/courses/component-resources"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.componentResources
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/courses/components"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.courseComponents
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/schools/{schoolSourcedId}/courses"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.courses
+  - target: $["paths"]["/ims/oneroster/rostering/v1p2/academicSessions/"]["get"]
+    update:
+      x-speakeasy-pagination:
+        type: offsetLimit
+        inputs:
+          - name: offset
+            in: parameters
+            type: offset
+          - name: limit
+            in: parameters
+            type: limit
+        outputs:
+          results: $.academicSessions
+  - target: $["paths"]["/ims/oneroster/gradebook/v1p2/classes/{classSourcedId}/lineItems"]
+    remove: true

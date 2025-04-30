@@ -4,8 +4,6 @@ sources:
     OneRoster API:
         inputs:
             - location: .speakeasy/openapi-fixes.yaml
-        overlays:
-            - location: .speakeasy/speakeasy-modifications-overlay.yaml
         registry:
             location: registry.speakeasyapi.dev/emu-farm/timeback/one-roster-api
 targets:
