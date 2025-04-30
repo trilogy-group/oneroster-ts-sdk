@@ -18,10 +18,8 @@ Use the correct IDP server depending on the environment you're using:
 
 - Production Server:
 
-
   https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com
 - Staging Server:
-
 
   https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com
 

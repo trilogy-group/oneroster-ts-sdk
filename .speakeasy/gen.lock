@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a3ef2627-6a46-4073-b2e2-f674a3c84580
 management:
-  docChecksum: 76fd54f661b5943bcbd84df85a27c6b8
+  docChecksum: 43302e0f8cb93dc42ec07d98df6dafeb
   docVersion: 1.0.0
-  speakeasyVersion: 1.541.1
+  speakeasyVersion: 1.541.2
   generationVersion: 2.595.4
-  releaseVersion: 0.5.0
-  configChecksum: d9f22a487bad296d3628338e97650d58
+  releaseVersion: 0.6.1
+  configChecksum: c684e4d22a84457a6fdb89f6deca8894
   repoURL: https://github.com/trilogy-group/oneroster-ts.git
   installationURL: https://github.com/trilogy-group/oneroster-ts
   published: true
@@ -22,9 +22,7 @@ features:
     globalSecurity: 2.82.13
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
-    groups: 2.81.2
     mcpServer: 0.9.2
-    nameOverrides: 2.81.2
     nullables: 0.1.1
     oauth2ClientCredentials: 0.4.1
     pagination: 2.83.0
@@ -832,181 +830,203 @@ generatedFiles:
   - docs/models/operations/updateuseruseridresponse.md
   - docs/models/operations/updateuseruserrequest.md
   - docs/models/operations/updateuseruserresponse.md
-  - docs/sdks/academicsessions/README.md
-  - docs/sdks/assessmentlineitems/README.md
-  - docs/sdks/assessmentresults/README.md
-  - docs/sdks/categories/README.md
-  - docs/sdks/classes/README.md
+  - docs/sdks/academicsessionsmanagement/README.md
+  - docs/sdks/assessmentlineitemsmanagement/README.md
+  - docs/sdks/assessmentresultsmanagement/README.md
+  - docs/sdks/categoriesmanagement/README.md
   - docs/sdks/classesmanagement/README.md
-  - docs/sdks/classesresults/README.md
-  - docs/sdks/classresources/README.md
-  - docs/sdks/classteachers/README.md
-  - docs/sdks/componentresources/README.md
-  - docs/sdks/courseclasses/README.md
-  - docs/sdks/coursecomponents/README.md
-  - docs/sdks/courseresources/README.md
-  - docs/sdks/courses/README.md
-  - docs/sdks/demographics/README.md
-  - docs/sdks/enrollments/README.md
-  - docs/sdks/gradingperiods/README.md
-  - docs/sdks/lineitems/README.md
+  - docs/sdks/coursecomponentresourcesmanagement/README.md
+  - docs/sdks/coursecomponentsmanagement/README.md
+  - docs/sdks/coursesmanagement/README.md
+  - docs/sdks/demographicsmanagement/README.md
+  - docs/sdks/enrollmentsmanagement/README.md
+  - docs/sdks/gradingperiodsmanagement/README.md
+  - docs/sdks/lineitemsmanagement/README.md
   - docs/sdks/oneroster/README.md
-  - docs/sdks/organizations/README.md
-  - docs/sdks/resources/README.md
-  - docs/sdks/resourcesclasses/README.md
-  - docs/sdks/results/README.md
-  - docs/sdks/schoollineitems/README.md
-  - docs/sdks/schools/README.md
-  - docs/sdks/schoolscourses/README.md
-  - docs/sdks/schoolslineitems/README.md
-  - docs/sdks/schoolsscorescales/README.md
-  - docs/sdks/scorescales/README.md
-  - docs/sdks/students/README.md
-  - docs/sdks/studentsclasses/README.md
-  - docs/sdks/teachers/README.md
-  - docs/sdks/terms/README.md
-  - docs/sdks/userresources/README.md
-  - docs/sdks/users/README.md
+  - docs/sdks/organizationsmanagement/README.md
+  - docs/sdks/resourcesclassesmanagement/README.md
+  - docs/sdks/resourcescoursesmanagement/README.md
+  - docs/sdks/resourcesmanagement/README.md
+  - docs/sdks/resourcesusersmanagement/README.md
+  - docs/sdks/resultsmanagement/README.md
+  - docs/sdks/schoolsmanagement/README.md
+  - docs/sdks/scorescalesmanagement/README.md
+  - docs/sdks/studentsmanagement/README.md
+  - docs/sdks/teachersmanagement/README.md
+  - docs/sdks/termsmanagement/README.md
+  - docs/sdks/usersmanagement/README.md
   - eslint.config.mjs
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/academicSessionsCreate.ts
-  - src/funcs/academicSessionsDelete.ts
-  - src/funcs/academicSessionsGet.ts
-  - src/funcs/academicSessionsGetAll.ts
-  - src/funcs/academicSessionsUpdate.ts
-  - src/funcs/assessmentLineItemsCreate.ts
-  - src/funcs/assessmentLineItemsDelete.ts
-  - src/funcs/assessmentLineItemsGet.ts
-  - src/funcs/assessmentLineItemsGetAll.ts
-  - src/funcs/assessmentLineItemsUpdate.ts
-  - src/funcs/assessmentResultsCreate.ts
-  - src/funcs/assessmentResultsDelete.ts
-  - src/funcs/assessmentResultsGet.ts
-  - src/funcs/assessmentResultsGetAll.ts
-  - src/funcs/assessmentResultsUpdate.ts
-  - src/funcs/categoriesCreate.ts
-  - src/funcs/categoriesDelete.ts
-  - src/funcs/categoriesGet.ts
-  - src/funcs/categoriesGetAll.ts
-  - src/funcs/categoriesUpdate.ts
-  - src/funcs/classResourcesDelete.ts
-  - src/funcs/classTeachersGetAll.ts
-  - src/funcs/classesAddStudent.ts
-  - src/funcs/classesAddTeacher.ts
-  - src/funcs/classesCreate.ts
-  - src/funcs/classesCreateResults.ts
-  - src/funcs/classesDelete.ts
-  - src/funcs/classesGet.ts
-  - src/funcs/classesGetAll.ts
-  - src/funcs/classesGetCategories.ts
-  - src/funcs/classesGetScoreScales.ts
-  - src/funcs/classesGetStudentResults.ts
-  - src/funcs/classesGetStudents.ts
-  - src/funcs/classesGetTeachers.ts
-  - src/funcs/classesListResources.ts
+  - src/funcs/academicSessionsManagementDeleteAcademicSession.ts
+  - src/funcs/academicSessionsManagementGetAcademicSession.ts
+  - src/funcs/academicSessionsManagementGetAllAcademicSessions.ts
+  - src/funcs/academicSessionsManagementPostAcademicSession.ts
+  - src/funcs/academicSessionsManagementPutAcademicSession.ts
+  - src/funcs/assessmentLineItemsManagementCreateAssessmentLineItem.ts
+  - src/funcs/assessmentLineItemsManagementDeleteAssessmentLineItem.ts
+  - src/funcs/assessmentLineItemsManagementGetAllAssessmentLineItems.ts
+  - src/funcs/assessmentLineItemsManagementGetAssessmentLineItem.ts
+  - src/funcs/assessmentLineItemsManagementUpdateAssessmentLineItem.ts
+  - src/funcs/assessmentResultsManagementCreateAssessmentResult.ts
+  - src/funcs/assessmentResultsManagementDeleteAssessmentResult.ts
+  - src/funcs/assessmentResultsManagementGetAllAssessmentResults.ts
+  - src/funcs/assessmentResultsManagementGetAssessmentResult.ts
+  - src/funcs/assessmentResultsManagementUpdateAssessmentResult.ts
+  - src/funcs/categoriesManagementCreateCategory.ts
+  - src/funcs/categoriesManagementDeleteCategory.ts
+  - src/funcs/categoriesManagementGetAllCategories.ts
+  - src/funcs/categoriesManagementGetCategory.ts
+  - src/funcs/categoriesManagementUpdateCategory.ts
+  - src/funcs/classesManagementAddStudentToClass.ts
+  - src/funcs/classesManagementAddTeacherToClass.ts
+  - src/funcs/classesManagementCreateClass.ts
+  - src/funcs/classesManagementDeleteClass.ts
+  - src/funcs/classesManagementGetAllClasses.ts
+  - src/funcs/classesManagementGetCategoriesForClass.ts
+  - src/funcs/classesManagementGetClass.ts
+  - src/funcs/classesManagementGetClassesForSchool.ts
+  - src/funcs/classesManagementGetClassesForStudent.ts
+  - src/funcs/classesManagementGetClassesForTeacher.ts
+  - src/funcs/classesManagementGetClassesForTerm.ts
+  - src/funcs/classesManagementGetClassesForUser.ts
   - src/funcs/classesManagementGetLineItemsForClass.ts
-  - src/funcs/classesResultsGet.ts
-  - src/funcs/classesResultsGetForLineItem.ts
-  - src/funcs/classesUpdate.ts
-  - src/funcs/componentResourcesGetAll.ts
-  - src/funcs/courseClassesGetAll.ts
-  - src/funcs/courseComponentsDelete.ts
-  - src/funcs/courseComponentsGetAll.ts
-  - src/funcs/courseResourcesDelete.ts
-  - src/funcs/coursesAssignResource.ts
-  - src/funcs/coursesCreate.ts
-  - src/funcs/coursesCreateComponent.ts
-  - src/funcs/coursesCreateComponentResource.ts
-  - src/funcs/coursesDelete.ts
-  - src/funcs/coursesDeleteComponentResource.ts
-  - src/funcs/coursesGet.ts
-  - src/funcs/coursesGetAll.ts
-  - src/funcs/coursesGetComponent.ts
-  - src/funcs/coursesGetComponentResource.ts
-  - src/funcs/coursesGetResources.ts
-  - src/funcs/coursesUpdate.ts
-  - src/funcs/coursesUpdateComponent.ts
-  - src/funcs/coursesUpdateComponentResource.ts
-  - src/funcs/demographicsCreate.ts
-  - src/funcs/demographicsDelete.ts
-  - src/funcs/demographicsGet.ts
-  - src/funcs/demographicsGetAll.ts
-  - src/funcs/demographicsUpdate.ts
-  - src/funcs/enrollmentsCreate.ts
-  - src/funcs/enrollmentsDelete.ts
-  - src/funcs/enrollmentsGet.ts
-  - src/funcs/enrollmentsGetAll.ts
-  - src/funcs/enrollmentsGetForClass.ts
-  - src/funcs/enrollmentsUpdate.ts
-  - src/funcs/gradingPeriodsCreate.ts
-  - src/funcs/gradingPeriodsCreateForTerm.ts
-  - src/funcs/gradingPeriodsDelete.ts
-  - src/funcs/gradingPeriodsGet.ts
-  - src/funcs/gradingPeriodsGetAll.ts
-  - src/funcs/gradingPeriodsUpdate.ts
-  - src/funcs/lineItemsCreate.ts
-  - src/funcs/lineItemsDelete.ts
-  - src/funcs/lineItemsGet.ts
-  - src/funcs/lineItemsList.ts
-  - src/funcs/lineItemsUpdate.ts
-  - src/funcs/organizationsCreate.ts
-  - src/funcs/organizationsDelete.ts
-  - src/funcs/organizationsGet.ts
-  - src/funcs/organizationsGetAll.ts
-  - src/funcs/organizationsUpdate.ts
-  - src/funcs/resourcesClassesAssign.ts
-  - src/funcs/resourcesCreate.ts
-  - src/funcs/resourcesDelete.ts
-  - src/funcs/resourcesGet.ts
-  - src/funcs/resourcesGetAll.ts
-  - src/funcs/resourcesUpdate.ts
-  - src/funcs/resultsCreate.ts
-  - src/funcs/resultsCreateForLineItem.ts
-  - src/funcs/resultsDelete.ts
-  - src/funcs/resultsGet.ts
-  - src/funcs/resultsGetAll.ts
-  - src/funcs/resultsUpdate.ts
-  - src/funcs/schoolLineItemsGet.ts
-  - src/funcs/schoolsCoursesGetAll.ts
-  - src/funcs/schoolsCreate.ts
-  - src/funcs/schoolsDelete.ts
-  - src/funcs/schoolsGet.ts
-  - src/funcs/schoolsGetAll.ts
-  - src/funcs/schoolsGetClasses.ts
-  - src/funcs/schoolsGetEnrollments.ts
-  - src/funcs/schoolsGetStudents.ts
-  - src/funcs/schoolsGetTeachers.ts
-  - src/funcs/schoolsGetTerms.ts
-  - src/funcs/schoolsLineItemsCreate.ts
-  - src/funcs/schoolsScoreScalesGet.ts
-  - src/funcs/schoolsUpdate.ts
-  - src/funcs/scoreScalesCreate.ts
-  - src/funcs/scoreScalesDelete.ts
-  - src/funcs/scoreScalesGet.ts
-  - src/funcs/scoreScalesList.ts
-  - src/funcs/scoreScalesUpdate.ts
-  - src/funcs/studentsClassesGet.ts
-  - src/funcs/studentsGet.ts
-  - src/funcs/studentsGetAll.ts
-  - src/funcs/studentsGetForClass.ts
-  - src/funcs/teachersGet.ts
-  - src/funcs/teachersGetAll.ts
-  - src/funcs/teachersGetClasses.ts
-  - src/funcs/termsGet.ts
-  - src/funcs/termsGetClasses.ts
-  - src/funcs/termsGetGradingPeriods.ts
-  - src/funcs/termsList.ts
-  - src/funcs/userResourcesRemove.ts
-  - src/funcs/usersAssignResource.ts
-  - src/funcs/usersCreate.ts
-  - src/funcs/usersDelete.ts
-  - src/funcs/usersGet.ts
-  - src/funcs/usersGetAll.ts
-  - src/funcs/usersGetClasses.ts
-  - src/funcs/usersGetResources.ts
-  - src/funcs/usersUpdate.ts
+  - src/funcs/classesManagementGetResultsForClass.ts
+  - src/funcs/classesManagementGetResultsForLineItemForClass.ts
+  - src/funcs/classesManagementGetResultsForStudentForClass.ts
+  - src/funcs/classesManagementGetScoreScalesForClass.ts
+  - src/funcs/classesManagementGetStudentsForClass.ts
+  - src/funcs/classesManagementGetTeachersForClass.ts
+  - src/funcs/classesManagementPostResultsForAcademicSessionForClass.ts
+  - src/funcs/classesManagementUpdateClass.ts
+  - src/funcs/courseComponentResourcesManagementCreateComponentResource.ts
+  - src/funcs/courseComponentResourcesManagementDeleteComponentResource.ts
+  - src/funcs/courseComponentResourcesManagementGetAllComponentResources.ts
+  - src/funcs/courseComponentResourcesManagementGetComponentResource.ts
+  - src/funcs/courseComponentResourcesManagementPutComponentResource.ts
+  - src/funcs/courseComponentsManagementCreateCourseComponent.ts
+  - src/funcs/courseComponentsManagementDeleteCourseComponent.ts
+  - src/funcs/courseComponentsManagementGetAllCourseComponents.ts
+  - src/funcs/courseComponentsManagementGetCourseComponent.ts
+  - src/funcs/courseComponentsManagementPutCourseComponent.ts
+  - src/funcs/coursesManagementCreateComponentResource.ts
+  - src/funcs/coursesManagementCreateCourse.ts
+  - src/funcs/coursesManagementCreateCourseComponent.ts
+  - src/funcs/coursesManagementDeleteComponentResource.ts
+  - src/funcs/coursesManagementDeleteCourse.ts
+  - src/funcs/coursesManagementDeleteCourseComponent.ts
+  - src/funcs/coursesManagementGetAllComponentResources.ts
+  - src/funcs/coursesManagementGetAllCourseComponents.ts
+  - src/funcs/coursesManagementGetAllCourses.ts
+  - src/funcs/coursesManagementGetClassesForCourse.ts
+  - src/funcs/coursesManagementGetComponentResource.ts
+  - src/funcs/coursesManagementGetCourse.ts
+  - src/funcs/coursesManagementGetCourseComponent.ts
+  - src/funcs/coursesManagementGetCoursesForSchool.ts
+  - src/funcs/coursesManagementPutComponentResource.ts
+  - src/funcs/coursesManagementPutCourse.ts
+  - src/funcs/coursesManagementPutCourseComponent.ts
+  - src/funcs/demographicsManagementDeleteDemographics.ts
+  - src/funcs/demographicsManagementGetAllDemographics.ts
+  - src/funcs/demographicsManagementGetDemographics.ts
+  - src/funcs/demographicsManagementPostDemographics.ts
+  - src/funcs/demographicsManagementPutDemographics.ts
+  - src/funcs/enrollmentsManagementCreateEnrollment.ts
+  - src/funcs/enrollmentsManagementDeleteEnrollment.ts
+  - src/funcs/enrollmentsManagementGetAllEnrollments.ts
+  - src/funcs/enrollmentsManagementGetEnrollment.ts
+  - src/funcs/enrollmentsManagementGetEnrollmentsForClassInSchool.ts
+  - src/funcs/enrollmentsManagementGetEnrollmentsForSchool.ts
+  - src/funcs/enrollmentsManagementUpdateEnrollment.ts
+  - src/funcs/gradingPeriodsManagementCreateGradingPeriod.ts
+  - src/funcs/gradingPeriodsManagementCreateGradingPeriodForTerm.ts
+  - src/funcs/gradingPeriodsManagementDeleteGradingPeriod.ts
+  - src/funcs/gradingPeriodsManagementGetAllGradingPeriods.ts
+  - src/funcs/gradingPeriodsManagementGetGradingPeriod.ts
+  - src/funcs/gradingPeriodsManagementGetGradingPeriodsForTerm.ts
+  - src/funcs/gradingPeriodsManagementUpdateGradingPeriod.ts
+  - src/funcs/lineItemsManagementCreateLineItem.ts
+  - src/funcs/lineItemsManagementCreateLineItemsForSchool.ts
+  - src/funcs/lineItemsManagementCreateResultForLineItem.ts
+  - src/funcs/lineItemsManagementDeleteLineItem.ts
+  - src/funcs/lineItemsManagementGetAllLineItems.ts
+  - src/funcs/lineItemsManagementGetLineItem.ts
+  - src/funcs/lineItemsManagementGetLineItemsForSchool.ts
+  - src/funcs/lineItemsManagementUpdateLineItem.ts
+  - src/funcs/organizationsManagementCreateOrg.ts
+  - src/funcs/organizationsManagementDeleteOrg.ts
+  - src/funcs/organizationsManagementGetAllOrgs.ts
+  - src/funcs/organizationsManagementGetOrg.ts
+  - src/funcs/organizationsManagementUpdateOrg.ts
+  - src/funcs/resourcesClassesManagementAssignResourceToClass.ts
+  - src/funcs/resourcesClassesManagementGetResourcesForClass.ts
+  - src/funcs/resourcesClassesManagementRemoveResourceFromClass.ts
+  - src/funcs/resourcesCoursesManagementAssignResourceToCourse.ts
+  - src/funcs/resourcesCoursesManagementGetResourcesForCourse.ts
+  - src/funcs/resourcesCoursesManagementRemoveResourceFromCourse.ts
+  - src/funcs/resourcesManagementCreateResource.ts
+  - src/funcs/resourcesManagementDeleteResource.ts
+  - src/funcs/resourcesManagementGetAllResources.ts
+  - src/funcs/resourcesManagementGetResource.ts
+  - src/funcs/resourcesManagementUpdateResource.ts
+  - src/funcs/resourcesUsersManagementAssignResourceToUser.ts
+  - src/funcs/resourcesUsersManagementGetResourcesForUser.ts
+  - src/funcs/resourcesUsersManagementRemoveResourceFromUser.ts
+  - src/funcs/resultsManagementCreateResult.ts
+  - src/funcs/resultsManagementDeleteResult.ts
+  - src/funcs/resultsManagementGetAllResults.ts
+  - src/funcs/resultsManagementGetResult.ts
+  - src/funcs/resultsManagementUpdateResult.ts
+  - src/funcs/schoolsManagementCreateLineItemsForSchool.ts
+  - src/funcs/schoolsManagementCreateSchool.ts
+  - src/funcs/schoolsManagementDeleteSchool.ts
+  - src/funcs/schoolsManagementGetAllSchools.ts
+  - src/funcs/schoolsManagementGetClassesForSchool.ts
+  - src/funcs/schoolsManagementGetCoursesForSchool.ts
+  - src/funcs/schoolsManagementGetEnrollmentsForClassInSchool.ts
+  - src/funcs/schoolsManagementGetEnrollmentsForSchool.ts
+  - src/funcs/schoolsManagementGetLineItemsForSchool.ts
+  - src/funcs/schoolsManagementGetSchool.ts
+  - src/funcs/schoolsManagementGetScoreScalesForSchool.ts
+  - src/funcs/schoolsManagementGetStudentsForClassInSchool.ts
+  - src/funcs/schoolsManagementGetStudentsForSchool.ts
+  - src/funcs/schoolsManagementGetTeachersForClassInSchool.ts
+  - src/funcs/schoolsManagementGetTeachersForSchool.ts
+  - src/funcs/schoolsManagementGetTermsForSchool.ts
+  - src/funcs/schoolsManagementUpdateSchool.ts
+  - src/funcs/scoreScalesManagementCreateScoreScale.ts
+  - src/funcs/scoreScalesManagementDeleteScoreScale.ts
+  - src/funcs/scoreScalesManagementGetAllScoreScales.ts
+  - src/funcs/scoreScalesManagementGetScoreScale.ts
+  - src/funcs/scoreScalesManagementGetScoreScalesForSchool.ts
+  - src/funcs/scoreScalesManagementUpdateScoreScale.ts
+  - src/funcs/studentsManagementAddStudentToClass.ts
+  - src/funcs/studentsManagementGetAllStudents.ts
+  - src/funcs/studentsManagementGetClassesForStudent.ts
+  - src/funcs/studentsManagementGetStudent.ts
+  - src/funcs/studentsManagementGetStudentsForClass.ts
+  - src/funcs/studentsManagementGetStudentsForClassInSchool.ts
+  - src/funcs/studentsManagementGetStudentsForSchool.ts
+  - src/funcs/teachersManagementAddTeacherToClass.ts
+  - src/funcs/teachersManagementGetAllTeachers.ts
+  - src/funcs/teachersManagementGetClassesForTeacher.ts
+  - src/funcs/teachersManagementGetTeacher.ts
+  - src/funcs/teachersManagementGetTeachersForClass.ts
+  - src/funcs/teachersManagementGetTeachersForClassInSchool.ts
+  - src/funcs/teachersManagementGetTeachersForSchool.ts
+  - src/funcs/termsManagementCreateGradingPeriodForTerm.ts
+  - src/funcs/termsManagementGetAllTerms.ts
+  - src/funcs/termsManagementGetClassesForTerm.ts
+  - src/funcs/termsManagementGetGradingPeriodsForTerm.ts
+  - src/funcs/termsManagementGetTerm.ts
+  - src/funcs/termsManagementGetTermsForSchool.ts
+  - src/funcs/usersManagementCreateUser.ts
+  - src/funcs/usersManagementDeleteUser.ts
+  - src/funcs/usersManagementGetAllUsers.ts
+  - src/funcs/usersManagementGetClassesForUser.ts
+  - src/funcs/usersManagementGetUser.ts
+  - src/funcs/usersManagementUpdateUser.ts
   - src/hooks/clientcredentials.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
@@ -1041,142 +1061,174 @@ generatedFiles:
   - src/mcp-server/server.ts
   - src/mcp-server/shared.ts
   - src/mcp-server/tools.ts
-  - src/mcp-server/tools/academicSessionsCreate.ts
-  - src/mcp-server/tools/academicSessionsDelete.ts
-  - src/mcp-server/tools/academicSessionsGet.ts
-  - src/mcp-server/tools/academicSessionsGetAll.ts
-  - src/mcp-server/tools/academicSessionsUpdate.ts
-  - src/mcp-server/tools/assessmentLineItemsCreate.ts
-  - src/mcp-server/tools/assessmentLineItemsDelete.ts
-  - src/mcp-server/tools/assessmentLineItemsGet.ts
-  - src/mcp-server/tools/assessmentLineItemsGetAll.ts
-  - src/mcp-server/tools/assessmentLineItemsUpdate.ts
-  - src/mcp-server/tools/assessmentResultsCreate.ts
-  - src/mcp-server/tools/assessmentResultsDelete.ts
-  - src/mcp-server/tools/assessmentResultsGet.ts
-  - src/mcp-server/tools/assessmentResultsGetAll.ts
-  - src/mcp-server/tools/assessmentResultsUpdate.ts
-  - src/mcp-server/tools/categoriesCreate.ts
-  - src/mcp-server/tools/categoriesDelete.ts
-  - src/mcp-server/tools/categoriesGet.ts
-  - src/mcp-server/tools/categoriesGetAll.ts
-  - src/mcp-server/tools/categoriesUpdate.ts
-  - src/mcp-server/tools/classResourcesDelete.ts
-  - src/mcp-server/tools/classTeachersGetAll.ts
-  - src/mcp-server/tools/classesAddStudent.ts
-  - src/mcp-server/tools/classesAddTeacher.ts
-  - src/mcp-server/tools/classesCreate.ts
-  - src/mcp-server/tools/classesCreateResults.ts
-  - src/mcp-server/tools/classesDelete.ts
-  - src/mcp-server/tools/classesGet.ts
-  - src/mcp-server/tools/classesGetAll.ts
-  - src/mcp-server/tools/classesGetCategories.ts
-  - src/mcp-server/tools/classesGetScoreScales.ts
-  - src/mcp-server/tools/classesGetStudentResults.ts
-  - src/mcp-server/tools/classesGetStudents.ts
-  - src/mcp-server/tools/classesGetTeachers.ts
-  - src/mcp-server/tools/classesListResources.ts
+  - src/mcp-server/tools/academicSessionsManagementDeleteAcademicSession.ts
+  - src/mcp-server/tools/academicSessionsManagementGetAcademicSession.ts
+  - src/mcp-server/tools/academicSessionsManagementGetAllAcademicSessions.ts
+  - src/mcp-server/tools/academicSessionsManagementPostAcademicSession.ts
+  - src/mcp-server/tools/academicSessionsManagementPutAcademicSession.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementCreateAssessmentLineItem.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementDeleteAssessmentLineItem.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementGetAllAssessmentLineItems.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementGetAssessmentLineItem.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementUpdateAssessmentLineItem.ts
+  - src/mcp-server/tools/assessmentResultsManagementCreateAssessmentResult.ts
+  - src/mcp-server/tools/assessmentResultsManagementDeleteAssessmentResult.ts
+  - src/mcp-server/tools/assessmentResultsManagementGetAllAssessmentResults.ts
+  - src/mcp-server/tools/assessmentResultsManagementGetAssessmentResult.ts
+  - src/mcp-server/tools/assessmentResultsManagementUpdateAssessmentResult.ts
+  - src/mcp-server/tools/categoriesManagementCreateCategory.ts
+  - src/mcp-server/tools/categoriesManagementDeleteCategory.ts
+  - src/mcp-server/tools/categoriesManagementGetAllCategories.ts
+  - src/mcp-server/tools/categoriesManagementGetCategory.ts
+  - src/mcp-server/tools/categoriesManagementUpdateCategory.ts
+  - src/mcp-server/tools/classesManagementAddStudentToClass.ts
+  - src/mcp-server/tools/classesManagementAddTeacherToClass.ts
+  - src/mcp-server/tools/classesManagementCreateClass.ts
+  - src/mcp-server/tools/classesManagementDeleteClass.ts
+  - src/mcp-server/tools/classesManagementGetAllClasses.ts
+  - src/mcp-server/tools/classesManagementGetCategoriesForClass.ts
+  - src/mcp-server/tools/classesManagementGetClass.ts
+  - src/mcp-server/tools/classesManagementGetClassesForSchool.ts
+  - src/mcp-server/tools/classesManagementGetClassesForStudent.ts
+  - src/mcp-server/tools/classesManagementGetClassesForTeacher.ts
+  - src/mcp-server/tools/classesManagementGetClassesForTerm.ts
+  - src/mcp-server/tools/classesManagementGetClassesForUser.ts
   - src/mcp-server/tools/classesManagementGetLineItemsForClass.ts
-  - src/mcp-server/tools/classesResultsGet.ts
-  - src/mcp-server/tools/classesResultsGetForLineItem.ts
-  - src/mcp-server/tools/classesUpdate.ts
-  - src/mcp-server/tools/componentResourcesGetAll.ts
-  - src/mcp-server/tools/courseClassesGetAll.ts
-  - src/mcp-server/tools/courseComponentsDelete.ts
-  - src/mcp-server/tools/courseComponentsGetAll.ts
-  - src/mcp-server/tools/courseResourcesDelete.ts
-  - src/mcp-server/tools/coursesAssignResource.ts
-  - src/mcp-server/tools/coursesCreate.ts
-  - src/mcp-server/tools/coursesCreateComponent.ts
-  - src/mcp-server/tools/coursesCreateComponentResource.ts
-  - src/mcp-server/tools/coursesDelete.ts
-  - src/mcp-server/tools/coursesDeleteComponentResource.ts
-  - src/mcp-server/tools/coursesGet.ts
-  - src/mcp-server/tools/coursesGetAll.ts
-  - src/mcp-server/tools/coursesGetComponent.ts
-  - src/mcp-server/tools/coursesGetComponentResource.ts
-  - src/mcp-server/tools/coursesGetResources.ts
-  - src/mcp-server/tools/coursesUpdate.ts
-  - src/mcp-server/tools/coursesUpdateComponent.ts
-  - src/mcp-server/tools/coursesUpdateComponentResource.ts
-  - src/mcp-server/tools/demographicsCreate.ts
-  - src/mcp-server/tools/demographicsDelete.ts
-  - src/mcp-server/tools/demographicsGet.ts
-  - src/mcp-server/tools/demographicsGetAll.ts
-  - src/mcp-server/tools/demographicsUpdate.ts
-  - src/mcp-server/tools/enrollmentsCreate.ts
-  - src/mcp-server/tools/enrollmentsDelete.ts
-  - src/mcp-server/tools/enrollmentsGet.ts
-  - src/mcp-server/tools/enrollmentsGetAll.ts
-  - src/mcp-server/tools/enrollmentsGetForClass.ts
-  - src/mcp-server/tools/enrollmentsUpdate.ts
-  - src/mcp-server/tools/gradingPeriodsCreate.ts
-  - src/mcp-server/tools/gradingPeriodsCreateForTerm.ts
-  - src/mcp-server/tools/gradingPeriodsDelete.ts
-  - src/mcp-server/tools/gradingPeriodsGet.ts
-  - src/mcp-server/tools/gradingPeriodsGetAll.ts
-  - src/mcp-server/tools/gradingPeriodsUpdate.ts
-  - src/mcp-server/tools/lineItemsCreate.ts
-  - src/mcp-server/tools/lineItemsDelete.ts
-  - src/mcp-server/tools/lineItemsGet.ts
-  - src/mcp-server/tools/lineItemsList.ts
-  - src/mcp-server/tools/lineItemsUpdate.ts
-  - src/mcp-server/tools/organizationsCreate.ts
-  - src/mcp-server/tools/organizationsDelete.ts
-  - src/mcp-server/tools/organizationsGet.ts
-  - src/mcp-server/tools/organizationsGetAll.ts
-  - src/mcp-server/tools/organizationsUpdate.ts
-  - src/mcp-server/tools/resourcesClassesAssign.ts
-  - src/mcp-server/tools/resourcesCreate.ts
-  - src/mcp-server/tools/resourcesDelete.ts
-  - src/mcp-server/tools/resourcesGet.ts
-  - src/mcp-server/tools/resourcesGetAll.ts
-  - src/mcp-server/tools/resourcesUpdate.ts
-  - src/mcp-server/tools/resultsCreate.ts
-  - src/mcp-server/tools/resultsCreateForLineItem.ts
-  - src/mcp-server/tools/resultsDelete.ts
-  - src/mcp-server/tools/resultsGet.ts
-  - src/mcp-server/tools/resultsGetAll.ts
-  - src/mcp-server/tools/resultsUpdate.ts
-  - src/mcp-server/tools/schoolLineItemsGet.ts
-  - src/mcp-server/tools/schoolsCoursesGetAll.ts
-  - src/mcp-server/tools/schoolsCreate.ts
-  - src/mcp-server/tools/schoolsDelete.ts
-  - src/mcp-server/tools/schoolsGet.ts
-  - src/mcp-server/tools/schoolsGetAll.ts
-  - src/mcp-server/tools/schoolsGetClasses.ts
-  - src/mcp-server/tools/schoolsGetEnrollments.ts
-  - src/mcp-server/tools/schoolsGetStudents.ts
-  - src/mcp-server/tools/schoolsGetTeachers.ts
-  - src/mcp-server/tools/schoolsGetTerms.ts
-  - src/mcp-server/tools/schoolsLineItemsCreate.ts
-  - src/mcp-server/tools/schoolsScoreScalesGet.ts
-  - src/mcp-server/tools/schoolsUpdate.ts
-  - src/mcp-server/tools/scoreScalesCreate.ts
-  - src/mcp-server/tools/scoreScalesDelete.ts
-  - src/mcp-server/tools/scoreScalesGet.ts
-  - src/mcp-server/tools/scoreScalesList.ts
-  - src/mcp-server/tools/scoreScalesUpdate.ts
-  - src/mcp-server/tools/studentsClassesGet.ts
-  - src/mcp-server/tools/studentsGet.ts
-  - src/mcp-server/tools/studentsGetAll.ts
-  - src/mcp-server/tools/studentsGetForClass.ts
-  - src/mcp-server/tools/teachersGet.ts
-  - src/mcp-server/tools/teachersGetAll.ts
-  - src/mcp-server/tools/teachersGetClasses.ts
-  - src/mcp-server/tools/termsGet.ts
-  - src/mcp-server/tools/termsGetClasses.ts
-  - src/mcp-server/tools/termsGetGradingPeriods.ts
-  - src/mcp-server/tools/termsList.ts
-  - src/mcp-server/tools/userResourcesRemove.ts
-  - src/mcp-server/tools/usersAssignResource.ts
-  - src/mcp-server/tools/usersCreate.ts
-  - src/mcp-server/tools/usersDelete.ts
-  - src/mcp-server/tools/usersGet.ts
-  - src/mcp-server/tools/usersGetAll.ts
-  - src/mcp-server/tools/usersGetClasses.ts
-  - src/mcp-server/tools/usersGetResources.ts
-  - src/mcp-server/tools/usersUpdate.ts
+  - src/mcp-server/tools/classesManagementGetResultsForClass.ts
+  - src/mcp-server/tools/classesManagementGetResultsForLineItemForClass.ts
+  - src/mcp-server/tools/classesManagementGetResultsForStudentForClass.ts
+  - src/mcp-server/tools/classesManagementGetScoreScalesForClass.ts
+  - src/mcp-server/tools/classesManagementGetStudentsForClass.ts
+  - src/mcp-server/tools/classesManagementGetTeachersForClass.ts
+  - src/mcp-server/tools/classesManagementPostResultsForAcademicSessionForClass.ts
+  - src/mcp-server/tools/classesManagementUpdateClass.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementCreateComponentResource.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementDeleteComponentResource.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementGetAllComponentResources.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementGetComponentResource.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementPutComponentResource.ts
+  - src/mcp-server/tools/courseComponentsManagementCreateCourseComponent.ts
+  - src/mcp-server/tools/courseComponentsManagementDeleteCourseComponent.ts
+  - src/mcp-server/tools/courseComponentsManagementGetAllCourseComponents.ts
+  - src/mcp-server/tools/courseComponentsManagementGetCourseComponent.ts
+  - src/mcp-server/tools/courseComponentsManagementPutCourseComponent.ts
+  - src/mcp-server/tools/coursesManagementCreateComponentResource.ts
+  - src/mcp-server/tools/coursesManagementCreateCourse.ts
+  - src/mcp-server/tools/coursesManagementCreateCourseComponent.ts
+  - src/mcp-server/tools/coursesManagementDeleteComponentResource.ts
+  - src/mcp-server/tools/coursesManagementDeleteCourse.ts
+  - src/mcp-server/tools/coursesManagementDeleteCourseComponent.ts
+  - src/mcp-server/tools/coursesManagementGetAllComponentResources.ts
+  - src/mcp-server/tools/coursesManagementGetAllCourseComponents.ts
+  - src/mcp-server/tools/coursesManagementGetAllCourses.ts
+  - src/mcp-server/tools/coursesManagementGetClassesForCourse.ts
+  - src/mcp-server/tools/coursesManagementGetComponentResource.ts
+  - src/mcp-server/tools/coursesManagementGetCourse.ts
+  - src/mcp-server/tools/coursesManagementGetCourseComponent.ts
+  - src/mcp-server/tools/coursesManagementGetCoursesForSchool.ts
+  - src/mcp-server/tools/coursesManagementPutComponentResource.ts
+  - src/mcp-server/tools/coursesManagementPutCourse.ts
+  - src/mcp-server/tools/coursesManagementPutCourseComponent.ts
+  - src/mcp-server/tools/demographicsManagementDeleteDemographics.ts
+  - src/mcp-server/tools/demographicsManagementGetAllDemographics.ts
+  - src/mcp-server/tools/demographicsManagementGetDemographics.ts
+  - src/mcp-server/tools/demographicsManagementPostDemographics.ts
+  - src/mcp-server/tools/demographicsManagementPutDemographics.ts
+  - src/mcp-server/tools/enrollmentsManagementCreateEnrollment.ts
+  - src/mcp-server/tools/enrollmentsManagementDeleteEnrollment.ts
+  - src/mcp-server/tools/enrollmentsManagementGetAllEnrollments.ts
+  - src/mcp-server/tools/enrollmentsManagementGetEnrollment.ts
+  - src/mcp-server/tools/enrollmentsManagementGetEnrollmentsForClassInSchool.ts
+  - src/mcp-server/tools/enrollmentsManagementGetEnrollmentsForSchool.ts
+  - src/mcp-server/tools/enrollmentsManagementUpdateEnrollment.ts
+  - src/mcp-server/tools/gradingPeriodsManagementCreateGradingPeriod.ts
+  - src/mcp-server/tools/gradingPeriodsManagementCreateGradingPeriodForTerm.ts
+  - src/mcp-server/tools/gradingPeriodsManagementDeleteGradingPeriod.ts
+  - src/mcp-server/tools/gradingPeriodsManagementGetAllGradingPeriods.ts
+  - src/mcp-server/tools/gradingPeriodsManagementGetGradingPeriod.ts
+  - src/mcp-server/tools/gradingPeriodsManagementGetGradingPeriodsForTerm.ts
+  - src/mcp-server/tools/gradingPeriodsManagementUpdateGradingPeriod.ts
+  - src/mcp-server/tools/lineItemsManagementCreateLineItem.ts
+  - src/mcp-server/tools/lineItemsManagementCreateLineItemsForSchool.ts
+  - src/mcp-server/tools/lineItemsManagementCreateResultForLineItem.ts
+  - src/mcp-server/tools/lineItemsManagementDeleteLineItem.ts
+  - src/mcp-server/tools/lineItemsManagementGetAllLineItems.ts
+  - src/mcp-server/tools/lineItemsManagementGetLineItem.ts
+  - src/mcp-server/tools/lineItemsManagementGetLineItemsForSchool.ts
+  - src/mcp-server/tools/lineItemsManagementUpdateLineItem.ts
+  - src/mcp-server/tools/organizationsManagementCreateOrg.ts
+  - src/mcp-server/tools/organizationsManagementDeleteOrg.ts
+  - src/mcp-server/tools/organizationsManagementGetAllOrgs.ts
+  - src/mcp-server/tools/organizationsManagementGetOrg.ts
+  - src/mcp-server/tools/organizationsManagementUpdateOrg.ts
+  - src/mcp-server/tools/resourcesClassesManagementAssignResourceToClass.ts
+  - src/mcp-server/tools/resourcesClassesManagementGetResourcesForClass.ts
+  - src/mcp-server/tools/resourcesClassesManagementRemoveResourceFromClass.ts
+  - src/mcp-server/tools/resourcesCoursesManagementAssignResourceToCourse.ts
+  - src/mcp-server/tools/resourcesCoursesManagementGetResourcesForCourse.ts
+  - src/mcp-server/tools/resourcesCoursesManagementRemoveResourceFromCourse.ts
+  - src/mcp-server/tools/resourcesManagementCreateResource.ts
+  - src/mcp-server/tools/resourcesManagementDeleteResource.ts
+  - src/mcp-server/tools/resourcesManagementGetAllResources.ts
+  - src/mcp-server/tools/resourcesManagementGetResource.ts
+  - src/mcp-server/tools/resourcesManagementUpdateResource.ts
+  - src/mcp-server/tools/resourcesUsersManagementAssignResourceToUser.ts
+  - src/mcp-server/tools/resourcesUsersManagementGetResourcesForUser.ts
+  - src/mcp-server/tools/resourcesUsersManagementRemoveResourceFromUser.ts
+  - src/mcp-server/tools/resultsManagementCreateResult.ts
+  - src/mcp-server/tools/resultsManagementDeleteResult.ts
+  - src/mcp-server/tools/resultsManagementGetAllResults.ts
+  - src/mcp-server/tools/resultsManagementGetResult.ts
+  - src/mcp-server/tools/resultsManagementUpdateResult.ts
+  - src/mcp-server/tools/schoolsManagementCreateLineItemsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementCreateSchool.ts
+  - src/mcp-server/tools/schoolsManagementDeleteSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetAllSchools.ts
+  - src/mcp-server/tools/schoolsManagementGetClassesForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetCoursesForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetEnrollmentsForClassInSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetEnrollmentsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetLineItemsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetScoreScalesForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetStudentsForClassInSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetStudentsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetTeachersForClassInSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetTeachersForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetTermsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementUpdateSchool.ts
+  - src/mcp-server/tools/scoreScalesManagementCreateScoreScale.ts
+  - src/mcp-server/tools/scoreScalesManagementDeleteScoreScale.ts
+  - src/mcp-server/tools/scoreScalesManagementGetAllScoreScales.ts
+  - src/mcp-server/tools/scoreScalesManagementGetScoreScale.ts
+  - src/mcp-server/tools/scoreScalesManagementGetScoreScalesForSchool.ts
+  - src/mcp-server/tools/scoreScalesManagementUpdateScoreScale.ts
+  - src/mcp-server/tools/studentsManagementAddStudentToClass.ts
+  - src/mcp-server/tools/studentsManagementGetAllStudents.ts
+  - src/mcp-server/tools/studentsManagementGetClassesForStudent.ts
+  - src/mcp-server/tools/studentsManagementGetStudent.ts
+  - src/mcp-server/tools/studentsManagementGetStudentsForClass.ts
+  - src/mcp-server/tools/studentsManagementGetStudentsForClassInSchool.ts
+  - src/mcp-server/tools/studentsManagementGetStudentsForSchool.ts
+  - src/mcp-server/tools/teachersManagementAddTeacherToClass.ts
+  - src/mcp-server/tools/teachersManagementGetAllTeachers.ts
+  - src/mcp-server/tools/teachersManagementGetClassesForTeacher.ts
+  - src/mcp-server/tools/teachersManagementGetTeacher.ts
+  - src/mcp-server/tools/teachersManagementGetTeachersForClass.ts
+  - src/mcp-server/tools/teachersManagementGetTeachersForClassInSchool.ts
+  - src/mcp-server/tools/teachersManagementGetTeachersForSchool.ts
+  - src/mcp-server/tools/termsManagementCreateGradingPeriodForTerm.ts
+  - src/mcp-server/tools/termsManagementGetAllTerms.ts
+  - src/mcp-server/tools/termsManagementGetClassesForTerm.ts
+  - src/mcp-server/tools/termsManagementGetGradingPeriodsForTerm.ts
+  - src/mcp-server/tools/termsManagementGetTerm.ts
+  - src/mcp-server/tools/termsManagementGetTermsForSchool.ts
+  - src/mcp-server/tools/usersManagementCreateUser.ts
+  - src/mcp-server/tools/usersManagementDeleteUser.ts
+  - src/mcp-server/tools/usersManagementGetAllUsers.ts
+  - src/mcp-server/tools/usersManagementGetClassesForUser.ts
+  - src/mcp-server/tools/usersManagementGetUser.ts
+  - src/mcp-server/tools/usersManagementUpdateUser.ts
   - src/models/components/academicsession.ts
   - src/models/components/assessmentlineitem.ts
   - src/models/components/assessmentresult.ts
@@ -1340,42 +1392,32 @@ generatedFiles:
   - src/models/operations/updateschool.ts
   - src/models/operations/updatescorescale.ts
   - src/models/operations/updateuser.ts
-  - src/sdk/academicsessions.ts
-  - src/sdk/assessmentlineitems.ts
-  - src/sdk/assessmentresults.ts
-  - src/sdk/categories.ts
-  - src/sdk/classes.ts
+  - src/sdk/academicsessionsmanagement.ts
+  - src/sdk/assessmentlineitemsmanagement.ts
+  - src/sdk/assessmentresultsmanagement.ts
+  - src/sdk/categoriesmanagement.ts
   - src/sdk/classesmanagement.ts
-  - src/sdk/classesresults.ts
-  - src/sdk/classresources.ts
-  - src/sdk/classteachers.ts
-  - src/sdk/componentresources.ts
-  - src/sdk/courseclasses.ts
-  - src/sdk/coursecomponents.ts
-  - src/sdk/courseresources.ts
-  - src/sdk/courses.ts
-  - src/sdk/demographics.ts
-  - src/sdk/enrollments.ts
-  - src/sdk/gradingperiods.ts
+  - src/sdk/coursecomponentresourcesmanagement.ts
+  - src/sdk/coursecomponentsmanagement.ts
+  - src/sdk/coursesmanagement.ts
+  - src/sdk/demographicsmanagement.ts
+  - src/sdk/enrollmentsmanagement.ts
+  - src/sdk/gradingperiodsmanagement.ts
   - src/sdk/index.ts
-  - src/sdk/lineitems.ts
-  - src/sdk/organizations.ts
-  - src/sdk/resources.ts
-  - src/sdk/resourcesclasses.ts
-  - src/sdk/results.ts
-  - src/sdk/schoollineitems.ts
-  - src/sdk/schools.ts
-  - src/sdk/schoolscourses.ts
-  - src/sdk/schoolslineitems.ts
-  - src/sdk/schoolsscorescales.ts
-  - src/sdk/scorescales.ts
+  - src/sdk/lineitemsmanagement.ts
+  - src/sdk/organizationsmanagement.ts
+  - src/sdk/resourcesclassesmanagement.ts
+  - src/sdk/resourcescoursesmanagement.ts
+  - src/sdk/resourcesmanagement.ts
+  - src/sdk/resourcesusersmanagement.ts
+  - src/sdk/resultsmanagement.ts
+  - src/sdk/schoolsmanagement.ts
+  - src/sdk/scorescalesmanagement.ts
   - src/sdk/sdk.ts
-  - src/sdk/students.ts
-  - src/sdk/studentsclasses.ts
-  - src/sdk/teachers.ts
-  - src/sdk/terms.ts
-  - src/sdk/userresources.ts
-  - src/sdk/users.ts
+  - src/sdk/studentsmanagement.ts
+  - src/sdk/teachersmanagement.ts
+  - src/sdk/termsmanagement.ts
+  - src/sdk/usersmanagement.ts
   - src/types/async.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
@@ -2409,7 +2451,7 @@ examples:
         application/json: {"resource": {"sourcedId": "<id>"}}
       responses:
         "201":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -2432,7 +2474,7 @@ examples:
           resourceSourcedId: "<id>"
       responses:
         "204":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -2506,7 +2548,7 @@ examples:
           resourceSourcedId: "<id>"
       responses:
         "204":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2557,7 +2599,7 @@ examples:
         application/json: {"resource": {"sourcedId": "<id>"}}
       responses:
         "201":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2580,7 +2622,7 @@ examples:
           resourceSourcedId: "<id>"
       responses:
         "204":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -2672,7 +2714,7 @@ examples:
         application/json: {"resource": {"title": "<value>", "vendorResourceId": "<id>"}}
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -3754,7 +3796,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "201":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -3776,7 +3818,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "204":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -3868,7 +3910,7 @@ examples:
         application/json: {"enrollment": {"sourcedId": "<id>", "status": "active", "role": "student", "primary": false, "beginDate": "2024-01-01", "endDate": "2024-01-01", "user": {"sourcedId": "<id>"}, "class": {"sourcedId": "<id>"}}}
       responses:
         "201":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -4111,7 +4153,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -4133,7 +4175,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -4221,7 +4263,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -4335,7 +4377,7 @@ examples:
         application/json: {"courseComponent": {"status": "tobedeleted", "course": {"sourcedId": "<id>"}, "title": "<value>", "sortOrder": 1, "unlockDate": "2021-01-01T00:00:00.000Z"}}
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -4357,7 +4399,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
