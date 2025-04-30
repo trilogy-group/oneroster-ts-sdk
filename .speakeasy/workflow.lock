@@ -2,8 +2,8 @@ speakeasyVersion: 1.541.1
 sources:
     OneRoster API:
         sourceNamespace: one-roster-api
-        sourceRevisionDigest: sha256:85e8477f4dc66776135a810272a31d440e8ea0a36c3681bff67d0f8b5a501eea
-        sourceBlobDigest: sha256:564592a821488ce6e65f0629fc0569cc182d3e0a7f116013161634a49110caa4
+        sourceRevisionDigest: sha256:e0d357bee69eb547aad0afa3daddbca22ce3000711ee482b9241fd91b191cd3f
+        sourceBlobDigest: sha256:a0aa486e96b21f7b018a0e2e8e9541ad0f01492a52a5fc36c140e130e9af7f31
         tags:
             - latest
             - 1.0.0
@@ -11,10 +11,10 @@ targets:
     one-roster:
         source: OneRoster API
         sourceNamespace: one-roster-api
-        sourceRevisionDigest: sha256:85e8477f4dc66776135a810272a31d440e8ea0a36c3681bff67d0f8b5a501eea
-        sourceBlobDigest: sha256:564592a821488ce6e65f0629fc0569cc182d3e0a7f116013161634a49110caa4
+        sourceRevisionDigest: sha256:e0d357bee69eb547aad0afa3daddbca22ce3000711ee482b9241fd91b191cd3f
+        sourceBlobDigest: sha256:a0aa486e96b21f7b018a0e2e8e9541ad0f01492a52a5fc36c140e130e9af7f31
         codeSamplesNamespace: one-roster-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:1a40199f191d682ccd1d0f18596caaeb2a3aa999faa1c771c59793aa181fecbc
+        codeSamplesRevisionDigest: sha256:6954f76f6fa95720f6e3001e546d12a4321d0a83cac505110881be2e877a5e59
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -23,6 +23,7 @@ workflow:
             inputs:
                 - location: .speakeasy/openapi.yaml
             overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
                 - location: .speakeasy/openapi-fixes-overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/emu-farm/timeback/one-roster-api

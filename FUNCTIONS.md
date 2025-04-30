@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { OneRosterCore } from "@superbuilders/oneroster/core.js";
-import { scoreScalesManagementGetAllScoreScales } from "@superbuilders/oneroster/funcs/scoreScalesManagementGetAllScoreScales.js";
+import { scoreScalesList } from "@superbuilders/oneroster/funcs/scoreScalesList.js";
 import { SDKValidationError } from "@superbuilders/oneroster/models/errors/sdkvalidationerror.js";
 
 // Use `OneRosterCore` for best tree-shaking performance.
@@ -33,7 +33,7 @@ const oneRoster = new OneRosterCore({
 });
 
 async function run() {
-  const res = await scoreScalesManagementGetAllScoreScales(oneRoster, {
+  const res = await scoreScalesList(oneRoster, {
     fields: "sourcedId,name",
     filter: "status='active'",
   });

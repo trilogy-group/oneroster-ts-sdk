@@ -33,8 +33,10 @@ Use the correct IDP server depending on the environment you're using:
 
 - Production Server:
 
+
   https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com
 - Staging Server:
+
 
   https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com
 
@@ -261,7 +263,7 @@ const oneRoster = new OneRoster({
 });
 
 async function run() {
-  const result = await oneRoster.scoreScalesManagement.getAllScoreScales({
+  const result = await oneRoster.scoreScales.list({
     fields: "sourcedId,name",
     filter: "status='active'",
   });
@@ -300,7 +302,7 @@ const oneRoster = new OneRoster({
 });
 
 async function run() {
-  const result = await oneRoster.scoreScalesManagement.getAllScoreScales({
+  const result = await oneRoster.scoreScales.list({
     fields: "sourcedId,name",
     filter: "status='active'",
   });
@@ -322,246 +324,244 @@ run();
 <details open>
 <summary>Available methods</summary>
 
-### [academicSessionsManagement](docs/sdks/academicsessionsmanagement/README.md)
+### [academicSessions](docs/sdks/academicsessions/README.md)
 
-* [getAllAcademicSessions](docs/sdks/academicsessionsmanagement/README.md#getallacademicsessions) - Get all Academic Sessions
-* [postAcademicSession](docs/sdks/academicsessionsmanagement/README.md#postacademicsession) - Create an Academic Session
-* [getAcademicSession](docs/sdks/academicsessionsmanagement/README.md#getacademicsession) - Get a specific Academic Session
-* [putAcademicSession](docs/sdks/academicsessionsmanagement/README.md#putacademicsession) - Update an Academic Session
-* [deleteAcademicSession](docs/sdks/academicsessionsmanagement/README.md#deleteacademicsession) - Delete an Academic Session
+* [getAll](docs/sdks/academicsessions/README.md#getall) - Get all Academic Sessions
+* [create](docs/sdks/academicsessions/README.md#create) - Create an Academic Session
+* [get](docs/sdks/academicsessions/README.md#get) - Get a specific Academic Session
+* [update](docs/sdks/academicsessions/README.md#update) - Update an Academic Session
+* [delete](docs/sdks/academicsessions/README.md#delete) - Delete an Academic Session
 
-### [assessmentLineItemsManagement](docs/sdks/assessmentlineitemsmanagement/README.md)
+### [assessmentLineItems](docs/sdks/assessmentlineitems/README.md)
 
-* [getAllAssessmentLineItems](docs/sdks/assessmentlineitemsmanagement/README.md#getallassessmentlineitems) - Get all Assessment Line Items
-* [createAssessmentLineItem](docs/sdks/assessmentlineitemsmanagement/README.md#createassessmentlineitem) - Create an Assessment Line Item
-* [getAssessmentLineItem](docs/sdks/assessmentlineitemsmanagement/README.md#getassessmentlineitem) - Get an Assessment Line Item
-* [updateAssessmentLineItem](docs/sdks/assessmentlineitemsmanagement/README.md#updateassessmentlineitem) - Update an Assessment Line Item
-* [deleteAssessmentLineItem](docs/sdks/assessmentlineitemsmanagement/README.md#deleteassessmentlineitem) - Delete an Assessment Line Item
+* [getAll](docs/sdks/assessmentlineitems/README.md#getall) - Get all Assessment Line Items
+* [create](docs/sdks/assessmentlineitems/README.md#create) - Create an Assessment Line Item
+* [get](docs/sdks/assessmentlineitems/README.md#get) - Get an Assessment Line Item
+* [update](docs/sdks/assessmentlineitems/README.md#update) - Update an Assessment Line Item
+* [delete](docs/sdks/assessmentlineitems/README.md#delete) - Delete an Assessment Line Item
 
-### [assessmentResultsManagement](docs/sdks/assessmentresultsmanagement/README.md)
+### [assessmentResults](docs/sdks/assessmentresults/README.md)
 
-* [getAllAssessmentResults](docs/sdks/assessmentresultsmanagement/README.md#getallassessmentresults) - Get all Assessment Results
-* [createAssessmentResult](docs/sdks/assessmentresultsmanagement/README.md#createassessmentresult) - Create an Assessment Result
-* [getAssessmentResult](docs/sdks/assessmentresultsmanagement/README.md#getassessmentresult) - Get an Assessment Result
-* [updateAssessmentResult](docs/sdks/assessmentresultsmanagement/README.md#updateassessmentresult) - Update an Assessment Result
-* [deleteAssessmentResult](docs/sdks/assessmentresultsmanagement/README.md#deleteassessmentresult) - Delete an Assessment Result
+* [getAll](docs/sdks/assessmentresults/README.md#getall) - Get all Assessment Results
+* [create](docs/sdks/assessmentresults/README.md#create) - Create an Assessment Result
+* [get](docs/sdks/assessmentresults/README.md#get) - Get an Assessment Result
+* [update](docs/sdks/assessmentresults/README.md#update) - Update an Assessment Result
+* [delete](docs/sdks/assessmentresults/README.md#delete) - Delete an Assessment Result
 
-### [categoriesManagement](docs/sdks/categoriesmanagement/README.md)
+### [categories](docs/sdks/categories/README.md)
 
-* [getAllCategories](docs/sdks/categoriesmanagement/README.md#getallcategories) - Get all Categories
-* [createCategory](docs/sdks/categoriesmanagement/README.md#createcategory) - Create a Category
-* [getCategory](docs/sdks/categoriesmanagement/README.md#getcategory) - Get a Category
-* [updateCategory](docs/sdks/categoriesmanagement/README.md#updatecategory) - Update a Category
-* [deleteCategory](docs/sdks/categoriesmanagement/README.md#deletecategory) - Delete a Category
+* [getAll](docs/sdks/categories/README.md#getall) - Get all Categories
+* [create](docs/sdks/categories/README.md#create) - Create a Category
+* [get](docs/sdks/categories/README.md#get) - Get a Category
+* [update](docs/sdks/categories/README.md#update) - Update a Category
+* [delete](docs/sdks/categories/README.md#delete) - Delete a Category
+
+### [classes](docs/sdks/classes/README.md)
+
+* [createResults](docs/sdks/classes/README.md#createresults) - Create Results for an Academic Session for a Class
+* [getStudentResults](docs/sdks/classes/README.md#getstudentresults) - Get Results for a Student for a Class
+* [getCategories](docs/sdks/classes/README.md#getcategories) - Get Categories for a Class
+* [getScoreScales](docs/sdks/classes/README.md#getscorescales) - Get Score Scales for a Class
+* [getAll](docs/sdks/classes/README.md#getall) - Get all Classes
+* [create](docs/sdks/classes/README.md#create) - Create a new Class
+* [get](docs/sdks/classes/README.md#get) - Get a specific class
+* [update](docs/sdks/classes/README.md#update) - Update a Class
+* [delete](docs/sdks/classes/README.md#delete) - Delete a Class
+* [listResources](docs/sdks/classes/README.md#listresources) - Get resources for a class
+* [addTeacher](docs/sdks/classes/README.md#addteacher) - Add a teacher to a Class
+* [getTeachers](docs/sdks/classes/README.md#getteachers) - Get Teachers for a specific Class in a School
+* [getStudents](docs/sdks/classes/README.md#getstudents) - Get students for a Class
+* [addStudent](docs/sdks/classes/README.md#addstudent) - Add a student to a Class
+
+#### [classes.results](docs/sdks/classesresults/README.md)
+
+* [getForLineItem](docs/sdks/classesresults/README.md#getforlineitem) - Get Results for a Line Item for a Class
+* [get](docs/sdks/classesresults/README.md#get) - Get Results for a Class
 
 ### [classesManagement](docs/sdks/classesmanagement/README.md)
 
-* [postResultsForAcademicSessionForClass](docs/sdks/classesmanagement/README.md#postresultsforacademicsessionforclass) - Create Results for an Academic Session for a Class
-* [getResultsForLineItemForClass](docs/sdks/classesmanagement/README.md#getresultsforlineitemforclass) - Get Results for a Line Item for a Class
-* [getResultsForStudentForClass](docs/sdks/classesmanagement/README.md#getresultsforstudentforclass) - Get Results for a Student for a Class
-* [getCategoriesForClass](docs/sdks/classesmanagement/README.md#getcategoriesforclass) - Get Categories for a Class
 * [getLineItemsForClass](docs/sdks/classesmanagement/README.md#getlineitemsforclass) - Get Line Items for a Class
-* [getResultsForClass](docs/sdks/classesmanagement/README.md#getresultsforclass) - Get Results for a Class
-* [getScoreScalesForClass](docs/sdks/classesmanagement/README.md#getscorescalesforclass) - Get Score Scales for a Class
-* [getAllClasses](docs/sdks/classesmanagement/README.md#getallclasses) - Get all Classes
-* [createClass](docs/sdks/classesmanagement/README.md#createclass) - Create a new Class
-* [getClass](docs/sdks/classesmanagement/README.md#getclass) - Get a specific class
-* [updateClass](docs/sdks/classesmanagement/README.md#updateclass) - Update a Class
-* [deleteClass](docs/sdks/classesmanagement/README.md#deleteclass) - Delete a Class
-* [getClassesForSchool](docs/sdks/classesmanagement/README.md#getclassesforschool) - Get all Classes for a School
-* [getClassesForUser](docs/sdks/classesmanagement/README.md#getclassesforuser) - Get Classes for a User
-* [getClassesForTerm](docs/sdks/classesmanagement/README.md#getclassesforterm) - Get Classes for a Term
-* [getTeachersForClass](docs/sdks/classesmanagement/README.md#getteachersforclass) - Get teachers for a Class
-* [addTeacherToClass](docs/sdks/classesmanagement/README.md#addteachertoclass) - Add a teacher to a Class
-* [getClassesForTeacher](docs/sdks/classesmanagement/README.md#getclassesforteacher) - Get Classes for a Teacher
-* [getStudentsForClass](docs/sdks/classesmanagement/README.md#getstudentsforclass) - Get students for a Class
-* [addStudentToClass](docs/sdks/classesmanagement/README.md#addstudenttoclass) - Add a student to a Class
-* [getClassesForStudent](docs/sdks/classesmanagement/README.md#getclassesforstudent) - Get Classes for a Student
 
-### [courseComponentResourcesManagement](docs/sdks/coursecomponentresourcesmanagement/README.md)
+### [classResources](docs/sdks/classresources/README.md)
 
-* [createComponentResource](docs/sdks/coursecomponentresourcesmanagement/README.md#createcomponentresource) - Create Component Resource
-* [getAllComponentResources](docs/sdks/coursecomponentresourcesmanagement/README.md#getallcomponentresources) - Get all Component Resources
-* [getComponentResource](docs/sdks/coursecomponentresourcesmanagement/README.md#getcomponentresource) - Get a specific Component Resource
-* [putComponentResource](docs/sdks/coursecomponentresourcesmanagement/README.md#putcomponentresource) - Update a Component Resource
-* [deleteComponentResource](docs/sdks/coursecomponentresourcesmanagement/README.md#deletecomponentresource) - Delete a Component Resource
+* [delete](docs/sdks/classresources/README.md#delete) - Remove a resource from a class
 
-### [courseComponentsManagement](docs/sdks/coursecomponentsmanagement/README.md)
+### [classTeachers](docs/sdks/classteachers/README.md)
 
-* [createCourseComponent](docs/sdks/coursecomponentsmanagement/README.md#createcoursecomponent) - Create Course Component
-* [getAllCourseComponents](docs/sdks/coursecomponentsmanagement/README.md#getallcoursecomponents) - Get all Course Components
-* [getCourseComponent](docs/sdks/coursecomponentsmanagement/README.md#getcoursecomponent) - Get a specific Course Component
-* [putCourseComponent](docs/sdks/coursecomponentsmanagement/README.md#putcoursecomponent) - Update a Course Component
-* [deleteCourseComponent](docs/sdks/coursecomponentsmanagement/README.md#deletecoursecomponent) - Delete a Course Component
+* [getAll](docs/sdks/classteachers/README.md#getall) - Get teachers for a Class
 
-### [coursesManagement](docs/sdks/coursesmanagement/README.md)
+### [componentResources](docs/sdks/componentresources/README.md)
 
-* [getAllCourses](docs/sdks/coursesmanagement/README.md#getallcourses) - Get All Courses
-* [createCourse](docs/sdks/coursesmanagement/README.md#createcourse) - Create a Course
-* [getClassesForCourse](docs/sdks/coursesmanagement/README.md#getclassesforcourse) - Get Classes for a Course
-* [getCourse](docs/sdks/coursesmanagement/README.md#getcourse) - Get a specific Course
-* [putCourse](docs/sdks/coursesmanagement/README.md#putcourse) - Update a Course
-* [deleteCourse](docs/sdks/coursesmanagement/README.md#deletecourse) - Delete a Course
-* [createComponentResource](docs/sdks/coursesmanagement/README.md#createcomponentresource) - Create Component Resource
-* [getAllComponentResources](docs/sdks/coursesmanagement/README.md#getallcomponentresources) - Get all Component Resources
-* [getComponentResource](docs/sdks/coursesmanagement/README.md#getcomponentresource) - Get a specific Component Resource
-* [putComponentResource](docs/sdks/coursesmanagement/README.md#putcomponentresource) - Update a Component Resource
-* [deleteComponentResource](docs/sdks/coursesmanagement/README.md#deletecomponentresource) - Delete a Component Resource
-* [createCourseComponent](docs/sdks/coursesmanagement/README.md#createcoursecomponent) - Create Course Component
-* [getAllCourseComponents](docs/sdks/coursesmanagement/README.md#getallcoursecomponents) - Get all Course Components
-* [getCourseComponent](docs/sdks/coursesmanagement/README.md#getcoursecomponent) - Get a specific Course Component
-* [putCourseComponent](docs/sdks/coursesmanagement/README.md#putcoursecomponent) - Update a Course Component
-* [deleteCourseComponent](docs/sdks/coursesmanagement/README.md#deletecoursecomponent) - Delete a Course Component
-* [getCoursesForSchool](docs/sdks/coursesmanagement/README.md#getcoursesforschool) - Get all Courses for a School
+* [getAll](docs/sdks/componentresources/README.md#getall) - Get all Component Resources
 
-### [demographicsManagement](docs/sdks/demographicsmanagement/README.md)
+### [courseClasses](docs/sdks/courseclasses/README.md)
 
-* [getAllDemographics](docs/sdks/demographicsmanagement/README.md#getalldemographics) - Get all Demographic records
-* [postDemographics](docs/sdks/demographicsmanagement/README.md#postdemographics) - Create a new Demographic record
-* [getDemographics](docs/sdks/demographicsmanagement/README.md#getdemographics) - Get a specific Demographic record
-* [putDemographics](docs/sdks/demographicsmanagement/README.md#putdemographics) - Update a Demographic record
-* [deleteDemographics](docs/sdks/demographicsmanagement/README.md#deletedemographics) - Delete a Demographic record
+* [getAll](docs/sdks/courseclasses/README.md#getall) - Get Classes for a Course
 
-### [enrollmentsManagement](docs/sdks/enrollmentsmanagement/README.md)
+### [courseComponents](docs/sdks/coursecomponents/README.md)
 
-* [getAllEnrollments](docs/sdks/enrollmentsmanagement/README.md#getallenrollments) - Get all Enrollments
-* [createEnrollment](docs/sdks/enrollmentsmanagement/README.md#createenrollment) - Create a new Enrollment
-* [getEnrollment](docs/sdks/enrollmentsmanagement/README.md#getenrollment) - Get a specific Enrollment
-* [updateEnrollment](docs/sdks/enrollmentsmanagement/README.md#updateenrollment) - Update an Enrollment
-* [deleteEnrollment](docs/sdks/enrollmentsmanagement/README.md#deleteenrollment) - Delete an Enrollment
-* [getEnrollmentsForClassInSchool](docs/sdks/enrollmentsmanagement/README.md#getenrollmentsforclassinschool) - Get Enrollments for a specific Class in a School
-* [getEnrollmentsForSchool](docs/sdks/enrollmentsmanagement/README.md#getenrollmentsforschool) - Get all Enrollments for a School
+* [getAll](docs/sdks/coursecomponents/README.md#getall) - Get all Course Components
+* [delete](docs/sdks/coursecomponents/README.md#delete) - Delete a Course Component
 
-### [gradingPeriodsManagement](docs/sdks/gradingperiodsmanagement/README.md)
+### [courseResources](docs/sdks/courseresources/README.md)
 
-* [getAllGradingPeriods](docs/sdks/gradingperiodsmanagement/README.md#getallgradingperiods) - Get all Grading Periods
-* [createGradingPeriod](docs/sdks/gradingperiodsmanagement/README.md#creategradingperiod) - Create a new Grading Period
-* [getGradingPeriod](docs/sdks/gradingperiodsmanagement/README.md#getgradingperiod) - Get a specific Grading Period
-* [updateGradingPeriod](docs/sdks/gradingperiodsmanagement/README.md#updategradingperiod) - Update a Grading Period
-* [deleteGradingPeriod](docs/sdks/gradingperiodsmanagement/README.md#deletegradingperiod) - Delete a Grading Period
-* [getGradingPeriodsForTerm](docs/sdks/gradingperiodsmanagement/README.md#getgradingperiodsforterm) - Get Grading Periods for a Term
-* [createGradingPeriodForTerm](docs/sdks/gradingperiodsmanagement/README.md#creategradingperiodforterm) - Create a new Grading Period for a Term
+* [delete](docs/sdks/courseresources/README.md#delete) - Remove a resource from a course
 
-### [lineItemsManagement](docs/sdks/lineitemsmanagement/README.md)
+### [courses](docs/sdks/courses/README.md)
 
-* [getAllLineItems](docs/sdks/lineitemsmanagement/README.md#getalllineitems) - Get all Line Items
-* [createLineItem](docs/sdks/lineitemsmanagement/README.md#createlineitem) - Create a Line Item
-* [getLineItem](docs/sdks/lineitemsmanagement/README.md#getlineitem) - Get a Line Item
-* [updateLineItem](docs/sdks/lineitemsmanagement/README.md#updatelineitem) - Update a Line Item
-* [deleteLineItem](docs/sdks/lineitemsmanagement/README.md#deletelineitem) - Delete a Line Item
-* [createResultForLineItem](docs/sdks/lineitemsmanagement/README.md#createresultforlineitem) - Create a Result for a Line Item
-* [getLineItemsForSchool](docs/sdks/lineitemsmanagement/README.md#getlineitemsforschool) - Get Line Items for a School
-* [createLineItemsForSchool](docs/sdks/lineitemsmanagement/README.md#createlineitemsforschool) - Create Line Items for a School
+* [getResources](docs/sdks/courses/README.md#getresources) - Get resources for a course
+* [assignResource](docs/sdks/courses/README.md#assignresource) - Assign a resource to a course
+* [getAll](docs/sdks/courses/README.md#getall) - Get All Courses
+* [create](docs/sdks/courses/README.md#create) - Create a Course
+* [get](docs/sdks/courses/README.md#get) - Get a specific Course
+* [update](docs/sdks/courses/README.md#update) - Update a Course
+* [delete](docs/sdks/courses/README.md#delete) - Delete a Course
+* [createComponentResource](docs/sdks/courses/README.md#createcomponentresource) - Create Component Resource
+* [getComponentResource](docs/sdks/courses/README.md#getcomponentresource) - Get a specific Component Resource
+* [updateComponentResource](docs/sdks/courses/README.md#updatecomponentresource) - Update a Component Resource
+* [deleteComponentResource](docs/sdks/courses/README.md#deletecomponentresource) - Delete a Component Resource
+* [createComponent](docs/sdks/courses/README.md#createcomponent) - Create Course Component
+* [getComponent](docs/sdks/courses/README.md#getcomponent) - Get a specific Course Component
+* [updateComponent](docs/sdks/courses/README.md#updatecomponent) - Update a Course Component
+
+### [demographics](docs/sdks/demographics/README.md)
+
+* [getAll](docs/sdks/demographics/README.md#getall) - Get all Demographic records
+* [create](docs/sdks/demographics/README.md#create) - Create a new Demographic record
+* [get](docs/sdks/demographics/README.md#get) - Get a specific Demographic record
+* [update](docs/sdks/demographics/README.md#update) - Update a Demographic record
+* [delete](docs/sdks/demographics/README.md#delete) - Delete a Demographic record
+
+### [enrollments](docs/sdks/enrollments/README.md)
+
+* [getAll](docs/sdks/enrollments/README.md#getall) - Get all Enrollments
+* [create](docs/sdks/enrollments/README.md#create) - Create a new Enrollment
+* [get](docs/sdks/enrollments/README.md#get) - Get a specific Enrollment
+* [update](docs/sdks/enrollments/README.md#update) - Update an Enrollment
+* [delete](docs/sdks/enrollments/README.md#delete) - Delete an Enrollment
+* [getForClass](docs/sdks/enrollments/README.md#getforclass) - Get Enrollments for a specific Class in a School
+
+### [gradingPeriods](docs/sdks/gradingperiods/README.md)
+
+* [getAll](docs/sdks/gradingperiods/README.md#getall) - Get all Grading Periods
+* [create](docs/sdks/gradingperiods/README.md#create) - Create a new Grading Period
+* [get](docs/sdks/gradingperiods/README.md#get) - Get a specific Grading Period
+* [update](docs/sdks/gradingperiods/README.md#update) - Update a Grading Period
+* [delete](docs/sdks/gradingperiods/README.md#delete) - Delete a Grading Period
+* [createForTerm](docs/sdks/gradingperiods/README.md#createforterm) - Create a new Grading Period for a Term
+
+### [lineItems](docs/sdks/lineitems/README.md)
+
+* [list](docs/sdks/lineitems/README.md#list) - Get all Line Items
+* [create](docs/sdks/lineitems/README.md#create) - Create a Line Item
+* [get](docs/sdks/lineitems/README.md#get) - Get a Line Item
+* [update](docs/sdks/lineitems/README.md#update) - Update a Line Item
+* [delete](docs/sdks/lineitems/README.md#delete) - Delete a Line Item
 
 
-### [organizationsManagement](docs/sdks/organizationsmanagement/README.md)
+### [organizations](docs/sdks/organizations/README.md)
 
-* [getAllOrgs](docs/sdks/organizationsmanagement/README.md#getallorgs) - Get all Organizations
-* [createOrg](docs/sdks/organizationsmanagement/README.md#createorg) - Create an Organization
-* [getOrg](docs/sdks/organizationsmanagement/README.md#getorg) - Get a specific Organization
-* [updateOrg](docs/sdks/organizationsmanagement/README.md#updateorg) - Update an Organization
-* [deleteOrg](docs/sdks/organizationsmanagement/README.md#deleteorg) - Delete an Organization
+* [getAll](docs/sdks/organizations/README.md#getall) - Get all Organizations
+* [create](docs/sdks/organizations/README.md#create) - Create an Organization
+* [get](docs/sdks/organizations/README.md#get) - Get a specific Organization
+* [update](docs/sdks/organizations/README.md#update) - Update an Organization
+* [delete](docs/sdks/organizations/README.md#delete) - Delete an Organization
 
-### [resourcesClassesManagement](docs/sdks/resourcesclassesmanagement/README.md)
+### [resources](docs/sdks/resources/README.md)
 
-* [getResourcesForClass](docs/sdks/resourcesclassesmanagement/README.md#getresourcesforclass) - Get resources for a class
-* [assignResourceToClass](docs/sdks/resourcesclassesmanagement/README.md#assignresourcetoclass) - Assign a resource to a class
-* [removeResourceFromClass](docs/sdks/resourcesclassesmanagement/README.md#removeresourcefromclass) - Remove a resource from a class
+* [getAll](docs/sdks/resources/README.md#getall) - Get all Resources
+* [create](docs/sdks/resources/README.md#create) - Create a new Resource
+* [get](docs/sdks/resources/README.md#get) - Get a specific Resource
+* [update](docs/sdks/resources/README.md#update) - Update an existing Resource
+* [delete](docs/sdks/resources/README.md#delete) - Delete a resource
 
-### [resourcesCoursesManagement](docs/sdks/resourcescoursesmanagement/README.md)
+#### [resources.classes](docs/sdks/resourcesclasses/README.md)
 
-* [getResourcesForCourse](docs/sdks/resourcescoursesmanagement/README.md#getresourcesforcourse) - Get resources for a course
-* [assignResourceToCourse](docs/sdks/resourcescoursesmanagement/README.md#assignresourcetocourse) - Assign a resource to a course
-* [removeResourceFromCourse](docs/sdks/resourcescoursesmanagement/README.md#removeresourcefromcourse) - Remove a resource from a course
+* [assign](docs/sdks/resourcesclasses/README.md#assign) - Assign a resource to a class
 
-### [resourcesManagement](docs/sdks/resourcesmanagement/README.md)
+### [results](docs/sdks/results/README.md)
 
-* [getAllResources](docs/sdks/resourcesmanagement/README.md#getallresources) - Get all Resources
-* [createResource](docs/sdks/resourcesmanagement/README.md#createresource) - Create a new Resource
-* [getResource](docs/sdks/resourcesmanagement/README.md#getresource) - Get a specific Resource
-* [updateResource](docs/sdks/resourcesmanagement/README.md#updateresource) - Update an existing Resource
-* [deleteResource](docs/sdks/resourcesmanagement/README.md#deleteresource) - Delete a resource
+* [getAll](docs/sdks/results/README.md#getall) - Get all Results
+* [create](docs/sdks/results/README.md#create) - Create a Result
+* [get](docs/sdks/results/README.md#get) - Get a Result
+* [update](docs/sdks/results/README.md#update) - Update a Result
+* [delete](docs/sdks/results/README.md#delete) - Delete a Result
+* [createForLineItem](docs/sdks/results/README.md#createforlineitem) - Create a Result for a Line Item
 
-### [resourcesUsersManagement](docs/sdks/resourcesusersmanagement/README.md)
+### [schoolLineItems](docs/sdks/schoollineitems/README.md)
 
-* [getResourcesForUser](docs/sdks/resourcesusersmanagement/README.md#getresourcesforuser) - Get resources for a user
-* [assignResourceToUser](docs/sdks/resourcesusersmanagement/README.md#assignresourcetouser) - Assign a resource to a user
-* [removeResourceFromUser](docs/sdks/resourcesusersmanagement/README.md#removeresourcefromuser) - Remove a resource from a user
+* [get](docs/sdks/schoollineitems/README.md#get) - Get Line Items for a School
 
-### [resultsManagement](docs/sdks/resultsmanagement/README.md)
+### [schools](docs/sdks/schools/README.md)
 
-* [getAllResults](docs/sdks/resultsmanagement/README.md#getallresults) - Get all Results
-* [createResult](docs/sdks/resultsmanagement/README.md#createresult) - Create a Result
-* [getResult](docs/sdks/resultsmanagement/README.md#getresult) - Get a Result
-* [updateResult](docs/sdks/resultsmanagement/README.md#updateresult) - Update a Result
-* [deleteResult](docs/sdks/resultsmanagement/README.md#deleteresult) - Delete a Result
+* [getAll](docs/sdks/schools/README.md#getall) - Get all Schools
+* [create](docs/sdks/schools/README.md#create) - Create a new School
+* [get](docs/sdks/schools/README.md#get) - Get a specific School
+* [update](docs/sdks/schools/README.md#update) - Update a School
+* [delete](docs/sdks/schools/README.md#delete) - Delete a School
+* [getClasses](docs/sdks/schools/README.md#getclasses) - Get all Classes for a School
+* [getTerms](docs/sdks/schools/README.md#getterms) - Get all Terms for a School
+* [getTeachers](docs/sdks/schools/README.md#getteachers) - Get all teachers for a school
+* [getStudents](docs/sdks/schools/README.md#getstudents) - Get all Students for a School
+* [getEnrollments](docs/sdks/schools/README.md#getenrollments) - Get all Enrollments for a School
 
-### [schoolsManagement](docs/sdks/schoolsmanagement/README.md)
+#### [schools.courses](docs/sdks/schoolscourses/README.md)
 
-* [getScoreScalesForSchool](docs/sdks/schoolsmanagement/README.md#getscorescalesforschool) - Get Score Scales for a School
-* [getAllSchools](docs/sdks/schoolsmanagement/README.md#getallschools) - Get all Schools
-* [createSchool](docs/sdks/schoolsmanagement/README.md#createschool) - Create a new School
-* [getSchool](docs/sdks/schoolsmanagement/README.md#getschool) - Get a specific School
-* [updateSchool](docs/sdks/schoolsmanagement/README.md#updateschool) - Update a School
-* [deleteSchool](docs/sdks/schoolsmanagement/README.md#deleteschool) - Delete a School
-* [getLineItemsForSchool](docs/sdks/schoolsmanagement/README.md#getlineitemsforschool) - Get Line Items for a School
-* [createLineItemsForSchool](docs/sdks/schoolsmanagement/README.md#createlineitemsforschool) - Create Line Items for a School
-* [getClassesForSchool](docs/sdks/schoolsmanagement/README.md#getclassesforschool) - Get all Classes for a School
-* [getTermsForSchool](docs/sdks/schoolsmanagement/README.md#gettermsforschool) - Get all Terms for a School
-* [getTeachersForClassInSchool](docs/sdks/schoolsmanagement/README.md#getteachersforclassinschool) - Get Teachers for a specific Class in a School
-* [getTeachersForSchool](docs/sdks/schoolsmanagement/README.md#getteachersforschool) - Get all teachers for a school
-* [getStudentsForClassInSchool](docs/sdks/schoolsmanagement/README.md#getstudentsforclassinschool) - Get Students for a specific Class in a School
-* [getStudentsForSchool](docs/sdks/schoolsmanagement/README.md#getstudentsforschool) - Get all Students for a School
-* [getEnrollmentsForClassInSchool](docs/sdks/schoolsmanagement/README.md#getenrollmentsforclassinschool) - Get Enrollments for a specific Class in a School
-* [getEnrollmentsForSchool](docs/sdks/schoolsmanagement/README.md#getenrollmentsforschool) - Get all Enrollments for a School
-* [getCoursesForSchool](docs/sdks/schoolsmanagement/README.md#getcoursesforschool) - Get all Courses for a School
+* [getAll](docs/sdks/schoolscourses/README.md#getall) - Get all Courses for a School
 
-### [scoreScalesManagement](docs/sdks/scorescalesmanagement/README.md)
+#### [schools.lineItems](docs/sdks/schoolslineitems/README.md)
 
-* [getAllScoreScales](docs/sdks/scorescalesmanagement/README.md#getallscorescales) - Get all Score Scales
-* [createScoreScale](docs/sdks/scorescalesmanagement/README.md#createscorescale) - Create a Score Scale
-* [getScoreScale](docs/sdks/scorescalesmanagement/README.md#getscorescale) - Get a Score Scale
-* [updateScoreScale](docs/sdks/scorescalesmanagement/README.md#updatescorescale) - Update a Score Scale
-* [deleteScoreScale](docs/sdks/scorescalesmanagement/README.md#deletescorescale) - Delete a Score Scale
-* [getScoreScalesForSchool](docs/sdks/scorescalesmanagement/README.md#getscorescalesforschool) - Get Score Scales for a School
+* [create](docs/sdks/schoolslineitems/README.md#create) - Create Line Items for a School
 
-### [studentsManagement](docs/sdks/studentsmanagement/README.md)
+### [schoolsScoreScales](docs/sdks/schoolsscorescales/README.md)
 
-* [getStudentsForClass](docs/sdks/studentsmanagement/README.md#getstudentsforclass) - Get students for a Class
-* [addStudentToClass](docs/sdks/studentsmanagement/README.md#addstudenttoclass) - Add a student to a Class
-* [getStudentsForClassInSchool](docs/sdks/studentsmanagement/README.md#getstudentsforclassinschool) - Get Students for a specific Class in a School
-* [getStudentsForSchool](docs/sdks/studentsmanagement/README.md#getstudentsforschool) - Get all Students for a School
-* [getAllStudents](docs/sdks/studentsmanagement/README.md#getallstudents) - Get all Students
-* [getStudent](docs/sdks/studentsmanagement/README.md#getstudent) - Get a specific Student
-* [getClassesForStudent](docs/sdks/studentsmanagement/README.md#getclassesforstudent) - Get Classes for a Student
+* [get](docs/sdks/schoolsscorescales/README.md#get) - Get Score Scales for a School
 
-### [teachersManagement](docs/sdks/teachersmanagement/README.md)
+### [scoreScales](docs/sdks/scorescales/README.md)
 
-* [getTeachersForClass](docs/sdks/teachersmanagement/README.md#getteachersforclass) - Get teachers for a Class
-* [addTeacherToClass](docs/sdks/teachersmanagement/README.md#addteachertoclass) - Add a teacher to a Class
-* [getTeachersForClassInSchool](docs/sdks/teachersmanagement/README.md#getteachersforclassinschool) - Get Teachers for a specific Class in a School
-* [getTeachersForSchool](docs/sdks/teachersmanagement/README.md#getteachersforschool) - Get all teachers for a school
-* [getAllTeachers](docs/sdks/teachersmanagement/README.md#getallteachers) - Get all Teachers
-* [getTeacher](docs/sdks/teachersmanagement/README.md#getteacher) - Get a specific Teacher
-* [getClassesForTeacher](docs/sdks/teachersmanagement/README.md#getclassesforteacher) - Get Classes for a Teacher
+* [list](docs/sdks/scorescales/README.md#list) - Get all Score Scales
+* [create](docs/sdks/scorescales/README.md#create) - Create a Score Scale
+* [get](docs/sdks/scorescales/README.md#get) - Get a Score Scale
+* [update](docs/sdks/scorescales/README.md#update) - Update a Score Scale
+* [delete](docs/sdks/scorescales/README.md#delete) - Delete a Score Scale
 
-### [termsManagement](docs/sdks/termsmanagement/README.md)
+### [students](docs/sdks/students/README.md)
 
-* [getTermsForSchool](docs/sdks/termsmanagement/README.md#gettermsforschool) - Get all Terms for a School
-* [getAllTerms](docs/sdks/termsmanagement/README.md#getallterms) - Get all Terms
-* [getTerm](docs/sdks/termsmanagement/README.md#getterm) - Get a specific Term
-* [getClassesForTerm](docs/sdks/termsmanagement/README.md#getclassesforterm) - Get Classes for a Term
-* [getGradingPeriodsForTerm](docs/sdks/termsmanagement/README.md#getgradingperiodsforterm) - Get Grading Periods for a Term
-* [createGradingPeriodForTerm](docs/sdks/termsmanagement/README.md#creategradingperiodforterm) - Create a new Grading Period for a Term
+* [getForClass](docs/sdks/students/README.md#getforclass) - Get Students for a specific Class in a School
+* [getAll](docs/sdks/students/README.md#getall) - Get all Students
+* [get](docs/sdks/students/README.md#get) - Get a specific Student
 
-### [usersManagement](docs/sdks/usersmanagement/README.md)
+#### [students.classes](docs/sdks/studentsclasses/README.md)
 
-* [getAllUsers](docs/sdks/usersmanagement/README.md#getallusers) - Get all Users
-* [createUser](docs/sdks/usersmanagement/README.md#createuser) - Create a new User
-* [getUser](docs/sdks/usersmanagement/README.md#getuser) - Get a specific User
-* [updateUser](docs/sdks/usersmanagement/README.md#updateuser) - Update an existing User
-* [deleteUser](docs/sdks/usersmanagement/README.md#deleteuser) - Delete a User
-* [getClassesForUser](docs/sdks/usersmanagement/README.md#getclassesforuser) - Get Classes for a User
+* [get](docs/sdks/studentsclasses/README.md#get) - Get Classes for a Student
+
+### [teachers](docs/sdks/teachers/README.md)
+
+* [getAll](docs/sdks/teachers/README.md#getall) - Get all Teachers
+* [get](docs/sdks/teachers/README.md#get) - Get a specific Teacher
+* [getClasses](docs/sdks/teachers/README.md#getclasses) - Get Classes for a Teacher
+
+### [terms](docs/sdks/terms/README.md)
+
+* [list](docs/sdks/terms/README.md#list) - Get all Terms
+* [get](docs/sdks/terms/README.md#get) - Get a specific Term
+* [getClasses](docs/sdks/terms/README.md#getclasses) - Get Classes for a Term
+* [getGradingPeriods](docs/sdks/terms/README.md#getgradingperiods) - Get Grading Periods for a Term
+
+### [userResources](docs/sdks/userresources/README.md)
+
+* [remove](docs/sdks/userresources/README.md#remove) - Remove a resource from a user
+
+### [users](docs/sdks/users/README.md)
+
+* [getResources](docs/sdks/users/README.md#getresources) - Get resources for a user
+* [assignResource](docs/sdks/users/README.md#assignresource) - Assign a resource to a user
+* [getAll](docs/sdks/users/README.md#getall) - Get all Users
+* [create](docs/sdks/users/README.md#create) - Create a new User
+* [get](docs/sdks/users/README.md#get) - Get a specific User
+* [update](docs/sdks/users/README.md#update) - Update an existing User
+* [delete](docs/sdks/users/README.md#delete) - Delete a User
+* [getClasses](docs/sdks/users/README.md#getclasses) - Get Classes for a User
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -581,174 +581,142 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`academicSessionsManagementDeleteAcademicSession`](docs/sdks/academicsessionsmanagement/README.md#deleteacademicsession) - Delete an Academic Session
-- [`academicSessionsManagementGetAcademicSession`](docs/sdks/academicsessionsmanagement/README.md#getacademicsession) - Get a specific Academic Session
-- [`academicSessionsManagementGetAllAcademicSessions`](docs/sdks/academicsessionsmanagement/README.md#getallacademicsessions) - Get all Academic Sessions
-- [`academicSessionsManagementPostAcademicSession`](docs/sdks/academicsessionsmanagement/README.md#postacademicsession) - Create an Academic Session
-- [`academicSessionsManagementPutAcademicSession`](docs/sdks/academicsessionsmanagement/README.md#putacademicsession) - Update an Academic Session
-- [`assessmentLineItemsManagementCreateAssessmentLineItem`](docs/sdks/assessmentlineitemsmanagement/README.md#createassessmentlineitem) - Create an Assessment Line Item
-- [`assessmentLineItemsManagementDeleteAssessmentLineItem`](docs/sdks/assessmentlineitemsmanagement/README.md#deleteassessmentlineitem) - Delete an Assessment Line Item
-- [`assessmentLineItemsManagementGetAllAssessmentLineItems`](docs/sdks/assessmentlineitemsmanagement/README.md#getallassessmentlineitems) - Get all Assessment Line Items
-- [`assessmentLineItemsManagementGetAssessmentLineItem`](docs/sdks/assessmentlineitemsmanagement/README.md#getassessmentlineitem) - Get an Assessment Line Item
-- [`assessmentLineItemsManagementUpdateAssessmentLineItem`](docs/sdks/assessmentlineitemsmanagement/README.md#updateassessmentlineitem) - Update an Assessment Line Item
-- [`assessmentResultsManagementCreateAssessmentResult`](docs/sdks/assessmentresultsmanagement/README.md#createassessmentresult) - Create an Assessment Result
-- [`assessmentResultsManagementDeleteAssessmentResult`](docs/sdks/assessmentresultsmanagement/README.md#deleteassessmentresult) - Delete an Assessment Result
-- [`assessmentResultsManagementGetAllAssessmentResults`](docs/sdks/assessmentresultsmanagement/README.md#getallassessmentresults) - Get all Assessment Results
-- [`assessmentResultsManagementGetAssessmentResult`](docs/sdks/assessmentresultsmanagement/README.md#getassessmentresult) - Get an Assessment Result
-- [`assessmentResultsManagementUpdateAssessmentResult`](docs/sdks/assessmentresultsmanagement/README.md#updateassessmentresult) - Update an Assessment Result
-- [`categoriesManagementCreateCategory`](docs/sdks/categoriesmanagement/README.md#createcategory) - Create a Category
-- [`categoriesManagementDeleteCategory`](docs/sdks/categoriesmanagement/README.md#deletecategory) - Delete a Category
-- [`categoriesManagementGetAllCategories`](docs/sdks/categoriesmanagement/README.md#getallcategories) - Get all Categories
-- [`categoriesManagementGetCategory`](docs/sdks/categoriesmanagement/README.md#getcategory) - Get a Category
-- [`categoriesManagementUpdateCategory`](docs/sdks/categoriesmanagement/README.md#updatecategory) - Update a Category
-- [`classesManagementAddStudentToClass`](docs/sdks/classesmanagement/README.md#addstudenttoclass) - Add a student to a Class
-- [`classesManagementAddTeacherToClass`](docs/sdks/classesmanagement/README.md#addteachertoclass) - Add a teacher to a Class
-- [`classesManagementCreateClass`](docs/sdks/classesmanagement/README.md#createclass) - Create a new Class
-- [`classesManagementDeleteClass`](docs/sdks/classesmanagement/README.md#deleteclass) - Delete a Class
-- [`classesManagementGetAllClasses`](docs/sdks/classesmanagement/README.md#getallclasses) - Get all Classes
-- [`classesManagementGetCategoriesForClass`](docs/sdks/classesmanagement/README.md#getcategoriesforclass) - Get Categories for a Class
-- [`classesManagementGetClass`](docs/sdks/classesmanagement/README.md#getclass) - Get a specific class
-- [`classesManagementGetClassesForSchool`](docs/sdks/classesmanagement/README.md#getclassesforschool) - Get all Classes for a School
-- [`classesManagementGetClassesForStudent`](docs/sdks/classesmanagement/README.md#getclassesforstudent) - Get Classes for a Student
-- [`classesManagementGetClassesForTeacher`](docs/sdks/classesmanagement/README.md#getclassesforteacher) - Get Classes for a Teacher
-- [`classesManagementGetClassesForTerm`](docs/sdks/classesmanagement/README.md#getclassesforterm) - Get Classes for a Term
-- [`classesManagementGetClassesForUser`](docs/sdks/classesmanagement/README.md#getclassesforuser) - Get Classes for a User
+- [`academicSessionsCreate`](docs/sdks/academicsessions/README.md#create) - Create an Academic Session
+- [`academicSessionsDelete`](docs/sdks/academicsessions/README.md#delete) - Delete an Academic Session
+- [`academicSessionsGet`](docs/sdks/academicsessions/README.md#get) - Get a specific Academic Session
+- [`academicSessionsGetAll`](docs/sdks/academicsessions/README.md#getall) - Get all Academic Sessions
+- [`academicSessionsUpdate`](docs/sdks/academicsessions/README.md#update) - Update an Academic Session
+- [`assessmentLineItemsCreate`](docs/sdks/assessmentlineitems/README.md#create) - Create an Assessment Line Item
+- [`assessmentLineItemsDelete`](docs/sdks/assessmentlineitems/README.md#delete) - Delete an Assessment Line Item
+- [`assessmentLineItemsGet`](docs/sdks/assessmentlineitems/README.md#get) - Get an Assessment Line Item
+- [`assessmentLineItemsGetAll`](docs/sdks/assessmentlineitems/README.md#getall) - Get all Assessment Line Items
+- [`assessmentLineItemsUpdate`](docs/sdks/assessmentlineitems/README.md#update) - Update an Assessment Line Item
+- [`assessmentResultsCreate`](docs/sdks/assessmentresults/README.md#create) - Create an Assessment Result
+- [`assessmentResultsDelete`](docs/sdks/assessmentresults/README.md#delete) - Delete an Assessment Result
+- [`assessmentResultsGet`](docs/sdks/assessmentresults/README.md#get) - Get an Assessment Result
+- [`assessmentResultsGetAll`](docs/sdks/assessmentresults/README.md#getall) - Get all Assessment Results
+- [`assessmentResultsUpdate`](docs/sdks/assessmentresults/README.md#update) - Update an Assessment Result
+- [`categoriesCreate`](docs/sdks/categories/README.md#create) - Create a Category
+- [`categoriesDelete`](docs/sdks/categories/README.md#delete) - Delete a Category
+- [`categoriesGet`](docs/sdks/categories/README.md#get) - Get a Category
+- [`categoriesGetAll`](docs/sdks/categories/README.md#getall) - Get all Categories
+- [`categoriesUpdate`](docs/sdks/categories/README.md#update) - Update a Category
+- [`classesAddStudent`](docs/sdks/classes/README.md#addstudent) - Add a student to a Class
+- [`classesAddTeacher`](docs/sdks/classes/README.md#addteacher) - Add a teacher to a Class
+- [`classesCreate`](docs/sdks/classes/README.md#create) - Create a new Class
+- [`classesCreateResults`](docs/sdks/classes/README.md#createresults) - Create Results for an Academic Session for a Class
+- [`classesDelete`](docs/sdks/classes/README.md#delete) - Delete a Class
+- [`classesGet`](docs/sdks/classes/README.md#get) - Get a specific class
+- [`classesGetAll`](docs/sdks/classes/README.md#getall) - Get all Classes
+- [`classesGetCategories`](docs/sdks/classes/README.md#getcategories) - Get Categories for a Class
+- [`classesGetScoreScales`](docs/sdks/classes/README.md#getscorescales) - Get Score Scales for a Class
+- [`classesGetStudentResults`](docs/sdks/classes/README.md#getstudentresults) - Get Results for a Student for a Class
+- [`classesGetStudents`](docs/sdks/classes/README.md#getstudents) - Get students for a Class
+- [`classesGetTeachers`](docs/sdks/classes/README.md#getteachers) - Get Teachers for a specific Class in a School
+- [`classesListResources`](docs/sdks/classes/README.md#listresources) - Get resources for a class
 - [`classesManagementGetLineItemsForClass`](docs/sdks/classesmanagement/README.md#getlineitemsforclass) - Get Line Items for a Class
-- [`classesManagementGetResultsForClass`](docs/sdks/classesmanagement/README.md#getresultsforclass) - Get Results for a Class
-- [`classesManagementGetResultsForLineItemForClass`](docs/sdks/classesmanagement/README.md#getresultsforlineitemforclass) - Get Results for a Line Item for a Class
-- [`classesManagementGetResultsForStudentForClass`](docs/sdks/classesmanagement/README.md#getresultsforstudentforclass) - Get Results for a Student for a Class
-- [`classesManagementGetScoreScalesForClass`](docs/sdks/classesmanagement/README.md#getscorescalesforclass) - Get Score Scales for a Class
-- [`classesManagementGetStudentsForClass`](docs/sdks/classesmanagement/README.md#getstudentsforclass) - Get students for a Class
-- [`classesManagementGetTeachersForClass`](docs/sdks/classesmanagement/README.md#getteachersforclass) - Get teachers for a Class
-- [`classesManagementPostResultsForAcademicSessionForClass`](docs/sdks/classesmanagement/README.md#postresultsforacademicsessionforclass) - Create Results for an Academic Session for a Class
-- [`classesManagementUpdateClass`](docs/sdks/classesmanagement/README.md#updateclass) - Update a Class
-- [`courseComponentResourcesManagementCreateComponentResource`](docs/sdks/coursecomponentresourcesmanagement/README.md#createcomponentresource) - Create Component Resource
-- [`courseComponentResourcesManagementDeleteComponentResource`](docs/sdks/coursecomponentresourcesmanagement/README.md#deletecomponentresource) - Delete a Component Resource
-- [`courseComponentResourcesManagementGetAllComponentResources`](docs/sdks/coursecomponentresourcesmanagement/README.md#getallcomponentresources) - Get all Component Resources
-- [`courseComponentResourcesManagementGetComponentResource`](docs/sdks/coursecomponentresourcesmanagement/README.md#getcomponentresource) - Get a specific Component Resource
-- [`courseComponentResourcesManagementPutComponentResource`](docs/sdks/coursecomponentresourcesmanagement/README.md#putcomponentresource) - Update a Component Resource
-- [`courseComponentsManagementCreateCourseComponent`](docs/sdks/coursecomponentsmanagement/README.md#createcoursecomponent) - Create Course Component
-- [`courseComponentsManagementDeleteCourseComponent`](docs/sdks/coursecomponentsmanagement/README.md#deletecoursecomponent) - Delete a Course Component
-- [`courseComponentsManagementGetAllCourseComponents`](docs/sdks/coursecomponentsmanagement/README.md#getallcoursecomponents) - Get all Course Components
-- [`courseComponentsManagementGetCourseComponent`](docs/sdks/coursecomponentsmanagement/README.md#getcoursecomponent) - Get a specific Course Component
-- [`courseComponentsManagementPutCourseComponent`](docs/sdks/coursecomponentsmanagement/README.md#putcoursecomponent) - Update a Course Component
-- [`coursesManagementCreateComponentResource`](docs/sdks/coursesmanagement/README.md#createcomponentresource) - Create Component Resource
-- [`coursesManagementCreateCourse`](docs/sdks/coursesmanagement/README.md#createcourse) - Create a Course
-- [`coursesManagementCreateCourseComponent`](docs/sdks/coursesmanagement/README.md#createcoursecomponent) - Create Course Component
-- [`coursesManagementDeleteComponentResource`](docs/sdks/coursesmanagement/README.md#deletecomponentresource) - Delete a Component Resource
-- [`coursesManagementDeleteCourse`](docs/sdks/coursesmanagement/README.md#deletecourse) - Delete a Course
-- [`coursesManagementDeleteCourseComponent`](docs/sdks/coursesmanagement/README.md#deletecoursecomponent) - Delete a Course Component
-- [`coursesManagementGetAllComponentResources`](docs/sdks/coursesmanagement/README.md#getallcomponentresources) - Get all Component Resources
-- [`coursesManagementGetAllCourseComponents`](docs/sdks/coursesmanagement/README.md#getallcoursecomponents) - Get all Course Components
-- [`coursesManagementGetAllCourses`](docs/sdks/coursesmanagement/README.md#getallcourses) - Get All Courses
-- [`coursesManagementGetClassesForCourse`](docs/sdks/coursesmanagement/README.md#getclassesforcourse) - Get Classes for a Course
-- [`coursesManagementGetComponentResource`](docs/sdks/coursesmanagement/README.md#getcomponentresource) - Get a specific Component Resource
-- [`coursesManagementGetCourse`](docs/sdks/coursesmanagement/README.md#getcourse) - Get a specific Course
-- [`coursesManagementGetCourseComponent`](docs/sdks/coursesmanagement/README.md#getcoursecomponent) - Get a specific Course Component
-- [`coursesManagementGetCoursesForSchool`](docs/sdks/coursesmanagement/README.md#getcoursesforschool) - Get all Courses for a School
-- [`coursesManagementPutComponentResource`](docs/sdks/coursesmanagement/README.md#putcomponentresource) - Update a Component Resource
-- [`coursesManagementPutCourse`](docs/sdks/coursesmanagement/README.md#putcourse) - Update a Course
-- [`coursesManagementPutCourseComponent`](docs/sdks/coursesmanagement/README.md#putcoursecomponent) - Update a Course Component
-- [`demographicsManagementDeleteDemographics`](docs/sdks/demographicsmanagement/README.md#deletedemographics) - Delete a Demographic record
-- [`demographicsManagementGetAllDemographics`](docs/sdks/demographicsmanagement/README.md#getalldemographics) - Get all Demographic records
-- [`demographicsManagementGetDemographics`](docs/sdks/demographicsmanagement/README.md#getdemographics) - Get a specific Demographic record
-- [`demographicsManagementPostDemographics`](docs/sdks/demographicsmanagement/README.md#postdemographics) - Create a new Demographic record
-- [`demographicsManagementPutDemographics`](docs/sdks/demographicsmanagement/README.md#putdemographics) - Update a Demographic record
-- [`enrollmentsManagementCreateEnrollment`](docs/sdks/enrollmentsmanagement/README.md#createenrollment) - Create a new Enrollment
-- [`enrollmentsManagementDeleteEnrollment`](docs/sdks/enrollmentsmanagement/README.md#deleteenrollment) - Delete an Enrollment
-- [`enrollmentsManagementGetAllEnrollments`](docs/sdks/enrollmentsmanagement/README.md#getallenrollments) - Get all Enrollments
-- [`enrollmentsManagementGetEnrollment`](docs/sdks/enrollmentsmanagement/README.md#getenrollment) - Get a specific Enrollment
-- [`enrollmentsManagementGetEnrollmentsForClassInSchool`](docs/sdks/enrollmentsmanagement/README.md#getenrollmentsforclassinschool) - Get Enrollments for a specific Class in a School
-- [`enrollmentsManagementGetEnrollmentsForSchool`](docs/sdks/enrollmentsmanagement/README.md#getenrollmentsforschool) - Get all Enrollments for a School
-- [`enrollmentsManagementUpdateEnrollment`](docs/sdks/enrollmentsmanagement/README.md#updateenrollment) - Update an Enrollment
-- [`gradingPeriodsManagementCreateGradingPeriod`](docs/sdks/gradingperiodsmanagement/README.md#creategradingperiod) - Create a new Grading Period
-- [`gradingPeriodsManagementCreateGradingPeriodForTerm`](docs/sdks/gradingperiodsmanagement/README.md#creategradingperiodforterm) - Create a new Grading Period for a Term
-- [`gradingPeriodsManagementDeleteGradingPeriod`](docs/sdks/gradingperiodsmanagement/README.md#deletegradingperiod) - Delete a Grading Period
-- [`gradingPeriodsManagementGetAllGradingPeriods`](docs/sdks/gradingperiodsmanagement/README.md#getallgradingperiods) - Get all Grading Periods
-- [`gradingPeriodsManagementGetGradingPeriod`](docs/sdks/gradingperiodsmanagement/README.md#getgradingperiod) - Get a specific Grading Period
-- [`gradingPeriodsManagementGetGradingPeriodsForTerm`](docs/sdks/gradingperiodsmanagement/README.md#getgradingperiodsforterm) - Get Grading Periods for a Term
-- [`gradingPeriodsManagementUpdateGradingPeriod`](docs/sdks/gradingperiodsmanagement/README.md#updategradingperiod) - Update a Grading Period
-- [`lineItemsManagementCreateLineItem`](docs/sdks/lineitemsmanagement/README.md#createlineitem) - Create a Line Item
-- [`lineItemsManagementCreateLineItemsForSchool`](docs/sdks/lineitemsmanagement/README.md#createlineitemsforschool) - Create Line Items for a School
-- [`lineItemsManagementCreateResultForLineItem`](docs/sdks/lineitemsmanagement/README.md#createresultforlineitem) - Create a Result for a Line Item
-- [`lineItemsManagementDeleteLineItem`](docs/sdks/lineitemsmanagement/README.md#deletelineitem) - Delete a Line Item
-- [`lineItemsManagementGetAllLineItems`](docs/sdks/lineitemsmanagement/README.md#getalllineitems) - Get all Line Items
-- [`lineItemsManagementGetLineItem`](docs/sdks/lineitemsmanagement/README.md#getlineitem) - Get a Line Item
-- [`lineItemsManagementGetLineItemsForSchool`](docs/sdks/lineitemsmanagement/README.md#getlineitemsforschool) - Get Line Items for a School
-- [`lineItemsManagementUpdateLineItem`](docs/sdks/lineitemsmanagement/README.md#updatelineitem) - Update a Line Item
-- [`organizationsManagementCreateOrg`](docs/sdks/organizationsmanagement/README.md#createorg) - Create an Organization
-- [`organizationsManagementDeleteOrg`](docs/sdks/organizationsmanagement/README.md#deleteorg) - Delete an Organization
-- [`organizationsManagementGetAllOrgs`](docs/sdks/organizationsmanagement/README.md#getallorgs) - Get all Organizations
-- [`organizationsManagementGetOrg`](docs/sdks/organizationsmanagement/README.md#getorg) - Get a specific Organization
-- [`organizationsManagementUpdateOrg`](docs/sdks/organizationsmanagement/README.md#updateorg) - Update an Organization
-- [`resourcesClassesManagementAssignResourceToClass`](docs/sdks/resourcesclassesmanagement/README.md#assignresourcetoclass) - Assign a resource to a class
-- [`resourcesClassesManagementGetResourcesForClass`](docs/sdks/resourcesclassesmanagement/README.md#getresourcesforclass) - Get resources for a class
-- [`resourcesClassesManagementRemoveResourceFromClass`](docs/sdks/resourcesclassesmanagement/README.md#removeresourcefromclass) - Remove a resource from a class
-- [`resourcesCoursesManagementAssignResourceToCourse`](docs/sdks/resourcescoursesmanagement/README.md#assignresourcetocourse) - Assign a resource to a course
-- [`resourcesCoursesManagementGetResourcesForCourse`](docs/sdks/resourcescoursesmanagement/README.md#getresourcesforcourse) - Get resources for a course
-- [`resourcesCoursesManagementRemoveResourceFromCourse`](docs/sdks/resourcescoursesmanagement/README.md#removeresourcefromcourse) - Remove a resource from a course
-- [`resourcesManagementCreateResource`](docs/sdks/resourcesmanagement/README.md#createresource) - Create a new Resource
-- [`resourcesManagementDeleteResource`](docs/sdks/resourcesmanagement/README.md#deleteresource) - Delete a resource
-- [`resourcesManagementGetAllResources`](docs/sdks/resourcesmanagement/README.md#getallresources) - Get all Resources
-- [`resourcesManagementGetResource`](docs/sdks/resourcesmanagement/README.md#getresource) - Get a specific Resource
-- [`resourcesManagementUpdateResource`](docs/sdks/resourcesmanagement/README.md#updateresource) - Update an existing Resource
-- [`resourcesUsersManagementAssignResourceToUser`](docs/sdks/resourcesusersmanagement/README.md#assignresourcetouser) - Assign a resource to a user
-- [`resourcesUsersManagementGetResourcesForUser`](docs/sdks/resourcesusersmanagement/README.md#getresourcesforuser) - Get resources for a user
-- [`resourcesUsersManagementRemoveResourceFromUser`](docs/sdks/resourcesusersmanagement/README.md#removeresourcefromuser) - Remove a resource from a user
-- [`resultsManagementCreateResult`](docs/sdks/resultsmanagement/README.md#createresult) - Create a Result
-- [`resultsManagementDeleteResult`](docs/sdks/resultsmanagement/README.md#deleteresult) - Delete a Result
-- [`resultsManagementGetAllResults`](docs/sdks/resultsmanagement/README.md#getallresults) - Get all Results
-- [`resultsManagementGetResult`](docs/sdks/resultsmanagement/README.md#getresult) - Get a Result
-- [`resultsManagementUpdateResult`](docs/sdks/resultsmanagement/README.md#updateresult) - Update a Result
-- [`schoolsManagementCreateLineItemsForSchool`](docs/sdks/schoolsmanagement/README.md#createlineitemsforschool) - Create Line Items for a School
-- [`schoolsManagementCreateSchool`](docs/sdks/schoolsmanagement/README.md#createschool) - Create a new School
-- [`schoolsManagementDeleteSchool`](docs/sdks/schoolsmanagement/README.md#deleteschool) - Delete a School
-- [`schoolsManagementGetAllSchools`](docs/sdks/schoolsmanagement/README.md#getallschools) - Get all Schools
-- [`schoolsManagementGetClassesForSchool`](docs/sdks/schoolsmanagement/README.md#getclassesforschool) - Get all Classes for a School
-- [`schoolsManagementGetCoursesForSchool`](docs/sdks/schoolsmanagement/README.md#getcoursesforschool) - Get all Courses for a School
-- [`schoolsManagementGetEnrollmentsForClassInSchool`](docs/sdks/schoolsmanagement/README.md#getenrollmentsforclassinschool) - Get Enrollments for a specific Class in a School
-- [`schoolsManagementGetEnrollmentsForSchool`](docs/sdks/schoolsmanagement/README.md#getenrollmentsforschool) - Get all Enrollments for a School
-- [`schoolsManagementGetLineItemsForSchool`](docs/sdks/schoolsmanagement/README.md#getlineitemsforschool) - Get Line Items for a School
-- [`schoolsManagementGetSchool`](docs/sdks/schoolsmanagement/README.md#getschool) - Get a specific School
-- [`schoolsManagementGetScoreScalesForSchool`](docs/sdks/schoolsmanagement/README.md#getscorescalesforschool) - Get Score Scales for a School
-- [`schoolsManagementGetStudentsForClassInSchool`](docs/sdks/schoolsmanagement/README.md#getstudentsforclassinschool) - Get Students for a specific Class in a School
-- [`schoolsManagementGetStudentsForSchool`](docs/sdks/schoolsmanagement/README.md#getstudentsforschool) - Get all Students for a School
-- [`schoolsManagementGetTeachersForClassInSchool`](docs/sdks/schoolsmanagement/README.md#getteachersforclassinschool) - Get Teachers for a specific Class in a School
-- [`schoolsManagementGetTeachersForSchool`](docs/sdks/schoolsmanagement/README.md#getteachersforschool) - Get all teachers for a school
-- [`schoolsManagementGetTermsForSchool`](docs/sdks/schoolsmanagement/README.md#gettermsforschool) - Get all Terms for a School
-- [`schoolsManagementUpdateSchool`](docs/sdks/schoolsmanagement/README.md#updateschool) - Update a School
-- [`scoreScalesManagementCreateScoreScale`](docs/sdks/scorescalesmanagement/README.md#createscorescale) - Create a Score Scale
-- [`scoreScalesManagementDeleteScoreScale`](docs/sdks/scorescalesmanagement/README.md#deletescorescale) - Delete a Score Scale
-- [`scoreScalesManagementGetAllScoreScales`](docs/sdks/scorescalesmanagement/README.md#getallscorescales) - Get all Score Scales
-- [`scoreScalesManagementGetScoreScale`](docs/sdks/scorescalesmanagement/README.md#getscorescale) - Get a Score Scale
-- [`scoreScalesManagementGetScoreScalesForSchool`](docs/sdks/scorescalesmanagement/README.md#getscorescalesforschool) - Get Score Scales for a School
-- [`scoreScalesManagementUpdateScoreScale`](docs/sdks/scorescalesmanagement/README.md#updatescorescale) - Update a Score Scale
-- [`studentsManagementAddStudentToClass`](docs/sdks/studentsmanagement/README.md#addstudenttoclass) - Add a student to a Class
-- [`studentsManagementGetAllStudents`](docs/sdks/studentsmanagement/README.md#getallstudents) - Get all Students
-- [`studentsManagementGetClassesForStudent`](docs/sdks/studentsmanagement/README.md#getclassesforstudent) - Get Classes for a Student
-- [`studentsManagementGetStudent`](docs/sdks/studentsmanagement/README.md#getstudent) - Get a specific Student
-- [`studentsManagementGetStudentsForClass`](docs/sdks/studentsmanagement/README.md#getstudentsforclass) - Get students for a Class
-- [`studentsManagementGetStudentsForClassInSchool`](docs/sdks/studentsmanagement/README.md#getstudentsforclassinschool) - Get Students for a specific Class in a School
-- [`studentsManagementGetStudentsForSchool`](docs/sdks/studentsmanagement/README.md#getstudentsforschool) - Get all Students for a School
-- [`teachersManagementAddTeacherToClass`](docs/sdks/teachersmanagement/README.md#addteachertoclass) - Add a teacher to a Class
-- [`teachersManagementGetAllTeachers`](docs/sdks/teachersmanagement/README.md#getallteachers) - Get all Teachers
-- [`teachersManagementGetClassesForTeacher`](docs/sdks/teachersmanagement/README.md#getclassesforteacher) - Get Classes for a Teacher
-- [`teachersManagementGetTeacher`](docs/sdks/teachersmanagement/README.md#getteacher) - Get a specific Teacher
-- [`teachersManagementGetTeachersForClass`](docs/sdks/teachersmanagement/README.md#getteachersforclass) - Get teachers for a Class
-- [`teachersManagementGetTeachersForClassInSchool`](docs/sdks/teachersmanagement/README.md#getteachersforclassinschool) - Get Teachers for a specific Class in a School
-- [`teachersManagementGetTeachersForSchool`](docs/sdks/teachersmanagement/README.md#getteachersforschool) - Get all teachers for a school
-- [`termsManagementCreateGradingPeriodForTerm`](docs/sdks/termsmanagement/README.md#creategradingperiodforterm) - Create a new Grading Period for a Term
-- [`termsManagementGetAllTerms`](docs/sdks/termsmanagement/README.md#getallterms) - Get all Terms
-- [`termsManagementGetClassesForTerm`](docs/sdks/termsmanagement/README.md#getclassesforterm) - Get Classes for a Term
-- [`termsManagementGetGradingPeriodsForTerm`](docs/sdks/termsmanagement/README.md#getgradingperiodsforterm) - Get Grading Periods for a Term
-- [`termsManagementGetTerm`](docs/sdks/termsmanagement/README.md#getterm) - Get a specific Term
-- [`termsManagementGetTermsForSchool`](docs/sdks/termsmanagement/README.md#gettermsforschool) - Get all Terms for a School
-- [`usersManagementCreateUser`](docs/sdks/usersmanagement/README.md#createuser) - Create a new User
-- [`usersManagementDeleteUser`](docs/sdks/usersmanagement/README.md#deleteuser) - Delete a User
-- [`usersManagementGetAllUsers`](docs/sdks/usersmanagement/README.md#getallusers) - Get all Users
-- [`usersManagementGetClassesForUser`](docs/sdks/usersmanagement/README.md#getclassesforuser) - Get Classes for a User
-- [`usersManagementGetUser`](docs/sdks/usersmanagement/README.md#getuser) - Get a specific User
-- [`usersManagementUpdateUser`](docs/sdks/usersmanagement/README.md#updateuser) - Update an existing User
+- [`classesResultsGet`](docs/sdks/classesresults/README.md#get) - Get Results for a Class
+- [`classesResultsGetForLineItem`](docs/sdks/classesresults/README.md#getforlineitem) - Get Results for a Line Item for a Class
+- [`classesUpdate`](docs/sdks/classes/README.md#update) - Update a Class
+- [`classResourcesDelete`](docs/sdks/classresources/README.md#delete) - Remove a resource from a class
+- [`classTeachersGetAll`](docs/sdks/classteachers/README.md#getall) - Get teachers for a Class
+- [`componentResourcesGetAll`](docs/sdks/componentresources/README.md#getall) - Get all Component Resources
+- [`courseClassesGetAll`](docs/sdks/courseclasses/README.md#getall) - Get Classes for a Course
+- [`courseComponentsDelete`](docs/sdks/coursecomponents/README.md#delete) - Delete a Course Component
+- [`courseComponentsGetAll`](docs/sdks/coursecomponents/README.md#getall) - Get all Course Components
+- [`courseResourcesDelete`](docs/sdks/courseresources/README.md#delete) - Remove a resource from a course
+- [`coursesAssignResource`](docs/sdks/courses/README.md#assignresource) - Assign a resource to a course
+- [`coursesCreate`](docs/sdks/courses/README.md#create) - Create a Course
+- [`coursesCreateComponent`](docs/sdks/courses/README.md#createcomponent) - Create Course Component
+- [`coursesCreateComponentResource`](docs/sdks/courses/README.md#createcomponentresource) - Create Component Resource
+- [`coursesDelete`](docs/sdks/courses/README.md#delete) - Delete a Course
+- [`coursesDeleteComponentResource`](docs/sdks/courses/README.md#deletecomponentresource) - Delete a Component Resource
+- [`coursesGet`](docs/sdks/courses/README.md#get) - Get a specific Course
+- [`coursesGetAll`](docs/sdks/courses/README.md#getall) - Get All Courses
+- [`coursesGetComponent`](docs/sdks/courses/README.md#getcomponent) - Get a specific Course Component
+- [`coursesGetComponentResource`](docs/sdks/courses/README.md#getcomponentresource) - Get a specific Component Resource
+- [`coursesGetResources`](docs/sdks/courses/README.md#getresources) - Get resources for a course
+- [`coursesUpdate`](docs/sdks/courses/README.md#update) - Update a Course
+- [`coursesUpdateComponent`](docs/sdks/courses/README.md#updatecomponent) - Update a Course Component
+- [`coursesUpdateComponentResource`](docs/sdks/courses/README.md#updatecomponentresource) - Update a Component Resource
+- [`demographicsCreate`](docs/sdks/demographics/README.md#create) - Create a new Demographic record
+- [`demographicsDelete`](docs/sdks/demographics/README.md#delete) - Delete a Demographic record
+- [`demographicsGet`](docs/sdks/demographics/README.md#get) - Get a specific Demographic record
+- [`demographicsGetAll`](docs/sdks/demographics/README.md#getall) - Get all Demographic records
+- [`demographicsUpdate`](docs/sdks/demographics/README.md#update) - Update a Demographic record
+- [`enrollmentsCreate`](docs/sdks/enrollments/README.md#create) - Create a new Enrollment
+- [`enrollmentsDelete`](docs/sdks/enrollments/README.md#delete) - Delete an Enrollment
+- [`enrollmentsGet`](docs/sdks/enrollments/README.md#get) - Get a specific Enrollment
+- [`enrollmentsGetAll`](docs/sdks/enrollments/README.md#getall) - Get all Enrollments
+- [`enrollmentsGetForClass`](docs/sdks/enrollments/README.md#getforclass) - Get Enrollments for a specific Class in a School
+- [`enrollmentsUpdate`](docs/sdks/enrollments/README.md#update) - Update an Enrollment
+- [`gradingPeriodsCreate`](docs/sdks/gradingperiods/README.md#create) - Create a new Grading Period
+- [`gradingPeriodsCreateForTerm`](docs/sdks/gradingperiods/README.md#createforterm) - Create a new Grading Period for a Term
+- [`gradingPeriodsDelete`](docs/sdks/gradingperiods/README.md#delete) - Delete a Grading Period
+- [`gradingPeriodsGet`](docs/sdks/gradingperiods/README.md#get) - Get a specific Grading Period
+- [`gradingPeriodsGetAll`](docs/sdks/gradingperiods/README.md#getall) - Get all Grading Periods
+- [`gradingPeriodsUpdate`](docs/sdks/gradingperiods/README.md#update) - Update a Grading Period
+- [`lineItemsCreate`](docs/sdks/lineitems/README.md#create) - Create a Line Item
+- [`lineItemsDelete`](docs/sdks/lineitems/README.md#delete) - Delete a Line Item
+- [`lineItemsGet`](docs/sdks/lineitems/README.md#get) - Get a Line Item
+- [`lineItemsList`](docs/sdks/lineitems/README.md#list) - Get all Line Items
+- [`lineItemsUpdate`](docs/sdks/lineitems/README.md#update) - Update a Line Item
+- [`organizationsCreate`](docs/sdks/organizations/README.md#create) - Create an Organization
+- [`organizationsDelete`](docs/sdks/organizations/README.md#delete) - Delete an Organization
+- [`organizationsGet`](docs/sdks/organizations/README.md#get) - Get a specific Organization
+- [`organizationsGetAll`](docs/sdks/organizations/README.md#getall) - Get all Organizations
+- [`organizationsUpdate`](docs/sdks/organizations/README.md#update) - Update an Organization
+- [`resourcesClassesAssign`](docs/sdks/resourcesclasses/README.md#assign) - Assign a resource to a class
+- [`resourcesCreate`](docs/sdks/resources/README.md#create) - Create a new Resource
+- [`resourcesDelete`](docs/sdks/resources/README.md#delete) - Delete a resource
+- [`resourcesGet`](docs/sdks/resources/README.md#get) - Get a specific Resource
+- [`resourcesGetAll`](docs/sdks/resources/README.md#getall) - Get all Resources
+- [`resourcesUpdate`](docs/sdks/resources/README.md#update) - Update an existing Resource
+- [`resultsCreate`](docs/sdks/results/README.md#create) - Create a Result
+- [`resultsCreateForLineItem`](docs/sdks/results/README.md#createforlineitem) - Create a Result for a Line Item
+- [`resultsDelete`](docs/sdks/results/README.md#delete) - Delete a Result
+- [`resultsGet`](docs/sdks/results/README.md#get) - Get a Result
+- [`resultsGetAll`](docs/sdks/results/README.md#getall) - Get all Results
+- [`resultsUpdate`](docs/sdks/results/README.md#update) - Update a Result
+- [`schoolLineItemsGet`](docs/sdks/schoollineitems/README.md#get) - Get Line Items for a School
+- [`schoolsCoursesGetAll`](docs/sdks/schoolscourses/README.md#getall) - Get all Courses for a School
+- [`schoolsCreate`](docs/sdks/schools/README.md#create) - Create a new School
+- [`schoolsDelete`](docs/sdks/schools/README.md#delete) - Delete a School
+- [`schoolsGet`](docs/sdks/schools/README.md#get) - Get a specific School
+- [`schoolsGetAll`](docs/sdks/schools/README.md#getall) - Get all Schools
+- [`schoolsGetClasses`](docs/sdks/schools/README.md#getclasses) - Get all Classes for a School
+- [`schoolsGetEnrollments`](docs/sdks/schools/README.md#getenrollments) - Get all Enrollments for a School
+- [`schoolsGetStudents`](docs/sdks/schools/README.md#getstudents) - Get all Students for a School
+- [`schoolsGetTeachers`](docs/sdks/schools/README.md#getteachers) - Get all teachers for a school
+- [`schoolsGetTerms`](docs/sdks/schools/README.md#getterms) - Get all Terms for a School
+- [`schoolsLineItemsCreate`](docs/sdks/schoolslineitems/README.md#create) - Create Line Items for a School
+- [`schoolsScoreScalesGet`](docs/sdks/schoolsscorescales/README.md#get) - Get Score Scales for a School
+- [`schoolsUpdate`](docs/sdks/schools/README.md#update) - Update a School
+- [`scoreScalesCreate`](docs/sdks/scorescales/README.md#create) - Create a Score Scale
+- [`scoreScalesDelete`](docs/sdks/scorescales/README.md#delete) - Delete a Score Scale
+- [`scoreScalesGet`](docs/sdks/scorescales/README.md#get) - Get a Score Scale
+- [`scoreScalesList`](docs/sdks/scorescales/README.md#list) - Get all Score Scales
+- [`scoreScalesUpdate`](docs/sdks/scorescales/README.md#update) - Update a Score Scale
+- [`studentsClassesGet`](docs/sdks/studentsclasses/README.md#get) - Get Classes for a Student
+- [`studentsGet`](docs/sdks/students/README.md#get) - Get a specific Student
+- [`studentsGetAll`](docs/sdks/students/README.md#getall) - Get all Students
+- [`studentsGetForClass`](docs/sdks/students/README.md#getforclass) - Get Students for a specific Class in a School
+- [`teachersGet`](docs/sdks/teachers/README.md#get) - Get a specific Teacher
+- [`teachersGetAll`](docs/sdks/teachers/README.md#getall) - Get all Teachers
+- [`teachersGetClasses`](docs/sdks/teachers/README.md#getclasses) - Get Classes for a Teacher
+- [`termsGet`](docs/sdks/terms/README.md#get) - Get a specific Term
+- [`termsGetClasses`](docs/sdks/terms/README.md#getclasses) - Get Classes for a Term
+- [`termsGetGradingPeriods`](docs/sdks/terms/README.md#getgradingperiods) - Get Grading Periods for a Term
+- [`termsList`](docs/sdks/terms/README.md#list) - Get all Terms
+- [`userResourcesRemove`](docs/sdks/userresources/README.md#remove) - Remove a resource from a user
+- [`usersAssignResource`](docs/sdks/users/README.md#assignresource) - Assign a resource to a user
+- [`usersCreate`](docs/sdks/users/README.md#create) - Create a new User
+- [`usersDelete`](docs/sdks/users/README.md#delete) - Delete a User
+- [`usersGet`](docs/sdks/users/README.md#get) - Get a specific User
+- [`usersGetAll`](docs/sdks/users/README.md#getall) - Get all Users
+- [`usersGetClasses`](docs/sdks/users/README.md#getclasses) - Get Classes for a User
+- [`usersGetResources`](docs/sdks/users/README.md#getresources) - Get resources for a user
+- [`usersUpdate`](docs/sdks/users/README.md#update) - Update an existing User
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
@@ -776,7 +744,7 @@ const oneRoster = new OneRoster({
 });
 
 async function run() {
-  const result = await oneRoster.scoreScalesManagement.getAllScoreScales({
+  const result = await oneRoster.scoreScales.list({
     fields: "sourcedId,name",
     filter: "status='active'",
   });
@@ -809,7 +777,7 @@ const oneRoster = new OneRoster({
 });
 
 async function run() {
-  const result = await oneRoster.scoreScalesManagement.getAllScoreScales({
+  const result = await oneRoster.scoreScales.list({
     fields: "sourcedId,name",
     filter: "status='active'",
   }, {
@@ -857,7 +825,7 @@ const oneRoster = new OneRoster({
 });
 
 async function run() {
-  const result = await oneRoster.scoreScalesManagement.getAllScoreScales({
+  const result = await oneRoster.scoreScales.list({
     fields: "sourcedId,name",
     filter: "status='active'",
   });
@@ -876,7 +844,7 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `getAllScoreScales` method may throw the following errors:
+Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `list` method may throw the following errors:
 
 | Error Type                               | Status Code | Content Type     |
 | ---------------------------------------- | ----------- | ---------------- |
@@ -914,7 +882,7 @@ const oneRoster = new OneRoster({
 async function run() {
   let result;
   try {
-    result = await oneRoster.scoreScalesManagement.getAllScoreScales({
+    result = await oneRoster.scoreScales.list({
       fields: "sourcedId,name",
       filter: "status='active'",
     });
@@ -1011,7 +979,7 @@ const oneRoster = new OneRoster({
 });
 
 async function run() {
-  const result = await oneRoster.scoreScalesManagement.getAllScoreScales({
+  const result = await oneRoster.scoreScales.list({
     fields: "sourcedId,name",
     filter: "status='active'",
   });

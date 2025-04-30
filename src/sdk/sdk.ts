@@ -3,54 +3,70 @@
  */
 
 import { ClientSDK } from "../lib/sdks.js";
-import { AcademicSessionsManagement } from "./academicsessionsmanagement.js";
-import { AssessmentLineItemsManagement } from "./assessmentlineitemsmanagement.js";
-import { AssessmentResultsManagement } from "./assessmentresultsmanagement.js";
-import { CategoriesManagement } from "./categoriesmanagement.js";
+import { AcademicSessions } from "./academicsessions.js";
+import { AssessmentLineItems } from "./assessmentlineitems.js";
+import { AssessmentResults } from "./assessmentresults.js";
+import { Categories } from "./categories.js";
+import { Classes } from "./classes.js";
 import { ClassesManagement } from "./classesmanagement.js";
-import { CourseComponentResourcesManagement } from "./coursecomponentresourcesmanagement.js";
-import { CourseComponentsManagement } from "./coursecomponentsmanagement.js";
-import { CoursesManagement } from "./coursesmanagement.js";
-import { DemographicsManagement } from "./demographicsmanagement.js";
-import { EnrollmentsManagement } from "./enrollmentsmanagement.js";
-import { GradingPeriodsManagement } from "./gradingperiodsmanagement.js";
-import { LineItemsManagement } from "./lineitemsmanagement.js";
-import { OrganizationsManagement } from "./organizationsmanagement.js";
-import { ResourcesClassesManagement } from "./resourcesclassesmanagement.js";
-import { ResourcesCoursesManagement } from "./resourcescoursesmanagement.js";
-import { ResourcesManagement } from "./resourcesmanagement.js";
-import { ResourcesUsersManagement } from "./resourcesusersmanagement.js";
-import { ResultsManagement } from "./resultsmanagement.js";
-import { SchoolsManagement } from "./schoolsmanagement.js";
-import { ScoreScalesManagement } from "./scorescalesmanagement.js";
-import { StudentsManagement } from "./studentsmanagement.js";
-import { TeachersManagement } from "./teachersmanagement.js";
-import { TermsManagement } from "./termsmanagement.js";
-import { UsersManagement } from "./usersmanagement.js";
+import { ClassResources } from "./classresources.js";
+import { ClassTeachers } from "./classteachers.js";
+import { ComponentResources } from "./componentresources.js";
+import { CourseClasses } from "./courseclasses.js";
+import { CourseComponents } from "./coursecomponents.js";
+import { CourseResources } from "./courseresources.js";
+import { Courses } from "./courses.js";
+import { Demographics } from "./demographics.js";
+import { Enrollments } from "./enrollments.js";
+import { GradingPeriods } from "./gradingperiods.js";
+import { LineItems } from "./lineitems.js";
+import { Organizations } from "./organizations.js";
+import { Resources } from "./resources.js";
+import { Results } from "./results.js";
+import { SchoolLineItems } from "./schoollineitems.js";
+import { Schools } from "./schools.js";
+import { SchoolsScoreScales } from "./schoolsscorescales.js";
+import { ScoreScales } from "./scorescales.js";
+import { Students } from "./students.js";
+import { Teachers } from "./teachers.js";
+import { Terms } from "./terms.js";
+import { UserResources } from "./userresources.js";
+import { Users } from "./users.js";
 
 export class OneRoster extends ClientSDK {
-  private _scoreScalesManagement?: ScoreScalesManagement;
-  get scoreScalesManagement(): ScoreScalesManagement {
-    return (this._scoreScalesManagement ??= new ScoreScalesManagement(
-      this._options,
-    ));
+  private _scoreScales?: ScoreScales;
+  get scoreScales(): ScoreScales {
+    return (this._scoreScales ??= new ScoreScales(this._options));
   }
 
-  private _schoolsManagement?: SchoolsManagement;
-  get schoolsManagement(): SchoolsManagement {
-    return (this._schoolsManagement ??= new SchoolsManagement(this._options));
+  private _schoolsScoreScales?: SchoolsScoreScales;
+  get schoolsScoreScales(): SchoolsScoreScales {
+    return (this._schoolsScoreScales ??= new SchoolsScoreScales(this._options));
   }
 
-  private _resultsManagement?: ResultsManagement;
-  get resultsManagement(): ResultsManagement {
-    return (this._resultsManagement ??= new ResultsManagement(this._options));
+  private _schools?: Schools;
+  get schools(): Schools {
+    return (this._schools ??= new Schools(this._options));
   }
 
-  private _lineItemsManagement?: LineItemsManagement;
-  get lineItemsManagement(): LineItemsManagement {
-    return (this._lineItemsManagement ??= new LineItemsManagement(
-      this._options,
-    ));
+  private _results?: Results;
+  get results(): Results {
+    return (this._results ??= new Results(this._options));
+  }
+
+  private _lineItems?: LineItems;
+  get lineItems(): LineItems {
+    return (this._lineItems ??= new LineItems(this._options));
+  }
+
+  private _schoolLineItems?: SchoolLineItems;
+  get schoolLineItems(): SchoolLineItems {
+    return (this._schoolLineItems ??= new SchoolLineItems(this._options));
+  }
+
+  private _classes?: Classes;
+  get classes(): Classes {
+    return (this._classes ??= new Classes(this._options));
   }
 
   private _classesManagement?: ClassesManagement;
@@ -58,124 +74,110 @@ export class OneRoster extends ClientSDK {
     return (this._classesManagement ??= new ClassesManagement(this._options));
   }
 
-  private _categoriesManagement?: CategoriesManagement;
-  get categoriesManagement(): CategoriesManagement {
-    return (this._categoriesManagement ??= new CategoriesManagement(
+  private _categories?: Categories;
+  get categories(): Categories {
+    return (this._categories ??= new Categories(this._options));
+  }
+
+  private _assessmentResults?: AssessmentResults;
+  get assessmentResults(): AssessmentResults {
+    return (this._assessmentResults ??= new AssessmentResults(this._options));
+  }
+
+  private _assessmentLineItems?: AssessmentLineItems;
+  get assessmentLineItems(): AssessmentLineItems {
+    return (this._assessmentLineItems ??= new AssessmentLineItems(
       this._options,
     ));
   }
 
-  private _assessmentResultsManagement?: AssessmentResultsManagement;
-  get assessmentResultsManagement(): AssessmentResultsManagement {
-    return (this._assessmentResultsManagement ??=
-      new AssessmentResultsManagement(this._options));
+  private _courses?: Courses;
+  get courses(): Courses {
+    return (this._courses ??= new Courses(this._options));
   }
 
-  private _assessmentLineItemsManagement?: AssessmentLineItemsManagement;
-  get assessmentLineItemsManagement(): AssessmentLineItemsManagement {
-    return (this._assessmentLineItemsManagement ??=
-      new AssessmentLineItemsManagement(this._options));
+  private _courseResources?: CourseResources;
+  get courseResources(): CourseResources {
+    return (this._courseResources ??= new CourseResources(this._options));
   }
 
-  private _resourcesCoursesManagement?: ResourcesCoursesManagement;
-  get resourcesCoursesManagement(): ResourcesCoursesManagement {
-    return (this._resourcesCoursesManagement ??= new ResourcesCoursesManagement(
-      this._options,
-    ));
+  private _resources?: Resources;
+  get resources(): Resources {
+    return (this._resources ??= new Resources(this._options));
   }
 
-  private _resourcesClassesManagement?: ResourcesClassesManagement;
-  get resourcesClassesManagement(): ResourcesClassesManagement {
-    return (this._resourcesClassesManagement ??= new ResourcesClassesManagement(
-      this._options,
-    ));
+  private _classResources?: ClassResources;
+  get classResources(): ClassResources {
+    return (this._classResources ??= new ClassResources(this._options));
   }
 
-  private _resourcesUsersManagement?: ResourcesUsersManagement;
-  get resourcesUsersManagement(): ResourcesUsersManagement {
-    return (this._resourcesUsersManagement ??= new ResourcesUsersManagement(
-      this._options,
-    ));
+  private _users?: Users;
+  get users(): Users {
+    return (this._users ??= new Users(this._options));
   }
 
-  private _resourcesManagement?: ResourcesManagement;
-  get resourcesManagement(): ResourcesManagement {
-    return (this._resourcesManagement ??= new ResourcesManagement(
-      this._options,
-    ));
+  private _userResources?: UserResources;
+  get userResources(): UserResources {
+    return (this._userResources ??= new UserResources(this._options));
   }
 
-  private _usersManagement?: UsersManagement;
-  get usersManagement(): UsersManagement {
-    return (this._usersManagement ??= new UsersManagement(this._options));
+  private _terms?: Terms;
+  get terms(): Terms {
+    return (this._terms ??= new Terms(this._options));
   }
 
-  private _termsManagement?: TermsManagement;
-  get termsManagement(): TermsManagement {
-    return (this._termsManagement ??= new TermsManagement(this._options));
+  private _classTeachers?: ClassTeachers;
+  get classTeachers(): ClassTeachers {
+    return (this._classTeachers ??= new ClassTeachers(this._options));
   }
 
-  private _teachersManagement?: TeachersManagement;
-  get teachersManagement(): TeachersManagement {
-    return (this._teachersManagement ??= new TeachersManagement(this._options));
+  private _teachers?: Teachers;
+  get teachers(): Teachers {
+    return (this._teachers ??= new Teachers(this._options));
   }
 
-  private _studentsManagement?: StudentsManagement;
-  get studentsManagement(): StudentsManagement {
-    return (this._studentsManagement ??= new StudentsManagement(this._options));
+  private _students?: Students;
+  get students(): Students {
+    return (this._students ??= new Students(this._options));
   }
 
-  private _organizationsManagement?: OrganizationsManagement;
-  get organizationsManagement(): OrganizationsManagement {
-    return (this._organizationsManagement ??= new OrganizationsManagement(
-      this._options,
-    ));
+  private _organizations?: Organizations;
+  get organizations(): Organizations {
+    return (this._organizations ??= new Organizations(this._options));
   }
 
-  private _gradingPeriodsManagement?: GradingPeriodsManagement;
-  get gradingPeriodsManagement(): GradingPeriodsManagement {
-    return (this._gradingPeriodsManagement ??= new GradingPeriodsManagement(
-      this._options,
-    ));
+  private _gradingPeriods?: GradingPeriods;
+  get gradingPeriods(): GradingPeriods {
+    return (this._gradingPeriods ??= new GradingPeriods(this._options));
   }
 
-  private _enrollmentsManagement?: EnrollmentsManagement;
-  get enrollmentsManagement(): EnrollmentsManagement {
-    return (this._enrollmentsManagement ??= new EnrollmentsManagement(
-      this._options,
-    ));
+  private _enrollments?: Enrollments;
+  get enrollments(): Enrollments {
+    return (this._enrollments ??= new Enrollments(this._options));
   }
 
-  private _demographicsManagement?: DemographicsManagement;
-  get demographicsManagement(): DemographicsManagement {
-    return (this._demographicsManagement ??= new DemographicsManagement(
-      this._options,
-    ));
+  private _demographics?: Demographics;
+  get demographics(): Demographics {
+    return (this._demographics ??= new Demographics(this._options));
   }
 
-  private _coursesManagement?: CoursesManagement;
-  get coursesManagement(): CoursesManagement {
-    return (this._coursesManagement ??= new CoursesManagement(this._options));
+  private _courseClasses?: CourseClasses;
+  get courseClasses(): CourseClasses {
+    return (this._courseClasses ??= new CourseClasses(this._options));
   }
 
-  private _courseComponentResourcesManagement?:
-    CourseComponentResourcesManagement;
-  get courseComponentResourcesManagement(): CourseComponentResourcesManagement {
-    return (this._courseComponentResourcesManagement ??=
-      new CourseComponentResourcesManagement(this._options));
+  private _componentResources?: ComponentResources;
+  get componentResources(): ComponentResources {
+    return (this._componentResources ??= new ComponentResources(this._options));
   }
 
-  private _courseComponentsManagement?: CourseComponentsManagement;
-  get courseComponentsManagement(): CourseComponentsManagement {
-    return (this._courseComponentsManagement ??= new CourseComponentsManagement(
-      this._options,
-    ));
+  private _courseComponents?: CourseComponents;
+  get courseComponents(): CourseComponents {
+    return (this._courseComponents ??= new CourseComponents(this._options));
   }
 
-  private _academicSessionsManagement?: AcademicSessionsManagement;
-  get academicSessionsManagement(): AcademicSessionsManagement {
-    return (this._academicSessionsManagement ??= new AcademicSessionsManagement(
-      this._options,
-    ));
+  private _academicSessions?: AcademicSessions;
+  get academicSessions(): AcademicSessions {
+    return (this._academicSessions ??= new AcademicSessions(this._options));
   }
 }

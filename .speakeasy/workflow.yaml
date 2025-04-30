@@ -5,6 +5,7 @@ sources:
         inputs:
             - location: .speakeasy/openapi.yaml
         overlays:
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
             - location: .speakeasy/openapi-fixes-overlay.yaml
         registry:
             location: registry.speakeasyapi.dev/emu-farm/timeback/one-roster-api
