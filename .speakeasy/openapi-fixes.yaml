@@ -14360,10 +14360,10 @@ paths:
         type: offsetLimit
         inputs:
           - name: offset
-            in: classes
+            in: parameters
             type: offset
           - name: limit
-            in: classes
+            in: parameters
             type: limit
         outputs:
           results: $.enrollments

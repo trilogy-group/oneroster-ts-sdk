@@ -1,7 +1,7 @@
 overlay: 1.0.0
 x-speakeasy-jsonpath: rfc9535
 info:
-  title: Overlay .speakeasy/openapi.yaml => .speakeasy/openapi-fixed.yaml
+  title: Overlay .speakeasy/openapi.yaml => .speakeasy/openapi-fixes.yaml
   version: 0.0.0
 actions:
   - target: $["tags"][*]
@@ -600,10 +600,10 @@ actions:
         type: offsetLimit
         inputs:
           - name: offset
-            in: classes
+            in: parameters
             type: offset
           - name: limit
-            in: classes
+            in: parameters
             type: limit
         outputs:
           results: $.enrollments
