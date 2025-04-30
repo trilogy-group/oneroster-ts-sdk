@@ -3,7 +3,9 @@ speakeasyVersion: latest
 sources:
     OneRoster API:
         inputs:
-            - location: .speakeasy/openapi-fixes.yaml
+            - location: .speakeasy/openapi.yaml
+        overlays:
+            - location: .speakeasy/openapi-fixes-overlay.yaml
         registry:
             location: registry.speakeasyapi.dev/emu-farm/timeback/one-roster-api
 targets:
