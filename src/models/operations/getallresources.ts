@@ -3,17 +3,235 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
+ * The order to sort the response by
+ */
+export const GetAllResourcesOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetAllResourcesOrderBy = ClosedEnum<typeof GetAllResourcesOrderBy>;
+
+export type GetAllResourcesRequest = {
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetAllResourcesOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
+};
+
+/**
  * Successful response containing a collection of resources
  */
-export type GetAllResourcesResponse = {
+export type GetAllResourcesResponseBody = {
   resources: Array<components.Resource>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetAllResourcesResponse = {
+  result: GetAllResourcesResponseBody;
+};
+
+/** @internal */
+export const GetAllResourcesOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetAllResourcesOrderBy
+> = z.nativeEnum(GetAllResourcesOrderBy);
+
+/** @internal */
+export const GetAllResourcesOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetAllResourcesOrderBy
+> = GetAllResourcesOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllResourcesOrderBy$ {
+  /** @deprecated use `GetAllResourcesOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetAllResourcesOrderBy$inboundSchema;
+  /** @deprecated use `GetAllResourcesOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetAllResourcesOrderBy$outboundSchema;
+}
+
+/** @internal */
+export const GetAllResourcesRequest$inboundSchema: z.ZodType<
+  GetAllResourcesRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllResourcesOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/** @internal */
+export type GetAllResourcesRequest$Outbound = {
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
+};
+
+/** @internal */
+export const GetAllResourcesRequest$outboundSchema: z.ZodType<
+  GetAllResourcesRequest$Outbound,
+  z.ZodTypeDef,
+  GetAllResourcesRequest
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllResourcesOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllResourcesRequest$ {
+  /** @deprecated use `GetAllResourcesRequest$inboundSchema` instead. */
+  export const inboundSchema = GetAllResourcesRequest$inboundSchema;
+  /** @deprecated use `GetAllResourcesRequest$outboundSchema` instead. */
+  export const outboundSchema = GetAllResourcesRequest$outboundSchema;
+  /** @deprecated use `GetAllResourcesRequest$Outbound` instead. */
+  export type Outbound = GetAllResourcesRequest$Outbound;
+}
+
+export function getAllResourcesRequestToJSON(
+  getAllResourcesRequest: GetAllResourcesRequest,
+): string {
+  return JSON.stringify(
+    GetAllResourcesRequest$outboundSchema.parse(getAllResourcesRequest),
+  );
+}
+
+export function getAllResourcesRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllResourcesRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllResourcesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllResourcesRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetAllResourcesResponseBody$inboundSchema: z.ZodType<
+  GetAllResourcesResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  resources: z.array(components.Resource$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetAllResourcesResponseBody$Outbound = {
+  resources: Array<components.Resource$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetAllResourcesResponseBody$outboundSchema: z.ZodType<
+  GetAllResourcesResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetAllResourcesResponseBody
+> = z.object({
+  resources: z.array(components.Resource$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllResourcesResponseBody$ {
+  /** @deprecated use `GetAllResourcesResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetAllResourcesResponseBody$inboundSchema;
+  /** @deprecated use `GetAllResourcesResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetAllResourcesResponseBody$outboundSchema;
+  /** @deprecated use `GetAllResourcesResponseBody$Outbound` instead. */
+  export type Outbound = GetAllResourcesResponseBody$Outbound;
+}
+
+export function getAllResourcesResponseBodyToJSON(
+  getAllResourcesResponseBody: GetAllResourcesResponseBody,
+): string {
+  return JSON.stringify(
+    GetAllResourcesResponseBody$outboundSchema.parse(
+      getAllResourcesResponseBody,
+    ),
+  );
+}
+
+export function getAllResourcesResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllResourcesResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllResourcesResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllResourcesResponseBody' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetAllResourcesResponse$inboundSchema: z.ZodType<
@@ -21,12 +239,16 @@ export const GetAllResourcesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  resources: z.array(components.Resource$inboundSchema),
+  Result: z.lazy(() => GetAllResourcesResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetAllResourcesResponse$Outbound = {
-  resources: Array<components.Resource$Outbound>;
+  Result: GetAllResourcesResponseBody$Outbound;
 };
 
 /** @internal */
@@ -35,7 +257,11 @@ export const GetAllResourcesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAllResourcesResponse
 > = z.object({
-  resources: z.array(components.Resource$outboundSchema),
+  result: z.lazy(() => GetAllResourcesResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

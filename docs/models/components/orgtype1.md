@@ -5,11 +5,11 @@
 ```typescript
 import { OrgType1 } from "@superbuilders/oneroster/models/components";
 
-let value: OrgType1 = "enrollment";
+let value: OrgType1 = "district";
 ```
 
 ## Values
 
 ```typescript
-"academicSession" | "assessmentLineItem" | "category" | "class" | "course" | "demographics" | "enrollment" | "gradingPeriod" | "lineItem" | "org" | "resource" | "result" | "scoreScale" | "student" | "teacher" | "term" | "user" | "componentResource" | "courseComponent"
+"department" | "school" | "district" | "local" | "state" | "national"
 ```

@@ -5,19 +5,54 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The order to sort the response by
+ */
+export const GetAllAcademicSessionsOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetAllAcademicSessionsOrderBy = ClosedEnum<
+  typeof GetAllAcademicSessionsOrderBy
+>;
+
 export type GetAllAcademicSessionsRequest = {
   /**
-   * Offset for pagination
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
    */
   offset?: number | undefined;
   /**
-   * Number of items per page
+   * The field to sort the response by
    */
-  limit?: number | undefined;
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetAllAcademicSessionsOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 /**
@@ -37,19 +72,50 @@ export type GetAllAcademicSessionsResponse = {
 };
 
 /** @internal */
+export const GetAllAcademicSessionsOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetAllAcademicSessionsOrderBy
+> = z.nativeEnum(GetAllAcademicSessionsOrderBy);
+
+/** @internal */
+export const GetAllAcademicSessionsOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetAllAcademicSessionsOrderBy
+> = GetAllAcademicSessionsOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllAcademicSessionsOrderBy$ {
+  /** @deprecated use `GetAllAcademicSessionsOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetAllAcademicSessionsOrderBy$inboundSchema;
+  /** @deprecated use `GetAllAcademicSessionsOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetAllAcademicSessionsOrderBy$outboundSchema;
+}
+
+/** @internal */
 export const GetAllAcademicSessionsRequest$inboundSchema: z.ZodType<
   GetAllAcademicSessionsRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  offset: z.number().int().default(0),
+  fields: z.string().optional(),
   limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllAcademicSessionsOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetAllAcademicSessionsRequest$Outbound = {
-  offset: number;
+  fields?: string | undefined;
   limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -58,8 +124,13 @@ export const GetAllAcademicSessionsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAllAcademicSessionsRequest
 > = z.object({
-  offset: z.number().int().default(0),
+  fields: z.string().optional(),
   limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllAcademicSessionsOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -102,11 +173,11 @@ export const GetAllAcademicSessionsResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   academicSessions: z.array(components.AcademicSession$inboundSchema),
-  totalCount: z.number().int(),
-  pageCount: z.number().int(),
-  pageNumber: z.number().int(),
-  offset: z.number().int(),
-  limit: z.number().int(),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /** @internal */
@@ -126,11 +197,11 @@ export const GetAllAcademicSessionsResponseBody$outboundSchema: z.ZodType<
   GetAllAcademicSessionsResponseBody
 > = z.object({
   academicSessions: z.array(components.AcademicSession$outboundSchema),
-  totalCount: z.number().int(),
-  pageCount: z.number().int(),
-  pageNumber: z.number().int(),
-  offset: z.number().int(),
-  limit: z.number().int(),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /**

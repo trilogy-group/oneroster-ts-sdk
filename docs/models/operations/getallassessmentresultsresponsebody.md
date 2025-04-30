@@ -21,6 +21,11 @@ let value: GetAllAssessmentResultsResponseBody = {
       scoreStatus: "submitted",
     },
   ],
+  totalCount: 909.86,
+  pageCount: 4926.22,
+  pageNumber: 6938.81,
+  offset: 5602.36,
+  limit: 7070.33,
 };
 ```
 
@@ -29,3 +34,8 @@ let value: GetAllAssessmentResultsResponseBody = {
 | Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | `assessmentResults`                                                          | [components.AssessmentResult](../../models/components/assessmentresult.md)[] | :heavy_check_mark:                                                           | N/A                                                                          |
+| `totalCount`                                                                 | *number*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |
+| `pageCount`                                                                  | *number*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |
+| `pageNumber`                                                                 | *number*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |
+| `offset`                                                                     | *number*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |
+| `limit`                                                                      | *number*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |

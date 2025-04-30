@@ -1,35 +1,32 @@
 # GetCoursesForSchoolResponse
 
-Represents a course.
-
 ## Example Usage
 
 ```typescript
 import { GetCoursesForSchoolResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetCoursesForSchoolResponse = {
-  status: "active",
-  title: "<value>",
-  org: {
-    sourcedId: "<id>",
+  result: {
+    courses: [
+      {
+        status: "active",
+        title: "<value>",
+        org: {
+          sourcedId: "<id>",
+        },
+      },
+    ],
+    totalCount: 2573.49,
+    pageCount: 9286.79,
+    pageNumber: 7120.96,
+    offset: 4295.39,
+    limit: 4812.13,
   },
 };
 ```
 
 ## Fields
 
-| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `sourcedId`                                                                                                    | *string*                                                                                                       | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `status`                                                                                                       | [operations.GetCoursesForSchoolStatus](../../models/operations/getcoursesforschoolstatus.md)                   | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
-| `dateLastModified`                                                                                             | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                  | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `metadata`                                                                                                     | Record<string, *any*>                                                                                          | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `title`                                                                                                        | *string*                                                                                                       | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
-| `academicSession`                                                                                              | [operations.GetCoursesForSchoolAcademicSession](../../models/operations/getcoursesforschoolacademicsession.md) | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `courseCode`                                                                                                   | *string*                                                                                                       | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `grades`                                                                                                       | *string*[]                                                                                                     | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `subjects`                                                                                                     | *string*[]                                                                                                     | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `subjectCodes`                                                                                                 | *string*[]                                                                                                     | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `org`                                                                                                          | [operations.GetCoursesForSchoolOrg](../../models/operations/getcoursesforschoolorg.md)                         | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
-| `level`                                                                                                        | *string*                                                                                                       | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `gradingScheme`                                                                                                | *string*                                                                                                       | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `result`                                                                                                 | [operations.GetCoursesForSchoolResponseBody](../../models/operations/getcoursesforschoolresponsebody.md) | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

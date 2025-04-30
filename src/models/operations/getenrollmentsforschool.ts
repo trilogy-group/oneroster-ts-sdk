@@ -3,24 +3,98 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetEnrollmentsForSchoolOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetEnrollmentsForSchoolOrderBy = ClosedEnum<
+  typeof GetEnrollmentsForSchoolOrderBy
+>;
 
 export type GetEnrollmentsForSchoolRequest = {
   /**
    * School sourced ID
    */
   schoolSourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetEnrollmentsForSchoolOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 /**
  * Collection of enrollments successfully retrieved
  */
-export type GetEnrollmentsForSchoolResponse = {
+export type GetEnrollmentsForSchoolResponseBody = {
   enrollments: Array<components.Enrollment>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetEnrollmentsForSchoolResponse = {
+  result: GetEnrollmentsForSchoolResponseBody;
+};
+
+/** @internal */
+export const GetEnrollmentsForSchoolOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetEnrollmentsForSchoolOrderBy
+> = z.nativeEnum(GetEnrollmentsForSchoolOrderBy);
+
+/** @internal */
+export const GetEnrollmentsForSchoolOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetEnrollmentsForSchoolOrderBy
+> = GetEnrollmentsForSchoolOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetEnrollmentsForSchoolOrderBy$ {
+  /** @deprecated use `GetEnrollmentsForSchoolOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetEnrollmentsForSchoolOrderBy$inboundSchema;
+  /** @deprecated use `GetEnrollmentsForSchoolOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetEnrollmentsForSchoolOrderBy$outboundSchema;
+}
 
 /** @internal */
 export const GetEnrollmentsForSchoolRequest$inboundSchema: z.ZodType<
@@ -29,11 +103,25 @@ export const GetEnrollmentsForSchoolRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   schoolSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetEnrollmentsForSchoolOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetEnrollmentsForSchoolRequest$Outbound = {
   schoolSourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -43,6 +131,13 @@ export const GetEnrollmentsForSchoolRequest$outboundSchema: z.ZodType<
   GetEnrollmentsForSchoolRequest
 > = z.object({
   schoolSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetEnrollmentsForSchoolOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -79,17 +174,95 @@ export function getEnrollmentsForSchoolRequestFromJSON(
 }
 
 /** @internal */
+export const GetEnrollmentsForSchoolResponseBody$inboundSchema: z.ZodType<
+  GetEnrollmentsForSchoolResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  enrollments: z.array(components.Enrollment$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetEnrollmentsForSchoolResponseBody$Outbound = {
+  enrollments: Array<components.Enrollment$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetEnrollmentsForSchoolResponseBody$outboundSchema: z.ZodType<
+  GetEnrollmentsForSchoolResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetEnrollmentsForSchoolResponseBody
+> = z.object({
+  enrollments: z.array(components.Enrollment$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetEnrollmentsForSchoolResponseBody$ {
+  /** @deprecated use `GetEnrollmentsForSchoolResponseBody$inboundSchema` instead. */
+  export const inboundSchema =
+    GetEnrollmentsForSchoolResponseBody$inboundSchema;
+  /** @deprecated use `GetEnrollmentsForSchoolResponseBody$outboundSchema` instead. */
+  export const outboundSchema =
+    GetEnrollmentsForSchoolResponseBody$outboundSchema;
+  /** @deprecated use `GetEnrollmentsForSchoolResponseBody$Outbound` instead. */
+  export type Outbound = GetEnrollmentsForSchoolResponseBody$Outbound;
+}
+
+export function getEnrollmentsForSchoolResponseBodyToJSON(
+  getEnrollmentsForSchoolResponseBody: GetEnrollmentsForSchoolResponseBody,
+): string {
+  return JSON.stringify(
+    GetEnrollmentsForSchoolResponseBody$outboundSchema.parse(
+      getEnrollmentsForSchoolResponseBody,
+    ),
+  );
+}
+
+export function getEnrollmentsForSchoolResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetEnrollmentsForSchoolResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      GetEnrollmentsForSchoolResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetEnrollmentsForSchoolResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
 export const GetEnrollmentsForSchoolResponse$inboundSchema: z.ZodType<
   GetEnrollmentsForSchoolResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  enrollments: z.array(components.Enrollment$inboundSchema),
+  Result: z.lazy(() => GetEnrollmentsForSchoolResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetEnrollmentsForSchoolResponse$Outbound = {
-  enrollments: Array<components.Enrollment$Outbound>;
+  Result: GetEnrollmentsForSchoolResponseBody$Outbound;
 };
 
 /** @internal */
@@ -98,7 +271,11 @@ export const GetEnrollmentsForSchoolResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetEnrollmentsForSchoolResponse
 > = z.object({
-  enrollments: z.array(components.Enrollment$outboundSchema),
+  result: z.lazy(() => GetEnrollmentsForSchoolResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

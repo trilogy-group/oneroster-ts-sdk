@@ -3,8 +3,8 @@
  */
 
 import { buildCommand } from "@stricli/core";
+import { numberParser } from "@stricli/core";
 import * as z from "zod";
-import { ServerList } from "../../../lib/config.js";
 import { consoleLoggerLevels } from "../../console-logger.js";
 import { mcpScopes } from "../../scopes.js";
 
@@ -83,11 +83,11 @@ export const startCommand = buildCommand({
         optional: true,
         parse: (value) => new URL(value).toString(),
       },
-      server: {
-        kind: "enum",
+      "server-index": {
+        kind: "parsed",
         brief: "Selects a predefined server used by the SDK",
         optional: true,
-        values: Object.keys(ServerList) as Array<keyof typeof ServerList>,
+        parse: numberParser,
       },
       "log-level": {
         kind: "enum",

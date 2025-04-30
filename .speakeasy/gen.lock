@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a3ef2627-6a46-4073-b2e2-f674a3c84580
 management:
-  docChecksum: d11c5c92bd8bad8a2c3bb6989d4891ec
+  docChecksum: 43302e0f8cb93dc42ec07d98df6dafeb
   docVersion: 1.0.0
-  speakeasyVersion: 1.540.1
-  generationVersion: 2.593.4
-  releaseVersion: 0.3.0
-  configChecksum: a7d2e1b7091eb889275992ca52ab918f
+  speakeasyVersion: 1.541.1
+  generationVersion: 2.595.4
+  releaseVersion: 0.4.1
+  configChecksum: 32c9adb27d7e3b2b6b5d86ee14f10337
   repoURL: https://github.com/trilogy-group/oneroster-ts.git
   installationURL: https://github.com/trilogy-group/oneroster-ts
   published: true
@@ -14,7 +14,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.6
+    core: 3.21.7
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
@@ -22,16 +22,13 @@ features:
     globalSecurity: 2.82.13
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
-    groups: 2.81.2
     mcpServer: 0.9.2
-    nameOverrides: 2.81.2
     nullables: 0.1.1
     oauth2ClientCredentials: 0.4.1
     pagination: 2.83.0
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.2.0
-    serverIDs: 2.81.2
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
@@ -306,6 +303,10 @@ generatedFiles:
   - docs/models/operations/deletescorescalerequest.md
   - docs/models/operations/deleteuserrequest.md
   - docs/models/operations/getacademicsessionrequest.md
+  - docs/models/operations/getallacademicsessionsorderby.md
+  - docs/models/operations/getallacademicsessionsrequest.md
+  - docs/models/operations/getallacademicsessionsresponse.md
+  - docs/models/operations/getallacademicsessionsresponsebody.md
   - docs/models/operations/getallassessmentlineitemsorderby.md
   - docs/models/operations/getallassessmentlineitemsrequest.md
   - docs/models/operations/getallassessmentlineitemsresponse.md
@@ -314,7 +315,14 @@ generatedFiles:
   - docs/models/operations/getallassessmentresultsrequest.md
   - docs/models/operations/getallassessmentresultsresponse.md
   - docs/models/operations/getallassessmentresultsresponsebody.md
+  - docs/models/operations/getallcategoriesorderby.md
+  - docs/models/operations/getallcategoriesrequest.md
   - docs/models/operations/getallcategoriesresponse.md
+  - docs/models/operations/getallcategoriesresponsebody.md
+  - docs/models/operations/getallclassesorderby.md
+  - docs/models/operations/getallclassesrequest.md
+  - docs/models/operations/getallclassesresponse.md
+  - docs/models/operations/getallclassesresponsebody.md
   - docs/models/operations/getallcomponentresourcescomponentresource.md
   - docs/models/operations/getallcomponentresourcescoursecomponent.md
   - docs/models/operations/getallcomponentresourcesorderby.md
@@ -340,22 +348,49 @@ generatedFiles:
   - docs/models/operations/getallcoursesresponse.md
   - docs/models/operations/getallcoursesresponsebody.md
   - docs/models/operations/getallcoursesstatus.md
+  - docs/models/operations/getalldemographicsorderby.md
+  - docs/models/operations/getalldemographicsrequest.md
   - docs/models/operations/getalldemographicsresponse.md
+  - docs/models/operations/getalldemographicsresponsebody.md
+  - docs/models/operations/getallenrollmentsorderby.md
+  - docs/models/operations/getallenrollmentsrequest.md
   - docs/models/operations/getallenrollmentsresponse.md
+  - docs/models/operations/getallenrollmentsresponsebody.md
+  - docs/models/operations/getallgradingperiodsorderby.md
+  - docs/models/operations/getallgradingperiodsrequest.md
   - docs/models/operations/getallgradingperiodsresponse.md
+  - docs/models/operations/getallgradingperiodsresponsebody.md
+  - docs/models/operations/getalllineitemsorderby.md
+  - docs/models/operations/getalllineitemsrequest.md
   - docs/models/operations/getalllineitemsresponse.md
+  - docs/models/operations/getalllineitemsresponsebody.md
   - docs/models/operations/getallorgsorderby.md
   - docs/models/operations/getallorgsrequest.md
   - docs/models/operations/getallorgsresponse.md
   - docs/models/operations/getallorgsresponsebody.md
+  - docs/models/operations/getallresourcesorderby.md
+  - docs/models/operations/getallresourcesrequest.md
   - docs/models/operations/getallresourcesresponse.md
+  - docs/models/operations/getallresourcesresponsebody.md
+  - docs/models/operations/getallresultsorderby.md
+  - docs/models/operations/getallresultsrequest.md
   - docs/models/operations/getallresultsresponse.md
+  - docs/models/operations/getallresultsresponsebody.md
+  - docs/models/operations/getallschoolsorderby.md
+  - docs/models/operations/getallschoolsrequest.md
   - docs/models/operations/getallschoolsresponse.md
+  - docs/models/operations/getallschoolsresponsebody.md
+  - docs/models/operations/getallscorescalesorderby.md
+  - docs/models/operations/getallscorescalesrequest.md
   - docs/models/operations/getallscorescalesresponse.md
+  - docs/models/operations/getallscorescalesresponsebody.md
   - docs/models/operations/getallstudentsagent.md
+  - docs/models/operations/getallstudentsorderby.md
   - docs/models/operations/getallstudentsorg.md
   - docs/models/operations/getallstudentsprimaryorg.md
+  - docs/models/operations/getallstudentsrequest.md
   - docs/models/operations/getallstudentsresponse.md
+  - docs/models/operations/getallstudentsresponsebody.md
   - docs/models/operations/getallstudentsrole.md
   - docs/models/operations/getallstudentsroleenum.md
   - docs/models/operations/getallstudentsroletype.md
@@ -364,9 +399,12 @@ generatedFiles:
   - docs/models/operations/getallstudentsuser.md
   - docs/models/operations/getallstudentsuserid.md
   - docs/models/operations/getallteachersagent.md
+  - docs/models/operations/getallteachersorderby.md
   - docs/models/operations/getallteachersorg.md
   - docs/models/operations/getallteachersprimaryorg.md
+  - docs/models/operations/getallteachersrequest.md
   - docs/models/operations/getallteachersresponse.md
+  - docs/models/operations/getallteachersresponsebody.md
   - docs/models/operations/getallteachersrole.md
   - docs/models/operations/getallteachersroleenum.md
   - docs/models/operations/getallteachersroletype.md
@@ -374,7 +412,10 @@ generatedFiles:
   - docs/models/operations/getallteacherstype.md
   - docs/models/operations/getallteachersuser.md
   - docs/models/operations/getallteachersuserid.md
+  - docs/models/operations/getalltermsorderby.md
+  - docs/models/operations/getalltermsrequest.md
   - docs/models/operations/getalltermsresponse.md
+  - docs/models/operations/getalltermsresponsebody.md
   - docs/models/operations/getallusersagent.md
   - docs/models/operations/getallusersorderby.md
   - docs/models/operations/getallusersorg.md
@@ -393,21 +434,36 @@ generatedFiles:
   - docs/models/operations/getassessmentlineitemresponse.md
   - docs/models/operations/getassessmentresultrequest.md
   - docs/models/operations/getassessmentresultresponse.md
+  - docs/models/operations/getcategoriesforclassorderby.md
   - docs/models/operations/getcategoriesforclassrequest.md
   - docs/models/operations/getcategoriesforclassresponse.md
+  - docs/models/operations/getcategoriesforclassresponsebody.md
   - docs/models/operations/getcategoryrequest.md
   - docs/models/operations/getcategoryresponse.md
+  - docs/models/operations/getclassesforcourseorderby.md
   - docs/models/operations/getclassesforcourserequest.md
+  - docs/models/operations/getclassesforcourseresponse.md
+  - docs/models/operations/getclassesforcourseresponsebody.md
+  - docs/models/operations/getclassesforschoolorderby.md
   - docs/models/operations/getclassesforschoolrequest.md
   - docs/models/operations/getclassesforschoolresponse.md
+  - docs/models/operations/getclassesforschoolresponsebody.md
+  - docs/models/operations/getclassesforstudentorderby.md
   - docs/models/operations/getclassesforstudentrequest.md
   - docs/models/operations/getclassesforstudentresponse.md
+  - docs/models/operations/getclassesforstudentresponsebody.md
+  - docs/models/operations/getclassesforteacherorderby.md
   - docs/models/operations/getclassesforteacherrequest.md
   - docs/models/operations/getclassesforteacherresponse.md
+  - docs/models/operations/getclassesforteacherresponsebody.md
+  - docs/models/operations/getclassesfortermorderby.md
   - docs/models/operations/getclassesfortermrequest.md
   - docs/models/operations/getclassesfortermresponse.md
+  - docs/models/operations/getclassesfortermresponsebody.md
+  - docs/models/operations/getclassesforuserorderby.md
   - docs/models/operations/getclassesforuserrequest.md
   - docs/models/operations/getclassesforuserresponse.md
+  - docs/models/operations/getclassesforuserresponsebody.md
   - docs/models/operations/getclassrequest.md
   - docs/models/operations/getcomponentresourcecomponentresource.md
   - docs/models/operations/getcomponentresourcecoursecomponent.md
@@ -428,55 +484,84 @@ generatedFiles:
   - docs/models/operations/getcourserequest.md
   - docs/models/operations/getcourseresponse.md
   - docs/models/operations/getcoursesforschoolacademicsession.md
+  - docs/models/operations/getcoursesforschoolcourse.md
+  - docs/models/operations/getcoursesforschoolorderby.md
   - docs/models/operations/getcoursesforschoolorg.md
   - docs/models/operations/getcoursesforschoolrequest.md
   - docs/models/operations/getcoursesforschoolresponse.md
+  - docs/models/operations/getcoursesforschoolresponsebody.md
   - docs/models/operations/getcoursesforschoolstatus.md
   - docs/models/operations/getcoursestatus.md
   - docs/models/operations/getdemographicsrequest.md
   - docs/models/operations/getdemographicsresponse.md
   - docs/models/operations/getenrollmentrequest.md
   - docs/models/operations/getenrollmentresponse.md
+  - docs/models/operations/getenrollmentsforclassinschoolorderby.md
   - docs/models/operations/getenrollmentsforclassinschoolrequest.md
   - docs/models/operations/getenrollmentsforclassinschoolresponse.md
+  - docs/models/operations/getenrollmentsforclassinschoolresponsebody.md
+  - docs/models/operations/getenrollmentsforschoolorderby.md
   - docs/models/operations/getenrollmentsforschoolrequest.md
   - docs/models/operations/getenrollmentsforschoolresponse.md
+  - docs/models/operations/getenrollmentsforschoolresponsebody.md
   - docs/models/operations/getgradingperiodrequest.md
   - docs/models/operations/getgradingperiodresponse.md
+  - docs/models/operations/getgradingperiodsfortermorderby.md
   - docs/models/operations/getgradingperiodsfortermrequest.md
   - docs/models/operations/getgradingperiodsfortermresponse.md
+  - docs/models/operations/getgradingperiodsfortermresponsebody.md
   - docs/models/operations/getlineitemrequest.md
   - docs/models/operations/getlineitemresponse.md
+  - docs/models/operations/getlineitemsforclassorderby.md
   - docs/models/operations/getlineitemsforclassrequest.md
   - docs/models/operations/getlineitemsforclassresponse.md
+  - docs/models/operations/getlineitemsforclassresponsebody.md
+  - docs/models/operations/getlineitemsforschoolorderby.md
   - docs/models/operations/getlineitemsforschoolrequest.md
   - docs/models/operations/getlineitemsforschoolresponse.md
+  - docs/models/operations/getlineitemsforschoolresponsebody.md
   - docs/models/operations/getorgrequest.md
   - docs/models/operations/getorgresponse.md
   - docs/models/operations/getresourcerequest.md
   - docs/models/operations/getresourceresponse.md
+  - docs/models/operations/getresourcesforclassorderby.md
   - docs/models/operations/getresourcesforclassrequest.md
   - docs/models/operations/getresourcesforclassresponse.md
+  - docs/models/operations/getresourcesforclassresponsebody.md
+  - docs/models/operations/getresourcesforcourseorderby.md
   - docs/models/operations/getresourcesforcourserequest.md
   - docs/models/operations/getresourcesforcourseresponse.md
+  - docs/models/operations/getresourcesforcourseresponsebody.md
+  - docs/models/operations/getresourcesforuserorderby.md
   - docs/models/operations/getresourcesforuserrequest.md
   - docs/models/operations/getresourcesforuserresponse.md
+  - docs/models/operations/getresourcesforuserresponsebody.md
   - docs/models/operations/getresultrequest.md
   - docs/models/operations/getresultresponse.md
+  - docs/models/operations/getresultsforclassorderby.md
   - docs/models/operations/getresultsforclassrequest.md
   - docs/models/operations/getresultsforclassresponse.md
+  - docs/models/operations/getresultsforclassresponsebody.md
+  - docs/models/operations/getresultsforlineitemforclassorderby.md
   - docs/models/operations/getresultsforlineitemforclassrequest.md
   - docs/models/operations/getresultsforlineitemforclassresponse.md
+  - docs/models/operations/getresultsforlineitemforclassresponsebody.md
+  - docs/models/operations/getresultsforstudentforclassorderby.md
   - docs/models/operations/getresultsforstudentforclassrequest.md
   - docs/models/operations/getresultsforstudentforclassresponse.md
+  - docs/models/operations/getresultsforstudentforclassresponsebody.md
   - docs/models/operations/getschoolrequest.md
   - docs/models/operations/getschoolresponse.md
   - docs/models/operations/getscorescalerequest.md
   - docs/models/operations/getscorescaleresponse.md
+  - docs/models/operations/getscorescalesforclassorderby.md
   - docs/models/operations/getscorescalesforclassrequest.md
   - docs/models/operations/getscorescalesforclassresponse.md
+  - docs/models/operations/getscorescalesforclassresponsebody.md
+  - docs/models/operations/getscorescalesforschoolorderby.md
   - docs/models/operations/getscorescalesforschoolrequest.md
   - docs/models/operations/getscorescalesforschoolresponse.md
+  - docs/models/operations/getscorescalesforschoolresponsebody.md
   - docs/models/operations/getstudentagent.md
   - docs/models/operations/getstudentorg.md
   - docs/models/operations/getstudentprimaryorg.md
@@ -485,11 +570,14 @@ generatedFiles:
   - docs/models/operations/getstudentrole.md
   - docs/models/operations/getstudentroleenum.md
   - docs/models/operations/getstudentroletype.md
+  - docs/models/operations/getstudentsforclassagent.md
   - docs/models/operations/getstudentsforclassinschoolagent.md
+  - docs/models/operations/getstudentsforclassinschoolorderby.md
   - docs/models/operations/getstudentsforclassinschoolorg.md
   - docs/models/operations/getstudentsforclassinschoolprimaryorg.md
   - docs/models/operations/getstudentsforclassinschoolrequest.md
   - docs/models/operations/getstudentsforclassinschoolresponse.md
+  - docs/models/operations/getstudentsforclassinschoolresponsebody.md
   - docs/models/operations/getstudentsforclassinschoolrole.md
   - docs/models/operations/getstudentsforclassinschoolroleenum.md
   - docs/models/operations/getstudentsforclassinschoolroletype.md
@@ -497,12 +585,25 @@ generatedFiles:
   - docs/models/operations/getstudentsforclassinschooltype.md
   - docs/models/operations/getstudentsforclassinschooluser.md
   - docs/models/operations/getstudentsforclassinschooluserid.md
+  - docs/models/operations/getstudentsforclassorderby.md
+  - docs/models/operations/getstudentsforclassorg.md
+  - docs/models/operations/getstudentsforclassprimaryorg.md
   - docs/models/operations/getstudentsforclassrequest.md
+  - docs/models/operations/getstudentsforclassresponse.md
+  - docs/models/operations/getstudentsforclassresponsebody.md
+  - docs/models/operations/getstudentsforclassrole.md
+  - docs/models/operations/getstudentsforclassroleenum.md
+  - docs/models/operations/getstudentsforclassroletype.md
+  - docs/models/operations/getstudentsforclassstatus.md
+  - docs/models/operations/getstudentsforclasstype.md
+  - docs/models/operations/getstudentsforclassuserid.md
   - docs/models/operations/getstudentsforschoolagent.md
+  - docs/models/operations/getstudentsforschoolorderby.md
   - docs/models/operations/getstudentsforschoolorg.md
   - docs/models/operations/getstudentsforschoolprimaryorg.md
   - docs/models/operations/getstudentsforschoolrequest.md
   - docs/models/operations/getstudentsforschoolresponse.md
+  - docs/models/operations/getstudentsforschoolresponsebody.md
   - docs/models/operations/getstudentsforschoolrole.md
   - docs/models/operations/getstudentsforschoolroleenum.md
   - docs/models/operations/getstudentsforschoolroletype.md
@@ -522,11 +623,14 @@ generatedFiles:
   - docs/models/operations/getteacherrole.md
   - docs/models/operations/getteacherroleenum.md
   - docs/models/operations/getteacherroletype.md
+  - docs/models/operations/getteachersforclassagent.md
   - docs/models/operations/getteachersforclassinschoolagent.md
+  - docs/models/operations/getteachersforclassinschoolorderby.md
   - docs/models/operations/getteachersforclassinschoolorg.md
   - docs/models/operations/getteachersforclassinschoolprimaryorg.md
   - docs/models/operations/getteachersforclassinschoolrequest.md
   - docs/models/operations/getteachersforclassinschoolresponse.md
+  - docs/models/operations/getteachersforclassinschoolresponsebody.md
   - docs/models/operations/getteachersforclassinschoolrole.md
   - docs/models/operations/getteachersforclassinschoolroleenum.md
   - docs/models/operations/getteachersforclassinschoolroletype.md
@@ -534,12 +638,25 @@ generatedFiles:
   - docs/models/operations/getteachersforclassinschooltype.md
   - docs/models/operations/getteachersforclassinschooluser.md
   - docs/models/operations/getteachersforclassinschooluserid.md
+  - docs/models/operations/getteachersforclassorderby.md
+  - docs/models/operations/getteachersforclassorg.md
+  - docs/models/operations/getteachersforclassprimaryorg.md
   - docs/models/operations/getteachersforclassrequest.md
+  - docs/models/operations/getteachersforclassresponse.md
+  - docs/models/operations/getteachersforclassresponsebody.md
+  - docs/models/operations/getteachersforclassrole.md
+  - docs/models/operations/getteachersforclassroleenum.md
+  - docs/models/operations/getteachersforclassroletype.md
+  - docs/models/operations/getteachersforclassstatus.md
+  - docs/models/operations/getteachersforclasstype.md
+  - docs/models/operations/getteachersforclassuserid.md
   - docs/models/operations/getteachersforschoolagent.md
+  - docs/models/operations/getteachersforschoolorderby.md
   - docs/models/operations/getteachersforschoolorg.md
   - docs/models/operations/getteachersforschoolprimaryorg.md
   - docs/models/operations/getteachersforschoolrequest.md
   - docs/models/operations/getteachersforschoolresponse.md
+  - docs/models/operations/getteachersforschoolresponsebody.md
   - docs/models/operations/getteachersforschoolrole.md
   - docs/models/operations/getteachersforschoolroleenum.md
   - docs/models/operations/getteachersforschoolroletype.md
@@ -553,8 +670,10 @@ generatedFiles:
   - docs/models/operations/getteacheruserid.md
   - docs/models/operations/gettermrequest.md
   - docs/models/operations/gettermresponse.md
+  - docs/models/operations/gettermsforschoolorderby.md
   - docs/models/operations/gettermsforschoolrequest.md
   - docs/models/operations/gettermsforschoolresponse.md
+  - docs/models/operations/gettermsforschoolresponsebody.md
   - docs/models/operations/getuseragent.md
   - docs/models/operations/getuserorg.md
   - docs/models/operations/getuserprimaryorg.md
@@ -588,10 +707,6 @@ generatedFiles:
   - docs/models/operations/postdemographicssourcedidpairs.md
   - docs/models/operations/postdemographicsstatus.md
   - docs/models/operations/postdemographicswhite.md
-  - docs/models/operations/postlineitemsforclassrequest.md
-  - docs/models/operations/postlineitemsforclassrequestbody.md
-  - docs/models/operations/postlineitemsforclassresponse.md
-  - docs/models/operations/postlineitemsforclasssourcedidpairs.md
   - docs/models/operations/postresultsforacademicsessionforclassrequest.md
   - docs/models/operations/postresultsforacademicsessionforclassrequestbody.md
   - docs/models/operations/postresultsforacademicsessionforclassresponse.md
@@ -637,6 +752,8 @@ generatedFiles:
   - docs/models/operations/removeresourcefromclassrequest.md
   - docs/models/operations/removeresourcefromcourserequest.md
   - docs/models/operations/removeresourcefromuserrequest.md
+  - docs/models/operations/student.md
+  - docs/models/operations/teacher.md
   - docs/models/operations/updateassessmentlineitemrequest.md
   - docs/models/operations/updateassessmentlineitemrequestbody.md
   - docs/models/operations/updateassessmentlineitemresponse.md
@@ -713,181 +830,203 @@ generatedFiles:
   - docs/models/operations/updateuseruseridresponse.md
   - docs/models/operations/updateuseruserrequest.md
   - docs/models/operations/updateuseruserresponse.md
-  - docs/sdks/academicsessions/README.md
-  - docs/sdks/assessmentlineitems/README.md
-  - docs/sdks/assessmentresults/README.md
-  - docs/sdks/categories/README.md
-  - docs/sdks/classes/README.md
-  - docs/sdks/classesresults/README.md
-  - docs/sdks/classresources/README.md
-  - docs/sdks/classteachers/README.md
-  - docs/sdks/componentresources/README.md
-  - docs/sdks/courseclasses/README.md
-  - docs/sdks/coursecomponents/README.md
-  - docs/sdks/courseresources/README.md
-  - docs/sdks/courses/README.md
-  - docs/sdks/demographics/README.md
-  - docs/sdks/enrollments/README.md
-  - docs/sdks/gradingperiods/README.md
-  - docs/sdks/lineitems/README.md
+  - docs/sdks/academicsessionsmanagement/README.md
+  - docs/sdks/assessmentlineitemsmanagement/README.md
+  - docs/sdks/assessmentresultsmanagement/README.md
+  - docs/sdks/categoriesmanagement/README.md
+  - docs/sdks/classesmanagement/README.md
+  - docs/sdks/coursecomponentresourcesmanagement/README.md
+  - docs/sdks/coursecomponentsmanagement/README.md
+  - docs/sdks/coursesmanagement/README.md
+  - docs/sdks/demographicsmanagement/README.md
+  - docs/sdks/enrollmentsmanagement/README.md
+  - docs/sdks/gradingperiodsmanagement/README.md
+  - docs/sdks/lineitemsmanagement/README.md
   - docs/sdks/oneroster/README.md
-  - docs/sdks/organizations/README.md
-  - docs/sdks/resources/README.md
-  - docs/sdks/resourcesclasses/README.md
-  - docs/sdks/results/README.md
-  - docs/sdks/schoollineitems/README.md
-  - docs/sdks/schools/README.md
-  - docs/sdks/schoolscourses/README.md
-  - docs/sdks/schoolslineitems/README.md
-  - docs/sdks/schoolsscorescales/README.md
-  - docs/sdks/scorescales/README.md
-  - docs/sdks/students/README.md
-  - docs/sdks/studentsclasses/README.md
-  - docs/sdks/teachers/README.md
-  - docs/sdks/terms/README.md
-  - docs/sdks/userresources/README.md
-  - docs/sdks/users/README.md
+  - docs/sdks/organizationsmanagement/README.md
+  - docs/sdks/resourcesclassesmanagement/README.md
+  - docs/sdks/resourcescoursesmanagement/README.md
+  - docs/sdks/resourcesmanagement/README.md
+  - docs/sdks/resourcesusersmanagement/README.md
+  - docs/sdks/resultsmanagement/README.md
+  - docs/sdks/schoolsmanagement/README.md
+  - docs/sdks/scorescalesmanagement/README.md
+  - docs/sdks/studentsmanagement/README.md
+  - docs/sdks/teachersmanagement/README.md
+  - docs/sdks/termsmanagement/README.md
+  - docs/sdks/usersmanagement/README.md
   - eslint.config.mjs
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/academicSessionsCreate.ts
-  - src/funcs/academicSessionsDelete.ts
-  - src/funcs/academicSessionsGet.ts
-  - src/funcs/academicSessionsGetAll.ts
-  - src/funcs/academicSessionsUpdate.ts
-  - src/funcs/assessmentLineItemsCreate.ts
-  - src/funcs/assessmentLineItemsDelete.ts
-  - src/funcs/assessmentLineItemsGet.ts
-  - src/funcs/assessmentLineItemsGetAll.ts
-  - src/funcs/assessmentLineItemsUpdate.ts
-  - src/funcs/assessmentResultsCreate.ts
-  - src/funcs/assessmentResultsDelete.ts
-  - src/funcs/assessmentResultsGet.ts
-  - src/funcs/assessmentResultsGetAll.ts
-  - src/funcs/assessmentResultsUpdate.ts
-  - src/funcs/categoriesCreate.ts
-  - src/funcs/categoriesDelete.ts
-  - src/funcs/categoriesGet.ts
-  - src/funcs/categoriesGetAll.ts
-  - src/funcs/categoriesUpdate.ts
-  - src/funcs/classResourcesDelete.ts
-  - src/funcs/classTeachersGetAll.ts
-  - src/funcs/classesAddStudent.ts
-  - src/funcs/classesAddTeacher.ts
-  - src/funcs/classesCreate.ts
-  - src/funcs/classesCreateLineItem.ts
-  - src/funcs/classesCreateResults.ts
-  - src/funcs/classesDelete.ts
-  - src/funcs/classesGet.ts
-  - src/funcs/classesGetAll.ts
-  - src/funcs/classesGetCategories.ts
-  - src/funcs/classesGetScoreScales.ts
-  - src/funcs/classesGetStudentResults.ts
-  - src/funcs/classesGetStudents.ts
-  - src/funcs/classesGetTeachers.ts
-  - src/funcs/classesListLineItems.ts
-  - src/funcs/classesListResources.ts
-  - src/funcs/classesResultsGet.ts
-  - src/funcs/classesResultsGetForLineItem.ts
-  - src/funcs/classesUpdate.ts
-  - src/funcs/componentResourcesGetAll.ts
-  - src/funcs/courseClassesGetAll.ts
-  - src/funcs/courseComponentsDelete.ts
-  - src/funcs/courseComponentsGetAll.ts
-  - src/funcs/courseResourcesDelete.ts
-  - src/funcs/coursesAssignResource.ts
-  - src/funcs/coursesCreate.ts
-  - src/funcs/coursesCreateComponent.ts
-  - src/funcs/coursesCreateComponentResource.ts
-  - src/funcs/coursesDelete.ts
-  - src/funcs/coursesDeleteComponentResource.ts
-  - src/funcs/coursesGet.ts
-  - src/funcs/coursesGetAll.ts
-  - src/funcs/coursesGetComponent.ts
-  - src/funcs/coursesGetComponentResource.ts
-  - src/funcs/coursesGetResources.ts
-  - src/funcs/coursesUpdate.ts
-  - src/funcs/coursesUpdateComponent.ts
-  - src/funcs/coursesUpdateComponentResource.ts
-  - src/funcs/demographicsCreate.ts
-  - src/funcs/demographicsDelete.ts
-  - src/funcs/demographicsGet.ts
-  - src/funcs/demographicsGetAll.ts
-  - src/funcs/demographicsUpdate.ts
-  - src/funcs/enrollmentsCreate.ts
-  - src/funcs/enrollmentsDelete.ts
-  - src/funcs/enrollmentsGet.ts
-  - src/funcs/enrollmentsGetAll.ts
-  - src/funcs/enrollmentsGetForClass.ts
-  - src/funcs/enrollmentsUpdate.ts
-  - src/funcs/gradingPeriodsCreate.ts
-  - src/funcs/gradingPeriodsCreateForTerm.ts
-  - src/funcs/gradingPeriodsDelete.ts
-  - src/funcs/gradingPeriodsGet.ts
-  - src/funcs/gradingPeriodsGetAll.ts
-  - src/funcs/gradingPeriodsUpdate.ts
-  - src/funcs/lineItemsCreate.ts
-  - src/funcs/lineItemsDelete.ts
-  - src/funcs/lineItemsGet.ts
-  - src/funcs/lineItemsList.ts
-  - src/funcs/lineItemsUpdate.ts
-  - src/funcs/organizationsCreate.ts
-  - src/funcs/organizationsDelete.ts
-  - src/funcs/organizationsGet.ts
-  - src/funcs/organizationsGetAll.ts
-  - src/funcs/organizationsUpdate.ts
-  - src/funcs/resourcesClassesAssign.ts
-  - src/funcs/resourcesCreate.ts
-  - src/funcs/resourcesDelete.ts
-  - src/funcs/resourcesGet.ts
-  - src/funcs/resourcesGetAll.ts
-  - src/funcs/resourcesUpdate.ts
-  - src/funcs/resultsCreate.ts
-  - src/funcs/resultsCreateForLineItem.ts
-  - src/funcs/resultsDelete.ts
-  - src/funcs/resultsGet.ts
-  - src/funcs/resultsGetAll.ts
-  - src/funcs/resultsUpdate.ts
-  - src/funcs/schoolLineItemsGet.ts
-  - src/funcs/schoolsCoursesGetAll.ts
-  - src/funcs/schoolsCreate.ts
-  - src/funcs/schoolsDelete.ts
-  - src/funcs/schoolsGet.ts
-  - src/funcs/schoolsGetAll.ts
-  - src/funcs/schoolsGetClasses.ts
-  - src/funcs/schoolsGetEnrollments.ts
-  - src/funcs/schoolsGetStudents.ts
-  - src/funcs/schoolsGetTeachers.ts
-  - src/funcs/schoolsGetTerms.ts
-  - src/funcs/schoolsLineItemsCreate.ts
-  - src/funcs/schoolsScoreScalesGet.ts
-  - src/funcs/schoolsUpdate.ts
-  - src/funcs/scoreScalesCreate.ts
-  - src/funcs/scoreScalesDelete.ts
-  - src/funcs/scoreScalesGet.ts
-  - src/funcs/scoreScalesList.ts
-  - src/funcs/scoreScalesUpdate.ts
-  - src/funcs/studentsClassesGet.ts
-  - src/funcs/studentsGet.ts
-  - src/funcs/studentsGetAll.ts
-  - src/funcs/studentsGetForClass.ts
-  - src/funcs/teachersGet.ts
-  - src/funcs/teachersGetAll.ts
-  - src/funcs/teachersGetClasses.ts
-  - src/funcs/termsGet.ts
-  - src/funcs/termsGetClasses.ts
-  - src/funcs/termsGetGradingPeriods.ts
-  - src/funcs/termsList.ts
-  - src/funcs/userResourcesRemove.ts
-  - src/funcs/usersAssignResource.ts
-  - src/funcs/usersCreate.ts
-  - src/funcs/usersDelete.ts
-  - src/funcs/usersGet.ts
-  - src/funcs/usersGetAll.ts
-  - src/funcs/usersGetClasses.ts
-  - src/funcs/usersGetResources.ts
-  - src/funcs/usersUpdate.ts
+  - src/funcs/academicSessionsManagementDeleteAcademicSession.ts
+  - src/funcs/academicSessionsManagementGetAcademicSession.ts
+  - src/funcs/academicSessionsManagementGetAllAcademicSessions.ts
+  - src/funcs/academicSessionsManagementPostAcademicSession.ts
+  - src/funcs/academicSessionsManagementPutAcademicSession.ts
+  - src/funcs/assessmentLineItemsManagementCreateAssessmentLineItem.ts
+  - src/funcs/assessmentLineItemsManagementDeleteAssessmentLineItem.ts
+  - src/funcs/assessmentLineItemsManagementGetAllAssessmentLineItems.ts
+  - src/funcs/assessmentLineItemsManagementGetAssessmentLineItem.ts
+  - src/funcs/assessmentLineItemsManagementUpdateAssessmentLineItem.ts
+  - src/funcs/assessmentResultsManagementCreateAssessmentResult.ts
+  - src/funcs/assessmentResultsManagementDeleteAssessmentResult.ts
+  - src/funcs/assessmentResultsManagementGetAllAssessmentResults.ts
+  - src/funcs/assessmentResultsManagementGetAssessmentResult.ts
+  - src/funcs/assessmentResultsManagementUpdateAssessmentResult.ts
+  - src/funcs/categoriesManagementCreateCategory.ts
+  - src/funcs/categoriesManagementDeleteCategory.ts
+  - src/funcs/categoriesManagementGetAllCategories.ts
+  - src/funcs/categoriesManagementGetCategory.ts
+  - src/funcs/categoriesManagementUpdateCategory.ts
+  - src/funcs/classesManagementAddStudentToClass.ts
+  - src/funcs/classesManagementAddTeacherToClass.ts
+  - src/funcs/classesManagementCreateClass.ts
+  - src/funcs/classesManagementDeleteClass.ts
+  - src/funcs/classesManagementGetAllClasses.ts
+  - src/funcs/classesManagementGetCategoriesForClass.ts
+  - src/funcs/classesManagementGetClass.ts
+  - src/funcs/classesManagementGetClassesForSchool.ts
+  - src/funcs/classesManagementGetClassesForStudent.ts
+  - src/funcs/classesManagementGetClassesForTeacher.ts
+  - src/funcs/classesManagementGetClassesForTerm.ts
+  - src/funcs/classesManagementGetClassesForUser.ts
+  - src/funcs/classesManagementGetLineItemsForClass.ts
+  - src/funcs/classesManagementGetResultsForClass.ts
+  - src/funcs/classesManagementGetResultsForLineItemForClass.ts
+  - src/funcs/classesManagementGetResultsForStudentForClass.ts
+  - src/funcs/classesManagementGetScoreScalesForClass.ts
+  - src/funcs/classesManagementGetStudentsForClass.ts
+  - src/funcs/classesManagementGetTeachersForClass.ts
+  - src/funcs/classesManagementPostResultsForAcademicSessionForClass.ts
+  - src/funcs/classesManagementUpdateClass.ts
+  - src/funcs/courseComponentResourcesManagementCreateComponentResource.ts
+  - src/funcs/courseComponentResourcesManagementDeleteComponentResource.ts
+  - src/funcs/courseComponentResourcesManagementGetAllComponentResources.ts
+  - src/funcs/courseComponentResourcesManagementGetComponentResource.ts
+  - src/funcs/courseComponentResourcesManagementPutComponentResource.ts
+  - src/funcs/courseComponentsManagementCreateCourseComponent.ts
+  - src/funcs/courseComponentsManagementDeleteCourseComponent.ts
+  - src/funcs/courseComponentsManagementGetAllCourseComponents.ts
+  - src/funcs/courseComponentsManagementGetCourseComponent.ts
+  - src/funcs/courseComponentsManagementPutCourseComponent.ts
+  - src/funcs/coursesManagementCreateComponentResource.ts
+  - src/funcs/coursesManagementCreateCourse.ts
+  - src/funcs/coursesManagementCreateCourseComponent.ts
+  - src/funcs/coursesManagementDeleteComponentResource.ts
+  - src/funcs/coursesManagementDeleteCourse.ts
+  - src/funcs/coursesManagementDeleteCourseComponent.ts
+  - src/funcs/coursesManagementGetAllComponentResources.ts
+  - src/funcs/coursesManagementGetAllCourseComponents.ts
+  - src/funcs/coursesManagementGetAllCourses.ts
+  - src/funcs/coursesManagementGetClassesForCourse.ts
+  - src/funcs/coursesManagementGetComponentResource.ts
+  - src/funcs/coursesManagementGetCourse.ts
+  - src/funcs/coursesManagementGetCourseComponent.ts
+  - src/funcs/coursesManagementGetCoursesForSchool.ts
+  - src/funcs/coursesManagementPutComponentResource.ts
+  - src/funcs/coursesManagementPutCourse.ts
+  - src/funcs/coursesManagementPutCourseComponent.ts
+  - src/funcs/demographicsManagementDeleteDemographics.ts
+  - src/funcs/demographicsManagementGetAllDemographics.ts
+  - src/funcs/demographicsManagementGetDemographics.ts
+  - src/funcs/demographicsManagementPostDemographics.ts
+  - src/funcs/demographicsManagementPutDemographics.ts
+  - src/funcs/enrollmentsManagementCreateEnrollment.ts
+  - src/funcs/enrollmentsManagementDeleteEnrollment.ts
+  - src/funcs/enrollmentsManagementGetAllEnrollments.ts
+  - src/funcs/enrollmentsManagementGetEnrollment.ts
+  - src/funcs/enrollmentsManagementGetEnrollmentsForClassInSchool.ts
+  - src/funcs/enrollmentsManagementGetEnrollmentsForSchool.ts
+  - src/funcs/enrollmentsManagementUpdateEnrollment.ts
+  - src/funcs/gradingPeriodsManagementCreateGradingPeriod.ts
+  - src/funcs/gradingPeriodsManagementCreateGradingPeriodForTerm.ts
+  - src/funcs/gradingPeriodsManagementDeleteGradingPeriod.ts
+  - src/funcs/gradingPeriodsManagementGetAllGradingPeriods.ts
+  - src/funcs/gradingPeriodsManagementGetGradingPeriod.ts
+  - src/funcs/gradingPeriodsManagementGetGradingPeriodsForTerm.ts
+  - src/funcs/gradingPeriodsManagementUpdateGradingPeriod.ts
+  - src/funcs/lineItemsManagementCreateLineItem.ts
+  - src/funcs/lineItemsManagementCreateLineItemsForSchool.ts
+  - src/funcs/lineItemsManagementCreateResultForLineItem.ts
+  - src/funcs/lineItemsManagementDeleteLineItem.ts
+  - src/funcs/lineItemsManagementGetAllLineItems.ts
+  - src/funcs/lineItemsManagementGetLineItem.ts
+  - src/funcs/lineItemsManagementGetLineItemsForSchool.ts
+  - src/funcs/lineItemsManagementUpdateLineItem.ts
+  - src/funcs/organizationsManagementCreateOrg.ts
+  - src/funcs/organizationsManagementDeleteOrg.ts
+  - src/funcs/organizationsManagementGetAllOrgs.ts
+  - src/funcs/organizationsManagementGetOrg.ts
+  - src/funcs/organizationsManagementUpdateOrg.ts
+  - src/funcs/resourcesClassesManagementAssignResourceToClass.ts
+  - src/funcs/resourcesClassesManagementGetResourcesForClass.ts
+  - src/funcs/resourcesClassesManagementRemoveResourceFromClass.ts
+  - src/funcs/resourcesCoursesManagementAssignResourceToCourse.ts
+  - src/funcs/resourcesCoursesManagementGetResourcesForCourse.ts
+  - src/funcs/resourcesCoursesManagementRemoveResourceFromCourse.ts
+  - src/funcs/resourcesManagementCreateResource.ts
+  - src/funcs/resourcesManagementDeleteResource.ts
+  - src/funcs/resourcesManagementGetAllResources.ts
+  - src/funcs/resourcesManagementGetResource.ts
+  - src/funcs/resourcesManagementUpdateResource.ts
+  - src/funcs/resourcesUsersManagementAssignResourceToUser.ts
+  - src/funcs/resourcesUsersManagementGetResourcesForUser.ts
+  - src/funcs/resourcesUsersManagementRemoveResourceFromUser.ts
+  - src/funcs/resultsManagementCreateResult.ts
+  - src/funcs/resultsManagementDeleteResult.ts
+  - src/funcs/resultsManagementGetAllResults.ts
+  - src/funcs/resultsManagementGetResult.ts
+  - src/funcs/resultsManagementUpdateResult.ts
+  - src/funcs/schoolsManagementCreateLineItemsForSchool.ts
+  - src/funcs/schoolsManagementCreateSchool.ts
+  - src/funcs/schoolsManagementDeleteSchool.ts
+  - src/funcs/schoolsManagementGetAllSchools.ts
+  - src/funcs/schoolsManagementGetClassesForSchool.ts
+  - src/funcs/schoolsManagementGetCoursesForSchool.ts
+  - src/funcs/schoolsManagementGetEnrollmentsForClassInSchool.ts
+  - src/funcs/schoolsManagementGetEnrollmentsForSchool.ts
+  - src/funcs/schoolsManagementGetLineItemsForSchool.ts
+  - src/funcs/schoolsManagementGetSchool.ts
+  - src/funcs/schoolsManagementGetScoreScalesForSchool.ts
+  - src/funcs/schoolsManagementGetStudentsForClassInSchool.ts
+  - src/funcs/schoolsManagementGetStudentsForSchool.ts
+  - src/funcs/schoolsManagementGetTeachersForClassInSchool.ts
+  - src/funcs/schoolsManagementGetTeachersForSchool.ts
+  - src/funcs/schoolsManagementGetTermsForSchool.ts
+  - src/funcs/schoolsManagementUpdateSchool.ts
+  - src/funcs/scoreScalesManagementCreateScoreScale.ts
+  - src/funcs/scoreScalesManagementDeleteScoreScale.ts
+  - src/funcs/scoreScalesManagementGetAllScoreScales.ts
+  - src/funcs/scoreScalesManagementGetScoreScale.ts
+  - src/funcs/scoreScalesManagementGetScoreScalesForSchool.ts
+  - src/funcs/scoreScalesManagementUpdateScoreScale.ts
+  - src/funcs/studentsManagementAddStudentToClass.ts
+  - src/funcs/studentsManagementGetAllStudents.ts
+  - src/funcs/studentsManagementGetClassesForStudent.ts
+  - src/funcs/studentsManagementGetStudent.ts
+  - src/funcs/studentsManagementGetStudentsForClass.ts
+  - src/funcs/studentsManagementGetStudentsForClassInSchool.ts
+  - src/funcs/studentsManagementGetStudentsForSchool.ts
+  - src/funcs/teachersManagementAddTeacherToClass.ts
+  - src/funcs/teachersManagementGetAllTeachers.ts
+  - src/funcs/teachersManagementGetClassesForTeacher.ts
+  - src/funcs/teachersManagementGetTeacher.ts
+  - src/funcs/teachersManagementGetTeachersForClass.ts
+  - src/funcs/teachersManagementGetTeachersForClassInSchool.ts
+  - src/funcs/teachersManagementGetTeachersForSchool.ts
+  - src/funcs/termsManagementCreateGradingPeriodForTerm.ts
+  - src/funcs/termsManagementGetAllTerms.ts
+  - src/funcs/termsManagementGetClassesForTerm.ts
+  - src/funcs/termsManagementGetGradingPeriodsForTerm.ts
+  - src/funcs/termsManagementGetTerm.ts
+  - src/funcs/termsManagementGetTermsForSchool.ts
+  - src/funcs/usersManagementCreateUser.ts
+  - src/funcs/usersManagementDeleteUser.ts
+  - src/funcs/usersManagementGetAllUsers.ts
+  - src/funcs/usersManagementGetClassesForUser.ts
+  - src/funcs/usersManagementGetUser.ts
+  - src/funcs/usersManagementUpdateUser.ts
   - src/hooks/clientcredentials.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
@@ -922,143 +1061,174 @@ generatedFiles:
   - src/mcp-server/server.ts
   - src/mcp-server/shared.ts
   - src/mcp-server/tools.ts
-  - src/mcp-server/tools/academicSessionsCreate.ts
-  - src/mcp-server/tools/academicSessionsDelete.ts
-  - src/mcp-server/tools/academicSessionsGet.ts
-  - src/mcp-server/tools/academicSessionsGetAll.ts
-  - src/mcp-server/tools/academicSessionsUpdate.ts
-  - src/mcp-server/tools/assessmentLineItemsCreate.ts
-  - src/mcp-server/tools/assessmentLineItemsDelete.ts
-  - src/mcp-server/tools/assessmentLineItemsGet.ts
-  - src/mcp-server/tools/assessmentLineItemsGetAll.ts
-  - src/mcp-server/tools/assessmentLineItemsUpdate.ts
-  - src/mcp-server/tools/assessmentResultsCreate.ts
-  - src/mcp-server/tools/assessmentResultsDelete.ts
-  - src/mcp-server/tools/assessmentResultsGet.ts
-  - src/mcp-server/tools/assessmentResultsGetAll.ts
-  - src/mcp-server/tools/assessmentResultsUpdate.ts
-  - src/mcp-server/tools/categoriesCreate.ts
-  - src/mcp-server/tools/categoriesDelete.ts
-  - src/mcp-server/tools/categoriesGet.ts
-  - src/mcp-server/tools/categoriesGetAll.ts
-  - src/mcp-server/tools/categoriesUpdate.ts
-  - src/mcp-server/tools/classResourcesDelete.ts
-  - src/mcp-server/tools/classTeachersGetAll.ts
-  - src/mcp-server/tools/classesAddStudent.ts
-  - src/mcp-server/tools/classesAddTeacher.ts
-  - src/mcp-server/tools/classesCreate.ts
-  - src/mcp-server/tools/classesCreateLineItem.ts
-  - src/mcp-server/tools/classesCreateResults.ts
-  - src/mcp-server/tools/classesDelete.ts
-  - src/mcp-server/tools/classesGet.ts
-  - src/mcp-server/tools/classesGetAll.ts
-  - src/mcp-server/tools/classesGetCategories.ts
-  - src/mcp-server/tools/classesGetScoreScales.ts
-  - src/mcp-server/tools/classesGetStudentResults.ts
-  - src/mcp-server/tools/classesGetStudents.ts
-  - src/mcp-server/tools/classesGetTeachers.ts
-  - src/mcp-server/tools/classesListLineItems.ts
-  - src/mcp-server/tools/classesListResources.ts
-  - src/mcp-server/tools/classesResultsGet.ts
-  - src/mcp-server/tools/classesResultsGetForLineItem.ts
-  - src/mcp-server/tools/classesUpdate.ts
-  - src/mcp-server/tools/componentResourcesGetAll.ts
-  - src/mcp-server/tools/courseClassesGetAll.ts
-  - src/mcp-server/tools/courseComponentsDelete.ts
-  - src/mcp-server/tools/courseComponentsGetAll.ts
-  - src/mcp-server/tools/courseResourcesDelete.ts
-  - src/mcp-server/tools/coursesAssignResource.ts
-  - src/mcp-server/tools/coursesCreate.ts
-  - src/mcp-server/tools/coursesCreateComponent.ts
-  - src/mcp-server/tools/coursesCreateComponentResource.ts
-  - src/mcp-server/tools/coursesDelete.ts
-  - src/mcp-server/tools/coursesDeleteComponentResource.ts
-  - src/mcp-server/tools/coursesGet.ts
-  - src/mcp-server/tools/coursesGetAll.ts
-  - src/mcp-server/tools/coursesGetComponent.ts
-  - src/mcp-server/tools/coursesGetComponentResource.ts
-  - src/mcp-server/tools/coursesGetResources.ts
-  - src/mcp-server/tools/coursesUpdate.ts
-  - src/mcp-server/tools/coursesUpdateComponent.ts
-  - src/mcp-server/tools/coursesUpdateComponentResource.ts
-  - src/mcp-server/tools/demographicsCreate.ts
-  - src/mcp-server/tools/demographicsDelete.ts
-  - src/mcp-server/tools/demographicsGet.ts
-  - src/mcp-server/tools/demographicsGetAll.ts
-  - src/mcp-server/tools/demographicsUpdate.ts
-  - src/mcp-server/tools/enrollmentsCreate.ts
-  - src/mcp-server/tools/enrollmentsDelete.ts
-  - src/mcp-server/tools/enrollmentsGet.ts
-  - src/mcp-server/tools/enrollmentsGetAll.ts
-  - src/mcp-server/tools/enrollmentsGetForClass.ts
-  - src/mcp-server/tools/enrollmentsUpdate.ts
-  - src/mcp-server/tools/gradingPeriodsCreate.ts
-  - src/mcp-server/tools/gradingPeriodsCreateForTerm.ts
-  - src/mcp-server/tools/gradingPeriodsDelete.ts
-  - src/mcp-server/tools/gradingPeriodsGet.ts
-  - src/mcp-server/tools/gradingPeriodsGetAll.ts
-  - src/mcp-server/tools/gradingPeriodsUpdate.ts
-  - src/mcp-server/tools/lineItemsCreate.ts
-  - src/mcp-server/tools/lineItemsDelete.ts
-  - src/mcp-server/tools/lineItemsGet.ts
-  - src/mcp-server/tools/lineItemsList.ts
-  - src/mcp-server/tools/lineItemsUpdate.ts
-  - src/mcp-server/tools/organizationsCreate.ts
-  - src/mcp-server/tools/organizationsDelete.ts
-  - src/mcp-server/tools/organizationsGet.ts
-  - src/mcp-server/tools/organizationsGetAll.ts
-  - src/mcp-server/tools/organizationsUpdate.ts
-  - src/mcp-server/tools/resourcesClassesAssign.ts
-  - src/mcp-server/tools/resourcesCreate.ts
-  - src/mcp-server/tools/resourcesDelete.ts
-  - src/mcp-server/tools/resourcesGet.ts
-  - src/mcp-server/tools/resourcesGetAll.ts
-  - src/mcp-server/tools/resourcesUpdate.ts
-  - src/mcp-server/tools/resultsCreate.ts
-  - src/mcp-server/tools/resultsCreateForLineItem.ts
-  - src/mcp-server/tools/resultsDelete.ts
-  - src/mcp-server/tools/resultsGet.ts
-  - src/mcp-server/tools/resultsGetAll.ts
-  - src/mcp-server/tools/resultsUpdate.ts
-  - src/mcp-server/tools/schoolLineItemsGet.ts
-  - src/mcp-server/tools/schoolsCoursesGetAll.ts
-  - src/mcp-server/tools/schoolsCreate.ts
-  - src/mcp-server/tools/schoolsDelete.ts
-  - src/mcp-server/tools/schoolsGet.ts
-  - src/mcp-server/tools/schoolsGetAll.ts
-  - src/mcp-server/tools/schoolsGetClasses.ts
-  - src/mcp-server/tools/schoolsGetEnrollments.ts
-  - src/mcp-server/tools/schoolsGetStudents.ts
-  - src/mcp-server/tools/schoolsGetTeachers.ts
-  - src/mcp-server/tools/schoolsGetTerms.ts
-  - src/mcp-server/tools/schoolsLineItemsCreate.ts
-  - src/mcp-server/tools/schoolsScoreScalesGet.ts
-  - src/mcp-server/tools/schoolsUpdate.ts
-  - src/mcp-server/tools/scoreScalesCreate.ts
-  - src/mcp-server/tools/scoreScalesDelete.ts
-  - src/mcp-server/tools/scoreScalesGet.ts
-  - src/mcp-server/tools/scoreScalesList.ts
-  - src/mcp-server/tools/scoreScalesUpdate.ts
-  - src/mcp-server/tools/studentsClassesGet.ts
-  - src/mcp-server/tools/studentsGet.ts
-  - src/mcp-server/tools/studentsGetAll.ts
-  - src/mcp-server/tools/studentsGetForClass.ts
-  - src/mcp-server/tools/teachersGet.ts
-  - src/mcp-server/tools/teachersGetAll.ts
-  - src/mcp-server/tools/teachersGetClasses.ts
-  - src/mcp-server/tools/termsGet.ts
-  - src/mcp-server/tools/termsGetClasses.ts
-  - src/mcp-server/tools/termsGetGradingPeriods.ts
-  - src/mcp-server/tools/termsList.ts
-  - src/mcp-server/tools/userResourcesRemove.ts
-  - src/mcp-server/tools/usersAssignResource.ts
-  - src/mcp-server/tools/usersCreate.ts
-  - src/mcp-server/tools/usersDelete.ts
-  - src/mcp-server/tools/usersGet.ts
-  - src/mcp-server/tools/usersGetAll.ts
-  - src/mcp-server/tools/usersGetClasses.ts
-  - src/mcp-server/tools/usersGetResources.ts
-  - src/mcp-server/tools/usersUpdate.ts
+  - src/mcp-server/tools/academicSessionsManagementDeleteAcademicSession.ts
+  - src/mcp-server/tools/academicSessionsManagementGetAcademicSession.ts
+  - src/mcp-server/tools/academicSessionsManagementGetAllAcademicSessions.ts
+  - src/mcp-server/tools/academicSessionsManagementPostAcademicSession.ts
+  - src/mcp-server/tools/academicSessionsManagementPutAcademicSession.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementCreateAssessmentLineItem.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementDeleteAssessmentLineItem.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementGetAllAssessmentLineItems.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementGetAssessmentLineItem.ts
+  - src/mcp-server/tools/assessmentLineItemsManagementUpdateAssessmentLineItem.ts
+  - src/mcp-server/tools/assessmentResultsManagementCreateAssessmentResult.ts
+  - src/mcp-server/tools/assessmentResultsManagementDeleteAssessmentResult.ts
+  - src/mcp-server/tools/assessmentResultsManagementGetAllAssessmentResults.ts
+  - src/mcp-server/tools/assessmentResultsManagementGetAssessmentResult.ts
+  - src/mcp-server/tools/assessmentResultsManagementUpdateAssessmentResult.ts
+  - src/mcp-server/tools/categoriesManagementCreateCategory.ts
+  - src/mcp-server/tools/categoriesManagementDeleteCategory.ts
+  - src/mcp-server/tools/categoriesManagementGetAllCategories.ts
+  - src/mcp-server/tools/categoriesManagementGetCategory.ts
+  - src/mcp-server/tools/categoriesManagementUpdateCategory.ts
+  - src/mcp-server/tools/classesManagementAddStudentToClass.ts
+  - src/mcp-server/tools/classesManagementAddTeacherToClass.ts
+  - src/mcp-server/tools/classesManagementCreateClass.ts
+  - src/mcp-server/tools/classesManagementDeleteClass.ts
+  - src/mcp-server/tools/classesManagementGetAllClasses.ts
+  - src/mcp-server/tools/classesManagementGetCategoriesForClass.ts
+  - src/mcp-server/tools/classesManagementGetClass.ts
+  - src/mcp-server/tools/classesManagementGetClassesForSchool.ts
+  - src/mcp-server/tools/classesManagementGetClassesForStudent.ts
+  - src/mcp-server/tools/classesManagementGetClassesForTeacher.ts
+  - src/mcp-server/tools/classesManagementGetClassesForTerm.ts
+  - src/mcp-server/tools/classesManagementGetClassesForUser.ts
+  - src/mcp-server/tools/classesManagementGetLineItemsForClass.ts
+  - src/mcp-server/tools/classesManagementGetResultsForClass.ts
+  - src/mcp-server/tools/classesManagementGetResultsForLineItemForClass.ts
+  - src/mcp-server/tools/classesManagementGetResultsForStudentForClass.ts
+  - src/mcp-server/tools/classesManagementGetScoreScalesForClass.ts
+  - src/mcp-server/tools/classesManagementGetStudentsForClass.ts
+  - src/mcp-server/tools/classesManagementGetTeachersForClass.ts
+  - src/mcp-server/tools/classesManagementPostResultsForAcademicSessionForClass.ts
+  - src/mcp-server/tools/classesManagementUpdateClass.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementCreateComponentResource.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementDeleteComponentResource.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementGetAllComponentResources.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementGetComponentResource.ts
+  - src/mcp-server/tools/courseComponentResourcesManagementPutComponentResource.ts
+  - src/mcp-server/tools/courseComponentsManagementCreateCourseComponent.ts
+  - src/mcp-server/tools/courseComponentsManagementDeleteCourseComponent.ts
+  - src/mcp-server/tools/courseComponentsManagementGetAllCourseComponents.ts
+  - src/mcp-server/tools/courseComponentsManagementGetCourseComponent.ts
+  - src/mcp-server/tools/courseComponentsManagementPutCourseComponent.ts
+  - src/mcp-server/tools/coursesManagementCreateComponentResource.ts
+  - src/mcp-server/tools/coursesManagementCreateCourse.ts
+  - src/mcp-server/tools/coursesManagementCreateCourseComponent.ts
+  - src/mcp-server/tools/coursesManagementDeleteComponentResource.ts
+  - src/mcp-server/tools/coursesManagementDeleteCourse.ts
+  - src/mcp-server/tools/coursesManagementDeleteCourseComponent.ts
+  - src/mcp-server/tools/coursesManagementGetAllComponentResources.ts
+  - src/mcp-server/tools/coursesManagementGetAllCourseComponents.ts
+  - src/mcp-server/tools/coursesManagementGetAllCourses.ts
+  - src/mcp-server/tools/coursesManagementGetClassesForCourse.ts
+  - src/mcp-server/tools/coursesManagementGetComponentResource.ts
+  - src/mcp-server/tools/coursesManagementGetCourse.ts
+  - src/mcp-server/tools/coursesManagementGetCourseComponent.ts
+  - src/mcp-server/tools/coursesManagementGetCoursesForSchool.ts
+  - src/mcp-server/tools/coursesManagementPutComponentResource.ts
+  - src/mcp-server/tools/coursesManagementPutCourse.ts
+  - src/mcp-server/tools/coursesManagementPutCourseComponent.ts
+  - src/mcp-server/tools/demographicsManagementDeleteDemographics.ts
+  - src/mcp-server/tools/demographicsManagementGetAllDemographics.ts
+  - src/mcp-server/tools/demographicsManagementGetDemographics.ts
+  - src/mcp-server/tools/demographicsManagementPostDemographics.ts
+  - src/mcp-server/tools/demographicsManagementPutDemographics.ts
+  - src/mcp-server/tools/enrollmentsManagementCreateEnrollment.ts
+  - src/mcp-server/tools/enrollmentsManagementDeleteEnrollment.ts
+  - src/mcp-server/tools/enrollmentsManagementGetAllEnrollments.ts
+  - src/mcp-server/tools/enrollmentsManagementGetEnrollment.ts
+  - src/mcp-server/tools/enrollmentsManagementGetEnrollmentsForClassInSchool.ts
+  - src/mcp-server/tools/enrollmentsManagementGetEnrollmentsForSchool.ts
+  - src/mcp-server/tools/enrollmentsManagementUpdateEnrollment.ts
+  - src/mcp-server/tools/gradingPeriodsManagementCreateGradingPeriod.ts
+  - src/mcp-server/tools/gradingPeriodsManagementCreateGradingPeriodForTerm.ts
+  - src/mcp-server/tools/gradingPeriodsManagementDeleteGradingPeriod.ts
+  - src/mcp-server/tools/gradingPeriodsManagementGetAllGradingPeriods.ts
+  - src/mcp-server/tools/gradingPeriodsManagementGetGradingPeriod.ts
+  - src/mcp-server/tools/gradingPeriodsManagementGetGradingPeriodsForTerm.ts
+  - src/mcp-server/tools/gradingPeriodsManagementUpdateGradingPeriod.ts
+  - src/mcp-server/tools/lineItemsManagementCreateLineItem.ts
+  - src/mcp-server/tools/lineItemsManagementCreateLineItemsForSchool.ts
+  - src/mcp-server/tools/lineItemsManagementCreateResultForLineItem.ts
+  - src/mcp-server/tools/lineItemsManagementDeleteLineItem.ts
+  - src/mcp-server/tools/lineItemsManagementGetAllLineItems.ts
+  - src/mcp-server/tools/lineItemsManagementGetLineItem.ts
+  - src/mcp-server/tools/lineItemsManagementGetLineItemsForSchool.ts
+  - src/mcp-server/tools/lineItemsManagementUpdateLineItem.ts
+  - src/mcp-server/tools/organizationsManagementCreateOrg.ts
+  - src/mcp-server/tools/organizationsManagementDeleteOrg.ts
+  - src/mcp-server/tools/organizationsManagementGetAllOrgs.ts
+  - src/mcp-server/tools/organizationsManagementGetOrg.ts
+  - src/mcp-server/tools/organizationsManagementUpdateOrg.ts
+  - src/mcp-server/tools/resourcesClassesManagementAssignResourceToClass.ts
+  - src/mcp-server/tools/resourcesClassesManagementGetResourcesForClass.ts
+  - src/mcp-server/tools/resourcesClassesManagementRemoveResourceFromClass.ts
+  - src/mcp-server/tools/resourcesCoursesManagementAssignResourceToCourse.ts
+  - src/mcp-server/tools/resourcesCoursesManagementGetResourcesForCourse.ts
+  - src/mcp-server/tools/resourcesCoursesManagementRemoveResourceFromCourse.ts
+  - src/mcp-server/tools/resourcesManagementCreateResource.ts
+  - src/mcp-server/tools/resourcesManagementDeleteResource.ts
+  - src/mcp-server/tools/resourcesManagementGetAllResources.ts
+  - src/mcp-server/tools/resourcesManagementGetResource.ts
+  - src/mcp-server/tools/resourcesManagementUpdateResource.ts
+  - src/mcp-server/tools/resourcesUsersManagementAssignResourceToUser.ts
+  - src/mcp-server/tools/resourcesUsersManagementGetResourcesForUser.ts
+  - src/mcp-server/tools/resourcesUsersManagementRemoveResourceFromUser.ts
+  - src/mcp-server/tools/resultsManagementCreateResult.ts
+  - src/mcp-server/tools/resultsManagementDeleteResult.ts
+  - src/mcp-server/tools/resultsManagementGetAllResults.ts
+  - src/mcp-server/tools/resultsManagementGetResult.ts
+  - src/mcp-server/tools/resultsManagementUpdateResult.ts
+  - src/mcp-server/tools/schoolsManagementCreateLineItemsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementCreateSchool.ts
+  - src/mcp-server/tools/schoolsManagementDeleteSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetAllSchools.ts
+  - src/mcp-server/tools/schoolsManagementGetClassesForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetCoursesForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetEnrollmentsForClassInSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetEnrollmentsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetLineItemsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetScoreScalesForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetStudentsForClassInSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetStudentsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetTeachersForClassInSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetTeachersForSchool.ts
+  - src/mcp-server/tools/schoolsManagementGetTermsForSchool.ts
+  - src/mcp-server/tools/schoolsManagementUpdateSchool.ts
+  - src/mcp-server/tools/scoreScalesManagementCreateScoreScale.ts
+  - src/mcp-server/tools/scoreScalesManagementDeleteScoreScale.ts
+  - src/mcp-server/tools/scoreScalesManagementGetAllScoreScales.ts
+  - src/mcp-server/tools/scoreScalesManagementGetScoreScale.ts
+  - src/mcp-server/tools/scoreScalesManagementGetScoreScalesForSchool.ts
+  - src/mcp-server/tools/scoreScalesManagementUpdateScoreScale.ts
+  - src/mcp-server/tools/studentsManagementAddStudentToClass.ts
+  - src/mcp-server/tools/studentsManagementGetAllStudents.ts
+  - src/mcp-server/tools/studentsManagementGetClassesForStudent.ts
+  - src/mcp-server/tools/studentsManagementGetStudent.ts
+  - src/mcp-server/tools/studentsManagementGetStudentsForClass.ts
+  - src/mcp-server/tools/studentsManagementGetStudentsForClassInSchool.ts
+  - src/mcp-server/tools/studentsManagementGetStudentsForSchool.ts
+  - src/mcp-server/tools/teachersManagementAddTeacherToClass.ts
+  - src/mcp-server/tools/teachersManagementGetAllTeachers.ts
+  - src/mcp-server/tools/teachersManagementGetClassesForTeacher.ts
+  - src/mcp-server/tools/teachersManagementGetTeacher.ts
+  - src/mcp-server/tools/teachersManagementGetTeachersForClass.ts
+  - src/mcp-server/tools/teachersManagementGetTeachersForClassInSchool.ts
+  - src/mcp-server/tools/teachersManagementGetTeachersForSchool.ts
+  - src/mcp-server/tools/termsManagementCreateGradingPeriodForTerm.ts
+  - src/mcp-server/tools/termsManagementGetAllTerms.ts
+  - src/mcp-server/tools/termsManagementGetClassesForTerm.ts
+  - src/mcp-server/tools/termsManagementGetGradingPeriodsForTerm.ts
+  - src/mcp-server/tools/termsManagementGetTerm.ts
+  - src/mcp-server/tools/termsManagementGetTermsForSchool.ts
+  - src/mcp-server/tools/usersManagementCreateUser.ts
+  - src/mcp-server/tools/usersManagementDeleteUser.ts
+  - src/mcp-server/tools/usersManagementGetAllUsers.ts
+  - src/mcp-server/tools/usersManagementGetClassesForUser.ts
+  - src/mcp-server/tools/usersManagementGetUser.ts
+  - src/mcp-server/tools/usersManagementUpdateUser.ts
   - src/models/components/academicsession.ts
   - src/models/components/assessmentlineitem.ts
   - src/models/components/assessmentresult.ts
@@ -1128,9 +1298,11 @@ generatedFiles:
   - src/models/operations/deletescorescale.ts
   - src/models/operations/deleteuser.ts
   - src/models/operations/getacademicsession.ts
+  - src/models/operations/getallacademicsessions.ts
   - src/models/operations/getallassessmentlineitems.ts
   - src/models/operations/getallassessmentresults.ts
   - src/models/operations/getallcategories.ts
+  - src/models/operations/getallclasses.ts
   - src/models/operations/getallcomponentresources.ts
   - src/models/operations/getallcoursecomponents.ts
   - src/models/operations/getallcourses.ts
@@ -1198,7 +1370,6 @@ generatedFiles:
   - src/models/operations/index.ts
   - src/models/operations/postacademicsession.ts
   - src/models/operations/postdemographics.ts
-  - src/models/operations/postlineitemsforclass.ts
   - src/models/operations/postresultsforacademicsessionforclass.ts
   - src/models/operations/putacademicsession.ts
   - src/models/operations/putcomponentresource.ts
@@ -1221,41 +1392,32 @@ generatedFiles:
   - src/models/operations/updateschool.ts
   - src/models/operations/updatescorescale.ts
   - src/models/operations/updateuser.ts
-  - src/sdk/academicsessions.ts
-  - src/sdk/assessmentlineitems.ts
-  - src/sdk/assessmentresults.ts
-  - src/sdk/categories.ts
-  - src/sdk/classes.ts
-  - src/sdk/classesresults.ts
-  - src/sdk/classresources.ts
-  - src/sdk/classteachers.ts
-  - src/sdk/componentresources.ts
-  - src/sdk/courseclasses.ts
-  - src/sdk/coursecomponents.ts
-  - src/sdk/courseresources.ts
-  - src/sdk/courses.ts
-  - src/sdk/demographics.ts
-  - src/sdk/enrollments.ts
-  - src/sdk/gradingperiods.ts
+  - src/sdk/academicsessionsmanagement.ts
+  - src/sdk/assessmentlineitemsmanagement.ts
+  - src/sdk/assessmentresultsmanagement.ts
+  - src/sdk/categoriesmanagement.ts
+  - src/sdk/classesmanagement.ts
+  - src/sdk/coursecomponentresourcesmanagement.ts
+  - src/sdk/coursecomponentsmanagement.ts
+  - src/sdk/coursesmanagement.ts
+  - src/sdk/demographicsmanagement.ts
+  - src/sdk/enrollmentsmanagement.ts
+  - src/sdk/gradingperiodsmanagement.ts
   - src/sdk/index.ts
-  - src/sdk/lineitems.ts
-  - src/sdk/organizations.ts
-  - src/sdk/resources.ts
-  - src/sdk/resourcesclasses.ts
-  - src/sdk/results.ts
-  - src/sdk/schoollineitems.ts
-  - src/sdk/schools.ts
-  - src/sdk/schoolscourses.ts
-  - src/sdk/schoolslineitems.ts
-  - src/sdk/schoolsscorescales.ts
-  - src/sdk/scorescales.ts
+  - src/sdk/lineitemsmanagement.ts
+  - src/sdk/organizationsmanagement.ts
+  - src/sdk/resourcesclassesmanagement.ts
+  - src/sdk/resourcescoursesmanagement.ts
+  - src/sdk/resourcesmanagement.ts
+  - src/sdk/resourcesusersmanagement.ts
+  - src/sdk/resultsmanagement.ts
+  - src/sdk/schoolsmanagement.ts
+  - src/sdk/scorescalesmanagement.ts
   - src/sdk/sdk.ts
-  - src/sdk/students.ts
-  - src/sdk/studentsclasses.ts
-  - src/sdk/teachers.ts
-  - src/sdk/terms.ts
-  - src/sdk/userresources.ts
-  - src/sdk/users.ts
+  - src/sdk/studentsmanagement.ts
+  - src/sdk/teachersmanagement.ts
+  - src/sdk/termsmanagement.ts
+  - src/sdk/usersmanagement.ts
   - src/types/async.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
@@ -1269,9 +1431,15 @@ generatedFiles:
 examples:
   getAllScoreScales:
     speakeasy-default-get-all-score-scales:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"scoreScales": [{"status": "active", "title": "<value>", "type": "<value>", "class": {"sourcedId": "<id>"}, "scoreScaleValue": [{"itemValueLHS": "<value>", "itemValueRHS": "<value>"}, {"itemValueLHS": "<value>", "itemValueRHS": "<value>"}, {"itemValueLHS": "<value>", "itemValueRHS": "<value>"}]}]}
+          application/json: {"scoreScales": [{"status": "active", "title": "<value>", "type": "<value>", "class": {"sourcedId": "<id>"}, "scoreScaleValue": [{"itemValueLHS": "<value>", "itemValueRHS": "<value>"}, {"itemValueLHS": "<value>", "itemValueRHS": "<value>"}, {"itemValueLHS": "<value>", "itemValueRHS": "<value>"}]}], "totalCount": 3853.03, "pageCount": 4585, "pageNumber": 8494.25, "offset": 5541.58, "limit": 7038.1}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -1378,9 +1546,14 @@ examples:
       parameters:
         path:
           sourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"scoreScales": []}
+          application/json: {"scoreScales": [], "totalCount": 495.14, "pageCount": 89.98, "pageNumber": 1631.69, "offset": 5970.97, "limit": 7649.88}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -1400,9 +1573,14 @@ examples:
       parameters:
         path:
           sourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"lineItems": [{"status": "tobedeleted", "title": "<value>", "assignDate": "2024-01-21T09:58:08.282Z", "dueDate": "2023-10-25T09:07:49.028Z", "class": {"sourcedId": "<id>"}, "school": {"sourcedId": "<id>"}, "category": {"sourcedId": "<id>"}}, {"status": "tobedeleted", "title": "<value>", "assignDate": "2024-01-07T14:35:34.318Z", "dueDate": "2023-09-22T21:57:54.686Z", "class": {"sourcedId": "<id>"}, "school": {"sourcedId": "<id>"}, "category": {"sourcedId": "<id>"}}]}
+          application/json: {"lineItems": [{"status": "tobedeleted", "title": "<value>", "assignDate": "2024-01-21T09:58:08.282Z", "dueDate": "2023-10-25T09:07:49.028Z", "class": {"sourcedId": "<id>"}, "school": {"sourcedId": "<id>"}, "category": {"sourcedId": "<id>"}}, {"status": "tobedeleted", "title": "<value>", "assignDate": "2024-01-07T14:35:34.318Z", "dueDate": "2023-09-22T21:57:54.686Z", "class": {"sourcedId": "<id>"}, "school": {"sourcedId": "<id>"}, "category": {"sourcedId": "<id>"}}], "totalCount": 5034.35, "pageCount": 7176.32, "pageNumber": 3516.56, "offset": 2713.32, "limit": 9499.43}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -1443,9 +1621,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
   getAllResults:
     speakeasy-default-get-all-results:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"results": [{"status": "active", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "submitted", "scoreDate": "2024-12-11T16:52:53.256Z"}, {"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "not submitted", "scoreDate": "2024-07-08T20:24:09.387Z"}, {"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "not submitted", "scoreDate": "2024-07-03T01:40:12.065Z"}]}
+          application/json: {"results": [{"status": "active", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "submitted", "scoreDate": "2024-12-11T16:52:53.256Z"}, {"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "not submitted", "scoreDate": "2024-07-08T20:24:09.387Z"}, {"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "not submitted", "scoreDate": "2024-07-03T01:40:12.065Z"}], "totalCount": 7907.56, "pageCount": 538.25, "pageNumber": 9007.21, "offset": 6484.52, "limit": 7241.1}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -1549,9 +1733,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
   getAllLineItems:
     speakeasy-default-get-all-line-items:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"lineItems": []}
+          application/json: {"lineItems": [], "totalCount": 2135.53, "pageCount": 9228.73, "pageNumber": 1765.95, "offset": 7045.24, "limit": 442.82}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -1705,9 +1895,15 @@ examples:
       parameters:
         path:
           classSourcedId: "<id>"
+          sourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"lineItems": [{"status": "active", "title": "<value>", "assignDate": "2024-08-25T21:09:11.995Z", "dueDate": "2025-08-29T06:56:37.096Z", "class": {"sourcedId": "<id>"}, "school": {"sourcedId": "<id>"}, "category": {"sourcedId": "<id>"}}]}
+          application/json: {"lineItems": [{"status": "active", "title": "<value>", "assignDate": "2024-08-25T21:09:11.995Z", "dueDate": "2025-08-29T06:56:37.096Z", "class": {"sourcedId": "<id>"}, "school": {"sourcedId": "<id>"}, "category": {"sourcedId": "<id>"}}], "totalCount": 2935.16, "pageCount": 2334.32, "pageNumber": 5500.74, "offset": 8862.13, "limit": 9152.39}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -1752,9 +1948,14 @@ examples:
         path:
           classSourcedId: "<id>"
           lineItemSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"results": [{"status": "active", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "submitted", "scoreDate": "2023-04-04T01:49:56.496Z"}, {"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "fully graded", "scoreDate": "2024-06-28T08:04:46.953Z"}]}
+          application/json: {"results": [{"status": "active", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "submitted", "scoreDate": "2023-04-04T01:49:56.496Z"}, {"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "fully graded", "scoreDate": "2024-06-28T08:04:46.953Z"}], "totalCount": 5856.25, "pageCount": 13.33, "pageNumber": 9094.47, "offset": 849.23, "limit": 8656.6}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -1775,9 +1976,14 @@ examples:
         path:
           classSourcedId: "<id>"
           studentSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"results": [{"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "partially graded", "scoreDate": "2024-06-25T23:50:23.946Z"}, {"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "fully graded", "scoreDate": "2025-02-20T14:02:53.977Z"}, {"status": "active", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "exempt", "scoreDate": "2023-05-17T23:07:40.175Z"}]}
+          application/json: {"results": [{"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "partially graded", "scoreDate": "2024-06-25T23:50:23.946Z"}, {"status": "tobedeleted", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "fully graded", "scoreDate": "2025-02-20T14:02:53.977Z"}, {"status": "active", "lineItem": {"sourcedId": "<id>"}, "student": {"sourcedId": "<id>"}, "scoreStatus": "exempt", "scoreDate": "2023-05-17T23:07:40.175Z"}], "totalCount": 8721.38, "pageCount": 5794.05, "pageNumber": 6354.28, "offset": 4945.19, "limit": 8739.51}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -1797,9 +2003,14 @@ examples:
       parameters:
         path:
           sourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"categories": [{"status": "tobedeleted", "title": "<value>"}, {"status": "active", "title": "<value>"}, {"status": "tobedeleted", "title": "<value>"}]}
+          application/json: {"categories": [{"status": "tobedeleted", "title": "<value>"}, {"status": "active", "title": "<value>"}, {"status": "tobedeleted", "title": "<value>"}], "totalCount": 9380.32, "pageCount": 6394.4, "pageNumber": 1656.45, "offset": 6263.77, "limit": 7404.85}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -1819,9 +2030,14 @@ examples:
       parameters:
         path:
           sourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"results": []}
+          application/json: {"results": [], "totalCount": 434.89, "pageCount": 7975.17, "pageNumber": 1211.9, "offset": 9477.14, "limit": 1715.64}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -1841,9 +2057,14 @@ examples:
       parameters:
         path:
           sourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"scoreScales": [{"status": "active", "title": "<value>", "type": "<value>", "class": {"sourcedId": "<id>"}, "scoreScaleValue": [{"itemValueLHS": "<value>", "itemValueRHS": "<value>"}, {"itemValueLHS": "<value>", "itemValueRHS": "<value>"}]}, {"status": "active", "title": "<value>", "type": "<value>", "class": {"sourcedId": "<id>"}, "scoreScaleValue": []}, {"status": "tobedeleted", "title": "<value>", "type": "<value>", "class": {"sourcedId": "<id>"}, "scoreScaleValue": [{"itemValueLHS": "<value>", "itemValueRHS": "<value>"}, {"itemValueLHS": "<value>", "itemValueRHS": "<value>"}]}]}
+          application/json: {"scoreScales": [{"status": "active", "title": "<value>", "type": "<value>", "class": {"sourcedId": "<id>"}, "scoreScaleValue": [{"itemValueLHS": "<value>", "itemValueRHS": "<value>"}, {"itemValueLHS": "<value>", "itemValueRHS": "<value>"}]}, {"status": "active", "title": "<value>", "type": "<value>", "class": {"sourcedId": "<id>"}, "scoreScaleValue": []}, {"status": "tobedeleted", "title": "<value>", "type": "<value>", "class": {"sourcedId": "<id>"}, "scoreScaleValue": [{"itemValueLHS": "<value>", "itemValueRHS": "<value>"}, {"itemValueLHS": "<value>", "itemValueRHS": "<value>"}]}], "totalCount": 8580.01, "pageCount": 119.95, "pageNumber": 6231.67, "offset": 4545.74, "limit": 262.75}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -1860,9 +2081,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
   getAllCategories:
     speakeasy-default-get-all-categories:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"categories": [{"status": "tobedeleted", "title": "<value>"}, {"status": "tobedeleted", "title": "<value>"}, {"status": "tobedeleted", "title": "<value>"}]}
+          application/json: {"categories": [{"status": "tobedeleted", "title": "<value>"}, {"status": "tobedeleted", "title": "<value>"}, {"status": "tobedeleted", "title": "<value>"}], "totalCount": 9526.78, "pageCount": 6584, "pageNumber": 6498.63, "offset": 7748.97, "limit": 2102.05}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -1974,7 +2201,7 @@ examples:
           filter: "status='active'"
       responses:
         "200":
-          application/json: {"assessmentResults": []}
+          application/json: {"assessmentResults": [], "totalCount": 1596.14, "pageCount": 571.78, "pageNumber": 353.33, "offset": 3945.02, "limit": 6884.84}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -2086,7 +2313,7 @@ examples:
           filter: "status='active'"
       responses:
         "200":
-          application/json: {"assessmentLineItems": []}
+          application/json: {"assessmentLineItems": [], "totalCount": 1493.57, "pageCount": 1835.77, "pageNumber": 5683.44, "offset": 2241.16, "limit": 9256.42}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -2193,9 +2420,14 @@ examples:
       parameters:
         path:
           courseSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"resources": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "vendorResourceId": "<id>"}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "vendorResourceId": "<id>"}]}
+          application/json: {"resources": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "vendorResourceId": "<id>"}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "vendorResourceId": "<id>"}], "totalCount": 7568.34, "pageCount": 7760.39, "pageNumber": 4266.98, "offset": 2019.55, "limit": 6196.18}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -2219,7 +2451,7 @@ examples:
         application/json: {"resource": {"sourcedId": "<id>"}}
       responses:
         "201":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -2242,7 +2474,7 @@ examples:
           resourceSourcedId: "<id>"
       responses:
         "204":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -2262,9 +2494,14 @@ examples:
       parameters:
         path:
           classSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"resources": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}]}
+          application/json: {"resources": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}], "totalCount": 4899.7, "pageCount": 8380.54, "pageNumber": 7885.02, "offset": 4774.72, "limit": 7513.35}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2311,7 +2548,7 @@ examples:
           resourceSourcedId: "<id>"
       responses:
         "204":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2331,9 +2568,14 @@ examples:
       parameters:
         path:
           userSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"resources": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}, {"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}]}
+          application/json: {"resources": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}, {"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}], "totalCount": 6635.72, "pageCount": 7752.83, "pageNumber": 7288.19, "offset": 8365.67, "limit": 8215.36}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2357,7 +2599,7 @@ examples:
         application/json: {"resource": {"sourcedId": "<id>"}}
       responses:
         "201":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2380,7 +2622,7 @@ examples:
           resourceSourcedId: "<id>"
       responses:
         "204":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -2397,9 +2639,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
   getAllResources:
     speakeasy-default-get-all-resources:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"resources": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}]}
+          application/json: {"resources": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "vendorResourceId": "<id>"}], "totalCount": 3675.06, "pageCount": 9440.75, "pageNumber": 8992.69, "offset": 4848.84, "limit": 1642.32}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2466,7 +2714,7 @@ examples:
         application/json: {"resource": {"title": "<value>", "vendorResourceId": "<id>"}}
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -2511,7 +2759,7 @@ examples:
           filter: "status='active'"
       responses:
         "200":
-          application/json: {"users": [{"sourcedId": "<id>", "status": "active", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "primary", "role": "proctor", "org": {"href": "https://standard-comparison.org/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "relative", "org": {"href": "https://damp-forgery.info", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": []}]}
+          application/json: {"users": [{"sourcedId": "<id>", "status": "active", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "primary", "role": "proctor", "org": {"href": "https://standard-comparison.org/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "relative", "org": {"href": "https://damp-forgery.info", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": []}], "totalCount": 4787.21, "pageCount": 4818.38, "pageNumber": 7908.19, "offset": 7207.21, "limit": 550.61}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2618,9 +2866,14 @@ examples:
       parameters:
         path:
           userSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"classes": [{"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://jittery-cook.biz", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://another-vein.com/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://circular-developmental.org", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://proper-conservative.name", "sourcedId": "<id>", "type": "<value>"}]}]}
+          application/json: {"classes": [{"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://jittery-cook.biz", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://another-vein.com/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://circular-developmental.org", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://proper-conservative.name", "sourcedId": "<id>", "type": "<value>"}]}], "totalCount": 3266.67, "pageCount": 3714.24, "pageNumber": 1063.69, "offset": 6460.98, "limit": 4384.05}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2637,9 +2890,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
   getAllTerms:
     speakeasy-default-get-all-terms:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"terms": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "term", "schoolYear": 3350.88, "org": {"href": "https://trustworthy-collaboration.biz/", "sourcedId": "<id>", "type": "teacher"}}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "semester", "schoolYear": 8227.23, "org": {"href": "https://black-and-white-seal.info/", "sourcedId": "<id>", "type": "lineItem"}}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "schoolYear", "schoolYear": 7132.59, "org": {"href": "https://trivial-kick.net", "sourcedId": "<id>", "type": "demographics"}}]}
+          application/json: {"terms": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "term", "schoolYear": 3350.88, "org": {"href": "https://trustworthy-collaboration.biz/", "sourcedId": "<id>", "type": "teacher"}}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "semester", "schoolYear": 8227.23, "org": {"href": "https://black-and-white-seal.info/", "sourcedId": "<id>", "type": "lineItem"}}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "schoolYear", "schoolYear": 7132.59, "org": {"href": "https://trivial-kick.net", "sourcedId": "<id>", "type": "demographics"}}], "totalCount": 8282.5, "pageCount": 8991.35, "pageNumber": 9724.77, "offset": 3350.88, "limit": 2485.45}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2681,9 +2940,14 @@ examples:
       parameters:
         path:
           schoolSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"terms": [{"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "term", "schoolYear": 3125.26, "org": {"href": "https://angelic-mallard.name", "sourcedId": "<id>", "type": "result"}}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "gradingPeriod", "schoolYear": 6316.89, "org": {"href": "https://same-king.com/", "sourcedId": "<id>", "type": "enrollment"}}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "schoolYear", "schoolYear": 5505.06, "org": {"href": "https://excellent-median.org", "sourcedId": "<id>", "type": "lineItem"}}]}
+          application/json: {"terms": [{"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "term", "schoolYear": 3125.26, "org": {"href": "https://angelic-mallard.name", "sourcedId": "<id>", "type": "result"}}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "gradingPeriod", "schoolYear": 6316.89, "org": {"href": "https://same-king.com/", "sourcedId": "<id>", "type": "enrollment"}}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "schoolYear", "schoolYear": 5505.06, "org": {"href": "https://excellent-median.org", "sourcedId": "<id>", "type": "lineItem"}}], "totalCount": 9924.86, "pageCount": 2581.11, "pageNumber": 8303.58, "offset": 3125.26, "limit": 7990.25}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2703,9 +2967,14 @@ examples:
       parameters:
         path:
           termSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"gradingPeriods": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "gradingPeriod", "schoolYear": 5667.48, "org": {"href": "https://tangible-address.org", "sourcedId": "<id>", "type": "assessmentLineItem"}}]}
+          application/json: {"gradingPeriods": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "gradingPeriod", "schoolYear": 5667.48, "org": {"href": "https://tangible-address.org", "sourcedId": "<id>", "type": "assessmentLineItem"}}], "totalCount": 4913.75, "pageCount": 7564.85, "pageNumber": 1649.74, "offset": 5667.48, "limit": 9422}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -2749,9 +3018,14 @@ examples:
       parameters:
         path:
           termSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"classes": []}
+          application/json: {"classes": [], "totalCount": 1235.53, "pageCount": 7368.66, "pageNumber": 9044.06, "offset": 8471.61, "limit": 4235.35}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -2768,9 +3042,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
   getAllTeachers:
     speakeasy-default-get-all-teachers:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"users": [{"sourcedId": "<id>", "status": "active", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "primary", "role": "aide", "org": {"href": "https://near-wasabi.org/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "proctor", "org": {"href": "https://wiggly-fraudster.name/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "guardian", "org": {"href": "https://instructive-beret.name/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://multicolored-accompanist.net/", "sourcedId": "<id>", "type": "lineItem"}, {"href": "https://jagged-cannon.com", "sourcedId": "<id>", "type": "courseComponent"}, {"href": "https://bowed-cappelletti.name/", "sourcedId": "<id>", "type": "result"}]}]}
+          application/json: {"users": [{"sourcedId": "<id>", "status": "active", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "primary", "role": "aide", "org": {"href": "https://near-wasabi.org/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "proctor", "org": {"href": "https://wiggly-fraudster.name/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "guardian", "org": {"href": "https://instructive-beret.name/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://multicolored-accompanist.net/", "sourcedId": "<id>", "type": "lineItem"}, {"href": "https://jagged-cannon.com", "sourcedId": "<id>", "type": "courseComponent"}, {"href": "https://bowed-cappelletti.name/", "sourcedId": "<id>", "type": "result"}]}], "totalCount": 4786.64, "pageCount": 1361.87, "pageNumber": 9433.6, "offset": 8459.61, "limit": 57.45}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -2813,9 +3093,14 @@ examples:
         path:
           schoolSourcedId: "<id>"
           classSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"users": []}
+          application/json: {"users": [], "totalCount": 2191, "pageCount": 231.85, "pageNumber": 7218.32, "offset": 8544.03, "limit": 5306.97}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -2835,9 +3120,14 @@ examples:
       parameters:
         path:
           schoolSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"users": [{"sourcedId": "<id>", "status": "active", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "primary", "role": "guardian", "org": {"href": "https://difficult-alb.name", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "parent", "org": {"href": "https://burly-cd.net", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://eminent-suspension.info", "sourcedId": "<id>", "type": "gradingPeriod"}, {"href": "https://leading-appliance.org/", "sourcedId": "<id>", "type": "demographics"}, {"href": "https://bustling-airbus.org/", "sourcedId": "<id>", "type": "scoreScale"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "secondary", "role": "parent", "org": {"href": "https://amused-reward.name", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "proctor", "org": {"href": "https://darling-pantyhose.info/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "parent", "org": {"href": "https://perfumed-import.net/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://bright-kielbasa.com/", "sourcedId": "<id>", "type": "student"}, {"href": "https://mysterious-lift.net/", "sourcedId": "<id>", "type": "org"}]}]}
+          application/json: {"users": [{"sourcedId": "<id>", "status": "active", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "primary", "role": "guardian", "org": {"href": "https://difficult-alb.name", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "parent", "org": {"href": "https://burly-cd.net", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://eminent-suspension.info", "sourcedId": "<id>", "type": "gradingPeriod"}, {"href": "https://leading-appliance.org/", "sourcedId": "<id>", "type": "demographics"}, {"href": "https://bustling-airbus.org/", "sourcedId": "<id>", "type": "scoreScale"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "secondary", "role": "parent", "org": {"href": "https://amused-reward.name", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "proctor", "org": {"href": "https://darling-pantyhose.info/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "parent", "org": {"href": "https://perfumed-import.net/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://bright-kielbasa.com/", "sourcedId": "<id>", "type": "student"}, {"href": "https://mysterious-lift.net/", "sourcedId": "<id>", "type": "org"}]}], "totalCount": 6954.75, "pageCount": 2493.69, "pageNumber": 6275.03, "offset": 5439.17, "limit": 4448.46}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -2857,9 +3147,14 @@ examples:
       parameters:
         path:
           classSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://tempting-co-producer.name/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://political-daddy.net/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://round-mozzarella.com", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://roasted-milestone.name/", "sourcedId": "<id>", "type": "<value>"}]}]
+          application/json: {"teachers": [{"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "secondary", "role": "aide", "org": {"href": "https://mammoth-oil.biz", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://wonderful-popularity.name", "sourcedId": "<id>", "type": "category"}, {"href": "https://roasted-milestone.name/", "sourcedId": "<id>", "type": "category"}, {"href": "https://motionless-guard.com/", "sourcedId": "<id>", "type": "courseComponent"}]}], "totalCount": 562.48, "pageCount": 1125.12, "pageNumber": 2032.06, "offset": 2467.23, "limit": 5315.85}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "404":
@@ -2870,6 +3165,10 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "500":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
+        "401":
+          application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
+        "403":
+          application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
   addTeacherToClass:
     speakeasy-default-add-teacher-to-class:
       parameters:
@@ -2899,9 +3198,14 @@ examples:
       parameters:
         path:
           teacherSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"classes": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://aware-duster.com", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://long-joy.com", "sourcedId": "<id>", "type": "<value>"}, "terms": []}, {"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://sparse-passport.info/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://quintessential-quit.com", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://straight-bracelet.info", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://key-ice-cream.org/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://unruly-jet.com/", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://flustered-sediment.net/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://sour-institute.info/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://spanish-junior.biz/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://junior-dependency.biz", "sourcedId": "<id>", "type": "<value>"}]}]}
+          application/json: {"classes": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://aware-duster.com", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://long-joy.com", "sourcedId": "<id>", "type": "<value>"}, "terms": []}, {"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://sparse-passport.info/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://quintessential-quit.com", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://straight-bracelet.info", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://key-ice-cream.org/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://unruly-jet.com/", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://flustered-sediment.net/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://sour-institute.info/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://spanish-junior.biz/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://junior-dependency.biz", "sourcedId": "<id>", "type": "<value>"}]}], "totalCount": 9289.87, "pageCount": 6777.85, "pageNumber": 9459.81, "offset": 6464.4, "limit": 528.82}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -2918,9 +3222,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
   getAllStudents:
     speakeasy-default-get-all-students:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"users": [{"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "secondary", "role": "relative", "org": {"href": "https://subtle-ice-cream.net", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://stale-restaurant.biz", "sourcedId": "<id>", "type": "user"}, {"href": "https://live-cutlet.info", "sourcedId": "<id>", "type": "componentResource"}, {"href": "https://pure-crocodile.net", "sourcedId": "<id>", "type": "academicSession"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [], "agents": [{"href": "https://bowed-replacement.net/", "sourcedId": "<id>", "type": "demographics"}, {"href": "https://miserable-lotion.biz", "sourcedId": "<id>", "type": "term"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "primary", "role": "teacher", "org": {"href": "https://neglected-solution.name", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://regal-sunbeam.org", "sourcedId": "<id>", "type": "result"}, {"href": "https://purple-thyme.com/", "sourcedId": "<id>", "type": "scoreScale"}, {"href": "https://decisive-coast.biz/", "sourcedId": "<id>", "type": "assessmentLineItem"}]}]}
+          application/json: {"users": [{"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "secondary", "role": "relative", "org": {"href": "https://subtle-ice-cream.net", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://stale-restaurant.biz", "sourcedId": "<id>", "type": "user"}, {"href": "https://live-cutlet.info", "sourcedId": "<id>", "type": "componentResource"}, {"href": "https://pure-crocodile.net", "sourcedId": "<id>", "type": "academicSession"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [], "agents": [{"href": "https://bowed-replacement.net/", "sourcedId": "<id>", "type": "demographics"}, {"href": "https://miserable-lotion.biz", "sourcedId": "<id>", "type": "term"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": false, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "primary", "role": "teacher", "org": {"href": "https://neglected-solution.name", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://regal-sunbeam.org", "sourcedId": "<id>", "type": "result"}, {"href": "https://purple-thyme.com/", "sourcedId": "<id>", "type": "scoreScale"}, {"href": "https://decisive-coast.biz/", "sourcedId": "<id>", "type": "assessmentLineItem"}]}], "totalCount": 9695.99, "pageCount": 5508.46, "pageNumber": 6947.56, "offset": 3526.32, "limit": 9992.67}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -2963,9 +3273,14 @@ examples:
         path:
           schoolSourcedId: "<id>"
           classSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"users": [{"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [], "agents": []}, {"sourcedId": "<id>", "status": "active", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "secondary", "role": "aide", "org": {"href": "https://ornery-permafrost.com/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://webbed-massage.name/", "sourcedId": "<id>", "type": "enrollment"}, {"href": "https://unrealistic-illusion.org/", "sourcedId": "<id>", "type": "category"}, {"href": "https://respectful-term.com", "sourcedId": "<id>", "type": "enrollment"}]}, {"sourcedId": "<id>", "status": "active", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [], "agents": [{"href": "https://blank-doorpost.biz", "sourcedId": "<id>", "type": "category"}, {"href": "https://infamous-cantaloupe.org", "sourcedId": "<id>", "type": "course"}]}]}
+          application/json: {"users": [{"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [], "agents": []}, {"sourcedId": "<id>", "status": "active", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "secondary", "role": "aide", "org": {"href": "https://ornery-permafrost.com/", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://webbed-massage.name/", "sourcedId": "<id>", "type": "enrollment"}, {"href": "https://unrealistic-illusion.org/", "sourcedId": "<id>", "type": "category"}, {"href": "https://respectful-term.com", "sourcedId": "<id>", "type": "enrollment"}]}, {"sourcedId": "<id>", "status": "active", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [], "agents": [{"href": "https://blank-doorpost.biz", "sourcedId": "<id>", "type": "category"}, {"href": "https://infamous-cantaloupe.org", "sourcedId": "<id>", "type": "course"}]}], "totalCount": 7930.97, "pageCount": 7638.3, "pageNumber": 3337.04, "offset": 231.83, "limit": 951.73}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -2985,9 +3300,14 @@ examples:
       parameters:
         path:
           schoolSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"users": []}
+          application/json: {"users": [], "totalCount": 75.87, "pageCount": 563.67, "pageNumber": 8235.37, "offset": 1899.6, "limit": 9381.14}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -3007,9 +3327,14 @@ examples:
       parameters:
         path:
           classSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://careless-knickers.name", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://blue-intent.com/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://extroverted-slipper.net", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://irresponsible-chap.name", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://appropriate-couch.com/", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://utter-extension.biz/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://stale-hydrocarbon.net/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://that-farmer.biz", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://well-to-do-pharmacopoeia.biz/", "sourcedId": "<id>", "type": "<value>"}]}]
+          application/json: {"students": [{"sourcedId": "<id>", "status": "tobedeleted", "enabledUser": true, "givenName": "<value>", "familyName": "<value>", "roles": [{"roleType": "primary", "role": "proctor", "org": {"href": "https://jaunty-beret.info", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}, {"roleType": "primary", "role": "teacher", "org": {"href": "https://extroverted-slipper.net", "sourcedId": "<id>", "type": "<value>"}, "beginDate": "<value>", "endDate": "<value>"}], "agents": [{"href": "https://content-millet.info/", "sourcedId": "<id>", "type": "academicSession"}, {"href": "https://apt-trash.info/", "sourcedId": "<id>", "type": "assessmentLineItem"}]}], "totalCount": 9226.05, "pageCount": 3121, "pageNumber": 2641.18, "offset": 3474.35, "limit": 7955.64}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -3053,9 +3378,14 @@ examples:
       parameters:
         path:
           studentSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"classes": [{"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://doting-crest.com/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://respectful-chasuble.biz/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://unrealistic-hyphenation.biz", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://cute-pear.net/", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://intelligent-underpants.com", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://unlawful-cuckoo.net/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://blue-pleasure.org", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://lined-devil.org/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://urban-range.name", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://informal-ceramic.com", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://worldly-negotiation.net", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://weird-metal.org/", "sourcedId": "<id>", "type": "<value>"}]}]}
+          application/json: {"classes": [{"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://doting-crest.com/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://respectful-chasuble.biz/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://unrealistic-hyphenation.biz", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://cute-pear.net/", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://intelligent-underpants.com", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://unlawful-cuckoo.net/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://blue-pleasure.org", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://lined-devil.org/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://urban-range.name", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://informal-ceramic.com", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://worldly-negotiation.net", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://weird-metal.org/", "sourcedId": "<id>", "type": "<value>"}]}], "totalCount": 8647.79, "pageCount": 4544.25, "pageNumber": 2080.77, "offset": 3855.85, "limit": 2031.93}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -3072,9 +3402,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
   getAllSchools:
     speakeasy-default-get-all-schools:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"orgs": [{"sourcedId": "<id>", "status": "tobedeleted", "name": "<value>", "type": "national", "identifier": "<value>", "parent": {"href": "https://idealistic-disposer.com/", "sourcedId": "<id>", "type": "<value>"}, "children": [{"href": "https://mean-beret.net/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://irresponsible-marketplace.com", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "active", "name": "<value>", "type": "department", "identifier": "<value>", "parent": {"href": "https://negative-electronics.net", "sourcedId": "<id>", "type": "<value>"}, "children": [{"href": "https://scaly-coil.com", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://lovable-bump.com/", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "active", "name": "<value>", "type": "district", "identifier": "<value>", "parent": {"href": "https://outlying-taxicab.biz", "sourcedId": "<id>", "type": "<value>"}, "children": [{"href": "https://superficial-disposer.biz/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://private-median.name/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://corrupt-gazebo.name/", "sourcedId": "<id>", "type": "<value>"}]}]}
+          application/json: {"orgs": [{"sourcedId": "<id>", "status": "tobedeleted", "name": "<value>", "type": "national", "identifier": "<value>", "parent": {"href": "https://idealistic-disposer.com/", "sourcedId": "<id>", "type": "<value>"}, "children": [{"href": "https://mean-beret.net/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://irresponsible-marketplace.com", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "active", "name": "<value>", "type": "department", "identifier": "<value>", "parent": {"href": "https://negative-electronics.net", "sourcedId": "<id>", "type": "<value>"}, "children": [{"href": "https://scaly-coil.com", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://lovable-bump.com/", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "active", "name": "<value>", "type": "district", "identifier": "<value>", "parent": {"href": "https://outlying-taxicab.biz", "sourcedId": "<id>", "type": "<value>"}, "children": [{"href": "https://superficial-disposer.biz/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://private-median.name/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://corrupt-gazebo.name/", "sourcedId": "<id>", "type": "<value>"}]}], "totalCount": 9443.53, "pageCount": 5323.77, "pageNumber": 9733.84, "offset": 679.99, "limit": 3840.38}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -3176,9 +3512,14 @@ examples:
         path:
           schoolSourcedId: "<id>"
           classSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"enrollments": [{"sourcedId": "<id>", "status": "active", "role": "student", "primary": true, "beginDate": "2024-01-01", "endDate": "2024-01-01", "user": {"href": "https://minty-distinction.net", "sourcedId": "<id>", "type": "<value>"}, "class": {"href": "https://well-to-do-passport.com/", "sourcedId": "<id>", "type": "<value>"}}]}
+          application/json: {"enrollments": [{"sourcedId": "<id>", "status": "active", "role": "student", "primary": true, "beginDate": "2024-01-01", "endDate": "2024-01-01", "user": {"href": "https://minty-distinction.net", "sourcedId": "<id>", "type": "<value>"}, "class": {"href": "https://well-to-do-passport.com/", "sourcedId": "<id>", "type": "<value>"}}], "totalCount": 2556.5, "pageCount": 96.85, "pageNumber": 7293.36, "offset": 4712.96, "limit": 7539.07}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -3198,9 +3539,14 @@ examples:
       parameters:
         path:
           schoolSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"enrollments": []}
+          application/json: {"enrollments": [], "totalCount": 1097.01, "pageCount": 661.9, "pageNumber": 5455.16, "offset": 2690.87, "limit": 251.62}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -3220,9 +3566,14 @@ examples:
       parameters:
         path:
           schoolSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: [{"status": "active", "title": "<value>", "org": {"sourcedId": "<id>"}}, {"status": "active", "title": "<value>", "org": {"sourcedId": "<id>"}}]
+          application/json: {"courses": [{"status": "active", "title": "<value>", "org": {"sourcedId": "<id>"}}], "totalCount": 3172.2, "pageCount": 1469.28, "pageNumber": 1198.1, "offset": 248.13, "limit": 1426.47}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -3242,9 +3593,14 @@ examples:
       parameters:
         path:
           schoolSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"classes": [{"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://political-orchid.biz/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://irresponsible-redesign.com/", "sourcedId": "<id>", "type": "<value>"}, "terms": []}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://gorgeous-blowgun.name/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://bitter-nudge.info", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://shameless-following.org", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://both-popularity.info", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://excellent-management.biz/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://jealous-citizen.name", "sourcedId": "<id>", "type": "<value>"}, "terms": []}]}
+          application/json: {"classes": [{"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://political-orchid.biz/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://irresponsible-redesign.com/", "sourcedId": "<id>", "type": "<value>"}, "terms": []}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://gorgeous-blowgun.name/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://bitter-nudge.info", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://shameless-following.org", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://both-popularity.info", "sourcedId": "<id>", "type": "<value>"}]}, {"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://excellent-management.biz/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://jealous-citizen.name", "sourcedId": "<id>", "type": "<value>"}, "terms": []}], "totalCount": 9884.98, "pageCount": 2577.02, "pageNumber": 1985.31, "offset": 2794.92, "limit": 6208.49}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -3269,7 +3625,7 @@ examples:
           filter: "status='active'"
       responses:
         "200":
-          application/json: {"orgs": [{"sourcedId": "<id>", "status": "tobedeleted", "name": "<value>", "type": "state", "identifier": "<value>", "parent": {"href": "https://emotional-roundabout.biz/", "sourcedId": "<id>", "type": "<value>"}, "children": []}]}
+          application/json: {"orgs": [{"sourcedId": "<id>", "status": "tobedeleted", "name": "<value>", "type": "state", "identifier": "<value>", "parent": {"href": "https://emotional-roundabout.biz/", "sourcedId": "<id>", "type": "<value>"}, "children": []}], "totalCount": 3414.8, "pageCount": 8106.96, "pageNumber": 7331.27, "offset": 4131.97, "limit": 2250.48}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -3369,9 +3725,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
   getAllGradingPeriods:
     speakeasy-default-get-all-grading-periods:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"gradingPeriods": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "schoolYear", "schoolYear": 1076.6, "org": {"href": "https://unusual-hierarchy.biz", "sourcedId": "<id>", "type": "term"}}]}
+          application/json: {"gradingPeriods": [{"sourcedId": "<id>", "status": "tobedeleted", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "schoolYear", "schoolYear": 1076.6, "org": {"href": "https://unusual-hierarchy.biz", "sourcedId": "<id>", "type": "term"}}], "totalCount": 3979.7, "pageCount": 8990.23, "pageNumber": 5905.49, "offset": 1076.6, "limit": 9489.72}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -3434,7 +3796,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "201":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -3456,7 +3818,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "204":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -3473,9 +3835,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
   getAllEnrollments:
     speakeasy-default-get-all-enrollments:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"enrollments": []}
+          application/json: {"enrollments": [], "totalCount": 2124.04, "pageCount": 285.73, "pageNumber": 3230.37, "offset": 7889.14, "limit": 9371.58}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -3542,7 +3910,7 @@ examples:
         application/json: {"enrollment": {"sourcedId": "<id>", "status": "active", "role": "student", "primary": false, "beginDate": "2024-01-01", "endDate": "2024-01-01", "user": {"sourcedId": "<id>"}, "class": {"sourcedId": "<id>"}}}
       responses:
         "201":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -3579,9 +3947,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
   getAllDemographics:
     speakeasy-default-get-all-demographics:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"demographics": [{"sourcedId": "<id>", "status": "active", "birthDate": "1973-05-11", "sex": "unspecified", "americanIndianOrAlaskaNative": "<value>", "asian": "<value>", "blackOrAfricanAmerican": "<value>", "nativeHawaiianOrOtherPacificIslander": "<value>", "white": "<value>", "demographicRaceTwoOrMoreRaces": "<value>", "hispanicOrLatinoEthnicity": "<value>", "countryOfBirthCode": "<value>", "stateOfBirthAbbreviation": "<value>", "cityOfBirth": "<value>", "publicSchoolResidenceStatus": "<value>"}]}
+          application/json: {"demographics": [{"sourcedId": "<id>", "status": "active", "birthDate": "1973-05-11", "sex": "unspecified", "americanIndianOrAlaskaNative": "<value>", "asian": "<value>", "blackOrAfricanAmerican": "<value>", "nativeHawaiianOrOtherPacificIslander": "<value>", "white": "<value>", "demographicRaceTwoOrMoreRaces": "<value>", "hispanicOrLatinoEthnicity": "<value>", "countryOfBirthCode": "<value>", "stateOfBirthAbbreviation": "<value>", "cityOfBirth": "<value>", "publicSchoolResidenceStatus": "<value>"}], "totalCount": 2881.7, "pageCount": 756.32, "pageNumber": 4608.32, "offset": 9907.21, "limit": 2897.84}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -3689,7 +4063,7 @@ examples:
           filter: "status='active'"
       responses:
         "200":
-          application/json: {"courses": []}
+          application/json: {"courses": [], "totalCount": 1071.39, "pageCount": 2888.16, "pageNumber": 9744.25, "offset": 9007.05, "limit": 9795.27}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -3728,9 +4102,14 @@ examples:
       parameters:
         path:
           courseSourcedId: "<id>"
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"classes": [], "totalCount": 2719.24, "pageCount": 4829.92, "pageNumber": 1879.37, "offset": 4462.34, "limit": 6551.15}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -3774,7 +4153,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}]}}
         "401":
@@ -3796,7 +4175,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -3840,7 +4219,7 @@ examples:
           filter: "status='active'"
       responses:
         "200":
-          application/json: {"componentResources": [{"sourcedId": "<id>", "status": "active", "courseComponent": {"sourcedId": "<id>"}, "resource": {"sourcedId": "<id>"}, "title": "<value>", "sortOrder": 0}, {"sourcedId": "<id>", "status": "active", "courseComponent": {"sourcedId": "<id>"}, "resource": {"sourcedId": "<id>"}, "title": "<value>", "sortOrder": 0}]}
+          application/json: {"componentResources": [{"sourcedId": "<id>", "status": "active", "courseComponent": {"sourcedId": "<id>"}, "resource": {"sourcedId": "<id>"}, "title": "<value>", "sortOrder": 0}, {"sourcedId": "<id>", "status": "active", "courseComponent": {"sourcedId": "<id>"}, "resource": {"sourcedId": "<id>"}, "title": "<value>", "sortOrder": 0}], "totalCount": 5552.93, "pageCount": 48.77, "pageNumber": 1401.77, "offset": 5331.79, "limit": 1991.7}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -3884,7 +4263,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
@@ -3952,7 +4331,7 @@ examples:
           filter: "status='active'"
       responses:
         "200":
-          application/json: {"courseComponents": []}
+          application/json: {"courseComponents": [], "totalCount": 718.92, "pageCount": 6075.75, "pageNumber": 1032.56, "offset": 481.08, "limit": 1164.49}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -3998,7 +4377,7 @@ examples:
         application/json: {"courseComponent": {"status": "tobedeleted", "course": {"sourcedId": "<id>"}, "title": "<value>", "sortOrder": 1, "unlockDate": "2021-01-01T00:00:00.000Z"}}
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          application/json: {"key": "<value>", "key1": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -4020,7 +4399,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          application/json: {"key": "<value>"}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":
@@ -4037,9 +4416,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
   getAllClasses:
     speakeasy-default-get-all-classes:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: [{"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "scheduled", "location": "<value>", "course": {"href": "https://icy-runway.com", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://lonely-bonnet.com", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://suburban-fork.name/", "sourcedId": "<id>", "type": "<value>"}, {"href": "https://boiling-quinoa.com", "sourcedId": "<id>", "type": "<value>"}]}]
+          application/json: {"classes": [], "totalCount": 947.87, "pageCount": 9979.12, "pageNumber": 7751.87, "offset": 3823.94, "limit": 7696.82}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -4141,9 +4526,15 @@ examples:
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
   getAllAcademicSessions:
     speakeasy-default-get-all-academic-sessions:
+      parameters:
+        query:
+          fields: "sourcedId,name"
+          limit: 100
+          offset: 0
+          filter: "status='active'"
       responses:
         "200":
-          application/json: [{"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "semester", "schoolYear": 4101.16, "org": {"href": "https://spherical-jump.net/", "sourcedId": "<id>", "type": "enrollment"}}]
+          application/json: {"academicSessions": [], "totalCount": 3494.37, "pageCount": 3796.87, "pageNumber": 4101.16, "offset": 4152.32, "limit": 7832.03}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": []}}
         "401":

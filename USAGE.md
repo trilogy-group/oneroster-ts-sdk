@@ -10,10 +10,15 @@ const oneRoster = new OneRoster({
 });
 
 async function run() {
-  const result = await oneRoster.scoreScales.list();
+  const result = await oneRoster.scoreScalesManagement.getAllScoreScales({
+    fields: "sourcedId,name",
+    filter: "status='active'",
+  });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();

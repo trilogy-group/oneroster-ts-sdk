@@ -12,6 +12,6 @@ let value: DeleteDemographicsRequest = {
 
 ## Fields
 
-| Field                                                       | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `sourcedId`                                                 | *string*                                                    | :heavy_check_mark:                                          | The unique identifier for the demographics record to delete |
+| Field                                                      | Type                                                       | Required                                                   | Description                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `sourcedId`                                                | *string*                                                   | :heavy_check_mark:                                         | The unique identifier for the Demographic record to delete |

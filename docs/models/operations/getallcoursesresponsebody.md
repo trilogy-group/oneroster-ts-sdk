@@ -17,6 +17,11 @@ let value: GetAllCoursesResponseBody = {
       },
     },
   ],
+  totalCount: 6386.94,
+  pageCount: 1641.88,
+  pageNumber: 8511.84,
+  offset: 4403.76,
+  limit: 5968.85,
 };
 ```
 
@@ -25,3 +30,8 @@ let value: GetAllCoursesResponseBody = {
 | Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | `courses`                                                                          | [operations.GetAllCoursesCourse](../../models/operations/getallcoursescourse.md)[] | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `totalCount`                                                                       | *number*                                                                           | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `pageCount`                                                                        | *number*                                                                           | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `pageNumber`                                                                       | *number*                                                                           | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `offset`                                                                           | *number*                                                                           | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `limit`                                                                            | *number*                                                                           | :heavy_check_mark:                                                                 | N/A                                                                                |

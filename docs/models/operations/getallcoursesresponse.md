@@ -16,6 +16,11 @@ let value: GetAllCoursesResponse = {
         },
       },
     ],
+    totalCount: 7164.01,
+    pageCount: 6457.62,
+    pageNumber: 4485.32,
+    offset: 2674.56,
+    limit: 2992.94,
   },
 };
 ```

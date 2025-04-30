@@ -58,6 +58,11 @@ export type GetAllOrgsRequest = {
  */
 export type GetAllOrgsResponseBody = {
   orgs: Array<components.Org>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 export type GetAllOrgsResponse = {
@@ -164,11 +169,21 @@ export const GetAllOrgsResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   orgs: z.array(components.Org$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /** @internal */
 export type GetAllOrgsResponseBody$Outbound = {
   orgs: Array<components.Org$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 /** @internal */
@@ -178,6 +193,11 @@ export const GetAllOrgsResponseBody$outboundSchema: z.ZodType<
   GetAllOrgsResponseBody
 > = z.object({
   orgs: z.array(components.Org$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /**

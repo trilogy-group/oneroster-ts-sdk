@@ -103,6 +103,11 @@ export type GetAllCourseComponentsCourseComponent = {
  */
 export type GetAllCourseComponentsResponseBody = {
   courseComponents: Array<GetAllCourseComponentsCourseComponent>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 export type GetAllCourseComponentsResponse = {
@@ -521,11 +526,21 @@ export const GetAllCourseComponentsResponseBody$inboundSchema: z.ZodType<
   courseComponents: z.array(
     z.lazy(() => GetAllCourseComponentsCourseComponent$inboundSchema),
   ),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /** @internal */
 export type GetAllCourseComponentsResponseBody$Outbound = {
   courseComponents: Array<GetAllCourseComponentsCourseComponent$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 /** @internal */
@@ -537,6 +552,11 @@ export const GetAllCourseComponentsResponseBody$outboundSchema: z.ZodType<
   courseComponents: z.array(
     z.lazy(() => GetAllCourseComponentsCourseComponent$outboundSchema),
   ),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /**

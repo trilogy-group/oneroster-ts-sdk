@@ -89,6 +89,11 @@ export type GetAllComponentResourcesComponentResource = {
  */
 export type GetAllComponentResourcesResponseBody = {
   componentResources: Array<GetAllComponentResourcesComponentResource>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 export type GetAllComponentResourcesResponse = {
@@ -434,11 +439,21 @@ export const GetAllComponentResourcesResponseBody$inboundSchema: z.ZodType<
   componentResources: z.array(
     z.lazy(() => GetAllComponentResourcesComponentResource$inboundSchema),
   ),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /** @internal */
 export type GetAllComponentResourcesResponseBody$Outbound = {
   componentResources: Array<GetAllComponentResourcesComponentResource$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 /** @internal */
@@ -450,6 +465,11 @@ export const GetAllComponentResourcesResponseBody$outboundSchema: z.ZodType<
   componentResources: z.array(
     z.lazy(() => GetAllComponentResourcesComponentResource$outboundSchema),
   ),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /**

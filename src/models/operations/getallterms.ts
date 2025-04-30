@@ -3,17 +3,233 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
+ * The order to sort the response by
+ */
+export const GetAllTermsOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetAllTermsOrderBy = ClosedEnum<typeof GetAllTermsOrderBy>;
+
+export type GetAllTermsRequest = {
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetAllTermsOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
+};
+
+/**
  * Successful response containing a collection of terms
  */
-export type GetAllTermsResponse = {
+export type GetAllTermsResponseBody = {
   terms: Array<components.AcademicSession>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetAllTermsResponse = {
+  result: GetAllTermsResponseBody;
+};
+
+/** @internal */
+export const GetAllTermsOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetAllTermsOrderBy
+> = z.nativeEnum(GetAllTermsOrderBy);
+
+/** @internal */
+export const GetAllTermsOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetAllTermsOrderBy
+> = GetAllTermsOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllTermsOrderBy$ {
+  /** @deprecated use `GetAllTermsOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetAllTermsOrderBy$inboundSchema;
+  /** @deprecated use `GetAllTermsOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetAllTermsOrderBy$outboundSchema;
+}
+
+/** @internal */
+export const GetAllTermsRequest$inboundSchema: z.ZodType<
+  GetAllTermsRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllTermsOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/** @internal */
+export type GetAllTermsRequest$Outbound = {
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
+};
+
+/** @internal */
+export const GetAllTermsRequest$outboundSchema: z.ZodType<
+  GetAllTermsRequest$Outbound,
+  z.ZodTypeDef,
+  GetAllTermsRequest
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllTermsOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllTermsRequest$ {
+  /** @deprecated use `GetAllTermsRequest$inboundSchema` instead. */
+  export const inboundSchema = GetAllTermsRequest$inboundSchema;
+  /** @deprecated use `GetAllTermsRequest$outboundSchema` instead. */
+  export const outboundSchema = GetAllTermsRequest$outboundSchema;
+  /** @deprecated use `GetAllTermsRequest$Outbound` instead. */
+  export type Outbound = GetAllTermsRequest$Outbound;
+}
+
+export function getAllTermsRequestToJSON(
+  getAllTermsRequest: GetAllTermsRequest,
+): string {
+  return JSON.stringify(
+    GetAllTermsRequest$outboundSchema.parse(getAllTermsRequest),
+  );
+}
+
+export function getAllTermsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllTermsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllTermsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllTermsRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetAllTermsResponseBody$inboundSchema: z.ZodType<
+  GetAllTermsResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  terms: z.array(components.AcademicSession$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetAllTermsResponseBody$Outbound = {
+  terms: Array<components.AcademicSession$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetAllTermsResponseBody$outboundSchema: z.ZodType<
+  GetAllTermsResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetAllTermsResponseBody
+> = z.object({
+  terms: z.array(components.AcademicSession$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllTermsResponseBody$ {
+  /** @deprecated use `GetAllTermsResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetAllTermsResponseBody$inboundSchema;
+  /** @deprecated use `GetAllTermsResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetAllTermsResponseBody$outboundSchema;
+  /** @deprecated use `GetAllTermsResponseBody$Outbound` instead. */
+  export type Outbound = GetAllTermsResponseBody$Outbound;
+}
+
+export function getAllTermsResponseBodyToJSON(
+  getAllTermsResponseBody: GetAllTermsResponseBody,
+): string {
+  return JSON.stringify(
+    GetAllTermsResponseBody$outboundSchema.parse(getAllTermsResponseBody),
+  );
+}
+
+export function getAllTermsResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllTermsResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllTermsResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllTermsResponseBody' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetAllTermsResponse$inboundSchema: z.ZodType<
@@ -21,12 +237,16 @@ export const GetAllTermsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  terms: z.array(components.AcademicSession$inboundSchema),
+  Result: z.lazy(() => GetAllTermsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetAllTermsResponse$Outbound = {
-  terms: Array<components.AcademicSession$Outbound>;
+  Result: GetAllTermsResponseBody$Outbound;
 };
 
 /** @internal */
@@ -35,7 +255,11 @@ export const GetAllTermsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAllTermsResponse
 > = z.object({
-  terms: z.array(components.AcademicSession$outboundSchema),
+  result: z.lazy(() => GetAllTermsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

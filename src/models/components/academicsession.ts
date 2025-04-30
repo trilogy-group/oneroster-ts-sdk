@@ -51,7 +51,7 @@ export type AcademicSessionParent = {
   type: ParentType;
 };
 
-export const OrgType1 = {
+export const OrgType2 = {
   AcademicSession: "academicSession",
   AssessmentLineItem: "assessmentLineItem",
   Category: "category",
@@ -72,12 +72,12 @@ export const OrgType1 = {
   ComponentResource: "componentResource",
   CourseComponent: "courseComponent",
 } as const;
-export type OrgType1 = ClosedEnum<typeof OrgType1>;
+export type OrgType2 = ClosedEnum<typeof OrgType2>;
 
 export type AcademicSessionOrg = {
   href: string;
   sourcedId: string;
-  type: OrgType1;
+  type: OrgType2;
 };
 
 /**
@@ -219,22 +219,22 @@ export function academicSessionParentFromJSON(
 }
 
 /** @internal */
-export const OrgType1$inboundSchema: z.ZodNativeEnum<typeof OrgType1> = z
-  .nativeEnum(OrgType1);
+export const OrgType2$inboundSchema: z.ZodNativeEnum<typeof OrgType2> = z
+  .nativeEnum(OrgType2);
 
 /** @internal */
-export const OrgType1$outboundSchema: z.ZodNativeEnum<typeof OrgType1> =
-  OrgType1$inboundSchema;
+export const OrgType2$outboundSchema: z.ZodNativeEnum<typeof OrgType2> =
+  OrgType2$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace OrgType1$ {
-  /** @deprecated use `OrgType1$inboundSchema` instead. */
-  export const inboundSchema = OrgType1$inboundSchema;
-  /** @deprecated use `OrgType1$outboundSchema` instead. */
-  export const outboundSchema = OrgType1$outboundSchema;
+export namespace OrgType2$ {
+  /** @deprecated use `OrgType2$inboundSchema` instead. */
+  export const inboundSchema = OrgType2$inboundSchema;
+  /** @deprecated use `OrgType2$outboundSchema` instead. */
+  export const outboundSchema = OrgType2$outboundSchema;
 }
 
 /** @internal */
@@ -245,7 +245,7 @@ export const AcademicSessionOrg$inboundSchema: z.ZodType<
 > = z.object({
   href: z.string(),
   sourcedId: z.string(),
-  type: OrgType1$inboundSchema,
+  type: OrgType2$inboundSchema,
 });
 
 /** @internal */
@@ -263,7 +263,7 @@ export const AcademicSessionOrg$outboundSchema: z.ZodType<
 > = z.object({
   href: z.string(),
   sourcedId: z.string(),
-  type: OrgType1$outboundSchema,
+  type: OrgType2$outboundSchema,
 });
 
 /**

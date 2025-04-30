@@ -3,17 +3,233 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
+ * The order to sort the response by
+ */
+export const GetAllSchoolsOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetAllSchoolsOrderBy = ClosedEnum<typeof GetAllSchoolsOrderBy>;
+
+export type GetAllSchoolsRequest = {
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetAllSchoolsOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
+};
+
+/**
  * Collection of schools successfully retrieved
  */
-export type GetAllSchoolsResponse = {
+export type GetAllSchoolsResponseBody = {
   orgs: Array<components.Org>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetAllSchoolsResponse = {
+  result: GetAllSchoolsResponseBody;
+};
+
+/** @internal */
+export const GetAllSchoolsOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetAllSchoolsOrderBy
+> = z.nativeEnum(GetAllSchoolsOrderBy);
+
+/** @internal */
+export const GetAllSchoolsOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetAllSchoolsOrderBy
+> = GetAllSchoolsOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllSchoolsOrderBy$ {
+  /** @deprecated use `GetAllSchoolsOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetAllSchoolsOrderBy$inboundSchema;
+  /** @deprecated use `GetAllSchoolsOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetAllSchoolsOrderBy$outboundSchema;
+}
+
+/** @internal */
+export const GetAllSchoolsRequest$inboundSchema: z.ZodType<
+  GetAllSchoolsRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllSchoolsOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/** @internal */
+export type GetAllSchoolsRequest$Outbound = {
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
+};
+
+/** @internal */
+export const GetAllSchoolsRequest$outboundSchema: z.ZodType<
+  GetAllSchoolsRequest$Outbound,
+  z.ZodTypeDef,
+  GetAllSchoolsRequest
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllSchoolsOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllSchoolsRequest$ {
+  /** @deprecated use `GetAllSchoolsRequest$inboundSchema` instead. */
+  export const inboundSchema = GetAllSchoolsRequest$inboundSchema;
+  /** @deprecated use `GetAllSchoolsRequest$outboundSchema` instead. */
+  export const outboundSchema = GetAllSchoolsRequest$outboundSchema;
+  /** @deprecated use `GetAllSchoolsRequest$Outbound` instead. */
+  export type Outbound = GetAllSchoolsRequest$Outbound;
+}
+
+export function getAllSchoolsRequestToJSON(
+  getAllSchoolsRequest: GetAllSchoolsRequest,
+): string {
+  return JSON.stringify(
+    GetAllSchoolsRequest$outboundSchema.parse(getAllSchoolsRequest),
+  );
+}
+
+export function getAllSchoolsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllSchoolsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllSchoolsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllSchoolsRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetAllSchoolsResponseBody$inboundSchema: z.ZodType<
+  GetAllSchoolsResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  orgs: z.array(components.Org$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetAllSchoolsResponseBody$Outbound = {
+  orgs: Array<components.Org$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetAllSchoolsResponseBody$outboundSchema: z.ZodType<
+  GetAllSchoolsResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetAllSchoolsResponseBody
+> = z.object({
+  orgs: z.array(components.Org$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllSchoolsResponseBody$ {
+  /** @deprecated use `GetAllSchoolsResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetAllSchoolsResponseBody$inboundSchema;
+  /** @deprecated use `GetAllSchoolsResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetAllSchoolsResponseBody$outboundSchema;
+  /** @deprecated use `GetAllSchoolsResponseBody$Outbound` instead. */
+  export type Outbound = GetAllSchoolsResponseBody$Outbound;
+}
+
+export function getAllSchoolsResponseBodyToJSON(
+  getAllSchoolsResponseBody: GetAllSchoolsResponseBody,
+): string {
+  return JSON.stringify(
+    GetAllSchoolsResponseBody$outboundSchema.parse(getAllSchoolsResponseBody),
+  );
+}
+
+export function getAllSchoolsResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllSchoolsResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllSchoolsResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllSchoolsResponseBody' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetAllSchoolsResponse$inboundSchema: z.ZodType<
@@ -21,12 +237,16 @@ export const GetAllSchoolsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  orgs: z.array(components.Org$inboundSchema),
+  Result: z.lazy(() => GetAllSchoolsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetAllSchoolsResponse$Outbound = {
-  orgs: Array<components.Org$Outbound>;
+  Result: GetAllSchoolsResponseBody$Outbound;
 };
 
 /** @internal */
@@ -35,7 +255,11 @@ export const GetAllSchoolsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAllSchoolsResponse
 > = z.object({
-  orgs: z.array(components.Org$outboundSchema),
+  result: z.lazy(() => GetAllSchoolsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

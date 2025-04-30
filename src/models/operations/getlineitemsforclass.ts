@@ -3,24 +3,98 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetLineItemsForClassOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetLineItemsForClassOrderBy = ClosedEnum<
+  typeof GetLineItemsForClassOrderBy
+>;
 
 export type GetLineItemsForClassRequest = {
   /**
    * The sourcedId of the class
    */
-  classSourcedId: string;
+  sourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetLineItemsForClassOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 /**
  * Successful response containing a collection of line items for the class
  */
-export type GetLineItemsForClassResponse = {
+export type GetLineItemsForClassResponseBody = {
   lineItems: Array<components.LineItem>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetLineItemsForClassResponse = {
+  result: GetLineItemsForClassResponseBody;
+};
+
+/** @internal */
+export const GetLineItemsForClassOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetLineItemsForClassOrderBy
+> = z.nativeEnum(GetLineItemsForClassOrderBy);
+
+/** @internal */
+export const GetLineItemsForClassOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetLineItemsForClassOrderBy
+> = GetLineItemsForClassOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetLineItemsForClassOrderBy$ {
+  /** @deprecated use `GetLineItemsForClassOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetLineItemsForClassOrderBy$inboundSchema;
+  /** @deprecated use `GetLineItemsForClassOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetLineItemsForClassOrderBy$outboundSchema;
+}
 
 /** @internal */
 export const GetLineItemsForClassRequest$inboundSchema: z.ZodType<
@@ -28,12 +102,26 @@ export const GetLineItemsForClassRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  classSourcedId: z.string(),
+  sourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetLineItemsForClassOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetLineItemsForClassRequest$Outbound = {
-  classSourcedId: string;
+  sourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -42,7 +130,14 @@ export const GetLineItemsForClassRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetLineItemsForClassRequest
 > = z.object({
-  classSourcedId: z.string(),
+  sourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetLineItemsForClassOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -79,17 +174,92 @@ export function getLineItemsForClassRequestFromJSON(
 }
 
 /** @internal */
+export const GetLineItemsForClassResponseBody$inboundSchema: z.ZodType<
+  GetLineItemsForClassResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  lineItems: z.array(components.LineItem$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetLineItemsForClassResponseBody$Outbound = {
+  lineItems: Array<components.LineItem$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetLineItemsForClassResponseBody$outboundSchema: z.ZodType<
+  GetLineItemsForClassResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetLineItemsForClassResponseBody
+> = z.object({
+  lineItems: z.array(components.LineItem$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetLineItemsForClassResponseBody$ {
+  /** @deprecated use `GetLineItemsForClassResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetLineItemsForClassResponseBody$inboundSchema;
+  /** @deprecated use `GetLineItemsForClassResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetLineItemsForClassResponseBody$outboundSchema;
+  /** @deprecated use `GetLineItemsForClassResponseBody$Outbound` instead. */
+  export type Outbound = GetLineItemsForClassResponseBody$Outbound;
+}
+
+export function getLineItemsForClassResponseBodyToJSON(
+  getLineItemsForClassResponseBody: GetLineItemsForClassResponseBody,
+): string {
+  return JSON.stringify(
+    GetLineItemsForClassResponseBody$outboundSchema.parse(
+      getLineItemsForClassResponseBody,
+    ),
+  );
+}
+
+export function getLineItemsForClassResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetLineItemsForClassResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetLineItemsForClassResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetLineItemsForClassResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
 export const GetLineItemsForClassResponse$inboundSchema: z.ZodType<
   GetLineItemsForClassResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  lineItems: z.array(components.LineItem$inboundSchema),
+  Result: z.lazy(() => GetLineItemsForClassResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetLineItemsForClassResponse$Outbound = {
-  lineItems: Array<components.LineItem$Outbound>;
+  Result: GetLineItemsForClassResponseBody$Outbound;
 };
 
 /** @internal */
@@ -98,7 +268,11 @@ export const GetLineItemsForClassResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetLineItemsForClassResponse
 > = z.object({
-  lineItems: z.array(components.LineItem$outboundSchema),
+  result: z.lazy(() => GetLineItemsForClassResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

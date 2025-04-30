@@ -20,6 +20,11 @@ let value: GetAllAssessmentResultsResponse = {
         scoreStatus: "not submitted",
       },
     ],
+    totalCount: 3698.19,
+    pageCount: 4879.52,
+    pageNumber: 5368.17,
+    offset: 1663.64,
+    limit: 9028.77,
   },
 };
 ```

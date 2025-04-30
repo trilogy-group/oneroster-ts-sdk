@@ -9,7 +9,7 @@ All endpoints require authentication using the `Authorization: Bearer <token>` h
 The token can be obtained with:
 
 ```
-curl -X POST https://alpha-auth-production-idp.auth.us-west-2.amazoncognito.com/oauth2/token \
+curl -X POST https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "grant_type=client_credentials&client_id=<your-client-id>&client_secret=<your-client-secret>"
 ```

@@ -3,17 +3,233 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
+ * The order to sort the response by
+ */
+export const GetAllResultsOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetAllResultsOrderBy = ClosedEnum<typeof GetAllResultsOrderBy>;
+
+export type GetAllResultsRequest = {
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetAllResultsOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
+};
+
+/**
  * Successful response containing a collection of results
  */
-export type GetAllResultsResponse = {
+export type GetAllResultsResponseBody = {
   results: Array<components.Result>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetAllResultsResponse = {
+  result: GetAllResultsResponseBody;
+};
+
+/** @internal */
+export const GetAllResultsOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetAllResultsOrderBy
+> = z.nativeEnum(GetAllResultsOrderBy);
+
+/** @internal */
+export const GetAllResultsOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetAllResultsOrderBy
+> = GetAllResultsOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllResultsOrderBy$ {
+  /** @deprecated use `GetAllResultsOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetAllResultsOrderBy$inboundSchema;
+  /** @deprecated use `GetAllResultsOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetAllResultsOrderBy$outboundSchema;
+}
+
+/** @internal */
+export const GetAllResultsRequest$inboundSchema: z.ZodType<
+  GetAllResultsRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllResultsOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/** @internal */
+export type GetAllResultsRequest$Outbound = {
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
+};
+
+/** @internal */
+export const GetAllResultsRequest$outboundSchema: z.ZodType<
+  GetAllResultsRequest$Outbound,
+  z.ZodTypeDef,
+  GetAllResultsRequest
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllResultsOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllResultsRequest$ {
+  /** @deprecated use `GetAllResultsRequest$inboundSchema` instead. */
+  export const inboundSchema = GetAllResultsRequest$inboundSchema;
+  /** @deprecated use `GetAllResultsRequest$outboundSchema` instead. */
+  export const outboundSchema = GetAllResultsRequest$outboundSchema;
+  /** @deprecated use `GetAllResultsRequest$Outbound` instead. */
+  export type Outbound = GetAllResultsRequest$Outbound;
+}
+
+export function getAllResultsRequestToJSON(
+  getAllResultsRequest: GetAllResultsRequest,
+): string {
+  return JSON.stringify(
+    GetAllResultsRequest$outboundSchema.parse(getAllResultsRequest),
+  );
+}
+
+export function getAllResultsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllResultsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllResultsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllResultsRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetAllResultsResponseBody$inboundSchema: z.ZodType<
+  GetAllResultsResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  results: z.array(components.Result$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetAllResultsResponseBody$Outbound = {
+  results: Array<components.Result$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetAllResultsResponseBody$outboundSchema: z.ZodType<
+  GetAllResultsResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetAllResultsResponseBody
+> = z.object({
+  results: z.array(components.Result$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllResultsResponseBody$ {
+  /** @deprecated use `GetAllResultsResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetAllResultsResponseBody$inboundSchema;
+  /** @deprecated use `GetAllResultsResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetAllResultsResponseBody$outboundSchema;
+  /** @deprecated use `GetAllResultsResponseBody$Outbound` instead. */
+  export type Outbound = GetAllResultsResponseBody$Outbound;
+}
+
+export function getAllResultsResponseBodyToJSON(
+  getAllResultsResponseBody: GetAllResultsResponseBody,
+): string {
+  return JSON.stringify(
+    GetAllResultsResponseBody$outboundSchema.parse(getAllResultsResponseBody),
+  );
+}
+
+export function getAllResultsResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllResultsResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllResultsResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllResultsResponseBody' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetAllResultsResponse$inboundSchema: z.ZodType<
@@ -21,12 +237,16 @@ export const GetAllResultsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  results: z.array(components.Result$inboundSchema),
+  Result: z.lazy(() => GetAllResultsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetAllResultsResponse$Outbound = {
-  results: Array<components.Result$Outbound>;
+  Result: GetAllResultsResponseBody$Outbound;
 };
 
 /** @internal */
@@ -35,7 +255,11 @@ export const GetAllResultsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAllResultsResponse
 > = z.object({
-  results: z.array(components.Result$outboundSchema),
+  result: z.lazy(() => GetAllResultsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

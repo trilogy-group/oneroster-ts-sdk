@@ -9,15 +9,14 @@ import { RetryConfig } from "./retries.js";
 import { Params, pathToFunc } from "./url.js";
 
 /**
- * OneRoster staging environment
- */
-export const ServerStaging = "staging";
-/**
  * Contains the list of servers available to the SDK
  */
-export const ServerList = {
-  [ServerStaging]: "https://api.staging.alpha-1edtech.com",
-} as const;
+export const ServerList = [
+  /**
+   * OneRoster API
+   */
+  "https://api.staging.alpha-1edtech.com",
+] as const;
 
 export type SDKOptions = {
   /**
@@ -32,7 +31,7 @@ export type SDKOptions = {
   /**
    * Allows overriding the default server used by the SDK
    */
-  server?: keyof typeof ServerList | undefined;
+  serverIdx?: number | undefined;
   /**
    * Allows overriding the default server URL used by the SDK
    */
@@ -51,8 +50,11 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
   const params: Params = {};
 
   if (!serverURL) {
-    const server = options.server ?? ServerStaging;
-    serverURL = ServerList[server] || "";
+    const serverIdx = options.serverIdx ?? 0;
+    if (serverIdx < 0 || serverIdx >= ServerList.length) {
+      throw new Error(`Invalid server index ${serverIdx}`);
+    }
+    serverURL = ServerList[serverIdx] || "";
   }
 
   const u = pathToFunc(serverURL)(params);
@@ -62,8 +64,8 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
 export const SDK_METADATA = {
   language: "typescript",
   openapiDocVersion: "1.0.0",
-  sdkVersion: "0.3.0",
-  genVersion: "2.593.4",
+  sdkVersion: "0.4.1",
+  genVersion: "2.595.4",
   userAgent:
-    "speakeasy-sdk/typescript 0.3.0 2.593.4 1.0.0 @superbuilders/oneroster",
+    "speakeasy-sdk/typescript 0.4.1 2.595.4 1.0.0 @superbuilders/oneroster",
 } as const;

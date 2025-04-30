@@ -3,10 +3,25 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetStudentsForClassInSchoolOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetStudentsForClassInSchoolOrderBy = ClosedEnum<
+  typeof GetStudentsForClassInSchoolOrderBy
+>;
 
 export type GetStudentsForClassInSchoolRequest = {
   /**
@@ -17,6 +32,34 @@ export type GetStudentsForClassInSchoolRequest = {
    * Class sourced ID
    */
   classSourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetStudentsForClassInSchoolOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 export const GetStudentsForClassInSchoolStatus = {
@@ -135,9 +178,40 @@ export type GetStudentsForClassInSchoolUser = {
 /**
  * Collection of students successfully retrieved
  */
-export type GetStudentsForClassInSchoolResponse = {
+export type GetStudentsForClassInSchoolResponseBody = {
   users: Array<GetStudentsForClassInSchoolUser>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetStudentsForClassInSchoolResponse = {
+  result: GetStudentsForClassInSchoolResponseBody;
+};
+
+/** @internal */
+export const GetStudentsForClassInSchoolOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetStudentsForClassInSchoolOrderBy
+> = z.nativeEnum(GetStudentsForClassInSchoolOrderBy);
+
+/** @internal */
+export const GetStudentsForClassInSchoolOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetStudentsForClassInSchoolOrderBy
+> = GetStudentsForClassInSchoolOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetStudentsForClassInSchoolOrderBy$ {
+  /** @deprecated use `GetStudentsForClassInSchoolOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetStudentsForClassInSchoolOrderBy$inboundSchema;
+  /** @deprecated use `GetStudentsForClassInSchoolOrderBy$outboundSchema` instead. */
+  export const outboundSchema =
+    GetStudentsForClassInSchoolOrderBy$outboundSchema;
+}
 
 /** @internal */
 export const GetStudentsForClassInSchoolRequest$inboundSchema: z.ZodType<
@@ -147,12 +221,26 @@ export const GetStudentsForClassInSchoolRequest$inboundSchema: z.ZodType<
 > = z.object({
   schoolSourcedId: z.string(),
   classSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetStudentsForClassInSchoolOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetStudentsForClassInSchoolRequest$Outbound = {
   schoolSourcedId: string;
   classSourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -163,6 +251,13 @@ export const GetStudentsForClassInSchoolRequest$outboundSchema: z.ZodType<
 > = z.object({
   schoolSourcedId: z.string(),
   classSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetStudentsForClassInSchoolOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -742,17 +837,101 @@ export function getStudentsForClassInSchoolUserFromJSON(
 }
 
 /** @internal */
+export const GetStudentsForClassInSchoolResponseBody$inboundSchema: z.ZodType<
+  GetStudentsForClassInSchoolResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  users: z.array(z.lazy(() => GetStudentsForClassInSchoolUser$inboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetStudentsForClassInSchoolResponseBody$Outbound = {
+  users: Array<GetStudentsForClassInSchoolUser$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetStudentsForClassInSchoolResponseBody$outboundSchema: z.ZodType<
+  GetStudentsForClassInSchoolResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetStudentsForClassInSchoolResponseBody
+> = z.object({
+  users: z.array(z.lazy(() => GetStudentsForClassInSchoolUser$outboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetStudentsForClassInSchoolResponseBody$ {
+  /** @deprecated use `GetStudentsForClassInSchoolResponseBody$inboundSchema` instead. */
+  export const inboundSchema =
+    GetStudentsForClassInSchoolResponseBody$inboundSchema;
+  /** @deprecated use `GetStudentsForClassInSchoolResponseBody$outboundSchema` instead. */
+  export const outboundSchema =
+    GetStudentsForClassInSchoolResponseBody$outboundSchema;
+  /** @deprecated use `GetStudentsForClassInSchoolResponseBody$Outbound` instead. */
+  export type Outbound = GetStudentsForClassInSchoolResponseBody$Outbound;
+}
+
+export function getStudentsForClassInSchoolResponseBodyToJSON(
+  getStudentsForClassInSchoolResponseBody:
+    GetStudentsForClassInSchoolResponseBody,
+): string {
+  return JSON.stringify(
+    GetStudentsForClassInSchoolResponseBody$outboundSchema.parse(
+      getStudentsForClassInSchoolResponseBody,
+    ),
+  );
+}
+
+export function getStudentsForClassInSchoolResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  GetStudentsForClassInSchoolResponseBody,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      GetStudentsForClassInSchoolResponseBody$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'GetStudentsForClassInSchoolResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
 export const GetStudentsForClassInSchoolResponse$inboundSchema: z.ZodType<
   GetStudentsForClassInSchoolResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  users: z.array(z.lazy(() => GetStudentsForClassInSchoolUser$inboundSchema)),
+  Result: z.lazy(() => GetStudentsForClassInSchoolResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetStudentsForClassInSchoolResponse$Outbound = {
-  users: Array<GetStudentsForClassInSchoolUser$Outbound>;
+  Result: GetStudentsForClassInSchoolResponseBody$Outbound;
 };
 
 /** @internal */
@@ -761,7 +940,11 @@ export const GetStudentsForClassInSchoolResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetStudentsForClassInSchoolResponse
 > = z.object({
-  users: z.array(z.lazy(() => GetStudentsForClassInSchoolUser$outboundSchema)),
+  result: z.lazy(() => GetStudentsForClassInSchoolResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

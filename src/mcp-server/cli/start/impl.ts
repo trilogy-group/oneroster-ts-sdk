@@ -23,7 +23,7 @@ interface StartCommandFlags {
   readonly "client-secret"?: string | undefined;
   readonly "token-url": string;
   readonly "server-url"?: string;
-  readonly server?: SDKOptions["server"];
+  readonly "server-index"?: SDKOptions["serverIdx"];
   readonly "log-level": ConsoleLoggerLevel;
   readonly env?: [string, string][];
 }
@@ -59,7 +59,7 @@ async function startStdio(flags: StartCommandFlags) {
         ?? "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
     },
     serverURL: flags["server-url"],
-    server: flags.server,
+    serverIdx: flags["server-index"],
   });
   await server.connect(transport);
 
@@ -85,7 +85,7 @@ async function startSSE(flags: StartCommandFlags) {
         ?? "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
     },
     serverURL: flags["server-url"],
-    server: flags.server,
+    serverIdx: flags["server-index"],
   });
   let transport: SSEServerTransport | undefined;
   const controller = new AbortController();

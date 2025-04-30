@@ -9,7 +9,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DeleteDemographicsRequest = {
   /**
-   * The unique identifier for the demographics record to delete
+   * The unique identifier for the Demographic record to delete
    */
   sourcedId: string;
 };

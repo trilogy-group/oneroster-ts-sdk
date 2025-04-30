@@ -18,6 +18,11 @@ let value: GetAllCourseComponentsResponse = {
         unlockDate: "2021-01-01T00:00:00.000Z",
       },
     ],
+    totalCount: 9351.96,
+    pageCount: 4302.84,
+    pageNumber: 1856.94,
+    offset: 4729.48,
+    limit: 5173.11,
   },
 };
 ```

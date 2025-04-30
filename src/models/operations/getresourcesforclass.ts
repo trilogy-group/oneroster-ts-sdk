@@ -3,24 +3,98 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetResourcesForClassOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetResourcesForClassOrderBy = ClosedEnum<
+  typeof GetResourcesForClassOrderBy
+>;
 
 export type GetResourcesForClassRequest = {
   /**
    * The sourcedId of the class
    */
   classSourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetResourcesForClassOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 /**
  * Successful response containing a collection of resources for the class
  */
-export type GetResourcesForClassResponse = {
+export type GetResourcesForClassResponseBody = {
   resources: Array<components.Resource>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetResourcesForClassResponse = {
+  result: GetResourcesForClassResponseBody;
+};
+
+/** @internal */
+export const GetResourcesForClassOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetResourcesForClassOrderBy
+> = z.nativeEnum(GetResourcesForClassOrderBy);
+
+/** @internal */
+export const GetResourcesForClassOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetResourcesForClassOrderBy
+> = GetResourcesForClassOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetResourcesForClassOrderBy$ {
+  /** @deprecated use `GetResourcesForClassOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetResourcesForClassOrderBy$inboundSchema;
+  /** @deprecated use `GetResourcesForClassOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetResourcesForClassOrderBy$outboundSchema;
+}
 
 /** @internal */
 export const GetResourcesForClassRequest$inboundSchema: z.ZodType<
@@ -29,11 +103,25 @@ export const GetResourcesForClassRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   classSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetResourcesForClassOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetResourcesForClassRequest$Outbound = {
   classSourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -43,6 +131,13 @@ export const GetResourcesForClassRequest$outboundSchema: z.ZodType<
   GetResourcesForClassRequest
 > = z.object({
   classSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetResourcesForClassOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -79,17 +174,92 @@ export function getResourcesForClassRequestFromJSON(
 }
 
 /** @internal */
+export const GetResourcesForClassResponseBody$inboundSchema: z.ZodType<
+  GetResourcesForClassResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  resources: z.array(components.Resource$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetResourcesForClassResponseBody$Outbound = {
+  resources: Array<components.Resource$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetResourcesForClassResponseBody$outboundSchema: z.ZodType<
+  GetResourcesForClassResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetResourcesForClassResponseBody
+> = z.object({
+  resources: z.array(components.Resource$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetResourcesForClassResponseBody$ {
+  /** @deprecated use `GetResourcesForClassResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetResourcesForClassResponseBody$inboundSchema;
+  /** @deprecated use `GetResourcesForClassResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetResourcesForClassResponseBody$outboundSchema;
+  /** @deprecated use `GetResourcesForClassResponseBody$Outbound` instead. */
+  export type Outbound = GetResourcesForClassResponseBody$Outbound;
+}
+
+export function getResourcesForClassResponseBodyToJSON(
+  getResourcesForClassResponseBody: GetResourcesForClassResponseBody,
+): string {
+  return JSON.stringify(
+    GetResourcesForClassResponseBody$outboundSchema.parse(
+      getResourcesForClassResponseBody,
+    ),
+  );
+}
+
+export function getResourcesForClassResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetResourcesForClassResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetResourcesForClassResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetResourcesForClassResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
 export const GetResourcesForClassResponse$inboundSchema: z.ZodType<
   GetResourcesForClassResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  resources: z.array(components.Resource$inboundSchema),
+  Result: z.lazy(() => GetResourcesForClassResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetResourcesForClassResponse$Outbound = {
-  resources: Array<components.Resource$Outbound>;
+  Result: GetResourcesForClassResponseBody$Outbound;
 };
 
 /** @internal */
@@ -98,7 +268,11 @@ export const GetResourcesForClassResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetResourcesForClassResponse
 > = z.object({
-  resources: z.array(components.Resource$outboundSchema),
+  result: z.lazy(() => GetResourcesForClassResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

@@ -3,24 +3,98 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetScoreScalesForClassOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetScoreScalesForClassOrderBy = ClosedEnum<
+  typeof GetScoreScalesForClassOrderBy
+>;
 
 export type GetScoreScalesForClassRequest = {
   /**
    * The sourcedId of the class
    */
   sourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetScoreScalesForClassOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 /**
  * Successful response containing a collection of score scales for the class
  */
-export type GetScoreScalesForClassResponse = {
+export type GetScoreScalesForClassResponseBody = {
   scoreScales: Array<components.ScoreScale>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetScoreScalesForClassResponse = {
+  result: GetScoreScalesForClassResponseBody;
+};
+
+/** @internal */
+export const GetScoreScalesForClassOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetScoreScalesForClassOrderBy
+> = z.nativeEnum(GetScoreScalesForClassOrderBy);
+
+/** @internal */
+export const GetScoreScalesForClassOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetScoreScalesForClassOrderBy
+> = GetScoreScalesForClassOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetScoreScalesForClassOrderBy$ {
+  /** @deprecated use `GetScoreScalesForClassOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetScoreScalesForClassOrderBy$inboundSchema;
+  /** @deprecated use `GetScoreScalesForClassOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetScoreScalesForClassOrderBy$outboundSchema;
+}
 
 /** @internal */
 export const GetScoreScalesForClassRequest$inboundSchema: z.ZodType<
@@ -29,11 +103,25 @@ export const GetScoreScalesForClassRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   sourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetScoreScalesForClassOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetScoreScalesForClassRequest$Outbound = {
   sourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -43,6 +131,13 @@ export const GetScoreScalesForClassRequest$outboundSchema: z.ZodType<
   GetScoreScalesForClassRequest
 > = z.object({
   sourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetScoreScalesForClassOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -79,17 +174,94 @@ export function getScoreScalesForClassRequestFromJSON(
 }
 
 /** @internal */
+export const GetScoreScalesForClassResponseBody$inboundSchema: z.ZodType<
+  GetScoreScalesForClassResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  scoreScales: z.array(components.ScoreScale$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetScoreScalesForClassResponseBody$Outbound = {
+  scoreScales: Array<components.ScoreScale$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetScoreScalesForClassResponseBody$outboundSchema: z.ZodType<
+  GetScoreScalesForClassResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetScoreScalesForClassResponseBody
+> = z.object({
+  scoreScales: z.array(components.ScoreScale$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetScoreScalesForClassResponseBody$ {
+  /** @deprecated use `GetScoreScalesForClassResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetScoreScalesForClassResponseBody$inboundSchema;
+  /** @deprecated use `GetScoreScalesForClassResponseBody$outboundSchema` instead. */
+  export const outboundSchema =
+    GetScoreScalesForClassResponseBody$outboundSchema;
+  /** @deprecated use `GetScoreScalesForClassResponseBody$Outbound` instead. */
+  export type Outbound = GetScoreScalesForClassResponseBody$Outbound;
+}
+
+export function getScoreScalesForClassResponseBodyToJSON(
+  getScoreScalesForClassResponseBody: GetScoreScalesForClassResponseBody,
+): string {
+  return JSON.stringify(
+    GetScoreScalesForClassResponseBody$outboundSchema.parse(
+      getScoreScalesForClassResponseBody,
+    ),
+  );
+}
+
+export function getScoreScalesForClassResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetScoreScalesForClassResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      GetScoreScalesForClassResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetScoreScalesForClassResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
 export const GetScoreScalesForClassResponse$inboundSchema: z.ZodType<
   GetScoreScalesForClassResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  scoreScales: z.array(components.ScoreScale$inboundSchema),
+  Result: z.lazy(() => GetScoreScalesForClassResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetScoreScalesForClassResponse$Outbound = {
-  scoreScales: Array<components.ScoreScale$Outbound>;
+  Result: GetScoreScalesForClassResponseBody$Outbound;
 };
 
 /** @internal */
@@ -98,7 +270,11 @@ export const GetScoreScalesForClassResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetScoreScalesForClassResponse
 > = z.object({
-  scoreScales: z.array(components.ScoreScale$outboundSchema),
+  result: z.lazy(() => GetScoreScalesForClassResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

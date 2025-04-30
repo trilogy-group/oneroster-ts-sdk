@@ -3,17 +3,235 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
+ * The order to sort the response by
+ */
+export const GetAllLineItemsOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetAllLineItemsOrderBy = ClosedEnum<typeof GetAllLineItemsOrderBy>;
+
+export type GetAllLineItemsRequest = {
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetAllLineItemsOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
+};
+
+/**
  * Successful response containing a collection of line items
  */
-export type GetAllLineItemsResponse = {
+export type GetAllLineItemsResponseBody = {
   lineItems: Array<components.LineItem>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetAllLineItemsResponse = {
+  result: GetAllLineItemsResponseBody;
+};
+
+/** @internal */
+export const GetAllLineItemsOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetAllLineItemsOrderBy
+> = z.nativeEnum(GetAllLineItemsOrderBy);
+
+/** @internal */
+export const GetAllLineItemsOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetAllLineItemsOrderBy
+> = GetAllLineItemsOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllLineItemsOrderBy$ {
+  /** @deprecated use `GetAllLineItemsOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetAllLineItemsOrderBy$inboundSchema;
+  /** @deprecated use `GetAllLineItemsOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetAllLineItemsOrderBy$outboundSchema;
+}
+
+/** @internal */
+export const GetAllLineItemsRequest$inboundSchema: z.ZodType<
+  GetAllLineItemsRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllLineItemsOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/** @internal */
+export type GetAllLineItemsRequest$Outbound = {
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
+};
+
+/** @internal */
+export const GetAllLineItemsRequest$outboundSchema: z.ZodType<
+  GetAllLineItemsRequest$Outbound,
+  z.ZodTypeDef,
+  GetAllLineItemsRequest
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllLineItemsOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllLineItemsRequest$ {
+  /** @deprecated use `GetAllLineItemsRequest$inboundSchema` instead. */
+  export const inboundSchema = GetAllLineItemsRequest$inboundSchema;
+  /** @deprecated use `GetAllLineItemsRequest$outboundSchema` instead. */
+  export const outboundSchema = GetAllLineItemsRequest$outboundSchema;
+  /** @deprecated use `GetAllLineItemsRequest$Outbound` instead. */
+  export type Outbound = GetAllLineItemsRequest$Outbound;
+}
+
+export function getAllLineItemsRequestToJSON(
+  getAllLineItemsRequest: GetAllLineItemsRequest,
+): string {
+  return JSON.stringify(
+    GetAllLineItemsRequest$outboundSchema.parse(getAllLineItemsRequest),
+  );
+}
+
+export function getAllLineItemsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllLineItemsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllLineItemsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllLineItemsRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetAllLineItemsResponseBody$inboundSchema: z.ZodType<
+  GetAllLineItemsResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  lineItems: z.array(components.LineItem$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetAllLineItemsResponseBody$Outbound = {
+  lineItems: Array<components.LineItem$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetAllLineItemsResponseBody$outboundSchema: z.ZodType<
+  GetAllLineItemsResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetAllLineItemsResponseBody
+> = z.object({
+  lineItems: z.array(components.LineItem$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllLineItemsResponseBody$ {
+  /** @deprecated use `GetAllLineItemsResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetAllLineItemsResponseBody$inboundSchema;
+  /** @deprecated use `GetAllLineItemsResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetAllLineItemsResponseBody$outboundSchema;
+  /** @deprecated use `GetAllLineItemsResponseBody$Outbound` instead. */
+  export type Outbound = GetAllLineItemsResponseBody$Outbound;
+}
+
+export function getAllLineItemsResponseBodyToJSON(
+  getAllLineItemsResponseBody: GetAllLineItemsResponseBody,
+): string {
+  return JSON.stringify(
+    GetAllLineItemsResponseBody$outboundSchema.parse(
+      getAllLineItemsResponseBody,
+    ),
+  );
+}
+
+export function getAllLineItemsResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllLineItemsResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllLineItemsResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllLineItemsResponseBody' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetAllLineItemsResponse$inboundSchema: z.ZodType<
@@ -21,12 +239,16 @@ export const GetAllLineItemsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  lineItems: z.array(components.LineItem$inboundSchema),
+  Result: z.lazy(() => GetAllLineItemsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetAllLineItemsResponse$Outbound = {
-  lineItems: Array<components.LineItem$Outbound>;
+  Result: GetAllLineItemsResponseBody$Outbound;
 };
 
 /** @internal */
@@ -35,7 +257,11 @@ export const GetAllLineItemsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAllLineItemsResponse
 > = z.object({
-  lineItems: z.array(components.LineItem$outboundSchema),
+  result: z.lazy(() => GetAllLineItemsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

@@ -3,10 +3,25 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetTeachersForClassInSchoolOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetTeachersForClassInSchoolOrderBy = ClosedEnum<
+  typeof GetTeachersForClassInSchoolOrderBy
+>;
 
 export type GetTeachersForClassInSchoolRequest = {
   /**
@@ -17,6 +32,34 @@ export type GetTeachersForClassInSchoolRequest = {
    * Class sourced ID
    */
   classSourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetTeachersForClassInSchoolOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 export const GetTeachersForClassInSchoolStatus = {
@@ -135,9 +178,40 @@ export type GetTeachersForClassInSchoolUser = {
 /**
  * Collection of teachers successfully retrieved
  */
-export type GetTeachersForClassInSchoolResponse = {
+export type GetTeachersForClassInSchoolResponseBody = {
   users: Array<GetTeachersForClassInSchoolUser>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetTeachersForClassInSchoolResponse = {
+  result: GetTeachersForClassInSchoolResponseBody;
+};
+
+/** @internal */
+export const GetTeachersForClassInSchoolOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetTeachersForClassInSchoolOrderBy
+> = z.nativeEnum(GetTeachersForClassInSchoolOrderBy);
+
+/** @internal */
+export const GetTeachersForClassInSchoolOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetTeachersForClassInSchoolOrderBy
+> = GetTeachersForClassInSchoolOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetTeachersForClassInSchoolOrderBy$ {
+  /** @deprecated use `GetTeachersForClassInSchoolOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetTeachersForClassInSchoolOrderBy$inboundSchema;
+  /** @deprecated use `GetTeachersForClassInSchoolOrderBy$outboundSchema` instead. */
+  export const outboundSchema =
+    GetTeachersForClassInSchoolOrderBy$outboundSchema;
+}
 
 /** @internal */
 export const GetTeachersForClassInSchoolRequest$inboundSchema: z.ZodType<
@@ -147,12 +221,26 @@ export const GetTeachersForClassInSchoolRequest$inboundSchema: z.ZodType<
 > = z.object({
   schoolSourcedId: z.string(),
   classSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetTeachersForClassInSchoolOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetTeachersForClassInSchoolRequest$Outbound = {
   schoolSourcedId: string;
   classSourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -163,6 +251,13 @@ export const GetTeachersForClassInSchoolRequest$outboundSchema: z.ZodType<
 > = z.object({
   schoolSourcedId: z.string(),
   classSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetTeachersForClassInSchoolOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -742,17 +837,101 @@ export function getTeachersForClassInSchoolUserFromJSON(
 }
 
 /** @internal */
+export const GetTeachersForClassInSchoolResponseBody$inboundSchema: z.ZodType<
+  GetTeachersForClassInSchoolResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  users: z.array(z.lazy(() => GetTeachersForClassInSchoolUser$inboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetTeachersForClassInSchoolResponseBody$Outbound = {
+  users: Array<GetTeachersForClassInSchoolUser$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetTeachersForClassInSchoolResponseBody$outboundSchema: z.ZodType<
+  GetTeachersForClassInSchoolResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetTeachersForClassInSchoolResponseBody
+> = z.object({
+  users: z.array(z.lazy(() => GetTeachersForClassInSchoolUser$outboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetTeachersForClassInSchoolResponseBody$ {
+  /** @deprecated use `GetTeachersForClassInSchoolResponseBody$inboundSchema` instead. */
+  export const inboundSchema =
+    GetTeachersForClassInSchoolResponseBody$inboundSchema;
+  /** @deprecated use `GetTeachersForClassInSchoolResponseBody$outboundSchema` instead. */
+  export const outboundSchema =
+    GetTeachersForClassInSchoolResponseBody$outboundSchema;
+  /** @deprecated use `GetTeachersForClassInSchoolResponseBody$Outbound` instead. */
+  export type Outbound = GetTeachersForClassInSchoolResponseBody$Outbound;
+}
+
+export function getTeachersForClassInSchoolResponseBodyToJSON(
+  getTeachersForClassInSchoolResponseBody:
+    GetTeachersForClassInSchoolResponseBody,
+): string {
+  return JSON.stringify(
+    GetTeachersForClassInSchoolResponseBody$outboundSchema.parse(
+      getTeachersForClassInSchoolResponseBody,
+    ),
+  );
+}
+
+export function getTeachersForClassInSchoolResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  GetTeachersForClassInSchoolResponseBody,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      GetTeachersForClassInSchoolResponseBody$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'GetTeachersForClassInSchoolResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
 export const GetTeachersForClassInSchoolResponse$inboundSchema: z.ZodType<
   GetTeachersForClassInSchoolResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  users: z.array(z.lazy(() => GetTeachersForClassInSchoolUser$inboundSchema)),
+  Result: z.lazy(() => GetTeachersForClassInSchoolResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetTeachersForClassInSchoolResponse$Outbound = {
-  users: Array<GetTeachersForClassInSchoolUser$Outbound>;
+  Result: GetTeachersForClassInSchoolResponseBody$Outbound;
 };
 
 /** @internal */
@@ -761,7 +940,11 @@ export const GetTeachersForClassInSchoolResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetTeachersForClassInSchoolResponse
 > = z.object({
-  users: z.array(z.lazy(() => GetTeachersForClassInSchoolUser$outboundSchema)),
+  result: z.lazy(() => GetTeachersForClassInSchoolResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

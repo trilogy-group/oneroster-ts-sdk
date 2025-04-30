@@ -24,11 +24,11 @@ let value: GetAllAcademicSessionsResponseBody = {
       },
     },
   ],
-  totalCount: 168413,
-  pageCount: 108370,
-  pageNumber: 749504,
-  offset: 746937,
-  limit: 634030,
+  totalCount: 1684.13,
+  pageCount: 1083.7,
+  pageNumber: 7495.04,
+  offset: 7469.37,
+  limit: 6340.3,
 };
 ```
 

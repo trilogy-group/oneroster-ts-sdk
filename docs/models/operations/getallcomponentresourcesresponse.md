@@ -20,6 +20,11 @@ let value: GetAllComponentResourcesResponse = {
         title: "<value>",
       },
     ],
+    totalCount: 4906.82,
+    pageCount: 3845.59,
+    pageNumber: 132.64,
+    offset: 5836.4,
+    limit: 2165.27,
   },
 };
 ```

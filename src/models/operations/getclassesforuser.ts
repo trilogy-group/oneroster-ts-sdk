@@ -3,24 +3,98 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetClassesForUserOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetClassesForUserOrderBy = ClosedEnum<
+  typeof GetClassesForUserOrderBy
+>;
 
 export type GetClassesForUserRequest = {
   /**
    * The sourcedId of the user
    */
   userSourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetClassesForUserOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 /**
  * Successful response containing a collection of classes for the user
  */
-export type GetClassesForUserResponse = {
+export type GetClassesForUserResponseBody = {
   classes: Array<components.Class>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetClassesForUserResponse = {
+  result: GetClassesForUserResponseBody;
+};
+
+/** @internal */
+export const GetClassesForUserOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetClassesForUserOrderBy
+> = z.nativeEnum(GetClassesForUserOrderBy);
+
+/** @internal */
+export const GetClassesForUserOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetClassesForUserOrderBy
+> = GetClassesForUserOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetClassesForUserOrderBy$ {
+  /** @deprecated use `GetClassesForUserOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetClassesForUserOrderBy$inboundSchema;
+  /** @deprecated use `GetClassesForUserOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetClassesForUserOrderBy$outboundSchema;
+}
 
 /** @internal */
 export const GetClassesForUserRequest$inboundSchema: z.ZodType<
@@ -29,11 +103,25 @@ export const GetClassesForUserRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   userSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetClassesForUserOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetClassesForUserRequest$Outbound = {
   userSourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -43,6 +131,13 @@ export const GetClassesForUserRequest$outboundSchema: z.ZodType<
   GetClassesForUserRequest
 > = z.object({
   userSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetClassesForUserOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -77,17 +172,92 @@ export function getClassesForUserRequestFromJSON(
 }
 
 /** @internal */
+export const GetClassesForUserResponseBody$inboundSchema: z.ZodType<
+  GetClassesForUserResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  classes: z.array(components.Class$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetClassesForUserResponseBody$Outbound = {
+  classes: Array<components.Class$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetClassesForUserResponseBody$outboundSchema: z.ZodType<
+  GetClassesForUserResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetClassesForUserResponseBody
+> = z.object({
+  classes: z.array(components.Class$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetClassesForUserResponseBody$ {
+  /** @deprecated use `GetClassesForUserResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetClassesForUserResponseBody$inboundSchema;
+  /** @deprecated use `GetClassesForUserResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetClassesForUserResponseBody$outboundSchema;
+  /** @deprecated use `GetClassesForUserResponseBody$Outbound` instead. */
+  export type Outbound = GetClassesForUserResponseBody$Outbound;
+}
+
+export function getClassesForUserResponseBodyToJSON(
+  getClassesForUserResponseBody: GetClassesForUserResponseBody,
+): string {
+  return JSON.stringify(
+    GetClassesForUserResponseBody$outboundSchema.parse(
+      getClassesForUserResponseBody,
+    ),
+  );
+}
+
+export function getClassesForUserResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetClassesForUserResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetClassesForUserResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetClassesForUserResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
 export const GetClassesForUserResponse$inboundSchema: z.ZodType<
   GetClassesForUserResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  classes: z.array(components.Class$inboundSchema),
+  Result: z.lazy(() => GetClassesForUserResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetClassesForUserResponse$Outbound = {
-  classes: Array<components.Class$Outbound>;
+  Result: GetClassesForUserResponseBody$Outbound;
 };
 
 /** @internal */
@@ -96,7 +266,11 @@ export const GetClassesForUserResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetClassesForUserResponse
 > = z.object({
-  classes: z.array(components.Class$outboundSchema),
+  result: z.lazy(() => GetClassesForUserResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

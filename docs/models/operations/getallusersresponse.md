@@ -36,6 +36,11 @@ let value: GetAllUsersResponse = {
         ],
       },
     ],
+    totalCount: 5529.09,
+    pageCount: 56.97,
+    pageNumber: 2953.63,
+    offset: 8739.8,
+    limit: 9237.21,
   },
 };
 ```

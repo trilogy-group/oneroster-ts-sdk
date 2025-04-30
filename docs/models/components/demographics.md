@@ -10,7 +10,7 @@ import { Demographics } from "@superbuilders/oneroster/models/components";
 let value: Demographics = {
   sourcedId: "<id>",
   status: "active",
-  birthDate: "2004-11-10",
+  birthDate: "2004-11-11",
   sex: "other",
   americanIndianOrAlaskaNative: "<value>",
   asian: "<value>",

@@ -3,16 +3,98 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
+import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetClassesForCourseOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetClassesForCourseOrderBy = ClosedEnum<
+  typeof GetClassesForCourseOrderBy
+>;
 
 export type GetClassesForCourseRequest = {
   /**
    * The sourcedId of the course
    */
   courseSourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetClassesForCourseOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
+
+/**
+ * Collection of Classes for Course
+ */
+export type GetClassesForCourseResponseBody = {
+  classes: Array<components.Class>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+export type GetClassesForCourseResponse = {
+  result: GetClassesForCourseResponseBody;
+};
+
+/** @internal */
+export const GetClassesForCourseOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetClassesForCourseOrderBy
+> = z.nativeEnum(GetClassesForCourseOrderBy);
+
+/** @internal */
+export const GetClassesForCourseOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetClassesForCourseOrderBy
+> = GetClassesForCourseOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetClassesForCourseOrderBy$ {
+  /** @deprecated use `GetClassesForCourseOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetClassesForCourseOrderBy$inboundSchema;
+  /** @deprecated use `GetClassesForCourseOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetClassesForCourseOrderBy$outboundSchema;
+}
 
 /** @internal */
 export const GetClassesForCourseRequest$inboundSchema: z.ZodType<
@@ -21,11 +103,25 @@ export const GetClassesForCourseRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   courseSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetClassesForCourseOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetClassesForCourseRequest$Outbound = {
   courseSourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -35,6 +131,13 @@ export const GetClassesForCourseRequest$outboundSchema: z.ZodType<
   GetClassesForCourseRequest
 > = z.object({
   courseSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetClassesForCourseOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -65,5 +168,140 @@ export function getClassesForCourseRequestFromJSON(
     jsonString,
     (x) => GetClassesForCourseRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetClassesForCourseRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetClassesForCourseResponseBody$inboundSchema: z.ZodType<
+  GetClassesForCourseResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  classes: z.array(components.Class$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetClassesForCourseResponseBody$Outbound = {
+  classes: Array<components.Class$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetClassesForCourseResponseBody$outboundSchema: z.ZodType<
+  GetClassesForCourseResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetClassesForCourseResponseBody
+> = z.object({
+  classes: z.array(components.Class$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetClassesForCourseResponseBody$ {
+  /** @deprecated use `GetClassesForCourseResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetClassesForCourseResponseBody$inboundSchema;
+  /** @deprecated use `GetClassesForCourseResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetClassesForCourseResponseBody$outboundSchema;
+  /** @deprecated use `GetClassesForCourseResponseBody$Outbound` instead. */
+  export type Outbound = GetClassesForCourseResponseBody$Outbound;
+}
+
+export function getClassesForCourseResponseBodyToJSON(
+  getClassesForCourseResponseBody: GetClassesForCourseResponseBody,
+): string {
+  return JSON.stringify(
+    GetClassesForCourseResponseBody$outboundSchema.parse(
+      getClassesForCourseResponseBody,
+    ),
+  );
+}
+
+export function getClassesForCourseResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetClassesForCourseResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetClassesForCourseResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetClassesForCourseResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetClassesForCourseResponse$inboundSchema: z.ZodType<
+  GetClassesForCourseResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => GetClassesForCourseResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type GetClassesForCourseResponse$Outbound = {
+  Result: GetClassesForCourseResponseBody$Outbound;
+};
+
+/** @internal */
+export const GetClassesForCourseResponse$outboundSchema: z.ZodType<
+  GetClassesForCourseResponse$Outbound,
+  z.ZodTypeDef,
+  GetClassesForCourseResponse
+> = z.object({
+  result: z.lazy(() => GetClassesForCourseResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetClassesForCourseResponse$ {
+  /** @deprecated use `GetClassesForCourseResponse$inboundSchema` instead. */
+  export const inboundSchema = GetClassesForCourseResponse$inboundSchema;
+  /** @deprecated use `GetClassesForCourseResponse$outboundSchema` instead. */
+  export const outboundSchema = GetClassesForCourseResponse$outboundSchema;
+  /** @deprecated use `GetClassesForCourseResponse$Outbound` instead. */
+  export type Outbound = GetClassesForCourseResponse$Outbound;
+}
+
+export function getClassesForCourseResponseToJSON(
+  getClassesForCourseResponse: GetClassesForCourseResponse,
+): string {
+  return JSON.stringify(
+    GetClassesForCourseResponse$outboundSchema.parse(
+      getClassesForCourseResponse,
+    ),
+  );
+}
+
+export function getClassesForCourseResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<GetClassesForCourseResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetClassesForCourseResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetClassesForCourseResponse' from JSON`,
   );
 }

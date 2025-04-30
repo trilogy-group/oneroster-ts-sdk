@@ -37,6 +37,11 @@ let value: GetAllUsersResponseBody = {
       ],
     },
   ],
+  totalCount: 7867.35,
+  pageCount: 9796.56,
+  pageNumber: 1659.42,
+  offset: 6606.84,
+  limit: 9389.58,
 };
 ```
 
@@ -45,3 +50,8 @@ let value: GetAllUsersResponseBody = {
 | Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `users`                                                                    | [operations.GetAllUsersUser](../../models/operations/getallusersuser.md)[] | :heavy_check_mark:                                                         | N/A                                                                        |
+| `totalCount`                                                               | *number*                                                                   | :heavy_check_mark:                                                         | N/A                                                                        |
+| `pageCount`                                                                | *number*                                                                   | :heavy_check_mark:                                                         | N/A                                                                        |
+| `pageNumber`                                                               | *number*                                                                   | :heavy_check_mark:                                                         | N/A                                                                        |
+| `offset`                                                                   | *number*                                                                   | :heavy_check_mark:                                                         | N/A                                                                        |
+| `limit`                                                                    | *number*                                                                   | :heavy_check_mark:                                                         | N/A                                                                        |

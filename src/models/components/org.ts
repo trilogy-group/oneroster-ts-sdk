@@ -14,7 +14,7 @@ export const OrgStatus = {
 } as const;
 export type OrgStatus = ClosedEnum<typeof OrgStatus>;
 
-export const OrgType2 = {
+export const OrgType1 = {
   Department: "department",
   School: "school",
   District: "district",
@@ -22,7 +22,7 @@ export const OrgType2 = {
   State: "state",
   National: "national",
 } as const;
-export type OrgType2 = ClosedEnum<typeof OrgType2>;
+export type OrgType1 = ClosedEnum<typeof OrgType1>;
 
 export type OrgParent = {
   href: string;
@@ -45,7 +45,7 @@ export type Org = {
   dateLastModified?: Date | undefined;
   metadata?: { [k: string]: any } | null | undefined;
   name: string;
-  type: OrgType2;
+  type: OrgType1;
   identifier: string;
   parent: OrgParent | null;
   children: Array<Child>;
@@ -71,22 +71,22 @@ export namespace OrgStatus$ {
 }
 
 /** @internal */
-export const OrgType2$inboundSchema: z.ZodNativeEnum<typeof OrgType2> = z
-  .nativeEnum(OrgType2);
+export const OrgType1$inboundSchema: z.ZodNativeEnum<typeof OrgType1> = z
+  .nativeEnum(OrgType1);
 
 /** @internal */
-export const OrgType2$outboundSchema: z.ZodNativeEnum<typeof OrgType2> =
-  OrgType2$inboundSchema;
+export const OrgType1$outboundSchema: z.ZodNativeEnum<typeof OrgType1> =
+  OrgType1$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace OrgType2$ {
-  /** @deprecated use `OrgType2$inboundSchema` instead. */
-  export const inboundSchema = OrgType2$inboundSchema;
-  /** @deprecated use `OrgType2$outboundSchema` instead. */
-  export const outboundSchema = OrgType2$outboundSchema;
+export namespace OrgType1$ {
+  /** @deprecated use `OrgType1$inboundSchema` instead. */
+  export const inboundSchema = OrgType1$inboundSchema;
+  /** @deprecated use `OrgType1$outboundSchema` instead. */
+  export const outboundSchema = OrgType1$outboundSchema;
 }
 
 /** @internal */
@@ -208,7 +208,7 @@ export const Org$inboundSchema: z.ZodType<Org, z.ZodTypeDef, unknown> = z
     ).optional(),
     metadata: z.nullable(z.record(z.any())).optional(),
     name: z.string(),
-    type: OrgType2$inboundSchema,
+    type: OrgType1$inboundSchema,
     identifier: z.string(),
     parent: z.nullable(z.lazy(() => OrgParent$inboundSchema)),
     children: z.array(z.lazy(() => Child$inboundSchema)),
@@ -235,7 +235,7 @@ export const Org$outboundSchema: z.ZodType<Org$Outbound, z.ZodTypeDef, Org> = z
     dateLastModified: z.date().transform(v => v.toISOString()).optional(),
     metadata: z.nullable(z.record(z.any())).optional(),
     name: z.string(),
-    type: OrgType2$outboundSchema,
+    type: OrgType1$outboundSchema,
     identifier: z.string(),
     parent: z.nullable(z.lazy(() => OrgParent$outboundSchema)),
     children: z.array(z.lazy(() => Child$outboundSchema)),

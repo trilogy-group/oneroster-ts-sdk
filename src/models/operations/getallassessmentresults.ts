@@ -60,6 +60,11 @@ export type GetAllAssessmentResultsRequest = {
  */
 export type GetAllAssessmentResultsResponseBody = {
   assessmentResults: Array<components.AssessmentResult>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 export type GetAllAssessmentResultsResponse = {
@@ -168,11 +173,21 @@ export const GetAllAssessmentResultsResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   assessmentResults: z.array(components.AssessmentResult$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /** @internal */
 export type GetAllAssessmentResultsResponseBody$Outbound = {
   assessmentResults: Array<components.AssessmentResult$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 /** @internal */
@@ -182,6 +197,11 @@ export const GetAllAssessmentResultsResponseBody$outboundSchema: z.ZodType<
   GetAllAssessmentResultsResponseBody
 > = z.object({
   assessmentResults: z.array(components.AssessmentResult$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /**

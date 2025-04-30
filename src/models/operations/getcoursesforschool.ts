@@ -3,16 +3,59 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetCoursesForSchoolOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetCoursesForSchoolOrderBy = ClosedEnum<
+  typeof GetCoursesForSchoolOrderBy
+>;
 
 export type GetCoursesForSchoolRequest = {
   /**
    * School sourced ID
    */
   schoolSourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetCoursesForSchoolOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 export const GetCoursesForSchoolStatus = {
@@ -34,7 +77,7 @@ export type GetCoursesForSchoolOrg = {
 /**
  * Represents a course.
  */
-export type GetCoursesForSchoolResponse = {
+export type GetCoursesForSchoolCourse = {
   sourcedId?: string | undefined;
   status: GetCoursesForSchoolStatus;
   dateLastModified?: Date | undefined;
@@ -50,6 +93,43 @@ export type GetCoursesForSchoolResponse = {
   gradingScheme?: string | null | undefined;
 };
 
+/**
+ * Collection of courses successfully retrieved
+ */
+export type GetCoursesForSchoolResponseBody = {
+  courses: Array<GetCoursesForSchoolCourse>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+export type GetCoursesForSchoolResponse = {
+  result: GetCoursesForSchoolResponseBody;
+};
+
+/** @internal */
+export const GetCoursesForSchoolOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetCoursesForSchoolOrderBy
+> = z.nativeEnum(GetCoursesForSchoolOrderBy);
+
+/** @internal */
+export const GetCoursesForSchoolOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetCoursesForSchoolOrderBy
+> = GetCoursesForSchoolOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetCoursesForSchoolOrderBy$ {
+  /** @deprecated use `GetCoursesForSchoolOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetCoursesForSchoolOrderBy$inboundSchema;
+  /** @deprecated use `GetCoursesForSchoolOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetCoursesForSchoolOrderBy$outboundSchema;
+}
+
 /** @internal */
 export const GetCoursesForSchoolRequest$inboundSchema: z.ZodType<
   GetCoursesForSchoolRequest,
@@ -57,11 +137,25 @@ export const GetCoursesForSchoolRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   schoolSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetCoursesForSchoolOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetCoursesForSchoolRequest$Outbound = {
   schoolSourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -71,6 +165,13 @@ export const GetCoursesForSchoolRequest$outboundSchema: z.ZodType<
   GetCoursesForSchoolRequest
 > = z.object({
   schoolSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetCoursesForSchoolOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -238,8 +339,8 @@ export function getCoursesForSchoolOrgFromJSON(
 }
 
 /** @internal */
-export const GetCoursesForSchoolResponse$inboundSchema: z.ZodType<
-  GetCoursesForSchoolResponse,
+export const GetCoursesForSchoolCourse$inboundSchema: z.ZodType<
+  GetCoursesForSchoolCourse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -263,7 +364,7 @@ export const GetCoursesForSchoolResponse$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type GetCoursesForSchoolResponse$Outbound = {
+export type GetCoursesForSchoolCourse$Outbound = {
   sourcedId?: string | undefined;
   status: string;
   dateLastModified?: string | undefined;
@@ -283,10 +384,10 @@ export type GetCoursesForSchoolResponse$Outbound = {
 };
 
 /** @internal */
-export const GetCoursesForSchoolResponse$outboundSchema: z.ZodType<
-  GetCoursesForSchoolResponse$Outbound,
+export const GetCoursesForSchoolCourse$outboundSchema: z.ZodType<
+  GetCoursesForSchoolCourse$Outbound,
   z.ZodTypeDef,
-  GetCoursesForSchoolResponse
+  GetCoursesForSchoolCourse
 > = z.object({
   sourcedId: z.string().optional(),
   status: GetCoursesForSchoolStatus$outboundSchema,
@@ -303,6 +404,139 @@ export const GetCoursesForSchoolResponse$outboundSchema: z.ZodType<
   org: z.lazy(() => GetCoursesForSchoolOrg$outboundSchema),
   level: z.nullable(z.string()).optional(),
   gradingScheme: z.nullable(z.string()).optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetCoursesForSchoolCourse$ {
+  /** @deprecated use `GetCoursesForSchoolCourse$inboundSchema` instead. */
+  export const inboundSchema = GetCoursesForSchoolCourse$inboundSchema;
+  /** @deprecated use `GetCoursesForSchoolCourse$outboundSchema` instead. */
+  export const outboundSchema = GetCoursesForSchoolCourse$outboundSchema;
+  /** @deprecated use `GetCoursesForSchoolCourse$Outbound` instead. */
+  export type Outbound = GetCoursesForSchoolCourse$Outbound;
+}
+
+export function getCoursesForSchoolCourseToJSON(
+  getCoursesForSchoolCourse: GetCoursesForSchoolCourse,
+): string {
+  return JSON.stringify(
+    GetCoursesForSchoolCourse$outboundSchema.parse(getCoursesForSchoolCourse),
+  );
+}
+
+export function getCoursesForSchoolCourseFromJSON(
+  jsonString: string,
+): SafeParseResult<GetCoursesForSchoolCourse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetCoursesForSchoolCourse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetCoursesForSchoolCourse' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetCoursesForSchoolResponseBody$inboundSchema: z.ZodType<
+  GetCoursesForSchoolResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  courses: z.array(z.lazy(() => GetCoursesForSchoolCourse$inboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetCoursesForSchoolResponseBody$Outbound = {
+  courses: Array<GetCoursesForSchoolCourse$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetCoursesForSchoolResponseBody$outboundSchema: z.ZodType<
+  GetCoursesForSchoolResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetCoursesForSchoolResponseBody
+> = z.object({
+  courses: z.array(z.lazy(() => GetCoursesForSchoolCourse$outboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetCoursesForSchoolResponseBody$ {
+  /** @deprecated use `GetCoursesForSchoolResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetCoursesForSchoolResponseBody$inboundSchema;
+  /** @deprecated use `GetCoursesForSchoolResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetCoursesForSchoolResponseBody$outboundSchema;
+  /** @deprecated use `GetCoursesForSchoolResponseBody$Outbound` instead. */
+  export type Outbound = GetCoursesForSchoolResponseBody$Outbound;
+}
+
+export function getCoursesForSchoolResponseBodyToJSON(
+  getCoursesForSchoolResponseBody: GetCoursesForSchoolResponseBody,
+): string {
+  return JSON.stringify(
+    GetCoursesForSchoolResponseBody$outboundSchema.parse(
+      getCoursesForSchoolResponseBody,
+    ),
+  );
+}
+
+export function getCoursesForSchoolResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetCoursesForSchoolResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetCoursesForSchoolResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetCoursesForSchoolResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetCoursesForSchoolResponse$inboundSchema: z.ZodType<
+  GetCoursesForSchoolResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => GetCoursesForSchoolResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type GetCoursesForSchoolResponse$Outbound = {
+  Result: GetCoursesForSchoolResponseBody$Outbound;
+};
+
+/** @internal */
+export const GetCoursesForSchoolResponse$outboundSchema: z.ZodType<
+  GetCoursesForSchoolResponse$Outbound,
+  z.ZodTypeDef,
+  GetCoursesForSchoolResponse
+> = z.object({
+  result: z.lazy(() => GetCoursesForSchoolResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

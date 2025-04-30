@@ -1,3 +1,5 @@
+**/.speakeasy/temp/
+**/.speakeasy/logs/
 /models
 /models/errors
 /types

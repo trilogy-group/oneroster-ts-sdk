@@ -28,6 +28,11 @@ let value: GetAllOrgsResponse = {
         ],
       },
     ],
+    totalCount: 3071.46,
+    pageCount: 9945.97,
+    pageNumber: 5087.66,
+    offset: 8032.7,
+    limit: 8559.45,
   },
 };
 ```

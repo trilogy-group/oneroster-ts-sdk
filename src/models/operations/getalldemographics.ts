@@ -3,17 +3,237 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
+ * The order to sort the response by
+ */
+export const GetAllDemographicsOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetAllDemographicsOrderBy = ClosedEnum<
+  typeof GetAllDemographicsOrderBy
+>;
+
+export type GetAllDemographicsRequest = {
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetAllDemographicsOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
+};
+
+/**
  * Demographics collection retrieved successfully
  */
-export type GetAllDemographicsResponse = {
+export type GetAllDemographicsResponseBody = {
   demographics: Array<components.Demographics>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetAllDemographicsResponse = {
+  result: GetAllDemographicsResponseBody;
+};
+
+/** @internal */
+export const GetAllDemographicsOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetAllDemographicsOrderBy
+> = z.nativeEnum(GetAllDemographicsOrderBy);
+
+/** @internal */
+export const GetAllDemographicsOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetAllDemographicsOrderBy
+> = GetAllDemographicsOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllDemographicsOrderBy$ {
+  /** @deprecated use `GetAllDemographicsOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetAllDemographicsOrderBy$inboundSchema;
+  /** @deprecated use `GetAllDemographicsOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetAllDemographicsOrderBy$outboundSchema;
+}
+
+/** @internal */
+export const GetAllDemographicsRequest$inboundSchema: z.ZodType<
+  GetAllDemographicsRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllDemographicsOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/** @internal */
+export type GetAllDemographicsRequest$Outbound = {
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
+};
+
+/** @internal */
+export const GetAllDemographicsRequest$outboundSchema: z.ZodType<
+  GetAllDemographicsRequest$Outbound,
+  z.ZodTypeDef,
+  GetAllDemographicsRequest
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllDemographicsOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllDemographicsRequest$ {
+  /** @deprecated use `GetAllDemographicsRequest$inboundSchema` instead. */
+  export const inboundSchema = GetAllDemographicsRequest$inboundSchema;
+  /** @deprecated use `GetAllDemographicsRequest$outboundSchema` instead. */
+  export const outboundSchema = GetAllDemographicsRequest$outboundSchema;
+  /** @deprecated use `GetAllDemographicsRequest$Outbound` instead. */
+  export type Outbound = GetAllDemographicsRequest$Outbound;
+}
+
+export function getAllDemographicsRequestToJSON(
+  getAllDemographicsRequest: GetAllDemographicsRequest,
+): string {
+  return JSON.stringify(
+    GetAllDemographicsRequest$outboundSchema.parse(getAllDemographicsRequest),
+  );
+}
+
+export function getAllDemographicsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllDemographicsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllDemographicsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllDemographicsRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetAllDemographicsResponseBody$inboundSchema: z.ZodType<
+  GetAllDemographicsResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  demographics: z.array(components.Demographics$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetAllDemographicsResponseBody$Outbound = {
+  demographics: Array<components.Demographics$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetAllDemographicsResponseBody$outboundSchema: z.ZodType<
+  GetAllDemographicsResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetAllDemographicsResponseBody
+> = z.object({
+  demographics: z.array(components.Demographics$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllDemographicsResponseBody$ {
+  /** @deprecated use `GetAllDemographicsResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetAllDemographicsResponseBody$inboundSchema;
+  /** @deprecated use `GetAllDemographicsResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetAllDemographicsResponseBody$outboundSchema;
+  /** @deprecated use `GetAllDemographicsResponseBody$Outbound` instead. */
+  export type Outbound = GetAllDemographicsResponseBody$Outbound;
+}
+
+export function getAllDemographicsResponseBodyToJSON(
+  getAllDemographicsResponseBody: GetAllDemographicsResponseBody,
+): string {
+  return JSON.stringify(
+    GetAllDemographicsResponseBody$outboundSchema.parse(
+      getAllDemographicsResponseBody,
+    ),
+  );
+}
+
+export function getAllDemographicsResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllDemographicsResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllDemographicsResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllDemographicsResponseBody' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetAllDemographicsResponse$inboundSchema: z.ZodType<
@@ -21,12 +241,16 @@ export const GetAllDemographicsResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  demographics: z.array(components.Demographics$inboundSchema),
+  Result: z.lazy(() => GetAllDemographicsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetAllDemographicsResponse$Outbound = {
-  demographics: Array<components.Demographics$Outbound>;
+  Result: GetAllDemographicsResponseBody$Outbound;
 };
 
 /** @internal */
@@ -35,7 +259,11 @@ export const GetAllDemographicsResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAllDemographicsResponse
 > = z.object({
-  demographics: z.array(components.Demographics$outboundSchema),
+  result: z.lazy(() => GetAllDemographicsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

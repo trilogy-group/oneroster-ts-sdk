@@ -90,6 +90,11 @@ export type GetAllCoursesCourse = {
  */
 export type GetAllCoursesResponseBody = {
   courses: Array<GetAllCoursesCourse>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 export type GetAllCoursesResponse = {
@@ -423,11 +428,21 @@ export const GetAllCoursesResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   courses: z.array(z.lazy(() => GetAllCoursesCourse$inboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /** @internal */
 export type GetAllCoursesResponseBody$Outbound = {
   courses: Array<GetAllCoursesCourse$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 /** @internal */
@@ -437,6 +452,11 @@ export const GetAllCoursesResponseBody$outboundSchema: z.ZodType<
   GetAllCoursesResponseBody
 > = z.object({
   courses: z.array(z.lazy(() => GetAllCoursesCourse$outboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /**

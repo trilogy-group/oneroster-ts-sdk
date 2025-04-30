@@ -3,24 +3,98 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The order to sort the response by
+ */
+export const GetClassesForTermOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetClassesForTermOrderBy = ClosedEnum<
+  typeof GetClassesForTermOrderBy
+>;
 
 export type GetClassesForTermRequest = {
   /**
    * The sourcedId of the term
    */
   termSourcedId: string;
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetClassesForTermOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
 };
 
 /**
  * Successful response containing a collection of classes for the term
  */
-export type GetClassesForTermResponse = {
+export type GetClassesForTermResponseBody = {
   classes: Array<components.Class>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetClassesForTermResponse = {
+  result: GetClassesForTermResponseBody;
+};
+
+/** @internal */
+export const GetClassesForTermOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetClassesForTermOrderBy
+> = z.nativeEnum(GetClassesForTermOrderBy);
+
+/** @internal */
+export const GetClassesForTermOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetClassesForTermOrderBy
+> = GetClassesForTermOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetClassesForTermOrderBy$ {
+  /** @deprecated use `GetClassesForTermOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetClassesForTermOrderBy$inboundSchema;
+  /** @deprecated use `GetClassesForTermOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetClassesForTermOrderBy$outboundSchema;
+}
 
 /** @internal */
 export const GetClassesForTermRequest$inboundSchema: z.ZodType<
@@ -29,11 +103,25 @@ export const GetClassesForTermRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   termSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetClassesForTermOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /** @internal */
 export type GetClassesForTermRequest$Outbound = {
   termSourcedId: string;
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
 };
 
 /** @internal */
@@ -43,6 +131,13 @@ export const GetClassesForTermRequest$outboundSchema: z.ZodType<
   GetClassesForTermRequest
 > = z.object({
   termSourcedId: z.string(),
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetClassesForTermOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
 });
 
 /**
@@ -77,17 +172,92 @@ export function getClassesForTermRequestFromJSON(
 }
 
 /** @internal */
+export const GetClassesForTermResponseBody$inboundSchema: z.ZodType<
+  GetClassesForTermResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  classes: z.array(components.Class$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetClassesForTermResponseBody$Outbound = {
+  classes: Array<components.Class$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetClassesForTermResponseBody$outboundSchema: z.ZodType<
+  GetClassesForTermResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetClassesForTermResponseBody
+> = z.object({
+  classes: z.array(components.Class$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetClassesForTermResponseBody$ {
+  /** @deprecated use `GetClassesForTermResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetClassesForTermResponseBody$inboundSchema;
+  /** @deprecated use `GetClassesForTermResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetClassesForTermResponseBody$outboundSchema;
+  /** @deprecated use `GetClassesForTermResponseBody$Outbound` instead. */
+  export type Outbound = GetClassesForTermResponseBody$Outbound;
+}
+
+export function getClassesForTermResponseBodyToJSON(
+  getClassesForTermResponseBody: GetClassesForTermResponseBody,
+): string {
+  return JSON.stringify(
+    GetClassesForTermResponseBody$outboundSchema.parse(
+      getClassesForTermResponseBody,
+    ),
+  );
+}
+
+export function getClassesForTermResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetClassesForTermResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetClassesForTermResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetClassesForTermResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
 export const GetClassesForTermResponse$inboundSchema: z.ZodType<
   GetClassesForTermResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  classes: z.array(components.Class$inboundSchema),
+  Result: z.lazy(() => GetClassesForTermResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetClassesForTermResponse$Outbound = {
-  classes: Array<components.Class$Outbound>;
+  Result: GetClassesForTermResponseBody$Outbound;
 };
 
 /** @internal */
@@ -96,7 +266,11 @@ export const GetClassesForTermResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetClassesForTermResponse
 > = z.object({
-  classes: z.array(components.Class$outboundSchema),
+  result: z.lazy(() => GetClassesForTermResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

@@ -3,17 +3,237 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
+ * The order to sort the response by
+ */
+export const GetAllCategoriesOrderBy = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order to sort the response by
+ */
+export type GetAllCategoriesOrderBy = ClosedEnum<
+  typeof GetAllCategoriesOrderBy
+>;
+
+export type GetAllCategoriesRequest = {
+  /**
+   * Comma-separated list of fields to include in the response
+   */
+  fields?: string | undefined;
+  /**
+   * The maximum number of items to return in the paginated response
+   */
+  limit?: number | undefined;
+  /**
+   * The number of items to skip in the paginated response
+   */
+  offset?: number | undefined;
+  /**
+   * The field to sort the response by
+   */
+  sort?: string | undefined;
+  /**
+   * The order to sort the response by
+   */
+  orderBy?: GetAllCategoriesOrderBy | undefined;
+  /**
+   * The filter to apply to the response
+   */
+  filter?: string | undefined;
+  /**
+   * The search query to apply to the response
+   */
+  search?: string | undefined;
+};
+
+/**
  * Successful response containing a collection of categories
  */
-export type GetAllCategoriesResponse = {
+export type GetAllCategoriesResponseBody = {
   categories: Array<components.Category>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
+
+export type GetAllCategoriesResponse = {
+  result: GetAllCategoriesResponseBody;
+};
+
+/** @internal */
+export const GetAllCategoriesOrderBy$inboundSchema: z.ZodNativeEnum<
+  typeof GetAllCategoriesOrderBy
+> = z.nativeEnum(GetAllCategoriesOrderBy);
+
+/** @internal */
+export const GetAllCategoriesOrderBy$outboundSchema: z.ZodNativeEnum<
+  typeof GetAllCategoriesOrderBy
+> = GetAllCategoriesOrderBy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllCategoriesOrderBy$ {
+  /** @deprecated use `GetAllCategoriesOrderBy$inboundSchema` instead. */
+  export const inboundSchema = GetAllCategoriesOrderBy$inboundSchema;
+  /** @deprecated use `GetAllCategoriesOrderBy$outboundSchema` instead. */
+  export const outboundSchema = GetAllCategoriesOrderBy$outboundSchema;
+}
+
+/** @internal */
+export const GetAllCategoriesRequest$inboundSchema: z.ZodType<
+  GetAllCategoriesRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllCategoriesOrderBy$inboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/** @internal */
+export type GetAllCategoriesRequest$Outbound = {
+  fields?: string | undefined;
+  limit: number;
+  offset: number;
+  sort?: string | undefined;
+  orderBy?: string | undefined;
+  filter?: string | undefined;
+  search?: string | undefined;
+};
+
+/** @internal */
+export const GetAllCategoriesRequest$outboundSchema: z.ZodType<
+  GetAllCategoriesRequest$Outbound,
+  z.ZodTypeDef,
+  GetAllCategoriesRequest
+> = z.object({
+  fields: z.string().optional(),
+  limit: z.number().int().default(100),
+  offset: z.number().int().default(0),
+  sort: z.string().optional(),
+  orderBy: GetAllCategoriesOrderBy$outboundSchema.optional(),
+  filter: z.string().optional(),
+  search: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllCategoriesRequest$ {
+  /** @deprecated use `GetAllCategoriesRequest$inboundSchema` instead. */
+  export const inboundSchema = GetAllCategoriesRequest$inboundSchema;
+  /** @deprecated use `GetAllCategoriesRequest$outboundSchema` instead. */
+  export const outboundSchema = GetAllCategoriesRequest$outboundSchema;
+  /** @deprecated use `GetAllCategoriesRequest$Outbound` instead. */
+  export type Outbound = GetAllCategoriesRequest$Outbound;
+}
+
+export function getAllCategoriesRequestToJSON(
+  getAllCategoriesRequest: GetAllCategoriesRequest,
+): string {
+  return JSON.stringify(
+    GetAllCategoriesRequest$outboundSchema.parse(getAllCategoriesRequest),
+  );
+}
+
+export function getAllCategoriesRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllCategoriesRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllCategoriesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllCategoriesRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetAllCategoriesResponseBody$inboundSchema: z.ZodType<
+  GetAllCategoriesResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  categories: z.array(components.Category$inboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/** @internal */
+export type GetAllCategoriesResponseBody$Outbound = {
+  categories: Array<components.Category$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
+};
+
+/** @internal */
+export const GetAllCategoriesResponseBody$outboundSchema: z.ZodType<
+  GetAllCategoriesResponseBody$Outbound,
+  z.ZodTypeDef,
+  GetAllCategoriesResponseBody
+> = z.object({
+  categories: z.array(components.Category$outboundSchema),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAllCategoriesResponseBody$ {
+  /** @deprecated use `GetAllCategoriesResponseBody$inboundSchema` instead. */
+  export const inboundSchema = GetAllCategoriesResponseBody$inboundSchema;
+  /** @deprecated use `GetAllCategoriesResponseBody$outboundSchema` instead. */
+  export const outboundSchema = GetAllCategoriesResponseBody$outboundSchema;
+  /** @deprecated use `GetAllCategoriesResponseBody$Outbound` instead. */
+  export type Outbound = GetAllCategoriesResponseBody$Outbound;
+}
+
+export function getAllCategoriesResponseBodyToJSON(
+  getAllCategoriesResponseBody: GetAllCategoriesResponseBody,
+): string {
+  return JSON.stringify(
+    GetAllCategoriesResponseBody$outboundSchema.parse(
+      getAllCategoriesResponseBody,
+    ),
+  );
+}
+
+export function getAllCategoriesResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAllCategoriesResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAllCategoriesResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAllCategoriesResponseBody' from JSON`,
+  );
+}
 
 /** @internal */
 export const GetAllCategoriesResponse$inboundSchema: z.ZodType<
@@ -21,12 +241,16 @@ export const GetAllCategoriesResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  categories: z.array(components.Category$inboundSchema),
+  Result: z.lazy(() => GetAllCategoriesResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
 });
 
 /** @internal */
 export type GetAllCategoriesResponse$Outbound = {
-  categories: Array<components.Category$Outbound>;
+  Result: GetAllCategoriesResponseBody$Outbound;
 };
 
 /** @internal */
@@ -35,7 +259,11 @@ export const GetAllCategoriesResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetAllCategoriesResponse
 > = z.object({
-  categories: z.array(components.Category$outboundSchema),
+  result: z.lazy(() => GetAllCategoriesResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
 });
 
 /**

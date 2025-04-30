@@ -162,6 +162,11 @@ export type GetAllUsersUser = {
  */
 export type GetAllUsersResponseBody = {
   users: Array<GetAllUsersUser>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 export type GetAllUsersResponse = {
@@ -772,11 +777,21 @@ export const GetAllUsersResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   users: z.array(z.lazy(() => GetAllUsersUser$inboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /** @internal */
 export type GetAllUsersResponseBody$Outbound = {
   users: Array<GetAllUsersUser$Outbound>;
+  totalCount: number;
+  pageCount: number;
+  pageNumber: number;
+  offset: number;
+  limit: number;
 };
 
 /** @internal */
@@ -786,6 +801,11 @@ export const GetAllUsersResponseBody$outboundSchema: z.ZodType<
   GetAllUsersResponseBody
 > = z.object({
   users: z.array(z.lazy(() => GetAllUsersUser$outboundSchema)),
+  totalCount: z.number(),
+  pageCount: z.number(),
+  pageNumber: z.number(),
+  offset: z.number(),
+  limit: z.number(),
 });
 
 /**
