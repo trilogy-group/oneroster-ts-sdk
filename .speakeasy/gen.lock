@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.540.1
   generationVersion: 2.593.4
-  releaseVersion: 0.3.1
-  configChecksum: cbf24de64dad369b8227500f9b276112
+  releaseVersion: 0.3.2
+  configChecksum: cba20f5d6fba55aef40fd1d4a31b3548
   repoURL: https://github.com/trilogy-group/oneroster-ts.git
   installationURL: https://github.com/trilogy-group/oneroster-ts
   published: true
