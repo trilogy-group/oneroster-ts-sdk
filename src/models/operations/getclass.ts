@@ -5,6 +5,7 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
+import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetClassRequest = {
@@ -12,6 +13,16 @@ export type GetClassRequest = {
    * Class sourcedId
    */
   sourcedId: string;
+};
+
+/**
+ * Successful response with the requested class
+ */
+export type GetClassResponse = {
+  /**
+   * Represents a class.
+   */
+  class: components.Class;
 };
 
 /** @internal */
@@ -63,5 +74,59 @@ export function getClassRequestFromJSON(
     jsonString,
     (x) => GetClassRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetClassRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetClassResponse$inboundSchema: z.ZodType<
+  GetClassResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  class: components.Class$inboundSchema,
+});
+
+/** @internal */
+export type GetClassResponse$Outbound = {
+  class: components.Class$Outbound;
+};
+
+/** @internal */
+export const GetClassResponse$outboundSchema: z.ZodType<
+  GetClassResponse$Outbound,
+  z.ZodTypeDef,
+  GetClassResponse
+> = z.object({
+  class: components.Class$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetClassResponse$ {
+  /** @deprecated use `GetClassResponse$inboundSchema` instead. */
+  export const inboundSchema = GetClassResponse$inboundSchema;
+  /** @deprecated use `GetClassResponse$outboundSchema` instead. */
+  export const outboundSchema = GetClassResponse$outboundSchema;
+  /** @deprecated use `GetClassResponse$Outbound` instead. */
+  export type Outbound = GetClassResponse$Outbound;
+}
+
+export function getClassResponseToJSON(
+  getClassResponse: GetClassResponse,
+): string {
+  return JSON.stringify(
+    GetClassResponse$outboundSchema.parse(getClassResponse),
+  );
+}
+
+export function getClassResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<GetClassResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetClassResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetClassResponse' from JSON`,
   );
 }

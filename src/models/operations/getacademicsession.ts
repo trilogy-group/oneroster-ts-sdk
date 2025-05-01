@@ -5,6 +5,7 @@
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
+import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAcademicSessionRequest = {
@@ -12,6 +13,16 @@ export type GetAcademicSessionRequest = {
    * The sourcedId of the academic session
    */
   sourcedId: string;
+};
+
+/**
+ * Success
+ */
+export type GetAcademicSessionResponse = {
+  /**
+   * Represents an academic session.
+   */
+  academicSession: components.AcademicSession;
 };
 
 /** @internal */
@@ -65,5 +76,59 @@ export function getAcademicSessionRequestFromJSON(
     jsonString,
     (x) => GetAcademicSessionRequest$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'GetAcademicSessionRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const GetAcademicSessionResponse$inboundSchema: z.ZodType<
+  GetAcademicSessionResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  academicSession: components.AcademicSession$inboundSchema,
+});
+
+/** @internal */
+export type GetAcademicSessionResponse$Outbound = {
+  academicSession: components.AcademicSession$Outbound;
+};
+
+/** @internal */
+export const GetAcademicSessionResponse$outboundSchema: z.ZodType<
+  GetAcademicSessionResponse$Outbound,
+  z.ZodTypeDef,
+  GetAcademicSessionResponse
+> = z.object({
+  academicSession: components.AcademicSession$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace GetAcademicSessionResponse$ {
+  /** @deprecated use `GetAcademicSessionResponse$inboundSchema` instead. */
+  export const inboundSchema = GetAcademicSessionResponse$inboundSchema;
+  /** @deprecated use `GetAcademicSessionResponse$outboundSchema` instead. */
+  export const outboundSchema = GetAcademicSessionResponse$outboundSchema;
+  /** @deprecated use `GetAcademicSessionResponse$Outbound` instead. */
+  export type Outbound = GetAcademicSessionResponse$Outbound;
+}
+
+export function getAcademicSessionResponseToJSON(
+  getAcademicSessionResponse: GetAcademicSessionResponse,
+): string {
+  return JSON.stringify(
+    GetAcademicSessionResponse$outboundSchema.parse(getAcademicSessionResponse),
+  );
+}
+
+export function getAcademicSessionResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAcademicSessionResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAcademicSessionResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAcademicSessionResponse' from JSON`,
   );
 }

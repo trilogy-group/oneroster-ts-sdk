@@ -39,7 +39,7 @@ export function classesManagementUpdateClass(
   Result<
     components.Class,
     | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError2
+    | errors.UnauthorizedRequestResponseError1
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError2
@@ -70,7 +70,7 @@ async function $do(
     Result<
       components.Class,
       | errors.BadRequestResponseError1
-      | errors.UnauthorizedRequestResponseError2
+      | errors.UnauthorizedRequestResponseError1
       | errors.ForbiddenResponseError1
       | errors.NotFoundResponseError1
       | errors.UnprocessableEntityResponseError2
@@ -163,7 +163,7 @@ async function $do(
   const [result] = await M.match<
     components.Class,
     | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError2
+    | errors.UnauthorizedRequestResponseError1
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError2
@@ -179,7 +179,7 @@ async function $do(
   >(
     M.json(200, components.Class$inboundSchema),
     M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError2$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
     M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
     M.jsonErr(422, errors.UnprocessableEntityResponseError2$inboundSchema),

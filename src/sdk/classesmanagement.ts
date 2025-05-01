@@ -212,7 +212,7 @@ export class ClassesManagement extends ClientSDK {
   async getClass(
     request: operations.GetClassRequest,
     options?: RequestOptions,
-  ): Promise<components.Class> {
+  ): Promise<operations.GetClassResponse> {
     return unwrapAsync(classesManagementGetClass(
       this,
       request,

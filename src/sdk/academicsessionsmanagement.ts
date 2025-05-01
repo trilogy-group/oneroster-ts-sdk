@@ -61,7 +61,7 @@ export class AcademicSessionsManagement extends ClientSDK {
   async getAcademicSession(
     request: operations.GetAcademicSessionRequest,
     options?: RequestOptions,
-  ): Promise<components.AcademicSession> {
+  ): Promise<operations.GetAcademicSessionResponse> {
     return unwrapAsync(academicSessionsManagementGetAcademicSession(
       this,
       request,

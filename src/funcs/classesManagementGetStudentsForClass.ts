@@ -46,10 +46,10 @@ export function classesManagementGetStudentsForClass(
     Result<
       operations.GetStudentsForClassResponse,
       | errors.BadRequestResponseError1
-      | errors.UnauthorizedRequestResponseError1
+      | errors.UnauthorizedRequestResponseError2
       | errors.ForbiddenResponseError1
       | errors.NotFoundResponseError1
-      | errors.UnprocessableEntityResponseError1
+      | errors.UnprocessableEntityResponseError2
       | errors.TooManyRequestsResponseError1
       | errors.InternalServerErrorResponse2
       | APIError
@@ -80,10 +80,10 @@ async function $do(
       Result<
         operations.GetStudentsForClassResponse,
         | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError1
+        | errors.UnauthorizedRequestResponseError2
         | errors.ForbiddenResponseError1
         | errors.NotFoundResponseError1
-        | errors.UnprocessableEntityResponseError1
+        | errors.UnprocessableEntityResponseError2
         | errors.TooManyRequestsResponseError1
         | errors.InternalServerErrorResponse2
         | APIError
@@ -186,10 +186,10 @@ async function $do(
   const [result, raw] = await M.match<
     operations.GetStudentsForClassResponse,
     | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError1
+    | errors.UnauthorizedRequestResponseError2
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
-    | errors.UnprocessableEntityResponseError1
+    | errors.UnprocessableEntityResponseError2
     | errors.TooManyRequestsResponseError1
     | errors.InternalServerErrorResponse2
     | APIError
@@ -204,10 +204,10 @@ async function $do(
       key: "Result",
     }),
     M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError2$inboundSchema),
     M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
-    M.jsonErr(422, errors.UnprocessableEntityResponseError1$inboundSchema),
+    M.jsonErr(422, errors.UnprocessableEntityResponseError2$inboundSchema),
     M.jsonErr(429, errors.TooManyRequestsResponseError1$inboundSchema),
     M.jsonErr(500, errors.InternalServerErrorResponse2$inboundSchema),
     M.fail("4XX"),
@@ -228,10 +228,10 @@ async function $do(
       Result<
         operations.GetStudentsForClassResponse,
         | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError1
+        | errors.UnauthorizedRequestResponseError2
         | errors.ForbiddenResponseError1
         | errors.NotFoundResponseError1
-        | errors.UnprocessableEntityResponseError1
+        | errors.UnprocessableEntityResponseError2
         | errors.TooManyRequestsResponseError1
         | errors.InternalServerErrorResponse2
         | APIError

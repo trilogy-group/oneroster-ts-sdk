@@ -45,8 +45,8 @@ export function classesManagementGetResultsForStudentForClass(
   PageIterator<
     Result<
       operations.GetResultsForStudentForClassResponse,
-      | errors.BadRequestResponseError1
-      | errors.UnauthorizedRequestResponseError1
+      | errors.BadRequestResponseError2
+      | errors.UnauthorizedRequestResponseError2
       | errors.ForbiddenResponseError1
       | errors.NotFoundResponseError1
       | errors.UnprocessableEntityResponseError2
@@ -79,8 +79,8 @@ async function $do(
     PageIterator<
       Result<
         operations.GetResultsForStudentForClassResponse,
-        | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError1
+        | errors.BadRequestResponseError2
+        | errors.UnauthorizedRequestResponseError2
         | errors.ForbiddenResponseError1
         | errors.NotFoundResponseError1
         | errors.UnprocessableEntityResponseError2
@@ -192,8 +192,8 @@ async function $do(
 
   const [result, raw] = await M.match<
     operations.GetResultsForStudentForClassResponse,
-    | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError1
+    | errors.BadRequestResponseError2
+    | errors.UnauthorizedRequestResponseError2
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError2
@@ -210,8 +210,8 @@ async function $do(
     M.json(200, operations.GetResultsForStudentForClassResponse$inboundSchema, {
       key: "Result",
     }),
-    M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError2$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError2$inboundSchema),
     M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
     M.jsonErr(422, errors.UnprocessableEntityResponseError2$inboundSchema),
@@ -234,8 +234,8 @@ async function $do(
     next: Paginator<
       Result<
         operations.GetResultsForStudentForClassResponse,
-        | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError1
+        | errors.BadRequestResponseError2
+        | errors.UnauthorizedRequestResponseError2
         | errors.ForbiddenResponseError1
         | errors.NotFoundResponseError1
         | errors.UnprocessableEntityResponseError2

@@ -3748,7 +3748,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Class'
+                type: object
+                properties:
+                  class:
+                    $ref: '#/components/schemas/Class'
+                required:
+                  - class
         '400':
           description: Bad Request
           content:
@@ -17329,7 +17334,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AcademicSession'
+                type: object
+                properties:
+                  academicSession:
+                    $ref: '#/components/schemas/AcademicSession'
+                required:
+                  - academicSession
         '400':
           description: Bad Request
           content:

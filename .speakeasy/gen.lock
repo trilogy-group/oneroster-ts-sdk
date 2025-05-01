@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a3ef2627-6a46-4073-b2e2-f674a3c84580
 management:
-  docChecksum: 43302e0f8cb93dc42ec07d98df6dafeb
+  docChecksum: 10d5039974ef6510407103946a7f848b
   docVersion: 1.0.0
   speakeasyVersion: 1.541.2
   generationVersion: 2.595.4
-  releaseVersion: 0.6.2
-  configChecksum: 2397fe480b567b05b97c08fc0f226980
+  releaseVersion: 0.6.3
+  configChecksum: edea882624d1cb13293614a141b851fd
   repoURL: https://github.com/trilogy-group/oneroster-ts.git
   installationURL: https://github.com/trilogy-group/oneroster-ts
   published: true
@@ -303,6 +303,7 @@ generatedFiles:
   - docs/models/operations/deletescorescalerequest.md
   - docs/models/operations/deleteuserrequest.md
   - docs/models/operations/getacademicsessionrequest.md
+  - docs/models/operations/getacademicsessionresponse.md
   - docs/models/operations/getallacademicsessionsorderby.md
   - docs/models/operations/getallacademicsessionsrequest.md
   - docs/models/operations/getallacademicsessionsresponse.md
@@ -465,6 +466,7 @@ generatedFiles:
   - docs/models/operations/getclassesforuserresponse.md
   - docs/models/operations/getclassesforuserresponsebody.md
   - docs/models/operations/getclassrequest.md
+  - docs/models/operations/getclassresponse.md
   - docs/models/operations/getcomponentresourcecomponentresource.md
   - docs/models/operations/getcomponentresourcecoursecomponent.md
   - docs/models/operations/getcomponentresourcerequest.md
@@ -4465,7 +4467,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://whopping-fedora.name/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://likable-drug.biz/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://inborn-climb.biz/", "sourcedId": "<id>", "type": "<value>"}]}
+          application/json: {"class": {"sourcedId": "<id>", "status": "active", "title": "<value>", "classCode": "<value>", "classType": "homeroom", "location": "<value>", "course": {"href": "https://whopping-fedora.name/", "sourcedId": "<id>", "type": "<value>"}, "school": {"href": "https://likable-drug.biz/", "sourcedId": "<id>", "type": "<value>"}, "terms": [{"href": "https://inborn-climb.biz/", "sourcedId": "<id>", "type": "<value>"}]}}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}]}}
         "401":
@@ -4575,7 +4577,7 @@ examples:
           sourcedId: "<id>"
       responses:
         "200":
-          application/json: {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "gradingPeriod", "schoolYear": 6167.72, "org": {"href": "https://crushing-cash.info/", "sourcedId": "<id>", "type": "user"}}
+          application/json: {"academicSession": {"sourcedId": "<id>", "status": "active", "title": "<value>", "startDate": "<value>", "endDate": "<value>", "type": "gradingPeriod", "schoolYear": 6167.72, "org": {"href": "https://crushing-cash.info/", "sourcedId": "<id>", "type": "user"}}}
         "400":
           application/json: {"imsx_description": "<value>", "imsx_CodeMinor": {"imsx_codeMinorField": [{}, {}, {}]}}
         "401":
