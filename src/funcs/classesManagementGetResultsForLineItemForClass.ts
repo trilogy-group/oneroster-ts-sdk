@@ -46,7 +46,7 @@ export function classesManagementGetResultsForLineItemForClass(
     Result<
       operations.GetResultsForLineItemForClassResponse,
       | errors.BadRequestResponseError1
-      | errors.UnauthorizedRequestResponseError2
+      | errors.UnauthorizedRequestResponseError1
       | errors.ForbiddenResponseError1
       | errors.NotFoundResponseError1
       | errors.UnprocessableEntityResponseError1
@@ -80,7 +80,7 @@ async function $do(
       Result<
         operations.GetResultsForLineItemForClassResponse,
         | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError2
+        | errors.UnauthorizedRequestResponseError1
         | errors.ForbiddenResponseError1
         | errors.NotFoundResponseError1
         | errors.UnprocessableEntityResponseError1
@@ -193,7 +193,7 @@ async function $do(
   const [result, raw] = await M.match<
     operations.GetResultsForLineItemForClassResponse,
     | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError2
+    | errors.UnauthorizedRequestResponseError1
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
     | errors.UnprocessableEntityResponseError1
@@ -213,7 +213,7 @@ async function $do(
       { key: "Result" },
     ),
     M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError2$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
     M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
     M.jsonErr(422, errors.UnprocessableEntityResponseError1$inboundSchema),
@@ -237,7 +237,7 @@ async function $do(
       Result<
         operations.GetResultsForLineItemForClassResponse,
         | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError2
+        | errors.UnauthorizedRequestResponseError1
         | errors.ForbiddenResponseError1
         | errors.NotFoundResponseError1
         | errors.UnprocessableEntityResponseError1
