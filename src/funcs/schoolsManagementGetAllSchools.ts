@@ -45,7 +45,7 @@ export function schoolsManagementGetAllSchools(
   PageIterator<
     Result<
       operations.GetAllSchoolsResponse,
-      | errors.BadRequestResponseError2
+      | errors.BadRequestResponseError1
       | errors.UnauthorizedRequestResponseError1
       | errors.ForbiddenResponseError1
       | errors.NotFoundResponseError1
@@ -79,7 +79,7 @@ async function $do(
     PageIterator<
       Result<
         operations.GetAllSchoolsResponse,
-        | errors.BadRequestResponseError2
+        | errors.BadRequestResponseError1
         | errors.UnauthorizedRequestResponseError1
         | errors.ForbiddenResponseError1
         | errors.NotFoundResponseError1
@@ -175,7 +175,7 @@ async function $do(
 
   const [result, raw] = await M.match<
     operations.GetAllSchoolsResponse,
-    | errors.BadRequestResponseError2
+    | errors.BadRequestResponseError1
     | errors.UnauthorizedRequestResponseError1
     | errors.ForbiddenResponseError1
     | errors.NotFoundResponseError1
@@ -193,7 +193,7 @@ async function $do(
     M.json(200, operations.GetAllSchoolsResponse$inboundSchema, {
       key: "Result",
     }),
-    M.jsonErr(400, errors.BadRequestResponseError2$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
     M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
     M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
     M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
@@ -217,7 +217,7 @@ async function $do(
     next: Paginator<
       Result<
         operations.GetAllSchoolsResponse,
-        | errors.BadRequestResponseError2
+        | errors.BadRequestResponseError1
         | errors.UnauthorizedRequestResponseError1
         | errors.ForbiddenResponseError1
         | errors.NotFoundResponseError1
