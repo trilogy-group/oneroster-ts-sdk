@@ -37,11 +37,11 @@ export function schoolsManagementGetSchool(
 ): APIPromise<
   Result<
     operations.GetSchoolResponse,
-    | errors.BadRequestResponseError1
-    | errors.NotFoundResponseError1
-    | errors.UnprocessableEntityResponseError2
-    | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse1
+    | errors.BadRequestResponseError
+    | errors.NotFoundResponseError
+    | errors.UnprocessableEntityResponseError
+    | errors.TooManyRequestsResponseError
+    | errors.InternalServerErrorResponse
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -66,11 +66,11 @@ async function $do(
   [
     Result<
       operations.GetSchoolResponse,
-      | errors.BadRequestResponseError1
-      | errors.NotFoundResponseError1
-      | errors.UnprocessableEntityResponseError2
-      | errors.TooManyRequestsResponseError1
-      | errors.InternalServerErrorResponse1
+      | errors.BadRequestResponseError
+      | errors.NotFoundResponseError
+      | errors.UnprocessableEntityResponseError
+      | errors.TooManyRequestsResponseError
+      | errors.InternalServerErrorResponse
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -156,11 +156,11 @@ async function $do(
 
   const [result] = await M.match<
     operations.GetSchoolResponse,
-    | errors.BadRequestResponseError1
-    | errors.NotFoundResponseError1
-    | errors.UnprocessableEntityResponseError2
-    | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse1
+    | errors.BadRequestResponseError
+    | errors.NotFoundResponseError
+    | errors.UnprocessableEntityResponseError
+    | errors.TooManyRequestsResponseError
+    | errors.InternalServerErrorResponse
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -170,11 +170,11 @@ async function $do(
     | ConnectionError
   >(
     M.json(200, operations.GetSchoolResponse$inboundSchema),
-    M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
-    M.jsonErr(422, errors.UnprocessableEntityResponseError2$inboundSchema),
-    M.jsonErr(429, errors.TooManyRequestsResponseError1$inboundSchema),
-    M.jsonErr(500, errors.InternalServerErrorResponse1$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError$inboundSchema),
+    M.jsonErr(404, errors.NotFoundResponseError$inboundSchema),
+    M.jsonErr(422, errors.UnprocessableEntityResponseError$inboundSchema),
+    M.jsonErr(429, errors.TooManyRequestsResponseError$inboundSchema),
+    M.jsonErr(500, errors.InternalServerErrorResponse$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });

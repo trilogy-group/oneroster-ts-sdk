@@ -873,30 +873,30 @@ run();
 
 Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `getAllScoreScales` method may throw the following errors:
 
-| Error Type                               | Status Code | Content Type     |
-| ---------------------------------------- | ----------- | ---------------- |
-| errors.BadRequestResponseError1          | 400         | application/json |
-| errors.UnauthorizedRequestResponseError1 | 401         | application/json |
-| errors.ForbiddenResponseError1           | 403         | application/json |
-| errors.NotFoundResponseError1            | 404         | application/json |
-| errors.UnprocessableEntityResponseError1 | 422         | application/json |
-| errors.TooManyRequestsResponseError1     | 429         | application/json |
-| errors.InternalServerErrorResponse1      | 500         | application/json |
-| errors.APIError                          | 4XX, 5XX    | \*/\*            |
+| Error Type                              | Status Code | Content Type     |
+| --------------------------------------- | ----------- | ---------------- |
+| errors.BadRequestResponseError          | 400         | application/json |
+| errors.UnauthorizedRequestResponseError | 401         | application/json |
+| errors.ForbiddenResponseError           | 403         | application/json |
+| errors.NotFoundResponseError            | 404         | application/json |
+| errors.UnprocessableEntityResponseError | 422         | application/json |
+| errors.TooManyRequestsResponseError     | 429         | application/json |
+| errors.InternalServerErrorResponse      | 500         | application/json |
+| errors.APIError                         | 4XX, 5XX    | \*/\*            |
 
 If the method throws an error and it is not captured by the known errors, it will default to throwing a `APIError`.
 
 ```typescript
 import { OneRoster } from "@superbuilders/oneroster";
 import {
-  BadRequestResponseError1,
-  ForbiddenResponseError1,
-  InternalServerErrorResponse1,
-  NotFoundResponseError1,
+  BadRequestResponseError,
+  ForbiddenResponseError,
+  InternalServerErrorResponse,
+  NotFoundResponseError,
   SDKValidationError,
-  TooManyRequestsResponseError1,
-  UnauthorizedRequestResponseError1,
-  UnprocessableEntityResponseError1,
+  TooManyRequestsResponseError,
+  UnauthorizedRequestResponseError,
+  UnprocessableEntityResponseError,
 } from "@superbuilders/oneroster/models/errors";
 
 const oneRoster = new OneRoster({
@@ -928,38 +928,38 @@ async function run() {
         console.error(err.rawValue);
         return;
       }
-      case (err instanceof BadRequestResponseError1): {
-        // Handle err.data$: BadRequestResponseError1Data
+      case (err instanceof BadRequestResponseError): {
+        // Handle err.data$: BadRequestResponseErrorData
         console.error(err);
         return;
       }
-      case (err instanceof UnauthorizedRequestResponseError1): {
-        // Handle err.data$: UnauthorizedRequestResponseError1Data
+      case (err instanceof UnauthorizedRequestResponseError): {
+        // Handle err.data$: UnauthorizedRequestResponseErrorData
         console.error(err);
         return;
       }
-      case (err instanceof ForbiddenResponseError1): {
-        // Handle err.data$: ForbiddenResponseError1Data
+      case (err instanceof ForbiddenResponseError): {
+        // Handle err.data$: ForbiddenResponseErrorData
         console.error(err);
         return;
       }
-      case (err instanceof NotFoundResponseError1): {
-        // Handle err.data$: NotFoundResponseError1Data
+      case (err instanceof NotFoundResponseError): {
+        // Handle err.data$: NotFoundResponseErrorData
         console.error(err);
         return;
       }
-      case (err instanceof UnprocessableEntityResponseError1): {
-        // Handle err.data$: UnprocessableEntityResponseError1Data
+      case (err instanceof UnprocessableEntityResponseError): {
+        // Handle err.data$: UnprocessableEntityResponseErrorData
         console.error(err);
         return;
       }
-      case (err instanceof TooManyRequestsResponseError1): {
-        // Handle err.data$: TooManyRequestsResponseError1Data
+      case (err instanceof TooManyRequestsResponseError): {
+        // Handle err.data$: TooManyRequestsResponseErrorData
         console.error(err);
         return;
       }
-      case (err instanceof InternalServerErrorResponse1): {
-        // Handle err.data$: InternalServerErrorResponse1Data
+      case (err instanceof InternalServerErrorResponse): {
+        // Handle err.data$: InternalServerErrorResponseData
         console.error(err);
         return;
       }

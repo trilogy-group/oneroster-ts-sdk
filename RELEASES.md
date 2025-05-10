@@ -39,3 +39,13 @@ Based on:
 - [typescript v0.6.2] .
 ### Releases
 - [NPM v0.6.2] https://www.npmjs.com/package/@superbuilders/oneroster/v/0.6.2 - .
+
+## 2025-05-10 00:10:00
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.543.4 (2.598.22) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.6.4] .
+### Releases
+- [NPM v0.6.4] https://www.npmjs.com/package/@superbuilders/oneroster/v/0.6.4 - .

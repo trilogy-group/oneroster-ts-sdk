@@ -8,32 +8,32 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "./sdkvalidationerror.js";
 
-export type InternalServerErrorResponseImsxCodeMinorField1 = {
+export type InternalServerErrorResponseImsxCodeMinorField = {
   imsxCodeMinorFieldName?: "TargetEndSystem" | undefined;
   imsxCodeMinorFieldValue?: "internal_server_error" | undefined;
 };
 
 export type InternalServerErrorResponseImsxCodeMinor = {
-  imsxCodeMinorField: Array<InternalServerErrorResponseImsxCodeMinorField1>;
+  imsxCodeMinorField: Array<InternalServerErrorResponseImsxCodeMinorField>;
 };
 
-export type InternalServerErrorResponse1Data = {
+export type InternalServerErrorResponseData = {
   imsxCodeMajor: "failure";
   imsxSeverity: "error";
   imsxDescription: string;
   imsxCodeMinor: InternalServerErrorResponseImsxCodeMinor;
 };
 
-export class InternalServerErrorResponse1 extends Error {
+export class InternalServerErrorResponse extends Error {
   imsxCodeMajor: "failure";
   imsxSeverity: "error";
   imsxDescription: string;
   imsxCodeMinor: InternalServerErrorResponseImsxCodeMinor;
 
   /** The original data that was passed to this error instance. */
-  data$: InternalServerErrorResponse1Data;
+  data$: InternalServerErrorResponseData;
 
-  constructor(err: InternalServerErrorResponse1Data) {
+  constructor(err: InternalServerErrorResponseData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -45,46 +45,14 @@ export class InternalServerErrorResponse1 extends Error {
     this.imsxDescription = err.imsxDescription;
     this.imsxCodeMinor = err.imsxCodeMinor;
 
-    this.name = "InternalServerErrorResponse1";
-  }
-}
-
-export type InternalServerErrorResponse2Data = {
-  imsxCodeMajor: "failure";
-  imsxSeverity: "error";
-  imsxDescription: string;
-  imsxCodeMinor: InternalServerErrorResponseImsxCodeMinor;
-};
-
-export class InternalServerErrorResponse2 extends Error {
-  imsxCodeMajor: "failure";
-  imsxSeverity: "error";
-  imsxDescription: string;
-  imsxCodeMinor: InternalServerErrorResponseImsxCodeMinor;
-
-  /** The original data that was passed to this error instance. */
-  data$: InternalServerErrorResponse2Data;
-
-  constructor(err: InternalServerErrorResponse2Data) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
-    this.data$ = err;
-
-    this.imsxCodeMajor = err.imsxCodeMajor;
-    this.imsxSeverity = err.imsxSeverity;
-    this.imsxDescription = err.imsxDescription;
-    this.imsxCodeMinor = err.imsxCodeMinor;
-
-    this.name = "InternalServerErrorResponse2";
+    this.name = "InternalServerErrorResponse";
   }
 }
 
 /** @internal */
-export const InternalServerErrorResponseImsxCodeMinorField1$inboundSchema:
+export const InternalServerErrorResponseImsxCodeMinorField$inboundSchema:
   z.ZodType<
-    InternalServerErrorResponseImsxCodeMinorField1,
+    InternalServerErrorResponseImsxCodeMinorField,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -98,17 +66,17 @@ export const InternalServerErrorResponseImsxCodeMinorField1$inboundSchema:
   });
 
 /** @internal */
-export type InternalServerErrorResponseImsxCodeMinorField1$Outbound = {
+export type InternalServerErrorResponseImsxCodeMinorField$Outbound = {
   imsx_codeMinorFieldName: "TargetEndSystem";
   imsx_codeMinorFieldValue: "internal_server_error";
 };
 
 /** @internal */
-export const InternalServerErrorResponseImsxCodeMinorField1$outboundSchema:
+export const InternalServerErrorResponseImsxCodeMinorField$outboundSchema:
   z.ZodType<
-    InternalServerErrorResponseImsxCodeMinorField1$Outbound,
+    InternalServerErrorResponseImsxCodeMinorField$Outbound,
     z.ZodTypeDef,
-    InternalServerErrorResponseImsxCodeMinorField1
+    InternalServerErrorResponseImsxCodeMinorField
   > = z.object({
     imsxCodeMinorFieldName: z.literal("TargetEndSystem").default(
       "TargetEndSystem" as const,
@@ -127,42 +95,41 @@ export const InternalServerErrorResponseImsxCodeMinorField1$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace InternalServerErrorResponseImsxCodeMinorField1$ {
-  /** @deprecated use `InternalServerErrorResponseImsxCodeMinorField1$inboundSchema` instead. */
+export namespace InternalServerErrorResponseImsxCodeMinorField$ {
+  /** @deprecated use `InternalServerErrorResponseImsxCodeMinorField$inboundSchema` instead. */
   export const inboundSchema =
-    InternalServerErrorResponseImsxCodeMinorField1$inboundSchema;
-  /** @deprecated use `InternalServerErrorResponseImsxCodeMinorField1$outboundSchema` instead. */
+    InternalServerErrorResponseImsxCodeMinorField$inboundSchema;
+  /** @deprecated use `InternalServerErrorResponseImsxCodeMinorField$outboundSchema` instead. */
   export const outboundSchema =
-    InternalServerErrorResponseImsxCodeMinorField1$outboundSchema;
-  /** @deprecated use `InternalServerErrorResponseImsxCodeMinorField1$Outbound` instead. */
-  export type Outbound =
-    InternalServerErrorResponseImsxCodeMinorField1$Outbound;
+    InternalServerErrorResponseImsxCodeMinorField$outboundSchema;
+  /** @deprecated use `InternalServerErrorResponseImsxCodeMinorField$Outbound` instead. */
+  export type Outbound = InternalServerErrorResponseImsxCodeMinorField$Outbound;
 }
 
-export function internalServerErrorResponseImsxCodeMinorField1ToJSON(
-  internalServerErrorResponseImsxCodeMinorField1:
-    InternalServerErrorResponseImsxCodeMinorField1,
+export function internalServerErrorResponseImsxCodeMinorFieldToJSON(
+  internalServerErrorResponseImsxCodeMinorField:
+    InternalServerErrorResponseImsxCodeMinorField,
 ): string {
   return JSON.stringify(
-    InternalServerErrorResponseImsxCodeMinorField1$outboundSchema.parse(
-      internalServerErrorResponseImsxCodeMinorField1,
+    InternalServerErrorResponseImsxCodeMinorField$outboundSchema.parse(
+      internalServerErrorResponseImsxCodeMinorField,
     ),
   );
 }
 
-export function internalServerErrorResponseImsxCodeMinorField1FromJSON(
+export function internalServerErrorResponseImsxCodeMinorFieldFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  InternalServerErrorResponseImsxCodeMinorField1,
+  InternalServerErrorResponseImsxCodeMinorField,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      InternalServerErrorResponseImsxCodeMinorField1$inboundSchema.parse(
+      InternalServerErrorResponseImsxCodeMinorField$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'InternalServerErrorResponseImsxCodeMinorField1' from JSON`,
+    `Failed to parse 'InternalServerErrorResponseImsxCodeMinorField' from JSON`,
   );
 }
 
@@ -173,7 +140,7 @@ export const InternalServerErrorResponseImsxCodeMinor$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   imsx_codeMinorField: z.array(
-    z.lazy(() => InternalServerErrorResponseImsxCodeMinorField1$inboundSchema),
+    z.lazy(() => InternalServerErrorResponseImsxCodeMinorField$inboundSchema),
   ),
 }).transform((v) => {
   return remap$(v, {
@@ -184,7 +151,7 @@ export const InternalServerErrorResponseImsxCodeMinor$inboundSchema: z.ZodType<
 /** @internal */
 export type InternalServerErrorResponseImsxCodeMinor$Outbound = {
   imsx_codeMinorField: Array<
-    InternalServerErrorResponseImsxCodeMinorField1$Outbound
+    InternalServerErrorResponseImsxCodeMinorField$Outbound
   >;
 };
 
@@ -195,7 +162,7 @@ export const InternalServerErrorResponseImsxCodeMinor$outboundSchema: z.ZodType<
   InternalServerErrorResponseImsxCodeMinor
 > = z.object({
   imsxCodeMinorField: z.array(
-    z.lazy(() => InternalServerErrorResponseImsxCodeMinorField1$outboundSchema),
+    z.lazy(() => InternalServerErrorResponseImsxCodeMinorField$outboundSchema),
   ),
 }).transform((v) => {
   return remap$(v, {
@@ -246,8 +213,8 @@ export function internalServerErrorResponseImsxCodeMinorFromJSON(
 }
 
 /** @internal */
-export const InternalServerErrorResponse1$inboundSchema: z.ZodType<
-  InternalServerErrorResponse1,
+export const InternalServerErrorResponse$inboundSchema: z.ZodType<
+  InternalServerErrorResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -266,11 +233,11 @@ export const InternalServerErrorResponse1$inboundSchema: z.ZodType<
       "imsx_CodeMinor": "imsxCodeMinor",
     });
 
-    return new InternalServerErrorResponse1(remapped);
+    return new InternalServerErrorResponse(remapped);
   });
 
 /** @internal */
-export type InternalServerErrorResponse1$Outbound = {
+export type InternalServerErrorResponse$Outbound = {
   imsx_codeMajor: "failure";
   imsx_severity: "error";
   imsx_description: string;
@@ -278,11 +245,11 @@ export type InternalServerErrorResponse1$Outbound = {
 };
 
 /** @internal */
-export const InternalServerErrorResponse1$outboundSchema: z.ZodType<
-  InternalServerErrorResponse1$Outbound,
+export const InternalServerErrorResponse$outboundSchema: z.ZodType<
+  InternalServerErrorResponse$Outbound,
   z.ZodTypeDef,
-  InternalServerErrorResponse1
-> = z.instanceof(InternalServerErrorResponse1)
+  InternalServerErrorResponse
+> = z.instanceof(InternalServerErrorResponse)
   .transform(v => v.data$)
   .pipe(
     z.object({
@@ -306,81 +273,11 @@ export const InternalServerErrorResponse1$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace InternalServerErrorResponse1$ {
-  /** @deprecated use `InternalServerErrorResponse1$inboundSchema` instead. */
-  export const inboundSchema = InternalServerErrorResponse1$inboundSchema;
-  /** @deprecated use `InternalServerErrorResponse1$outboundSchema` instead. */
-  export const outboundSchema = InternalServerErrorResponse1$outboundSchema;
-  /** @deprecated use `InternalServerErrorResponse1$Outbound` instead. */
-  export type Outbound = InternalServerErrorResponse1$Outbound;
-}
-
-/** @internal */
-export const InternalServerErrorResponse2$inboundSchema: z.ZodType<
-  InternalServerErrorResponse2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  imsx_codeMajor: z.literal("failure"),
-  imsx_severity: z.literal("error"),
-  imsx_description: z.string(),
-  imsx_CodeMinor: z.lazy(() =>
-    InternalServerErrorResponseImsxCodeMinor$inboundSchema
-  ),
-})
-  .transform((v) => {
-    const remapped = remap$(v, {
-      "imsx_codeMajor": "imsxCodeMajor",
-      "imsx_severity": "imsxSeverity",
-      "imsx_description": "imsxDescription",
-      "imsx_CodeMinor": "imsxCodeMinor",
-    });
-
-    return new InternalServerErrorResponse2(remapped);
-  });
-
-/** @internal */
-export type InternalServerErrorResponse2$Outbound = {
-  imsx_codeMajor: "failure";
-  imsx_severity: "error";
-  imsx_description: string;
-  imsx_CodeMinor: InternalServerErrorResponseImsxCodeMinor$Outbound;
-};
-
-/** @internal */
-export const InternalServerErrorResponse2$outboundSchema: z.ZodType<
-  InternalServerErrorResponse2$Outbound,
-  z.ZodTypeDef,
-  InternalServerErrorResponse2
-> = z.instanceof(InternalServerErrorResponse2)
-  .transform(v => v.data$)
-  .pipe(
-    z.object({
-      imsxCodeMajor: z.literal("failure").default("failure" as const),
-      imsxSeverity: z.literal("error").default("error" as const),
-      imsxDescription: z.string(),
-      imsxCodeMinor: z.lazy(() =>
-        InternalServerErrorResponseImsxCodeMinor$outboundSchema
-      ),
-    }).transform((v) => {
-      return remap$(v, {
-        imsxCodeMajor: "imsx_codeMajor",
-        imsxSeverity: "imsx_severity",
-        imsxDescription: "imsx_description",
-        imsxCodeMinor: "imsx_CodeMinor",
-      });
-    }),
-  );
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace InternalServerErrorResponse2$ {
-  /** @deprecated use `InternalServerErrorResponse2$inboundSchema` instead. */
-  export const inboundSchema = InternalServerErrorResponse2$inboundSchema;
-  /** @deprecated use `InternalServerErrorResponse2$outboundSchema` instead. */
-  export const outboundSchema = InternalServerErrorResponse2$outboundSchema;
-  /** @deprecated use `InternalServerErrorResponse2$Outbound` instead. */
-  export type Outbound = InternalServerErrorResponse2$Outbound;
+export namespace InternalServerErrorResponse$ {
+  /** @deprecated use `InternalServerErrorResponse$inboundSchema` instead. */
+  export const inboundSchema = InternalServerErrorResponse$inboundSchema;
+  /** @deprecated use `InternalServerErrorResponse$outboundSchema` instead. */
+  export const outboundSchema = InternalServerErrorResponse$outboundSchema;
+  /** @deprecated use `InternalServerErrorResponse$Outbound` instead. */
+  export type Outbound = InternalServerErrorResponse$Outbound;
 }
