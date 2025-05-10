@@ -45,13 +45,13 @@ export function classesManagementGetResultsForLineItemForClass(
   PageIterator<
     Result<
       operations.GetResultsForLineItemForClassResponse,
-      | errors.BadRequestResponseError2
-      | errors.UnauthorizedRequestResponseError2
-      | errors.ForbiddenResponseError2
-      | errors.NotFoundResponseError2
-      | errors.UnprocessableEntityResponseError2
-      | errors.TooManyRequestsResponseError1
-      | errors.InternalServerErrorResponse1
+      | errors.BadRequestResponseError
+      | errors.UnauthorizedRequestResponseError
+      | errors.ForbiddenResponseError
+      | errors.NotFoundResponseError
+      | errors.UnprocessableEntityResponseError
+      | errors.TooManyRequestsResponseError
+      | errors.InternalServerErrorResponse
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -79,13 +79,13 @@ async function $do(
     PageIterator<
       Result<
         operations.GetResultsForLineItemForClassResponse,
-        | errors.BadRequestResponseError2
-        | errors.UnauthorizedRequestResponseError2
-        | errors.ForbiddenResponseError2
-        | errors.NotFoundResponseError2
-        | errors.UnprocessableEntityResponseError2
-        | errors.TooManyRequestsResponseError1
-        | errors.InternalServerErrorResponse1
+        | errors.BadRequestResponseError
+        | errors.UnauthorizedRequestResponseError
+        | errors.ForbiddenResponseError
+        | errors.NotFoundResponseError
+        | errors.UnprocessableEntityResponseError
+        | errors.TooManyRequestsResponseError
+        | errors.InternalServerErrorResponse
         | APIError
         | SDKValidationError
         | UnexpectedClientError
@@ -192,13 +192,13 @@ async function $do(
 
   const [result, raw] = await M.match<
     operations.GetResultsForLineItemForClassResponse,
-    | errors.BadRequestResponseError2
-    | errors.UnauthorizedRequestResponseError2
-    | errors.ForbiddenResponseError2
-    | errors.NotFoundResponseError2
-    | errors.UnprocessableEntityResponseError2
-    | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse1
+    | errors.BadRequestResponseError
+    | errors.UnauthorizedRequestResponseError
+    | errors.ForbiddenResponseError
+    | errors.NotFoundResponseError
+    | errors.UnprocessableEntityResponseError
+    | errors.TooManyRequestsResponseError
+    | errors.InternalServerErrorResponse
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -212,13 +212,13 @@ async function $do(
       operations.GetResultsForLineItemForClassResponse$inboundSchema,
       { key: "Result" },
     ),
-    M.jsonErr(400, errors.BadRequestResponseError2$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError2$inboundSchema),
-    M.jsonErr(403, errors.ForbiddenResponseError2$inboundSchema),
-    M.jsonErr(404, errors.NotFoundResponseError2$inboundSchema),
-    M.jsonErr(422, errors.UnprocessableEntityResponseError2$inboundSchema),
-    M.jsonErr(429, errors.TooManyRequestsResponseError1$inboundSchema),
-    M.jsonErr(500, errors.InternalServerErrorResponse1$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError$inboundSchema),
+    M.jsonErr(403, errors.ForbiddenResponseError$inboundSchema),
+    M.jsonErr(404, errors.NotFoundResponseError$inboundSchema),
+    M.jsonErr(422, errors.UnprocessableEntityResponseError$inboundSchema),
+    M.jsonErr(429, errors.TooManyRequestsResponseError$inboundSchema),
+    M.jsonErr(500, errors.InternalServerErrorResponse$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });
@@ -236,13 +236,13 @@ async function $do(
     next: Paginator<
       Result<
         operations.GetResultsForLineItemForClassResponse,
-        | errors.BadRequestResponseError2
-        | errors.UnauthorizedRequestResponseError2
-        | errors.ForbiddenResponseError2
-        | errors.NotFoundResponseError2
-        | errors.UnprocessableEntityResponseError2
-        | errors.TooManyRequestsResponseError1
-        | errors.InternalServerErrorResponse1
+        | errors.BadRequestResponseError
+        | errors.UnauthorizedRequestResponseError
+        | errors.ForbiddenResponseError
+        | errors.NotFoundResponseError
+        | errors.UnprocessableEntityResponseError
+        | errors.TooManyRequestsResponseError
+        | errors.InternalServerErrorResponse
         | APIError
         | SDKValidationError
         | UnexpectedClientError
