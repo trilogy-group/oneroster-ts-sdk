@@ -49,32 +49,12 @@ export const startCommand = buildCommand({
           },
         }
         : {}),
-      "client-id": {
+      "o-auth2": {
         kind: "parsed",
-        brief: "Sets the clientID auth field for the API",
+        brief: "Sets the oAuth2 auth field for the API",
         optional: true,
         parse: (value) => {
           return z.string().parse(value);
-        },
-      },
-      "client-secret": {
-        kind: "parsed",
-        brief: "Sets the clientSecret auth field for the API",
-        optional: true,
-        parse: (value) => {
-          return z.string().parse(value);
-        },
-      },
-      "token-url": {
-        kind: "parsed",
-        brief: "Sets the tokenURL auth field for the API",
-        optional: false,
-        default:
-          "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
-        parse: (value) => {
-          return z.string().default(
-            "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
-          ).parse(value);
         },
       },
       "server-url": {

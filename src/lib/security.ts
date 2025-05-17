@@ -242,14 +242,9 @@ export function resolveGlobalSecurity(
   return resolveSecurity(
     [
       {
-        fieldName: "clientID",
-        type: "oauth2:client_credentials",
-        value: security?.clientID ?? env().ONEROSTER_CLIENT_ID,
-      },
-      {
-        fieldName: "clientSecret",
-        type: "oauth2:client_credentials",
-        value: security?.clientSecret ?? env().ONEROSTER_CLIENT_SECRET,
+        fieldName: "Authorization",
+        type: "oauth2",
+        value: security?.oAuth2 ?? env().ONEROSTER_O_AUTH2,
       },
     ],
   );

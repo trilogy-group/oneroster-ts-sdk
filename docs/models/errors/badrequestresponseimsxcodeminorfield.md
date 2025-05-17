@@ -1,11 +1,11 @@
-# UnprocessableEntityResponseImsxCodeMinorField1
+# BadRequestResponseImsxCodeMinorField
 
 ## Example Usage
 
 ```typescript
-import { UnprocessableEntityResponseImsxCodeMinorField1 } from "@superbuilders/oneroster/models/errors";
+import { BadRequestResponseImsxCodeMinorField } from "@superbuilders/oneroster/models/errors";
 
-let value: UnprocessableEntityResponseImsxCodeMinorField1 = {};
+let value: BadRequestResponseImsxCodeMinorField = {};
 ```
 
 ## Fields

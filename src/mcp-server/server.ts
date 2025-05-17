@@ -187,16 +187,16 @@ export function createMCPServer(deps: {
   allowedTools?: string[] | undefined;
   scopes?: MCPScope[] | undefined;
   serverURL?: string | undefined;
-  security?: SDKOptions["security"] | undefined;
+  oAuth2?: SDKOptions["oAuth2"] | undefined;
   serverIdx?: SDKOptions["serverIdx"] | undefined;
 }) {
   const server = new McpServer({
     name: "OneRoster",
-    version: "0.6.3",
+    version: "0.7.0",
   });
 
   const client = new OneRosterCore({
-    security: deps.security,
+    oAuth2: deps.oAuth2,
     serverURL: deps.serverURL,
     serverIdx: deps.serverIdx,
   });
