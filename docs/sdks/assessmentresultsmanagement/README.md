@@ -23,10 +23,7 @@ Get all of the Assessment Results on the service provider.
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -55,10 +52,7 @@ import { assessmentResultsManagementGetAllAssessmentResults } from "@superbuilde
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -97,16 +91,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## createAssessmentResult
 
@@ -118,24 +112,21 @@ To create an Assessment Result. The responding system must return the set of sou
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
   const result = await oneRoster.assessmentResultsManagement.createAssessmentResult({
     assessmentResult: {
-      status: "active",
+      status: "tobedeleted",
       assessmentLineItem: {
         sourcedId: "<id>",
       },
       student: {
         sourcedId: "<id>",
       },
-      scoreDate: new Date("2024-11-12T06:42:20.966Z"),
-      scoreStatus: "not submitted",
+      scoreDate: new Date("2025-07-06T03:07:19.645Z"),
+      scoreStatus: "fully graded",
     },
   });
 
@@ -157,24 +148,21 @@ import { assessmentResultsManagementCreateAssessmentResult } from "@superbuilder
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
   const res = await assessmentResultsManagementCreateAssessmentResult(oneRoster, {
     assessmentResult: {
-      status: "active",
+      status: "tobedeleted",
       assessmentLineItem: {
         sourcedId: "<id>",
       },
       student: {
         sourcedId: "<id>",
       },
-      scoreDate: new Date("2024-11-12T06:42:20.966Z"),
-      scoreStatus: "not submitted",
+      scoreDate: new Date("2025-07-06T03:07:19.645Z"),
+      scoreStatus: "fully graded",
     },
   });
 
@@ -206,16 +194,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError2            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getAssessmentResult
 
@@ -227,10 +215,7 @@ Get a specific Assessment Result on the service provider. If the corresponding r
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -256,10 +241,7 @@ import { assessmentResultsManagementGetAssessmentResult } from "@superbuilders/o
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -295,16 +277,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## updateAssessmentResult
 
@@ -316,10 +298,7 @@ To update an existing Assessment Result. The sourcedId for the record to be upda
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -327,15 +306,15 @@ async function run() {
     sourcedId: "<id>",
     requestBody: {
       assessmentResult: {
-        status: "tobedeleted",
+        status: "active",
         assessmentLineItem: {
           sourcedId: "<id>",
         },
         student: {
           sourcedId: "<id>",
         },
-        scoreDate: new Date("2023-06-21T03:03:46.548Z"),
-        scoreStatus: "submitted",
+        scoreDate: new Date("2025-11-28T17:20:21.171Z"),
+        scoreStatus: "partially graded",
       },
     },
   });
@@ -358,10 +337,7 @@ import { assessmentResultsManagementUpdateAssessmentResult } from "@superbuilder
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -369,15 +345,15 @@ async function run() {
     sourcedId: "<id>",
     requestBody: {
       assessmentResult: {
-        status: "tobedeleted",
+        status: "active",
         assessmentLineItem: {
           sourcedId: "<id>",
         },
         student: {
           sourcedId: "<id>",
         },
-        scoreDate: new Date("2023-06-21T03:03:46.548Z"),
-        scoreStatus: "submitted",
+        scoreDate: new Date("2025-11-28T17:20:21.171Z"),
+        scoreStatus: "partially graded",
       },
     },
   });
@@ -410,16 +386,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError2           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## deleteAssessmentResult
 
@@ -431,10 +407,7 @@ Perform a soft delete on a specific Assessment Result on the service provider. T
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -459,10 +432,7 @@ import { assessmentResultsManagementDeleteAssessmentResult } from "@superbuilder
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -497,13 +467,13 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |

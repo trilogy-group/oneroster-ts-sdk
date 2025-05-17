@@ -37,13 +37,13 @@ export function schoolsManagementCreateLineItemsForSchool(
 ): APIPromise<
   Result<
     operations.CreateLineItemsForSchoolResponse,
-    | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError1
-    | errors.ForbiddenResponseError1
-    | errors.NotFoundResponseError1
-    | errors.UnprocessableEntityResponseError2
-    | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse1
+    | errors.BadRequestResponseError
+    | errors.UnauthorizedRequestResponseError
+    | errors.ForbiddenResponseError
+    | errors.NotFoundResponseError
+    | errors.UnprocessableEntityResponseError
+    | errors.TooManyRequestsResponseError
+    | errors.InternalServerErrorResponse
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -68,13 +68,13 @@ async function $do(
   [
     Result<
       operations.CreateLineItemsForSchoolResponse,
-      | errors.BadRequestResponseError1
-      | errors.UnauthorizedRequestResponseError1
-      | errors.ForbiddenResponseError1
-      | errors.NotFoundResponseError1
-      | errors.UnprocessableEntityResponseError2
-      | errors.TooManyRequestsResponseError1
-      | errors.InternalServerErrorResponse1
+      | errors.BadRequestResponseError
+      | errors.UnauthorizedRequestResponseError
+      | errors.ForbiddenResponseError
+      | errors.NotFoundResponseError
+      | errors.UnprocessableEntityResponseError
+      | errors.TooManyRequestsResponseError
+      | errors.InternalServerErrorResponse
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -114,7 +114,8 @@ async function $do(
     Accept: "application/json",
   }));
 
-  const securityInput = await extractSecurity(client._options.security);
+  const secConfig = await extractSecurity(client._options.oAuth2);
+  const securityInput = secConfig == null ? {} : { oAuth2: secConfig };
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
@@ -124,7 +125,7 @@ async function $do(
 
     resolvedSecurity: requestSecurity,
 
-    securitySource: client._options.security,
+    securitySource: client._options.oAuth2,
     retryConfig: options?.retries
       || client._options.retryConfig
       || { strategy: "none" },
@@ -162,13 +163,13 @@ async function $do(
 
   const [result] = await M.match<
     operations.CreateLineItemsForSchoolResponse,
-    | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError1
-    | errors.ForbiddenResponseError1
-    | errors.NotFoundResponseError1
-    | errors.UnprocessableEntityResponseError2
-    | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse1
+    | errors.BadRequestResponseError
+    | errors.UnauthorizedRequestResponseError
+    | errors.ForbiddenResponseError
+    | errors.NotFoundResponseError
+    | errors.UnprocessableEntityResponseError
+    | errors.TooManyRequestsResponseError
+    | errors.InternalServerErrorResponse
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -178,13 +179,13 @@ async function $do(
     | ConnectionError
   >(
     M.json(201, operations.CreateLineItemsForSchoolResponse$inboundSchema),
-    M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
-    M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
-    M.jsonErr(404, errors.NotFoundResponseError1$inboundSchema),
-    M.jsonErr(422, errors.UnprocessableEntityResponseError2$inboundSchema),
-    M.jsonErr(429, errors.TooManyRequestsResponseError1$inboundSchema),
-    M.jsonErr(500, errors.InternalServerErrorResponse1$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError$inboundSchema),
+    M.jsonErr(403, errors.ForbiddenResponseError$inboundSchema),
+    M.jsonErr(404, errors.NotFoundResponseError$inboundSchema),
+    M.jsonErr(422, errors.UnprocessableEntityResponseError$inboundSchema),
+    M.jsonErr(429, errors.TooManyRequestsResponseError$inboundSchema),
+    M.jsonErr(500, errors.InternalServerErrorResponse$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });

@@ -35,10 +35,7 @@ Get the set of scoreScales on the service provider for a specific school. If the
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -68,10 +65,7 @@ import { schoolsManagementGetScoreScalesForSchool } from "@superbuilders/onerost
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -111,16 +105,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getAllSchools
 
@@ -132,10 +126,7 @@ To get all Schools on the service provider.
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -164,10 +155,7 @@ import { schoolsManagementGetAllSchools } from "@superbuilders/oneroster/funcs/s
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -206,16 +194,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## createSchool
 
@@ -227,10 +215,7 @@ To create a new School. The responding system must return the set of sourcedIds 
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -254,10 +239,7 @@ import { schoolsManagementCreateSchool } from "@superbuilders/oneroster/funcs/sc
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -291,16 +273,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError2 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError2            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getSchool
 
@@ -312,10 +294,7 @@ Get a specific School on the service provider. If the corresponding record canno
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -341,10 +320,7 @@ import { schoolsManagementGetSchool } from "@superbuilders/oneroster/funcs/schoo
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -380,14 +356,14 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## updateSchool
 
@@ -399,10 +375,7 @@ To update an existing School. The sourcedId for the record to be updated is supp
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -428,10 +401,7 @@ import { schoolsManagementUpdateSchool } from "@superbuilders/oneroster/funcs/sc
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -467,16 +437,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## deleteSchool
 
@@ -488,10 +458,7 @@ Perform a soft delete on a specific School on the service provider. The operatio
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -517,10 +484,7 @@ import { schoolsManagementDeleteSchool } from "@superbuilders/oneroster/funcs/sc
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -556,16 +520,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getLineItemsForSchool
 
@@ -577,10 +541,7 @@ Get the set of lineItems on the service provider for a specific school. If the c
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -610,10 +571,7 @@ import { schoolsManagementGetLineItemsForSchool } from "@superbuilders/oneroster
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -653,16 +611,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## createLineItemsForSchool
 
@@ -674,10 +632,7 @@ To create a set of lineItems for a specific school. The responding system must r
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -686,10 +641,10 @@ async function run() {
     requestBody: {
       lineItems: [
         {
-          status: "active",
+          status: "tobedeleted",
           title: "<value>",
-          assignDate: new Date("2023-04-27T10:18:47.158Z"),
-          dueDate: new Date("2024-08-01T01:20:45.518Z"),
+          assignDate: new Date("2023-11-01T01:31:28.141Z"),
+          dueDate: new Date("2025-01-27T20:14:04.628Z"),
           class: {
             sourcedId: "<id>",
           },
@@ -703,23 +658,8 @@ async function run() {
         {
           status: "tobedeleted",
           title: "<value>",
-          assignDate: new Date("2025-10-22T11:43:49.772Z"),
-          dueDate: new Date("2025-04-13T11:50:54.034Z"),
-          class: {
-            sourcedId: "<id>",
-          },
-          school: {
-            sourcedId: "<id>",
-          },
-          category: {
-            sourcedId: "<id>",
-          },
-        },
-        {
-          status: "tobedeleted",
-          title: "<value>",
-          assignDate: new Date("2024-03-10T22:36:23.472Z"),
-          dueDate: new Date("2024-02-06T22:38:06.551Z"),
+          assignDate: new Date("2023-11-01T01:31:28.141Z"),
+          dueDate: new Date("2025-01-27T20:14:04.628Z"),
           class: {
             sourcedId: "<id>",
           },
@@ -752,10 +692,7 @@ import { schoolsManagementCreateLineItemsForSchool } from "@superbuilders/oneros
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -764,10 +701,10 @@ async function run() {
     requestBody: {
       lineItems: [
         {
-          status: "active",
+          status: "tobedeleted",
           title: "<value>",
-          assignDate: new Date("2023-04-27T10:18:47.158Z"),
-          dueDate: new Date("2024-08-01T01:20:45.518Z"),
+          assignDate: new Date("2023-11-01T01:31:28.141Z"),
+          dueDate: new Date("2025-01-27T20:14:04.628Z"),
           class: {
             sourcedId: "<id>",
           },
@@ -781,23 +718,8 @@ async function run() {
         {
           status: "tobedeleted",
           title: "<value>",
-          assignDate: new Date("2025-10-22T11:43:49.772Z"),
-          dueDate: new Date("2025-04-13T11:50:54.034Z"),
-          class: {
-            sourcedId: "<id>",
-          },
-          school: {
-            sourcedId: "<id>",
-          },
-          category: {
-            sourcedId: "<id>",
-          },
-        },
-        {
-          status: "tobedeleted",
-          title: "<value>",
-          assignDate: new Date("2024-03-10T22:36:23.472Z"),
-          dueDate: new Date("2024-02-06T22:38:06.551Z"),
+          assignDate: new Date("2023-11-01T01:31:28.141Z"),
+          dueDate: new Date("2025-01-27T20:14:04.628Z"),
           class: {
             sourcedId: "<id>",
           },
@@ -840,16 +762,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getClassesForSchool
 
@@ -861,10 +783,7 @@ To get all Classes for a School on the service provider. If the specified school
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -894,10 +813,7 @@ import { schoolsManagementGetClassesForSchool } from "@superbuilders/oneroster/f
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -937,16 +853,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse2      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getTermsForSchool
 
@@ -958,10 +874,7 @@ To get all Terms for a School on the service provider. If the specified school c
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -991,10 +904,7 @@ import { schoolsManagementGetTermsForSchool } from "@superbuilders/oneroster/fun
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1034,16 +944,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError2            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getTeachersForClassInSchool
 
@@ -1055,10 +965,7 @@ To get all Teachers for a Class in a School on the service provider. If the spec
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1089,10 +996,7 @@ import { schoolsManagementGetTeachersForClassInSchool } from "@superbuilders/one
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1133,16 +1037,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError2            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError2     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getTeachersForSchool
 
@@ -1154,10 +1058,7 @@ To get all Teachers for a School on the service provider. If the specified schoo
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1187,10 +1088,7 @@ import { schoolsManagementGetTeachersForSchool } from "@superbuilders/oneroster/
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1230,16 +1128,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getStudentsForClassInSchool
 
@@ -1251,10 +1149,7 @@ To get all Students for a Class in a School on the service provider. If the spec
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1285,10 +1180,7 @@ import { schoolsManagementGetStudentsForClassInSchool } from "@superbuilders/one
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1329,16 +1221,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError2           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getStudentsForSchool
 
@@ -1350,10 +1242,7 @@ To get all Students for a School on the service provider.
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1383,10 +1272,7 @@ import { schoolsManagementGetStudentsForSchool } from "@superbuilders/oneroster/
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1426,16 +1312,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getEnrollmentsForClassInSchool
 
@@ -1447,10 +1333,7 @@ To get all Enrollments for a Class in a School on the service provider. If the s
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1481,10 +1364,7 @@ import { schoolsManagementGetEnrollmentsForClassInSchool } from "@superbuilders/
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1525,16 +1405,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError2     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getEnrollmentsForSchool
 
@@ -1546,10 +1426,7 @@ To get all Enrollments for a School on the service provider. If the specified sc
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1579,10 +1456,7 @@ import { schoolsManagementGetEnrollmentsForSchool } from "@superbuilders/onerost
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1622,16 +1496,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError2 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getCoursesForSchool
 
@@ -1643,10 +1517,7 @@ To get all Courses for a School on the service provider. If the specified school
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1676,10 +1547,7 @@ import { schoolsManagementGetCoursesForSchool } from "@superbuilders/oneroster/f
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -1719,13 +1587,13 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError2           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |

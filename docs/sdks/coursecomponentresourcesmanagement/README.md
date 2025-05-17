@@ -23,10 +23,7 @@ To create a new Component Resource. The responding system must return the set of
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -50,10 +47,7 @@ import { courseComponentResourcesManagementCreateComponentResource } from "@supe
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -87,16 +81,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError2            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getAllComponentResources
 
@@ -108,10 +102,7 @@ To get all Component Resources on the service provider.
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -140,10 +131,7 @@ import { courseComponentResourcesManagementGetAllComponentResources } from "@sup
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -182,16 +170,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError1 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## getComponentResource
 
@@ -203,10 +191,7 @@ Get a specific Component Resource on the service provider. If the corresponding 
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -232,10 +217,7 @@ import { courseComponentResourcesManagementGetComponentResource } from "@superbu
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -271,16 +253,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## putComponentResource
 
@@ -292,10 +274,7 @@ To update an existing Component Resource. The sourcedId for the record to be upd
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -321,10 +300,7 @@ import { courseComponentResourcesManagementPutComponentResource } from "@superbu
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -360,16 +336,16 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError1          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |
 
 ## deleteComponentResource
 
@@ -381,10 +357,7 @@ Perform a soft delete on a specific Component Resource on the service provider. 
 import { OneRoster } from "@superbuilders/oneroster";
 
 const oneRoster = new OneRoster({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -410,10 +383,7 @@ import { courseComponentResourcesManagementDeleteComponentResource } from "@supe
 // Use `OneRosterCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const oneRoster = new OneRosterCore({
-  security: {
-    clientID: process.env["ONEROSTER_CLIENT_ID"] ?? "",
-    clientSecret: process.env["ONEROSTER_CLIENT_SECRET"] ?? "",
-  },
+  oAuth2: process.env["ONEROSTER_O_AUTH2"] ?? "",
 });
 
 async function run() {
@@ -449,13 +419,13 @@ run();
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| errors.BadRequestResponseError2          | 400                                      | application/json                         |
-| errors.UnauthorizedRequestResponseError1 | 401                                      | application/json                         |
-| errors.ForbiddenResponseError1           | 403                                      | application/json                         |
-| errors.NotFoundResponseError1            | 404                                      | application/json                         |
-| errors.UnprocessableEntityResponseError2 | 422                                      | application/json                         |
-| errors.TooManyRequestsResponseError1     | 429                                      | application/json                         |
-| errors.InternalServerErrorResponse1      | 500                                      | application/json                         |
-| errors.APIError                          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.BadRequestResponseError          | 400                                     | application/json                        |
+| errors.UnauthorizedRequestResponseError | 401                                     | application/json                        |
+| errors.ForbiddenResponseError           | 403                                     | application/json                        |
+| errors.NotFoundResponseError            | 404                                     | application/json                        |
+| errors.UnprocessableEntityResponseError | 422                                     | application/json                        |
+| errors.TooManyRequestsResponseError     | 429                                     | application/json                        |
+| errors.InternalServerErrorResponse      | 500                                     | application/json                        |
+| errors.APIError                         | 4XX, 5XX                                | \*/\*                                   |

@@ -1,11 +1,11 @@
-# UnauthorizedRequestResponseImsxCodeMinorField1
+# UnauthorizedRequestResponseImsxCodeMinorField
 
 ## Example Usage
 
 ```typescript
-import { UnauthorizedRequestResponseImsxCodeMinorField1 } from "@superbuilders/oneroster/models/errors";
+import { UnauthorizedRequestResponseImsxCodeMinorField } from "@superbuilders/oneroster/models/errors";
 
-let value: UnauthorizedRequestResponseImsxCodeMinorField1 = {};
+let value: UnauthorizedRequestResponseImsxCodeMinorField = {};
 ```
 
 ## Fields
