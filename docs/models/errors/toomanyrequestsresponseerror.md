@@ -1,9 +1,9 @@
-# TooManyRequestsResponseError2
+# TooManyRequestsResponseError
 
 ## Example Usage
 
 ```typescript
-import { TooManyRequestsResponseError2 } from "@superbuilders/oneroster/models/errors";
+import { TooManyRequestsResponseError } from "@superbuilders/oneroster/models/errors";
 
 // No examples available for this model
 ```

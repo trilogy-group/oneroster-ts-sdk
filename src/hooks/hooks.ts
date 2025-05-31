@@ -3,7 +3,6 @@
  */
 
 import { RequestInput } from "../lib/http.js";
-import { ClientCredentialsHook } from "./clientcredentials.js";
 import {
   AfterErrorContext,
   AfterErrorHook,
@@ -19,8 +18,6 @@ import {
   SDKInitOptions,
 } from "./types.js";
 
-import { initHooks } from "./registration.js";
-
 export class SDKHooks implements Hooks {
   sdkInitHooks: SDKInitHook[] = [];
   beforeCreateRequestHooks: BeforeCreateRequestHook[] = [];
@@ -29,9 +26,7 @@ export class SDKHooks implements Hooks {
   afterErrorHooks: AfterErrorHook[] = [];
 
   constructor() {
-    const presetHooks: Array<Hook> = [
-      new ClientCredentialsHook(),
-    ];
+    const presetHooks: Array<Hook> = [];
 
     for (const hook of presetHooks) {
       if ("sdkInit" in hook) {
@@ -50,7 +45,6 @@ export class SDKHooks implements Hooks {
         this.registerAfterErrorHook(hook);
       }
     }
-    initHooks(this);
   }
 
   registerSDKInitHook(hook: SDKInitHook) {

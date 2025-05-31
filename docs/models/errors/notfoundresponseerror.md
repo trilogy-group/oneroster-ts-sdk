@@ -1,9 +1,9 @@
-# NotFoundResponseError1
+# NotFoundResponseError
 
 ## Example Usage
 
 ```typescript
-import { NotFoundResponseError1 } from "@superbuilders/oneroster/models/errors";
+import { NotFoundResponseError } from "@superbuilders/oneroster/models/errors";
 
 // No examples available for this model
 ```
