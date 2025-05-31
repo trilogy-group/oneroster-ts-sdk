@@ -45,13 +45,13 @@ export function termsManagementGetTermsForSchool(
   PageIterator<
     Result<
       operations.GetTermsForSchoolResponse,
-      | errors.BadRequestResponseError1
-      | errors.UnauthorizedRequestResponseError1
-      | errors.ForbiddenResponseError1
-      | errors.NotFoundResponseError2
-      | errors.UnprocessableEntityResponseError2
-      | errors.TooManyRequestsResponseError1
-      | errors.InternalServerErrorResponse1
+      | errors.BadRequestResponseError
+      | errors.UnauthorizedRequestResponseError
+      | errors.ForbiddenResponseError
+      | errors.NotFoundResponseError
+      | errors.UnprocessableEntityResponseError
+      | errors.TooManyRequestsResponseError
+      | errors.InternalServerErrorResponse
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -79,13 +79,13 @@ async function $do(
     PageIterator<
       Result<
         operations.GetTermsForSchoolResponse,
-        | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError1
-        | errors.ForbiddenResponseError1
-        | errors.NotFoundResponseError2
-        | errors.UnprocessableEntityResponseError2
-        | errors.TooManyRequestsResponseError1
-        | errors.InternalServerErrorResponse1
+        | errors.BadRequestResponseError
+        | errors.UnauthorizedRequestResponseError
+        | errors.ForbiddenResponseError
+        | errors.NotFoundResponseError
+        | errors.UnprocessableEntityResponseError
+        | errors.TooManyRequestsResponseError
+        | errors.InternalServerErrorResponse
         | APIError
         | SDKValidationError
         | UnexpectedClientError
@@ -135,17 +135,19 @@ async function $do(
     Accept: "application/json",
   }));
 
-  const securityInput = await extractSecurity(client._options.security);
+  const secConfig = await extractSecurity(client._options.oAuth2);
+  const securityInput = secConfig == null ? {} : { oAuth2: secConfig };
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "getTermsForSchool",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
 
-    securitySource: client._options.security,
+    securitySource: client._options.oAuth2,
     retryConfig: options?.retries
       || client._options.retryConfig
       || { strategy: "none" },
@@ -160,6 +162,7 @@ async function $do(
     headers: headers,
     query: query,
     body: body,
+    userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
@@ -184,13 +187,13 @@ async function $do(
 
   const [result, raw] = await M.match<
     operations.GetTermsForSchoolResponse,
-    | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError1
-    | errors.ForbiddenResponseError1
-    | errors.NotFoundResponseError2
-    | errors.UnprocessableEntityResponseError2
-    | errors.TooManyRequestsResponseError1
-    | errors.InternalServerErrorResponse1
+    | errors.BadRequestResponseError
+    | errors.UnauthorizedRequestResponseError
+    | errors.ForbiddenResponseError
+    | errors.NotFoundResponseError
+    | errors.UnprocessableEntityResponseError
+    | errors.TooManyRequestsResponseError
+    | errors.InternalServerErrorResponse
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -202,13 +205,13 @@ async function $do(
     M.json(200, operations.GetTermsForSchoolResponse$inboundSchema, {
       key: "Result",
     }),
-    M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
-    M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
-    M.jsonErr(404, errors.NotFoundResponseError2$inboundSchema),
-    M.jsonErr(422, errors.UnprocessableEntityResponseError2$inboundSchema),
-    M.jsonErr(429, errors.TooManyRequestsResponseError1$inboundSchema),
-    M.jsonErr(500, errors.InternalServerErrorResponse1$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError$inboundSchema),
+    M.jsonErr(403, errors.ForbiddenResponseError$inboundSchema),
+    M.jsonErr(404, errors.NotFoundResponseError$inboundSchema),
+    M.jsonErr(422, errors.UnprocessableEntityResponseError$inboundSchema),
+    M.jsonErr(429, errors.TooManyRequestsResponseError$inboundSchema),
+    M.jsonErr(500, errors.InternalServerErrorResponse$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });
@@ -226,13 +229,13 @@ async function $do(
     next: Paginator<
       Result<
         operations.GetTermsForSchoolResponse,
-        | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError1
-        | errors.ForbiddenResponseError1
-        | errors.NotFoundResponseError2
-        | errors.UnprocessableEntityResponseError2
-        | errors.TooManyRequestsResponseError1
-        | errors.InternalServerErrorResponse1
+        | errors.BadRequestResponseError
+        | errors.UnauthorizedRequestResponseError
+        | errors.ForbiddenResponseError
+        | errors.NotFoundResponseError
+        | errors.UnprocessableEntityResponseError
+        | errors.TooManyRequestsResponseError
+        | errors.InternalServerErrorResponse
         | APIError
         | SDKValidationError
         | UnexpectedClientError

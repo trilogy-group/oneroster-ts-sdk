@@ -12,7 +12,7 @@ let value: GetAllDemographicsResponseBody = {
     {
       sourcedId: "<id>",
       status: "active",
-      birthDate: "1966-09-18",
+      birthDate: "1966-05-20",
       sex: "male",
       americanIndianOrAlaskaNative: "<value>",
       asian: "<value>",

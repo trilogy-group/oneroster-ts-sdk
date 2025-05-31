@@ -11,7 +11,7 @@ let value: GetAllDemographicsResponse = {
       {
         sourcedId: "<id>",
         status: "tobedeleted",
-        birthDate: "1955-08-15",
+        birthDate: "1955-04-15",
         sex: "female",
         americanIndianOrAlaskaNative: "<value>",
         asian: "<value>",

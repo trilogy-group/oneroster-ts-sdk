@@ -3,12 +3,12 @@
  */
 
 export * from "./apierror.js";
-export * from "./badrequestresponseerror1.js";
-export * from "./forbiddenresponseerror1.js";
+export * from "./badrequestresponseerror.js";
+export * from "./forbiddenresponseerror.js";
 export * from "./httpclienterrors.js";
-export * from "./internalservererrorresponse1.js";
-export * from "./notfoundresponseerror1.js";
+export * from "./internalservererrorresponse.js";
+export * from "./notfoundresponseerror.js";
 export * from "./sdkvalidationerror.js";
-export * from "./toomanyrequestsresponseerror1.js";
-export * from "./unauthorizedrequestresponseerror1.js";
-export * from "./unprocessableentityresponseerror1.js";
+export * from "./toomanyrequestsresponseerror.js";
+export * from "./unauthorizedrequestresponseerror.js";
+export * from "./unprocessableentityresponseerror.js";
