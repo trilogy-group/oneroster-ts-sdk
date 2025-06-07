@@ -9,15 +9,7 @@ let value: UpdateUserUserRequest = {
   enabledUser: false,
   givenName: "<value>",
   familyName: "<value>",
-  roles: [
-    {
-      roleType: "secondary",
-      role: "guardian",
-      org: {
-        sourcedId: "<id>",
-      },
-    },
-  ],
+  roles: [],
 };
 ```
 

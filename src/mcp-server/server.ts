@@ -40,7 +40,6 @@ import { tool$classesManagementDeleteClass } from "./tools/classesManagementDele
 import { tool$classesManagementGetAllClasses } from "./tools/classesManagementGetAllClasses.js";
 import { tool$classesManagementGetCategoriesForClass } from "./tools/classesManagementGetCategoriesForClass.js";
 import { tool$classesManagementGetClass } from "./tools/classesManagementGetClass.js";
-import { tool$classesManagementGetClassesForSchool } from "./tools/classesManagementGetClassesForSchool.js";
 import { tool$classesManagementGetClassesForStudent } from "./tools/classesManagementGetClassesForStudent.js";
 import { tool$classesManagementGetClassesForTeacher } from "./tools/classesManagementGetClassesForTeacher.js";
 import { tool$classesManagementGetClassesForTerm } from "./tools/classesManagementGetClassesForTerm.js";
@@ -54,16 +53,6 @@ import { tool$classesManagementGetStudentsForClass } from "./tools/classesManage
 import { tool$classesManagementGetTeachersForClass } from "./tools/classesManagementGetTeachersForClass.js";
 import { tool$classesManagementPostResultsForAcademicSessionForClass } from "./tools/classesManagementPostResultsForAcademicSessionForClass.js";
 import { tool$classesManagementUpdateClass } from "./tools/classesManagementUpdateClass.js";
-import { tool$courseComponentResourcesManagementCreateComponentResource } from "./tools/courseComponentResourcesManagementCreateComponentResource.js";
-import { tool$courseComponentResourcesManagementDeleteComponentResource } from "./tools/courseComponentResourcesManagementDeleteComponentResource.js";
-import { tool$courseComponentResourcesManagementGetAllComponentResources } from "./tools/courseComponentResourcesManagementGetAllComponentResources.js";
-import { tool$courseComponentResourcesManagementGetComponentResource } from "./tools/courseComponentResourcesManagementGetComponentResource.js";
-import { tool$courseComponentResourcesManagementPutComponentResource } from "./tools/courseComponentResourcesManagementPutComponentResource.js";
-import { tool$courseComponentsManagementCreateCourseComponent } from "./tools/courseComponentsManagementCreateCourseComponent.js";
-import { tool$courseComponentsManagementDeleteCourseComponent } from "./tools/courseComponentsManagementDeleteCourseComponent.js";
-import { tool$courseComponentsManagementGetAllCourseComponents } from "./tools/courseComponentsManagementGetAllCourseComponents.js";
-import { tool$courseComponentsManagementGetCourseComponent } from "./tools/courseComponentsManagementGetCourseComponent.js";
-import { tool$courseComponentsManagementPutCourseComponent } from "./tools/courseComponentsManagementPutCourseComponent.js";
 import { tool$coursesManagementCreateComponentResource } from "./tools/coursesManagementCreateComponentResource.js";
 import { tool$coursesManagementCreateCourse } from "./tools/coursesManagementCreateCourse.js";
 import { tool$coursesManagementCreateCourseComponent } from "./tools/coursesManagementCreateCourseComponent.js";
@@ -77,7 +66,6 @@ import { tool$coursesManagementGetClassesForCourse } from "./tools/coursesManage
 import { tool$coursesManagementGetComponentResource } from "./tools/coursesManagementGetComponentResource.js";
 import { tool$coursesManagementGetCourse } from "./tools/coursesManagementGetCourse.js";
 import { tool$coursesManagementGetCourseComponent } from "./tools/coursesManagementGetCourseComponent.js";
-import { tool$coursesManagementGetCoursesForSchool } from "./tools/coursesManagementGetCoursesForSchool.js";
 import { tool$coursesManagementPutComponentResource } from "./tools/coursesManagementPutComponentResource.js";
 import { tool$coursesManagementPutCourse } from "./tools/coursesManagementPutCourse.js";
 import { tool$coursesManagementPutCourseComponent } from "./tools/coursesManagementPutCourseComponent.js";
@@ -90,23 +78,17 @@ import { tool$enrollmentsManagementCreateEnrollment } from "./tools/enrollmentsM
 import { tool$enrollmentsManagementDeleteEnrollment } from "./tools/enrollmentsManagementDeleteEnrollment.js";
 import { tool$enrollmentsManagementGetAllEnrollments } from "./tools/enrollmentsManagementGetAllEnrollments.js";
 import { tool$enrollmentsManagementGetEnrollment } from "./tools/enrollmentsManagementGetEnrollment.js";
-import { tool$enrollmentsManagementGetEnrollmentsForClassInSchool } from "./tools/enrollmentsManagementGetEnrollmentsForClassInSchool.js";
-import { tool$enrollmentsManagementGetEnrollmentsForSchool } from "./tools/enrollmentsManagementGetEnrollmentsForSchool.js";
 import { tool$enrollmentsManagementUpdateEnrollment } from "./tools/enrollmentsManagementUpdateEnrollment.js";
 import { tool$gradingPeriodsManagementCreateGradingPeriod } from "./tools/gradingPeriodsManagementCreateGradingPeriod.js";
-import { tool$gradingPeriodsManagementCreateGradingPeriodForTerm } from "./tools/gradingPeriodsManagementCreateGradingPeriodForTerm.js";
 import { tool$gradingPeriodsManagementDeleteGradingPeriod } from "./tools/gradingPeriodsManagementDeleteGradingPeriod.js";
 import { tool$gradingPeriodsManagementGetAllGradingPeriods } from "./tools/gradingPeriodsManagementGetAllGradingPeriods.js";
 import { tool$gradingPeriodsManagementGetGradingPeriod } from "./tools/gradingPeriodsManagementGetGradingPeriod.js";
-import { tool$gradingPeriodsManagementGetGradingPeriodsForTerm } from "./tools/gradingPeriodsManagementGetGradingPeriodsForTerm.js";
 import { tool$gradingPeriodsManagementUpdateGradingPeriod } from "./tools/gradingPeriodsManagementUpdateGradingPeriod.js";
 import { tool$lineItemsManagementCreateLineItem } from "./tools/lineItemsManagementCreateLineItem.js";
-import { tool$lineItemsManagementCreateLineItemsForSchool } from "./tools/lineItemsManagementCreateLineItemsForSchool.js";
 import { tool$lineItemsManagementCreateResultForLineItem } from "./tools/lineItemsManagementCreateResultForLineItem.js";
 import { tool$lineItemsManagementDeleteLineItem } from "./tools/lineItemsManagementDeleteLineItem.js";
 import { tool$lineItemsManagementGetAllLineItems } from "./tools/lineItemsManagementGetAllLineItems.js";
 import { tool$lineItemsManagementGetLineItem } from "./tools/lineItemsManagementGetLineItem.js";
-import { tool$lineItemsManagementGetLineItemsForSchool } from "./tools/lineItemsManagementGetLineItemsForSchool.js";
 import { tool$lineItemsManagementUpdateLineItem } from "./tools/lineItemsManagementUpdateLineItem.js";
 import { tool$organizationsManagementCreateOrg } from "./tools/organizationsManagementCreateOrg.js";
 import { tool$organizationsManagementDeleteOrg } from "./tools/organizationsManagementDeleteOrg.js";
@@ -142,7 +124,6 @@ import { tool$schoolsManagementGetEnrollmentsForClassInSchool } from "./tools/sc
 import { tool$schoolsManagementGetEnrollmentsForSchool } from "./tools/schoolsManagementGetEnrollmentsForSchool.js";
 import { tool$schoolsManagementGetLineItemsForSchool } from "./tools/schoolsManagementGetLineItemsForSchool.js";
 import { tool$schoolsManagementGetSchool } from "./tools/schoolsManagementGetSchool.js";
-import { tool$schoolsManagementGetScoreScalesForSchool } from "./tools/schoolsManagementGetScoreScalesForSchool.js";
 import { tool$schoolsManagementGetStudentsForClassInSchool } from "./tools/schoolsManagementGetStudentsForClassInSchool.js";
 import { tool$schoolsManagementGetStudentsForSchool } from "./tools/schoolsManagementGetStudentsForSchool.js";
 import { tool$schoolsManagementGetTeachersForClassInSchool } from "./tools/schoolsManagementGetTeachersForClassInSchool.js";
@@ -155,30 +136,17 @@ import { tool$scoreScalesManagementGetAllScoreScales } from "./tools/scoreScales
 import { tool$scoreScalesManagementGetScoreScale } from "./tools/scoreScalesManagementGetScoreScale.js";
 import { tool$scoreScalesManagementGetScoreScalesForSchool } from "./tools/scoreScalesManagementGetScoreScalesForSchool.js";
 import { tool$scoreScalesManagementUpdateScoreScale } from "./tools/scoreScalesManagementUpdateScoreScale.js";
-import { tool$studentsManagementAddStudentToClass } from "./tools/studentsManagementAddStudentToClass.js";
 import { tool$studentsManagementGetAllStudents } from "./tools/studentsManagementGetAllStudents.js";
-import { tool$studentsManagementGetClassesForStudent } from "./tools/studentsManagementGetClassesForStudent.js";
 import { tool$studentsManagementGetStudent } from "./tools/studentsManagementGetStudent.js";
-import { tool$studentsManagementGetStudentsForClass } from "./tools/studentsManagementGetStudentsForClass.js";
-import { tool$studentsManagementGetStudentsForClassInSchool } from "./tools/studentsManagementGetStudentsForClassInSchool.js";
-import { tool$studentsManagementGetStudentsForSchool } from "./tools/studentsManagementGetStudentsForSchool.js";
-import { tool$teachersManagementAddTeacherToClass } from "./tools/teachersManagementAddTeacherToClass.js";
 import { tool$teachersManagementGetAllTeachers } from "./tools/teachersManagementGetAllTeachers.js";
-import { tool$teachersManagementGetClassesForTeacher } from "./tools/teachersManagementGetClassesForTeacher.js";
 import { tool$teachersManagementGetTeacher } from "./tools/teachersManagementGetTeacher.js";
-import { tool$teachersManagementGetTeachersForClass } from "./tools/teachersManagementGetTeachersForClass.js";
-import { tool$teachersManagementGetTeachersForClassInSchool } from "./tools/teachersManagementGetTeachersForClassInSchool.js";
-import { tool$teachersManagementGetTeachersForSchool } from "./tools/teachersManagementGetTeachersForSchool.js";
 import { tool$termsManagementCreateGradingPeriodForTerm } from "./tools/termsManagementCreateGradingPeriodForTerm.js";
 import { tool$termsManagementGetAllTerms } from "./tools/termsManagementGetAllTerms.js";
-import { tool$termsManagementGetClassesForTerm } from "./tools/termsManagementGetClassesForTerm.js";
 import { tool$termsManagementGetGradingPeriodsForTerm } from "./tools/termsManagementGetGradingPeriodsForTerm.js";
 import { tool$termsManagementGetTerm } from "./tools/termsManagementGetTerm.js";
-import { tool$termsManagementGetTermsForSchool } from "./tools/termsManagementGetTermsForSchool.js";
 import { tool$usersManagementCreateUser } from "./tools/usersManagementCreateUser.js";
 import { tool$usersManagementDeleteUser } from "./tools/usersManagementDeleteUser.js";
 import { tool$usersManagementGetAllUsers } from "./tools/usersManagementGetAllUsers.js";
-import { tool$usersManagementGetClassesForUser } from "./tools/usersManagementGetClassesForUser.js";
 import { tool$usersManagementGetUser } from "./tools/usersManagementGetUser.js";
 import { tool$usersManagementUpdateUser } from "./tools/usersManagementUpdateUser.js";
 
@@ -187,16 +155,16 @@ export function createMCPServer(deps: {
   allowedTools?: string[] | undefined;
   scopes?: MCPScope[] | undefined;
   serverURL?: string | undefined;
-  security?: SDKOptions["security"] | undefined;
+  oAuth2?: SDKOptions["oAuth2"] | undefined;
   serverIdx?: SDKOptions["serverIdx"] | undefined;
 }) {
   const server = new McpServer({
     name: "OneRoster",
-    version: "0.6.3",
+    version: "0.7.0",
   });
 
   const client = new OneRosterCore({
-    security: deps.security,
+    oAuth2: deps.oAuth2,
     serverURL: deps.serverURL,
     serverIdx: deps.serverIdx,
   });
@@ -228,7 +196,6 @@ export function createMCPServer(deps: {
   tool(tool$scoreScalesManagementUpdateScoreScale);
   tool(tool$scoreScalesManagementDeleteScoreScale);
   tool(tool$scoreScalesManagementGetScoreScalesForSchool);
-  tool(tool$schoolsManagementGetScoreScalesForSchool);
   tool(tool$schoolsManagementGetAllSchools);
   tool(tool$schoolsManagementCreateSchool);
   tool(tool$schoolsManagementGetSchool);
@@ -256,8 +223,6 @@ export function createMCPServer(deps: {
   tool(tool$lineItemsManagementUpdateLineItem);
   tool(tool$lineItemsManagementDeleteLineItem);
   tool(tool$lineItemsManagementCreateResultForLineItem);
-  tool(tool$lineItemsManagementGetLineItemsForSchool);
-  tool(tool$lineItemsManagementCreateLineItemsForSchool);
   tool(tool$classesManagementPostResultsForAcademicSessionForClass);
   tool(tool$classesManagementGetResultsForLineItemForClass);
   tool(tool$classesManagementGetResultsForStudentForClass);
@@ -270,7 +235,6 @@ export function createMCPServer(deps: {
   tool(tool$classesManagementGetClass);
   tool(tool$classesManagementUpdateClass);
   tool(tool$classesManagementDeleteClass);
-  tool(tool$classesManagementGetClassesForSchool);
   tool(tool$classesManagementGetClassesForUser);
   tool(tool$classesManagementGetClassesForTerm);
   tool(tool$classesManagementGetTeachersForClass);
@@ -313,27 +277,14 @@ export function createMCPServer(deps: {
   tool(tool$usersManagementGetUser);
   tool(tool$usersManagementUpdateUser);
   tool(tool$usersManagementDeleteUser);
-  tool(tool$usersManagementGetClassesForUser);
-  tool(tool$termsManagementGetTermsForSchool);
   tool(tool$termsManagementGetAllTerms);
   tool(tool$termsManagementGetTerm);
-  tool(tool$termsManagementGetClassesForTerm);
   tool(tool$termsManagementGetGradingPeriodsForTerm);
   tool(tool$termsManagementCreateGradingPeriodForTerm);
-  tool(tool$teachersManagementGetTeachersForClass);
-  tool(tool$teachersManagementAddTeacherToClass);
-  tool(tool$teachersManagementGetTeachersForClassInSchool);
-  tool(tool$teachersManagementGetTeachersForSchool);
   tool(tool$teachersManagementGetAllTeachers);
   tool(tool$teachersManagementGetTeacher);
-  tool(tool$teachersManagementGetClassesForTeacher);
-  tool(tool$studentsManagementGetStudentsForClass);
-  tool(tool$studentsManagementAddStudentToClass);
-  tool(tool$studentsManagementGetStudentsForClassInSchool);
-  tool(tool$studentsManagementGetStudentsForSchool);
   tool(tool$studentsManagementGetAllStudents);
   tool(tool$studentsManagementGetStudent);
-  tool(tool$studentsManagementGetClassesForStudent);
   tool(tool$organizationsManagementGetAllOrgs);
   tool(tool$organizationsManagementCreateOrg);
   tool(tool$organizationsManagementGetOrg);
@@ -344,15 +295,11 @@ export function createMCPServer(deps: {
   tool(tool$gradingPeriodsManagementGetGradingPeriod);
   tool(tool$gradingPeriodsManagementUpdateGradingPeriod);
   tool(tool$gradingPeriodsManagementDeleteGradingPeriod);
-  tool(tool$gradingPeriodsManagementGetGradingPeriodsForTerm);
-  tool(tool$gradingPeriodsManagementCreateGradingPeriodForTerm);
   tool(tool$enrollmentsManagementGetAllEnrollments);
   tool(tool$enrollmentsManagementCreateEnrollment);
   tool(tool$enrollmentsManagementGetEnrollment);
   tool(tool$enrollmentsManagementUpdateEnrollment);
   tool(tool$enrollmentsManagementDeleteEnrollment);
-  tool(tool$enrollmentsManagementGetEnrollmentsForClassInSchool);
-  tool(tool$enrollmentsManagementGetEnrollmentsForSchool);
   tool(tool$demographicsManagementGetAllDemographics);
   tool(tool$demographicsManagementPostDemographics);
   tool(tool$demographicsManagementGetDemographics);
@@ -374,17 +321,6 @@ export function createMCPServer(deps: {
   tool(tool$coursesManagementGetCourseComponent);
   tool(tool$coursesManagementPutCourseComponent);
   tool(tool$coursesManagementDeleteCourseComponent);
-  tool(tool$coursesManagementGetCoursesForSchool);
-  tool(tool$courseComponentResourcesManagementCreateComponentResource);
-  tool(tool$courseComponentResourcesManagementGetAllComponentResources);
-  tool(tool$courseComponentResourcesManagementGetComponentResource);
-  tool(tool$courseComponentResourcesManagementPutComponentResource);
-  tool(tool$courseComponentResourcesManagementDeleteComponentResource);
-  tool(tool$courseComponentsManagementCreateCourseComponent);
-  tool(tool$courseComponentsManagementGetAllCourseComponents);
-  tool(tool$courseComponentsManagementGetCourseComponent);
-  tool(tool$courseComponentsManagementPutCourseComponent);
-  tool(tool$courseComponentsManagementDeleteCourseComponent);
   tool(tool$academicSessionsManagementGetAllAcademicSessions);
   tool(tool$academicSessionsManagementPostAcademicSession);
   tool(tool$academicSessionsManagementGetAcademicSession);

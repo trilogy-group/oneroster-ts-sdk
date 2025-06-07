@@ -15,17 +15,11 @@ let value: GetSchoolResponse = {
     type: "national",
     identifier: "<value>",
     parent: {
-      href: "https://grave-certification.biz/",
+      href: "https://afraid-chops.info",
       sourcedId: "<id>",
       type: "<value>",
     },
-    children: [
-      {
-        href: "https://slow-shoulder.info",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-    ],
+    children: [],
   },
 };
 ```

@@ -11,16 +11,16 @@ let value: GetAllTeachersResponseBody = {
   users: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
-      enabledUser: false,
+      status: "active",
+      enabledUser: true,
       givenName: "<value>",
       familyName: "<value>",
       roles: [
         {
           roleType: "primary",
-          role: "parent",
+          role: "teacher",
           org: {
-            href: "https://foolish-violin.biz",
+            href: "https://nutritious-morning.net",
             sourcedId: "<id>",
             type: "<value>",
           },
@@ -28,20 +28,14 @@ let value: GetAllTeachersResponseBody = {
           endDate: "<value>",
         },
       ],
-      agents: [
-        {
-          href: "https://edible-fit.name",
-          sourcedId: "<id>",
-          type: "resource",
-        },
-      ],
+      agents: [],
     },
   ],
-  totalCount: 7193.47,
-  pageCount: 1432.55,
-  pageNumber: 8306.68,
-  offset: 8514.43,
-  limit: 32.27,
+  totalCount: 3374.15,
+  pageCount: 5721.78,
+  pageNumber: 5731.21,
+  offset: 7193.47,
+  limit: 1432.55,
 };
 ```
 

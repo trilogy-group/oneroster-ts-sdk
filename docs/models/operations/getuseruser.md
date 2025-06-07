@@ -14,9 +14,9 @@ let value: GetUserUser = {
   roles: [
     {
       roleType: "secondary",
-      role: "relative",
+      role: "proctor",
       org: {
-        href: "https://minor-optimal.biz",
+        href: "https://excellent-receptor.com",
         sourcedId: "<id>",
         type: "<value>",
       },
@@ -26,9 +26,9 @@ let value: GetUserUser = {
   ],
   agents: [
     {
-      href: "https://leading-bench.biz",
+      href: "https://blind-convection.biz/",
       sourcedId: "<id>",
-      type: "class",
+      type: "teacher",
     },
   ],
 };

@@ -9,7 +9,7 @@ import { UpdateAssessmentLineItemResponse } from "@superbuilders/oneroster/model
 
 let value: UpdateAssessmentLineItemResponse = {
   assessmentLineItem: {
-    status: "tobedeleted",
+    status: "active",
     title: "<value>",
   },
 };
