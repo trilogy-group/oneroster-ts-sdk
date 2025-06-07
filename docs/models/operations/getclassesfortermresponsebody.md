@@ -11,35 +11,29 @@ let value: GetClassesForTermResponseBody = {
   classes: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       title: "<value>",
       classCode: "<value>",
-      classType: "homeroom",
+      classType: "scheduled",
       location: "<value>",
       course: {
-        href: "https://humble-importance.org/",
+        href: "https://intent-plumber.info",
         sourcedId: "<id>",
         type: "<value>",
       },
       school: {
-        href: "https://tall-essence.biz",
+        href: "https://sneaky-marimba.info",
         sourcedId: "<id>",
         type: "<value>",
       },
-      terms: [
-        {
-          href: "https://known-unique.name",
-          sourcedId: "<id>",
-          type: "<value>",
-        },
-      ],
+      terms: [],
     },
   ],
-  totalCount: 3484.6,
-  pageCount: 8822.77,
-  pageNumber: 1595.67,
-  offset: 4540.69,
-  limit: 3620.22,
+  totalCount: 3580.87,
+  pageCount: 3879.8,
+  pageNumber: 3771.73,
+  offset: 4576.07,
+  limit: 9710.32,
 };
 ```
 

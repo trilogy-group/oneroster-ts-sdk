@@ -12,25 +12,19 @@ let value: Class = {
   status: "active",
   title: "<value>",
   classCode: "<value>",
-  classType: "scheduled",
+  classType: "homeroom",
   location: "<value>",
   course: {
-    href: "https://noteworthy-ectoderm.com/",
+    href: "https://intent-plumber.info",
     sourcedId: "<id>",
     type: "<value>",
   },
   school: {
-    href: "https://jam-packed-brochure.name/",
+    href: "https://sneaky-marimba.info",
     sourcedId: "<id>",
     type: "<value>",
   },
-  terms: [
-    {
-      href: "https://subdued-metal.org/",
-      sourcedId: "<id>",
-      type: "<value>",
-    },
-  ],
+  terms: [],
 };
 ```
 

@@ -10,22 +10,22 @@ import { GetResultsForLineItemForClassResponseBody } from "@superbuilders/oneros
 let value: GetResultsForLineItemForClassResponseBody = {
   results: [
     {
-      status: "tobedeleted",
+      status: "active",
       lineItem: {
         sourcedId: "<id>",
       },
       student: {
         sourcedId: "<id>",
       },
-      scoreStatus: "partially graded",
-      scoreDate: new Date("2023-10-06T13:14:02.819Z"),
+      scoreStatus: "exempt",
+      scoreDate: new Date("2024-03-19T22:34:33.693Z"),
     },
   ],
-  totalCount: 1636.15,
-  pageCount: 6499.85,
-  pageNumber: 3326.75,
-  offset: 733.42,
-  limit: 5311.17,
+  totalCount: 6834.34,
+  pageCount: 2541.53,
+  pageNumber: 1636.15,
+  offset: 6499.85,
+  limit: 3326.75,
 };
 ```
 

@@ -13,11 +13,7 @@ let value: CreateClassClass = {
   org: {
     sourcedId: "<id>",
   },
-  terms: [
-    {
-      sourcedId: "<id>",
-    },
-  ],
+  terms: [],
 };
 ```
 

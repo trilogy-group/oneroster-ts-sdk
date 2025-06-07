@@ -12,13 +12,13 @@ import { schoolsManagementGetEnrollmentsForClassInSchool } from "../funcs/school
 import { schoolsManagementGetEnrollmentsForSchool } from "../funcs/schoolsManagementGetEnrollmentsForSchool.js";
 import { schoolsManagementGetLineItemsForSchool } from "../funcs/schoolsManagementGetLineItemsForSchool.js";
 import { schoolsManagementGetSchool } from "../funcs/schoolsManagementGetSchool.js";
-import { schoolsManagementGetScoreScalesForSchool } from "../funcs/schoolsManagementGetScoreScalesForSchool.js";
 import { schoolsManagementGetStudentsForClassInSchool } from "../funcs/schoolsManagementGetStudentsForClassInSchool.js";
 import { schoolsManagementGetStudentsForSchool } from "../funcs/schoolsManagementGetStudentsForSchool.js";
 import { schoolsManagementGetTeachersForClassInSchool } from "../funcs/schoolsManagementGetTeachersForClassInSchool.js";
 import { schoolsManagementGetTeachersForSchool } from "../funcs/schoolsManagementGetTeachersForSchool.js";
 import { schoolsManagementGetTermsForSchool } from "../funcs/schoolsManagementGetTermsForSchool.js";
 import { schoolsManagementUpdateSchool } from "../funcs/schoolsManagementUpdateSchool.js";
+import { scoreScalesManagementGetScoreScalesForSchool } from "../funcs/scoreScalesManagementGetScoreScalesForSchool.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -38,7 +38,7 @@ export class SchoolsManagement extends ClientSDK {
   ): Promise<
     PageIterator<operations.GetScoreScalesForSchoolResponse, { offset: number }>
   > {
-    return unwrapResultIterator(schoolsManagementGetScoreScalesForSchool(
+    return unwrapResultIterator(scoreScalesManagementGetScoreScalesForSchool(
       this,
       request,
       options,

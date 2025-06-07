@@ -7,22 +7,6 @@ import { UpdateScoreScaleRequest } from "@superbuilders/oneroster/models/operati
 
 let value: UpdateScoreScaleRequest = {
   sourcedId: "<id>",
-  requestBody: {
-    scoreScale: {
-      status: "tobedeleted",
-      title: "<value>",
-      type: "<value>",
-      class: {
-        sourcedId: "<id>",
-      },
-      scoreScaleValue: [
-        {
-          itemValueLHS: "<value>",
-          itemValueRHS: "<value>",
-        },
-      ],
-    },
-  },
 };
 ```
 
