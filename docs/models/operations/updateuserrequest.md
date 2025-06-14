@@ -7,22 +7,6 @@ import { UpdateUserRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: UpdateUserRequest = {
   sourcedId: "<id>",
-  requestBody: {
-    user: {
-      enabledUser: false,
-      givenName: "<value>",
-      familyName: "<value>",
-      roles: [
-        {
-          roleType: "primary",
-          role: "guardian",
-          org: {
-            sourcedId: "<id>",
-          },
-        },
-      ],
-    },
-  },
 };
 ```
 

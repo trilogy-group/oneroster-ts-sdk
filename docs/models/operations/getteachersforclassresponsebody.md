@@ -11,37 +11,37 @@ let value: GetTeachersForClassResponseBody = {
   teachers: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       enabledUser: false,
       givenName: "<value>",
       familyName: "<value>",
       roles: [
         {
           roleType: "primary",
-          role: "proctor",
+          role: "aide",
           org: {
-            href: "https://key-comestible.info",
+            href: "https://flashy-forage.org/",
             sourcedId: "<id>",
             type: "<value>",
           },
           beginDate: "<value>",
-          endDate: "<value>",
+          endDate: null,
         },
       ],
       agents: [
         {
-          href: "https://trim-hippodrome.info/",
+          href: "https://jittery-doorpost.org/",
           sourcedId: "<id>",
-          type: "demographics",
+          type: "enrollment",
         },
       ],
     },
   ],
-  totalCount: 9015.96,
-  pageCount: 3411.01,
-  pageNumber: 2079.52,
-  offset: 8981.95,
-  limit: 6282.15,
+  totalCount: 2079.52,
+  pageCount: 8981.95,
+  pageNumber: 6282.15,
+  offset: 5601.55,
+  limit: 5876.73,
 };
 ```
 

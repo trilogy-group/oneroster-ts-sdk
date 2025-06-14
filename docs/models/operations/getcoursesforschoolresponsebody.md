@@ -8,15 +8,7 @@ Collection of courses successfully retrieved
 import { GetCoursesForSchoolResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetCoursesForSchoolResponseBody = {
-  courses: [
-    {
-      status: "active",
-      title: "<value>",
-      org: {
-        sourcedId: "<id>",
-      },
-    },
-  ],
+  courses: [],
   totalCount: 2938.06,
   pageCount: 7526.4,
   pageNumber: 5495.25,

@@ -7,11 +7,6 @@ import { AssignResourceToCourseRequest } from "@superbuilders/oneroster/models/o
 
 let value: AssignResourceToCourseRequest = {
   courseSourcedId: "<id>",
-  requestBody: {
-    resource: {
-      sourcedId: "<id>",
-    },
-  },
 };
 ```
 

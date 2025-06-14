@@ -7,11 +7,6 @@ import { AssignResourceToClassRequest } from "@superbuilders/oneroster/models/op
 
 let value: AssignResourceToClassRequest = {
   classSourcedId: "<id>",
-  requestBody: {
-    resource: {
-      sourcedId: "<id>",
-    },
-  },
 };
 ```
 

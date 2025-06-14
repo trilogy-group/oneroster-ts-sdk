@@ -12,15 +12,15 @@ let value: GetTeachersForClassInSchoolResponseBody = {
     {
       sourcedId: "<id>",
       status: "tobedeleted",
-      enabledUser: false,
+      enabledUser: true,
       givenName: "<value>",
       familyName: "<value>",
       roles: [
         {
           roleType: "secondary",
-          role: "aide",
+          role: "administrator",
           org: {
-            href: "https://sniveling-appliance.biz",
+            href: "https://timely-underneath.com",
             sourcedId: "<id>",
             type: "<value>",
           },
@@ -30,18 +30,18 @@ let value: GetTeachersForClassInSchoolResponseBody = {
       ],
       agents: [
         {
-          href: "https://zany-request.info",
+          href: "https://everlasting-hope.info/",
           sourcedId: "<id>",
           type: "term",
         },
       ],
     },
   ],
-  totalCount: 8892.12,
-  pageCount: 7148.9,
-  pageNumber: 3206.64,
-  offset: 3434.93,
-  limit: 640.53,
+  totalCount: 7492.81,
+  pageCount: 4668.19,
+  pageNumber: 8397.7,
+  offset: 8892.12,
+  limit: 7148.9,
 };
 ```
 

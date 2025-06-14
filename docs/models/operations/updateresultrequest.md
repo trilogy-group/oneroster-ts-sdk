@@ -7,19 +7,6 @@ import { UpdateResultRequest } from "@superbuilders/oneroster/models/operations"
 
 let value: UpdateResultRequest = {
   sourcedId: "<id>",
-  requestBody: {
-    result: {
-      status: "active",
-      lineItem: {
-        sourcedId: "<id>",
-      },
-      student: {
-        sourcedId: "<id>",
-      },
-      scoreStatus: "exempt",
-      scoreDate: new Date("2024-11-17T17:36:37.962Z"),
-    },
-  },
 };
 ```
 

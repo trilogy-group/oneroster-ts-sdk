@@ -8,31 +8,12 @@ Collection of enrollments successfully retrieved
 import { GetEnrollmentsForSchoolResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetEnrollmentsForSchoolResponseBody = {
-  enrollments: [
-    {
-      sourcedId: "<id>",
-      status: "active",
-      role: "teacher",
-      primary: false,
-      beginDate: "2024-01-01",
-      endDate: "2024-01-01",
-      user: {
-        href: "https://pricey-pharmacopoeia.info/",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-      class: {
-        href: "https://deserted-gym.org/",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-    },
-  ],
-  totalCount: 4372.28,
-  pageCount: 5632.41,
-  pageNumber: 4280.25,
-  offset: 8169.15,
-  limit: 4364.48,
+  enrollments: [],
+  totalCount: 8314.14,
+  pageCount: 226.27,
+  pageNumber: 6337.52,
+  offset: 6632.44,
+  limit: 3874.73,
 };
 ```
 

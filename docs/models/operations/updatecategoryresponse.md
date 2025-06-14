@@ -9,7 +9,7 @@ import { UpdateCategoryResponse } from "@superbuilders/oneroster/models/operatio
 
 let value: UpdateCategoryResponse = {
   category: {
-    status: "tobedeleted",
+    status: "active",
     title: "<value>",
   },
 };
