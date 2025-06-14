@@ -7,10 +7,10 @@ import { UpdateLineItemRequestBody } from "@superbuilders/oneroster/models/opera
 
 let value: UpdateLineItemRequestBody = {
   lineItem: {
-    status: "tobedeleted",
+    status: "active",
     title: "<value>",
-    assignDate: new Date("2025-06-07T04:03:25.674Z"),
-    dueDate: new Date("2025-11-09T02:43:11.854Z"),
+    assignDate: new Date("2023-07-28T04:26:11.874Z"),
+    dueDate: new Date("2024-12-05T08:59:50.487Z"),
     class: {
       sourcedId: "<id>",
     },

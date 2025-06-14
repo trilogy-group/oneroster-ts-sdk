@@ -7,21 +7,6 @@ import { CreateResultForLineItemRequest } from "@superbuilders/oneroster/models/
 
 let value: CreateResultForLineItemRequest = {
   sourcedId: "<id>",
-  requestBody: {
-    results: [
-      {
-        status: "active",
-        lineItem: {
-          sourcedId: "<id>",
-        },
-        student: {
-          sourcedId: "<id>",
-        },
-        scoreStatus: "exempt",
-        scoreDate: new Date("2025-06-12T18:24:25.853Z"),
-      },
-    ],
-  },
 };
 ```
 
