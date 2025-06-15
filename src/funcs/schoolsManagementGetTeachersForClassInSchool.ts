@@ -11,7 +11,6 @@ import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import { APIError } from "../models/errors/apierror.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -20,6 +19,8 @@ import {
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import * as errors from "../models/errors/index.js";
+import { OneRosterError } from "../models/errors/onerostererror.js";
+import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
@@ -45,20 +46,21 @@ export function schoolsManagementGetTeachersForClassInSchool(
   PageIterator<
     Result<
       operations.GetTeachersForClassInSchoolResponse,
-      | errors.BadRequestResponseError1
-      | errors.UnauthorizedRequestResponseError1
-      | errors.ForbiddenResponseError1
-      | errors.NotFoundResponseError2
-      | errors.UnprocessableEntityResponseError2
-      | errors.TooManyRequestsResponseError2
-      | errors.InternalServerErrorResponse1
-      | APIError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
+      | errors.BadRequestResponseError
+      | errors.UnauthorizedRequestResponseError
+      | errors.ForbiddenResponseError
+      | errors.NotFoundResponseError
+      | errors.UnprocessableEntityResponseError
+      | errors.TooManyRequestsResponseError
+      | errors.InternalServerErrorResponse
+      | OneRosterError
+      | ResponseValidationError
+      | ConnectionError
       | RequestAbortedError
       | RequestTimeoutError
-      | ConnectionError
+      | InvalidRequestError
+      | UnexpectedClientError
+      | SDKValidationError
     >,
     { offset: number }
   >
@@ -79,20 +81,21 @@ async function $do(
     PageIterator<
       Result<
         operations.GetTeachersForClassInSchoolResponse,
-        | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError1
-        | errors.ForbiddenResponseError1
-        | errors.NotFoundResponseError2
-        | errors.UnprocessableEntityResponseError2
-        | errors.TooManyRequestsResponseError2
-        | errors.InternalServerErrorResponse1
-        | APIError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
+        | errors.BadRequestResponseError
+        | errors.UnauthorizedRequestResponseError
+        | errors.ForbiddenResponseError
+        | errors.NotFoundResponseError
+        | errors.UnprocessableEntityResponseError
+        | errors.TooManyRequestsResponseError
+        | errors.InternalServerErrorResponse
+        | OneRosterError
+        | ResponseValidationError
+        | ConnectionError
         | RequestAbortedError
         | RequestTimeoutError
-        | ConnectionError
+        | InvalidRequestError
+        | UnexpectedClientError
+        | SDKValidationError
       >,
       { offset: number }
     >,
@@ -140,17 +143,19 @@ async function $do(
     Accept: "application/json",
   }));
 
-  const securityInput = await extractSecurity(client._options.security);
+  const secConfig = await extractSecurity(client._options.oAuth2);
+  const securityInput = secConfig == null ? {} : { oAuth2: secConfig };
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "getTeachersForClassInSchool",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
 
-    securitySource: client._options.security,
+    securitySource: client._options.oAuth2,
     retryConfig: options?.retries
       || client._options.retryConfig
       || { strategy: "none" },
@@ -165,6 +170,7 @@ async function $do(
     headers: headers,
     query: query,
     body: body,
+    userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
@@ -189,34 +195,35 @@ async function $do(
 
   const [result, raw] = await M.match<
     operations.GetTeachersForClassInSchoolResponse,
-    | errors.BadRequestResponseError1
-    | errors.UnauthorizedRequestResponseError1
-    | errors.ForbiddenResponseError1
-    | errors.NotFoundResponseError2
-    | errors.UnprocessableEntityResponseError2
-    | errors.TooManyRequestsResponseError2
-    | errors.InternalServerErrorResponse1
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | errors.BadRequestResponseError
+    | errors.UnauthorizedRequestResponseError
+    | errors.ForbiddenResponseError
+    | errors.NotFoundResponseError
+    | errors.UnprocessableEntityResponseError
+    | errors.TooManyRequestsResponseError
+    | errors.InternalServerErrorResponse
+    | OneRosterError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >(
     M.json(200, operations.GetTeachersForClassInSchoolResponse$inboundSchema, {
       key: "Result",
     }),
-    M.jsonErr(400, errors.BadRequestResponseError1$inboundSchema),
-    M.jsonErr(401, errors.UnauthorizedRequestResponseError1$inboundSchema),
-    M.jsonErr(403, errors.ForbiddenResponseError1$inboundSchema),
-    M.jsonErr(404, errors.NotFoundResponseError2$inboundSchema),
-    M.jsonErr(422, errors.UnprocessableEntityResponseError2$inboundSchema),
-    M.jsonErr(429, errors.TooManyRequestsResponseError2$inboundSchema),
-    M.jsonErr(500, errors.InternalServerErrorResponse1$inboundSchema),
+    M.jsonErr(400, errors.BadRequestResponseError$inboundSchema),
+    M.jsonErr(401, errors.UnauthorizedRequestResponseError$inboundSchema),
+    M.jsonErr(403, errors.ForbiddenResponseError$inboundSchema),
+    M.jsonErr(404, errors.NotFoundResponseError$inboundSchema),
+    M.jsonErr(422, errors.UnprocessableEntityResponseError$inboundSchema),
+    M.jsonErr(429, errors.TooManyRequestsResponseError$inboundSchema),
+    M.jsonErr(500, errors.InternalServerErrorResponse$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
-  )(response, { extraFields: responseFields });
+  )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [haltIterator(result), {
       status: "complete",
@@ -231,20 +238,21 @@ async function $do(
     next: Paginator<
       Result<
         operations.GetTeachersForClassInSchoolResponse,
-        | errors.BadRequestResponseError1
-        | errors.UnauthorizedRequestResponseError1
-        | errors.ForbiddenResponseError1
-        | errors.NotFoundResponseError2
-        | errors.UnprocessableEntityResponseError2
-        | errors.TooManyRequestsResponseError2
-        | errors.InternalServerErrorResponse1
-        | APIError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
+        | errors.BadRequestResponseError
+        | errors.UnauthorizedRequestResponseError
+        | errors.ForbiddenResponseError
+        | errors.NotFoundResponseError
+        | errors.UnprocessableEntityResponseError
+        | errors.TooManyRequestsResponseError
+        | errors.InternalServerErrorResponse
+        | OneRosterError
+        | ResponseValidationError
+        | ConnectionError
         | RequestAbortedError
         | RequestTimeoutError
-        | ConnectionError
+        | InvalidRequestError
+        | UnexpectedClientError
+        | SDKValidationError
       >
     >;
     "~next"?: { offset: number };

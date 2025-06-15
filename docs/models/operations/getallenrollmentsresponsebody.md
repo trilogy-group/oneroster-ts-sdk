@@ -8,31 +8,12 @@ Successful response
 import { GetAllEnrollmentsResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllEnrollmentsResponseBody = {
-  enrollments: [
-    {
-      sourcedId: "<id>",
-      status: "active",
-      role: "teacher",
-      primary: false,
-      beginDate: "2024-01-01",
-      endDate: "2024-01-01",
-      user: {
-        href: "https://uneven-divine.name/",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-      class: {
-        href: "https://new-runway.org",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-    },
-  ],
-  totalCount: 6719.22,
-  pageCount: 6907.76,
-  pageNumber: 6864.67,
-  offset: 4675.84,
-  limit: 1933.65,
+  enrollments: [],
+  totalCount: 9051.27,
+  pageCount: 3172.32,
+  pageNumber: 8832.66,
+  offset: 2649.28,
+  limit: 6023.05,
 };
 ```
 

@@ -17,7 +17,7 @@ let value: CreateGradingPeriodForTermResponse = {
     type: "semester",
     schoolYear: 7108.8,
     org: {
-      href: "https://criminal-topsail.com/",
+      href: "https://white-freckle.biz",
       sourcedId: "<id>",
       type: "lineItem",
     },

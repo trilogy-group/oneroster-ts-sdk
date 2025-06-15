@@ -17,9 +17,9 @@ let value: GetTermResponse = {
     type: "term",
     schoolYear: 6747.48,
     org: {
-      href: "https://cumbersome-outset.net",
+      href: "https://white-freckle.biz",
       sourcedId: "<id>",
-      type: "scoreScale",
+      type: "lineItem",
     },
   },
 };

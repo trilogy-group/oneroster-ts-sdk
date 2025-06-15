@@ -10,15 +10,15 @@ import { GetAllAssessmentLineItemsResponseBody } from "@superbuilders/oneroster/
 let value: GetAllAssessmentLineItemsResponseBody = {
   assessmentLineItems: [
     {
-      status: "tobedeleted",
+      status: "active",
       title: "<value>",
     },
   ],
-  totalCount: 3250.12,
-  pageCount: 6764.12,
-  pageNumber: 594.65,
-  offset: 4851.82,
-  limit: 167.51,
+  totalCount: 6764.12,
+  pageCount: 594.65,
+  pageNumber: 4851.82,
+  offset: 167.51,
+  limit: 6626.19,
 };
 ```
 

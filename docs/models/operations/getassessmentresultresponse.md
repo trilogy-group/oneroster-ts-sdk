@@ -9,15 +9,15 @@ import { GetAssessmentResultResponse } from "@superbuilders/oneroster/models/ope
 
 let value: GetAssessmentResultResponse = {
   assessmentResult: {
-    status: "active",
+    status: "tobedeleted",
     assessmentLineItem: {
       sourcedId: "<id>",
     },
     student: {
       sourcedId: "<id>",
     },
-    scoreDate: new Date("2024-05-21T03:02:33.951Z"),
-    scoreStatus: "not submitted",
+    scoreDate: new Date("2025-05-27T04:24:47.054Z"),
+    scoreStatus: "fully graded",
   },
 };
 ```

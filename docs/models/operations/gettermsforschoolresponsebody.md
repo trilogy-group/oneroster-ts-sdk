@@ -11,24 +11,24 @@ let value: GetTermsForSchoolResponseBody = {
   terms: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       title: "<value>",
       startDate: "<value>",
       endDate: "<value>",
-      type: "semester",
-      schoolYear: 9450.81,
+      type: "term",
+      schoolYear: 9932.39,
       org: {
-        href: "https://wealthy-vestment.info",
+        href: "https://white-freckle.biz",
         sourcedId: "<id>",
-        type: "class",
+        type: "lineItem",
       },
     },
   ],
-  totalCount: 4635.61,
-  pageCount: 3974.74,
-  pageNumber: 4500.26,
-  offset: 2716.95,
-  limit: 4014.31,
+  totalCount: 3974.74,
+  pageCount: 4500.26,
+  pageNumber: 2716.95,
+  offset: 4014.31,
+  limit: 3364.81,
 };
 ```
 
