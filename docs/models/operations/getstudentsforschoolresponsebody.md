@@ -18,9 +18,9 @@ let value: GetStudentsForSchoolResponseBody = {
       roles: [
         {
           roleType: "secondary",
-          role: "student",
+          role: "guardian",
           org: {
-            href: "https://whole-dulcimer.org",
+            href: "https://acceptable-impact.org/",
             sourcedId: "<id>",
             type: "<value>",
           },
@@ -28,20 +28,14 @@ let value: GetStudentsForSchoolResponseBody = {
           endDate: "<value>",
         },
       ],
-      agents: [
-        {
-          href: "https://all-papa.org",
-          sourcedId: "<id>",
-          type: "componentResource",
-        },
-      ],
+      agents: [],
     },
   ],
-  totalCount: 4176.03,
-  pageCount: 8254.8,
-  pageNumber: 7615.83,
-  offset: 6292.03,
-  limit: 8727.79,
+  totalCount: 6436.26,
+  pageCount: 9736.94,
+  pageNumber: 9326.17,
+  offset: 4176.03,
+  limit: 8254.8,
 };
 ```
 

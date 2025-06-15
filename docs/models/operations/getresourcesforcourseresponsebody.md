@@ -8,14 +8,7 @@ Successful response containing a collection of resources for the course
 import { GetResourcesForCourseResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResourcesForCourseResponseBody = {
-  resources: [
-    {
-      sourcedId: "<id>",
-      status: "active",
-      title: "<value>",
-      vendorResourceId: "<id>",
-    },
-  ],
+  resources: [],
   totalCount: 1995.41,
   pageCount: 3834.42,
   pageNumber: 2096.65,

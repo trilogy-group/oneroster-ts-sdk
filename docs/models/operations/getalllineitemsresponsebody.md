@@ -12,8 +12,8 @@ let value: GetAllLineItemsResponseBody = {
     {
       status: "tobedeleted",
       title: "<value>",
-      assignDate: new Date("2025-10-07T19:05:28.488Z"),
-      dueDate: new Date("2023-08-10T23:32:56.493Z"),
+      assignDate: new Date("2024-06-03T08:42:01.042Z"),
+      dueDate: new Date("2025-02-13T13:30:50.872Z"),
       class: {
         sourcedId: "<id>",
       },
@@ -25,11 +25,11 @@ let value: GetAllLineItemsResponseBody = {
       },
     },
   ],
-  totalCount: 1458.05,
-  pageCount: 3947.52,
-  pageNumber: 4321.57,
-  offset: 8338,
-  limit: 7891.89,
+  totalCount: 9222.59,
+  pageCount: 2025.37,
+  pageNumber: 1458.05,
+  offset: 3947.52,
+  limit: 4321.57,
 };
 ```
 

@@ -16,9 +16,9 @@ let value: AcademicSession = {
   type: "term",
   schoolYear: 840.71,
   org: {
-    href: "https://wrathful-birdcage.net/",
+    href: "https://white-freckle.biz",
     sourcedId: "<id>",
-    type: "org",
+    type: "lineItem",
   },
 };
 ```

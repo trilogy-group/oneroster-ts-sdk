@@ -11,24 +11,12 @@ let value: GetStudentsForClassInSchoolUser = {
   enabledUser: false,
   givenName: "<value>",
   familyName: "<value>",
-  roles: [
-    {
-      roleType: "secondary",
-      role: "administrator",
-      org: {
-        href: "https://recent-fowl.name",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-      beginDate: "<value>",
-      endDate: "<value>",
-    },
-  ],
+  roles: [],
   agents: [
     {
-      href: "https://jaunty-cellar.info/",
+      href: "https://haunting-negotiation.com",
       sourcedId: "<id>",
-      type: "class",
+      type: "lineItem",
     },
   ],
 };

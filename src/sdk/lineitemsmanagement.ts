@@ -3,13 +3,13 @@
  */
 
 import { lineItemsManagementCreateLineItem } from "../funcs/lineItemsManagementCreateLineItem.js";
-import { lineItemsManagementCreateLineItemsForSchool } from "../funcs/lineItemsManagementCreateLineItemsForSchool.js";
 import { lineItemsManagementCreateResultForLineItem } from "../funcs/lineItemsManagementCreateResultForLineItem.js";
 import { lineItemsManagementDeleteLineItem } from "../funcs/lineItemsManagementDeleteLineItem.js";
 import { lineItemsManagementGetAllLineItems } from "../funcs/lineItemsManagementGetAllLineItems.js";
 import { lineItemsManagementGetLineItem } from "../funcs/lineItemsManagementGetLineItem.js";
-import { lineItemsManagementGetLineItemsForSchool } from "../funcs/lineItemsManagementGetLineItemsForSchool.js";
 import { lineItemsManagementUpdateLineItem } from "../funcs/lineItemsManagementUpdateLineItem.js";
+import { schoolsManagementCreateLineItemsForSchool } from "../funcs/schoolsManagementCreateLineItemsForSchool.js";
+import { schoolsManagementGetLineItemsForSchool } from "../funcs/schoolsManagementGetLineItemsForSchool.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
@@ -132,7 +132,7 @@ export class LineItemsManagement extends ClientSDK {
   ): Promise<
     PageIterator<operations.GetLineItemsForSchoolResponse, { offset: number }>
   > {
-    return unwrapResultIterator(lineItemsManagementGetLineItemsForSchool(
+    return unwrapResultIterator(schoolsManagementGetLineItemsForSchool(
       this,
       request,
       options,
@@ -149,7 +149,7 @@ export class LineItemsManagement extends ClientSDK {
     request: operations.CreateLineItemsForSchoolRequest,
     options?: RequestOptions,
   ): Promise<operations.CreateLineItemsForSchoolResponse> {
-    return unwrapAsync(lineItemsManagementCreateLineItemsForSchool(
+    return unwrapAsync(schoolsManagementCreateLineItemsForSchool(
       this,
       request,
       options,

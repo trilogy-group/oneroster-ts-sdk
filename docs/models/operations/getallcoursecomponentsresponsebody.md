@@ -8,17 +8,7 @@ Collection of Course Components
 import { GetAllCourseComponentsResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllCourseComponentsResponseBody = {
-  courseComponents: [
-    {
-      status: "active",
-      course: {
-        sourcedId: "<id>",
-      },
-      title: "<value>",
-      sortOrder: 1,
-      unlockDate: "2021-01-01T00:00:00.000Z",
-    },
-  ],
+  courseComponents: [],
   totalCount: 3620.72,
   pageCount: 8229.69,
   pageNumber: 1999.43,

@@ -8,27 +8,15 @@ import { GetAllStudentsUser } from "@superbuilders/oneroster/models/operations";
 let value: GetAllStudentsUser = {
   sourcedId: "<id>",
   status: "tobedeleted",
-  enabledUser: false,
+  enabledUser: true,
   givenName: "<value>",
   familyName: "<value>",
-  roles: [
-    {
-      roleType: "primary",
-      role: "parent",
-      org: {
-        href: "https://sad-kinase.name",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-      beginDate: "<value>",
-      endDate: "<value>",
-    },
-  ],
+  roles: [],
   agents: [
     {
-      href: "https://educated-tribe.org/",
+      href: "https://male-marimba.info",
       sourcedId: "<id>",
-      type: "student",
+      type: "course",
     },
   ],
 };

@@ -11,24 +11,12 @@ let value: GetTeachersForSchoolUser = {
   enabledUser: false,
   givenName: "<value>",
   familyName: "<value>",
-  roles: [
-    {
-      roleType: "secondary",
-      role: "guardian",
-      org: {
-        href: "https://cluttered-cantaloupe.org",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-      beginDate: "<value>",
-      endDate: "<value>",
-    },
-  ],
+  roles: [],
   agents: [
     {
-      href: "https://fuzzy-secret.biz",
+      href: "https://chubby-violin.net/",
       sourcedId: "<id>",
-      type: "category",
+      type: "demographics",
     },
   ],
 };

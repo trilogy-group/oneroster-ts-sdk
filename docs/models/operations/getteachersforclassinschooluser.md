@@ -8,27 +8,15 @@ import { GetTeachersForClassInSchoolUser } from "@superbuilders/oneroster/models
 let value: GetTeachersForClassInSchoolUser = {
   sourcedId: "<id>",
   status: "tobedeleted",
-  enabledUser: false,
+  enabledUser: true,
   givenName: "<value>",
   familyName: "<value>",
-  roles: [
-    {
-      roleType: "primary",
-      role: "parent",
-      org: {
-        href: "https://coarse-descendant.info",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-      beginDate: "<value>",
-      endDate: "<value>",
-    },
-  ],
+  roles: [],
   agents: [
     {
-      href: "https://stale-scrap.com/",
+      href: "https://everlasting-hope.info/",
       sourcedId: "<id>",
-      type: "demographics",
+      type: "term",
     },
   ],
 };

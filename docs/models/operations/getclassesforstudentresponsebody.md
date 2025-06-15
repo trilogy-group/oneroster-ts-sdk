@@ -11,35 +11,29 @@ let value: GetClassesForStudentResponseBody = {
   classes: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       title: "<value>",
       classCode: "<value>",
-      classType: "homeroom",
+      classType: "scheduled",
       location: "<value>",
       course: {
-        href: "https://impressionable-widow.net/",
+        href: "https://intent-plumber.info",
         sourcedId: "<id>",
         type: "<value>",
       },
       school: {
-        href: "https://mysterious-march.info/",
+        href: "https://sneaky-marimba.info",
         sourcedId: "<id>",
         type: "<value>",
       },
-      terms: [
-        {
-          href: "https://woeful-outset.org",
-          sourcedId: "<id>",
-          type: "<value>",
-        },
-      ],
+      terms: [],
     },
   ],
-  totalCount: 6884.17,
-  pageCount: 3.54,
-  pageNumber: 3234.88,
-  offset: 5133.26,
-  limit: 8643.98,
+  totalCount: 3673.53,
+  pageCount: 555.97,
+  pageNumber: 4045.84,
+  offset: 9853.76,
+  limit: 7524.8,
 };
 ```
 

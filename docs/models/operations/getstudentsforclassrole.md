@@ -13,7 +13,7 @@ let value: GetStudentsForClassRole = {
     sourcedId: "<id>",
     type: "<value>",
   },
-  beginDate: "<value>",
+  beginDate: null,
   endDate: "<value>",
 };
 ```

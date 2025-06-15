@@ -8,22 +8,7 @@ Successful response containing a collection of score scales
 import { GetAllScoreScalesResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllScoreScalesResponseBody = {
-  scoreScales: [
-    {
-      status: "active",
-      title: "<value>",
-      type: "<value>",
-      class: {
-        sourcedId: "<id>",
-      },
-      scoreScaleValue: [
-        {
-          itemValueLHS: "<value>",
-          itemValueRHS: "<value>",
-        },
-      ],
-    },
-  ],
+  scoreScales: [],
   totalCount: 9305.18,
   pageCount: 7507.61,
   pageNumber: 225.99,
