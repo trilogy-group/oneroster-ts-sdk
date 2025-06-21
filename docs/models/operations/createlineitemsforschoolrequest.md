@@ -7,25 +7,6 @@ import { CreateLineItemsForSchoolRequest } from "@superbuilders/oneroster/models
 
 let value: CreateLineItemsForSchoolRequest = {
   sourcedId: "<id>",
-  requestBody: {
-    lineItems: [
-      {
-        status: "active",
-        title: "<value>",
-        assignDate: new Date("2024-12-01T20:09:14.889Z"),
-        dueDate: new Date("2024-08-01T12:10:58.901Z"),
-        class: {
-          sourcedId: "<id>",
-        },
-        school: {
-          sourcedId: "<id>",
-        },
-        category: {
-          sourcedId: "<id>",
-        },
-      },
-    ],
-  },
 };
 ```
 

@@ -7,15 +7,6 @@ import { AddTeacherToClassRequest } from "@superbuilders/oneroster/models/operat
 
 let value: AddTeacherToClassRequest = {
   classSourcedId: "<id>",
-  requestBody: {
-    enrollment: {
-      user: {
-        sourcedId: "<id>",
-      },
-      beginDate: "2024-01-01",
-      endDate: "2024-01-01",
-    },
-  },
 };
 ```
 

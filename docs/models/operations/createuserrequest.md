@@ -7,18 +7,10 @@ import { CreateUserRequest } from "@superbuilders/oneroster/models/operations";
 
 let value: CreateUserRequest = {
   user: {
-    enabledUser: false,
+    enabledUser: true,
     givenName: "<value>",
     familyName: "<value>",
-    roles: [
-      {
-        roleType: "primary",
-        role: "aide",
-        org: {
-          sourcedId: "<id>",
-        },
-      },
-    ],
+    roles: [],
   },
 };
 ```

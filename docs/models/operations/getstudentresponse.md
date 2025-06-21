@@ -11,29 +11,11 @@ let value: GetStudentResponse = {
   user: {
     sourcedId: "<id>",
     status: "tobedeleted",
-    enabledUser: false,
+    enabledUser: true,
     givenName: "<value>",
     familyName: "<value>",
-    roles: [
-      {
-        roleType: "primary",
-        role: "administrator",
-        org: {
-          href: "https://classic-assist.name/",
-          sourcedId: "<id>",
-          type: "<value>",
-        },
-        beginDate: "<value>",
-        endDate: "<value>",
-      },
-    ],
-    agents: [
-      {
-        href: "https://passionate-pleasure.info/",
-        sourcedId: "<id>",
-        type: "scoreScale",
-      },
-    ],
+    roles: [],
+    agents: [],
   },
 };
 ```

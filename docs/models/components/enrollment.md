@@ -15,12 +15,12 @@ let value: Enrollment = {
   beginDate: "2024-01-01",
   endDate: "2024-01-01",
   user: {
-    href: "https://enlightened-celsius.net",
+    href: "https://lumpy-account.net",
     sourcedId: "<id>",
     type: "<value>",
   },
   class: {
-    href: "https://enchanting-median.info/",
+    href: "https://sarcastic-tackle.name/",
     sourcedId: "<id>",
     type: "<value>",
   },

@@ -8,21 +8,6 @@ import { PostResultsForAcademicSessionForClassRequest } from "@superbuilders/one
 let value: PostResultsForAcademicSessionForClassRequest = {
   classSourcedId: "<id>",
   academicSessionSourcedId: "<id>",
-  requestBody: {
-    results: [
-      {
-        status: "active",
-        lineItem: {
-          sourcedId: "<id>",
-        },
-        student: {
-          sourcedId: "<id>",
-        },
-        scoreStatus: "fully graded",
-        scoreDate: new Date("2025-01-06T04:32:10.374Z"),
-      },
-    ],
-  },
 };
 ```
 

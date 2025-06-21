@@ -7,21 +7,6 @@ import { UpdateEnrollmentRequest } from "@superbuilders/oneroster/models/operati
 
 let value: UpdateEnrollmentRequest = {
   sourcedId: "<id>",
-  requestBody: {
-    enrollment: {
-      sourcedId: "<id>",
-      status: "tobedeleted",
-      role: "proctor",
-      beginDate: "2024-01-01",
-      endDate: "2024-01-01",
-      user: {
-        sourcedId: "<id>",
-      },
-      class: {
-        sourcedId: "<id>",
-      },
-    },
-  },
 };
 ```
 

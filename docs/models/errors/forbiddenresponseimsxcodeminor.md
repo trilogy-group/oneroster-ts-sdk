@@ -6,14 +6,12 @@
 import { ForbiddenResponseImsxCodeMinor } from "@superbuilders/oneroster/models/errors";
 
 let value: ForbiddenResponseImsxCodeMinor = {
-  imsxCodeMinorField: [
-    {},
-  ],
+  imsxCodeMinorField: [],
 };
 ```
 
 ## Fields
 
-| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `imsxCodeMinorField`                                                                                         | [errors.ForbiddenResponseImsxCodeMinorField1](../../models/errors/forbiddenresponseimsxcodeminorfield1.md)[] | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `imsxCodeMinorField`                                                                                       | [errors.ForbiddenResponseImsxCodeMinorField](../../models/errors/forbiddenresponseimsxcodeminorfield.md)[] | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

@@ -16,8 +16,8 @@ let value: UpdateAssessmentResultResponse = {
     student: {
       sourcedId: "<id>",
     },
-    scoreDate: new Date("2025-02-26T08:00:41.444Z"),
-    scoreStatus: "not submitted",
+    scoreDate: new Date("2025-05-27T04:24:47.054Z"),
+    scoreStatus: "fully graded",
   },
 };
 ```

@@ -12,26 +12,20 @@ let value: GetClassResponse = {
     sourcedId: "<id>",
     status: "tobedeleted",
     title: "<value>",
-    classCode: "<value>",
-    classType: "homeroom",
+    classCode: null,
+    classType: "scheduled",
     location: "<value>",
     course: {
-      href: "https://inexperienced-lady.name",
+      href: "https://intent-plumber.info",
       sourcedId: "<id>",
       type: "<value>",
     },
     school: {
-      href: "https://dramatic-custom.net/",
+      href: "https://sneaky-marimba.info",
       sourcedId: "<id>",
       type: "<value>",
     },
-    terms: [
-      {
-        href: "https://cuddly-comestible.name",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-    ],
+    terms: [],
   },
 };
 ```

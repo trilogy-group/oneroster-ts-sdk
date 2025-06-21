@@ -13,10 +13,10 @@ let value: UpdateUserUserResponse = {
   familyName: "<value>",
   roles: [
     {
-      roleType: "secondary",
+      roleType: "primary",
       role: "proctor",
       org: {
-        href: "https://obvious-nectarine.biz/",
+        href: "https://bowed-gazebo.com",
         sourcedId: "<id>",
         type: "<value>",
       },
@@ -26,9 +26,9 @@ let value: UpdateUserUserResponse = {
   ],
   agents: [
     {
-      href: "https://proper-hydrolyze.org",
+      href: "https://juvenile-tail.com",
       sourcedId: "<id>",
-      type: "academicSession",
+      type: "student",
     },
   ],
 };

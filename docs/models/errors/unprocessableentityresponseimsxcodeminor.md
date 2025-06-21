@@ -6,14 +6,12 @@
 import { UnprocessableEntityResponseImsxCodeMinor } from "@superbuilders/oneroster/models/errors";
 
 let value: UnprocessableEntityResponseImsxCodeMinor = {
-  imsxCodeMinorField: [
-    {},
-  ],
+  imsxCodeMinorField: [],
 };
 ```
 
 ## Fields
 
-| Field                                                                                                                            | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `imsxCodeMinorField`                                                                                                             | [errors.UnprocessableEntityResponseImsxCodeMinorField1](../../models/errors/unprocessableentityresponseimsxcodeminorfield1.md)[] | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
+| Field                                                                                                                          | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `imsxCodeMinorField`                                                                                                           | [errors.UnprocessableEntityResponseImsxCodeMinorField](../../models/errors/unprocessableentityresponseimsxcodeminorfield.md)[] | :heavy_check_mark:                                                                                                             | N/A                                                                                                                            |

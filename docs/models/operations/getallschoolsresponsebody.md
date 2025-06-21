@@ -11,29 +11,23 @@ let value: GetAllSchoolsResponseBody = {
   orgs: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       name: "<value>",
-      type: "school",
+      type: "department",
       identifier: "<value>",
       parent: {
-        href: "https://tidy-management.com/",
+        href: "https://afraid-chops.info",
         sourcedId: "<id>",
         type: "<value>",
       },
-      children: [
-        {
-          href: "https://innocent-bakeware.info/",
-          sourcedId: "<id>",
-          type: "<value>",
-        },
-      ],
+      children: [],
     },
   ],
-  totalCount: 2952.78,
-  pageCount: 5158.87,
-  pageNumber: 8241.93,
-  offset: 6203.91,
-  limit: 7344.62,
+  totalCount: 4749.77,
+  pageCount: 2952.78,
+  pageNumber: 5158.87,
+  offset: 8241.93,
+  limit: 6203.91,
 };
 ```
 

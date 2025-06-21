@@ -13,10 +13,10 @@ let value: GetTeacherUser = {
   familyName: "<value>",
   roles: [
     {
-      roleType: "secondary",
-      role: "student",
+      roleType: "primary",
+      role: "proctor",
       org: {
-        href: "https://nimble-captain.name/",
+        href: "https://these-reboot.net",
         sourcedId: "<id>",
         type: "<value>",
       },
@@ -26,9 +26,9 @@ let value: GetTeacherUser = {
   ],
   agents: [
     {
-      href: "https://nimble-space.biz",
+      href: "https://tangible-cow.biz",
       sourcedId: "<id>",
-      type: "class",
+      type: "course",
     },
   ],
 };

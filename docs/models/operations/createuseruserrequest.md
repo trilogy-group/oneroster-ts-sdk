@@ -12,7 +12,7 @@ let value: CreateUserUserRequest = {
   roles: [
     {
       roleType: "secondary",
-      role: "teacher",
+      role: "aide",
       org: {
         sourcedId: "<id>",
       },

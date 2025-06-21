@@ -7,12 +7,6 @@ import { UpdateResourceRequest } from "@superbuilders/oneroster/models/operation
 
 let value: UpdateResourceRequest = {
   sourcedId: "<id>",
-  requestBody: {
-    resource: {
-      title: "<value>",
-      vendorResourceId: "<id>",
-    },
-  },
 };
 ```
 

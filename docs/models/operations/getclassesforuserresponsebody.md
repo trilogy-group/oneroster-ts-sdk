@@ -11,35 +11,29 @@ let value: GetClassesForUserResponseBody = {
   classes: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       title: "<value>",
       classCode: "<value>",
-      classType: "homeroom",
+      classType: "scheduled",
       location: "<value>",
       course: {
-        href: "https://long-term-sticker.info/",
+        href: "https://intent-plumber.info",
         sourcedId: "<id>",
         type: "<value>",
       },
       school: {
-        href: "https://brown-cellar.info/",
+        href: "https://sneaky-marimba.info",
         sourcedId: "<id>",
         type: "<value>",
       },
-      terms: [
-        {
-          href: "https://serene-release.org/",
-          sourcedId: "<id>",
-          type: "<value>",
-        },
-      ],
+      terms: [],
     },
   ],
-  totalCount: 2378.22,
-  pageCount: 806.52,
-  pageNumber: 5234.14,
-  offset: 2732.1,
-  limit: 2077.88,
+  totalCount: 1098.11,
+  pageCount: 4842.82,
+  pageNumber: 4821.59,
+  offset: 8524.54,
+  limit: 4803.17,
 };
 ```
 

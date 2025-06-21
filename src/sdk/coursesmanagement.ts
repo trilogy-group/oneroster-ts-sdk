@@ -15,10 +15,10 @@ import { coursesManagementGetClassesForCourse } from "../funcs/coursesManagement
 import { coursesManagementGetComponentResource } from "../funcs/coursesManagementGetComponentResource.js";
 import { coursesManagementGetCourse } from "../funcs/coursesManagementGetCourse.js";
 import { coursesManagementGetCourseComponent } from "../funcs/coursesManagementGetCourseComponent.js";
-import { coursesManagementGetCoursesForSchool } from "../funcs/coursesManagementGetCoursesForSchool.js";
 import { coursesManagementPutComponentResource } from "../funcs/coursesManagementPutComponentResource.js";
 import { coursesManagementPutCourse } from "../funcs/coursesManagementPutCourse.js";
 import { coursesManagementPutCourseComponent } from "../funcs/coursesManagementPutCourseComponent.js";
+import { schoolsManagementGetCoursesForSchool } from "../funcs/schoolsManagementGetCoursesForSchool.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
@@ -320,7 +320,7 @@ export class CoursesManagement extends ClientSDK {
   ): Promise<
     PageIterator<operations.GetCoursesForSchoolResponse, { offset: number }>
   > {
-    return unwrapResultIterator(coursesManagementGetCoursesForSchool(
+    return unwrapResultIterator(schoolsManagementGetCoursesForSchool(
       this,
       request,
       options,

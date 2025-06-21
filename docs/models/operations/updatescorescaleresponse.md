@@ -15,12 +15,7 @@ let value: UpdateScoreScaleResponse = {
     class: {
       sourcedId: "<id>",
     },
-    scoreScaleValue: [
-      {
-        itemValueLHS: "<value>",
-        itemValueRHS: "<value>",
-      },
-    ],
+    scoreScaleValue: [],
   },
 };
 ```

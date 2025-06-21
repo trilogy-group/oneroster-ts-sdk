@@ -6,9 +6,9 @@ import { enrollmentsManagementCreateEnrollment } from "../funcs/enrollmentsManag
 import { enrollmentsManagementDeleteEnrollment } from "../funcs/enrollmentsManagementDeleteEnrollment.js";
 import { enrollmentsManagementGetAllEnrollments } from "../funcs/enrollmentsManagementGetAllEnrollments.js";
 import { enrollmentsManagementGetEnrollment } from "../funcs/enrollmentsManagementGetEnrollment.js";
-import { enrollmentsManagementGetEnrollmentsForClassInSchool } from "../funcs/enrollmentsManagementGetEnrollmentsForClassInSchool.js";
-import { enrollmentsManagementGetEnrollmentsForSchool } from "../funcs/enrollmentsManagementGetEnrollmentsForSchool.js";
 import { enrollmentsManagementUpdateEnrollment } from "../funcs/enrollmentsManagementUpdateEnrollment.js";
+import { schoolsManagementGetEnrollmentsForClassInSchool } from "../funcs/schoolsManagementGetEnrollmentsForClassInSchool.js";
+import { schoolsManagementGetEnrollmentsForSchool } from "../funcs/schoolsManagementGetEnrollmentsForSchool.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
@@ -117,13 +117,11 @@ export class EnrollmentsManagement extends ClientSDK {
       { offset: number }
     >
   > {
-    return unwrapResultIterator(
-      enrollmentsManagementGetEnrollmentsForClassInSchool(
-        this,
-        request,
-        options,
-      ),
-    );
+    return unwrapResultIterator(schoolsManagementGetEnrollmentsForClassInSchool(
+      this,
+      request,
+      options,
+    ));
   }
 
   /**
@@ -138,7 +136,7 @@ export class EnrollmentsManagement extends ClientSDK {
   ): Promise<
     PageIterator<operations.GetEnrollmentsForSchoolResponse, { offset: number }>
   > {
-    return unwrapResultIterator(enrollmentsManagementGetEnrollmentsForSchool(
+    return unwrapResultIterator(schoolsManagementGetEnrollmentsForSchool(
       this,
       request,
       options,

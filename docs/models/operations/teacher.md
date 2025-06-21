@@ -8,29 +8,11 @@ import { Teacher } from "@superbuilders/oneroster/models/operations";
 let value: Teacher = {
   sourcedId: "<id>",
   status: "active",
-  enabledUser: false,
+  enabledUser: true,
   givenName: "<value>",
   familyName: "<value>",
-  roles: [
-    {
-      roleType: "primary",
-      role: "guardian",
-      org: {
-        href: "https://shallow-sport.com/",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-      beginDate: "<value>",
-      endDate: "<value>",
-    },
-  ],
-  agents: [
-    {
-      href: "https://well-worn-flat.net",
-      sourcedId: "<id>",
-      type: "teacher",
-    },
-  ],
+  roles: [],
+  agents: [],
 };
 ```
 

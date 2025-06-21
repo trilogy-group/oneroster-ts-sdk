@@ -12,20 +12,14 @@ let value: GetOrgResponse = {
     sourcedId: "<id>",
     status: "active",
     name: "<value>",
-    type: "school",
+    type: "national",
     identifier: "<value>",
     parent: {
-      href: "https://decent-slipper.biz",
+      href: "https://afraid-chops.info",
       sourcedId: "<id>",
       type: "<value>",
     },
-    children: [
-      {
-        href: "https://lucky-designation.org",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-    ],
+    children: [],
   },
 };
 ```

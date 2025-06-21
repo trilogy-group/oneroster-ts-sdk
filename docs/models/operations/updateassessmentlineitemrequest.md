@@ -7,12 +7,6 @@ import { UpdateAssessmentLineItemRequest } from "@superbuilders/oneroster/models
 
 let value: UpdateAssessmentLineItemRequest = {
   sourcedId: "<id>",
-  requestBody: {
-    assessmentLineItem: {
-      status: "tobedeleted",
-      title: "<value>",
-    },
-  },
 };
 ```
 

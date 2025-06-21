@@ -8,12 +8,7 @@ Successful response containing a collection of categories
 import { GetAllCategoriesResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllCategoriesResponseBody = {
-  categories: [
-    {
-      status: "active",
-      title: "<value>",
-    },
-  ],
+  categories: [],
   totalCount: 4480.26,
   pageCount: 335.09,
   pageNumber: 5859.99,

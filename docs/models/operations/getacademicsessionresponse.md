@@ -10,16 +10,16 @@ import { GetAcademicSessionResponse } from "@superbuilders/oneroster/models/oper
 let value: GetAcademicSessionResponse = {
   academicSession: {
     sourcedId: "<id>",
-    status: "tobedeleted",
+    status: "active",
     title: "<value>",
     startDate: "<value>",
     endDate: "<value>",
-    type: "gradingPeriod",
-    schoolYear: 6609.42,
+    type: "semester",
+    schoolYear: 7108.8,
     org: {
-      href: "https://flustered-gastropod.com/",
+      href: "https://white-freckle.biz",
       sourcedId: "<id>",
-      type: "user",
+      type: "lineItem",
     },
   },
 };

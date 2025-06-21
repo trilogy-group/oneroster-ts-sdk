@@ -8,24 +8,12 @@ Successful response containing a collection of results
 import { GetAllResultsResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllResultsResponseBody = {
-  results: [
-    {
-      status: "active",
-      lineItem: {
-        sourcedId: "<id>",
-      },
-      student: {
-        sourcedId: "<id>",
-      },
-      scoreStatus: "partially graded",
-      scoreDate: new Date("2024-06-21T01:00:20.991Z"),
-    },
-  ],
-  totalCount: 7676.57,
-  pageCount: 2592.09,
-  pageNumber: 6423.95,
-  offset: 4273.38,
-  limit: 2267.56,
+  results: [],
+  totalCount: 7116.12,
+  pageCount: 4900.02,
+  pageNumber: 7676.57,
+  offset: 2592.09,
+  limit: 6423.95,
 };
 ```
 

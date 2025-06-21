@@ -117,7 +117,7 @@ export const CreateSchoolOrg$inboundSchema: z.ZodType<
   status: CreateSchoolStatus$inboundSchema.default("active"),
   metadata: z.record(z.any()).optional(),
   name: z.string(),
-  type: z.literal("school").optional(),
+  type: z.literal("school").default("school").optional(),
   identifier: z.string().optional(),
   parent: z.nullable(z.lazy(() => CreateSchoolParent$inboundSchema)).optional(),
 });

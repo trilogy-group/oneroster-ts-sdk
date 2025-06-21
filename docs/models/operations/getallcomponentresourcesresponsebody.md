@@ -8,19 +8,7 @@ Collection of Component Resources
 import { GetAllComponentResourcesResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllComponentResourcesResponseBody = {
-  componentResources: [
-    {
-      sourcedId: "<id>",
-      status: "active",
-      courseComponent: {
-        sourcedId: "<id>",
-      },
-      resource: {
-        sourcedId: "<id>",
-      },
-      title: "<value>",
-    },
-  ],
+  componentResources: [],
   totalCount: 9879.73,
   pageCount: 2607.01,
   pageNumber: 4928.31,

@@ -5,23 +5,7 @@
 ```typescript
 import { GetResourcesForClassResponse } from "@superbuilders/oneroster/models/operations";
 
-let value: GetResourcesForClassResponse = {
-  result: {
-    resources: [
-      {
-        sourcedId: "<id>",
-        status: "active",
-        title: "<value>",
-        vendorResourceId: "<id>",
-      },
-    ],
-    totalCount: 6611.94,
-    pageCount: 7914.49,
-    pageNumber: 371.17,
-    offset: 8138,
-    limit: 4269.72,
-  },
-};
+let value: GetResourcesForClassResponse = {};
 ```
 
 ## Fields

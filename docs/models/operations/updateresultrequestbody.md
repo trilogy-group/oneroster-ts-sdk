@@ -14,8 +14,8 @@ let value: UpdateResultRequestBody = {
     student: {
       sourcedId: "<id>",
     },
-    scoreStatus: "not submitted",
-    scoreDate: new Date("2023-08-11T11:09:46.535Z"),
+    scoreStatus: "exempt",
+    scoreDate: new Date("2025-12-18T02:39:54.603Z"),
   },
 };
 ```

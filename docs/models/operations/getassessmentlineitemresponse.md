@@ -9,7 +9,7 @@ import { GetAssessmentLineItemResponse } from "@superbuilders/oneroster/models/o
 
 let value: GetAssessmentLineItemResponse = {
   assessmentLineItem: {
-    status: "tobedeleted",
+    status: "active",
     title: "<value>",
   },
 };

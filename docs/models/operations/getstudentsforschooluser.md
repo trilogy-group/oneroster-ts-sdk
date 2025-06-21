@@ -11,24 +11,12 @@ let value: GetStudentsForSchoolUser = {
   enabledUser: false,
   givenName: "<value>",
   familyName: "<value>",
-  roles: [
-    {
-      roleType: "secondary",
-      role: "aide",
-      org: {
-        href: "https://austere-grandson.name",
-        sourcedId: "<id>",
-        type: "<value>",
-      },
-      beginDate: "<value>",
-      endDate: "<value>",
-    },
-  ],
+  roles: [],
   agents: [
     {
-      href: "https://ignorant-cruelty.biz/",
+      href: "https://imaginative-mythology.info/",
       sourcedId: "<id>",
-      type: "student",
+      type: "gradingPeriod",
     },
   ],
 };

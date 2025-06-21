@@ -8,40 +8,12 @@ Collection of students successfully retrieved
 import { GetStudentsForClassInSchoolResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetStudentsForClassInSchoolResponseBody = {
-  users: [
-    {
-      sourcedId: "<id>",
-      status: "active",
-      enabledUser: false,
-      givenName: "<value>",
-      familyName: "<value>",
-      roles: [
-        {
-          roleType: "secondary",
-          role: "proctor",
-          org: {
-            href: "https://humble-department.com",
-            sourcedId: "<id>",
-            type: "<value>",
-          },
-          beginDate: "<value>",
-          endDate: "<value>",
-        },
-      ],
-      agents: [
-        {
-          href: "https://average-illusion.net",
-          sourcedId: "<id>",
-          type: "category",
-        },
-      ],
-    },
-  ],
-  totalCount: 8696.09,
-  pageCount: 5017.91,
-  pageNumber: 7629.68,
-  offset: 2365.39,
-  limit: 3729.5,
+  users: [],
+  totalCount: 8753.6,
+  pageCount: 5501.54,
+  pageNumber: 9272.66,
+  offset: 3770.54,
+  limit: 2327.85,
 };
 ```
 

@@ -19,7 +19,7 @@ let value: GetUserResponse = {
         roleType: "secondary",
         role: "proctor",
         org: {
-          href: "https://grubby-plastic.biz/",
+          href: "https://excellent-receptor.com",
           sourcedId: "<id>",
           type: "<value>",
         },
@@ -27,13 +27,7 @@ let value: GetUserResponse = {
         endDate: "<value>",
       },
     ],
-    agents: [
-      {
-        href: "https://urban-equal.info/",
-        sourcedId: "<id>",
-        type: "org",
-      },
-    ],
+    agents: [],
   },
 };
 ```

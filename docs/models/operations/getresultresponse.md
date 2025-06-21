@@ -9,15 +9,15 @@ import { GetResultResponse } from "@superbuilders/oneroster/models/operations";
 
 let value: GetResultResponse = {
   result: {
-    status: "tobedeleted",
+    status: "active",
     lineItem: {
       sourcedId: "<id>",
     },
     student: {
       sourcedId: "<id>",
     },
-    scoreStatus: "partially graded",
-    scoreDate: new Date("2025-10-06T08:18:52.391Z"),
+    scoreStatus: "exempt",
+    scoreDate: new Date("2025-12-18T02:39:54.603Z"),
   },
 };
 ```
