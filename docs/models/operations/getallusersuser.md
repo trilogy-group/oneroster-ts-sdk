@@ -14,21 +14,21 @@ let value: GetAllUsersUser = {
   roles: [
     {
       roleType: "secondary",
-      role: "proctor",
+      role: "guardian",
       org: {
-        href: "https://foolish-acquaintance.name",
+        href: "https://broken-cd.biz/",
         sourcedId: "<id>",
         type: "<value>",
       },
-      beginDate: "<value>",
+      beginDate: null,
       endDate: "<value>",
     },
   ],
   agents: [
     {
-      href: "https://marvelous-legislature.name",
+      href: "https://miserly-mantua.org/",
       sourcedId: "<id>",
-      type: "courseComponent",
+      type: "class",
     },
   ],
 };

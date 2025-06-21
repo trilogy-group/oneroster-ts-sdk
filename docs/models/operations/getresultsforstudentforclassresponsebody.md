@@ -10,22 +10,22 @@ import { GetResultsForStudentForClassResponseBody } from "@superbuilders/onerost
 let value: GetResultsForStudentForClassResponseBody = {
   results: [
     {
-      status: "tobedeleted",
+      status: "active",
       lineItem: {
         sourcedId: "<id>",
       },
       student: {
         sourcedId: "<id>",
       },
-      scoreStatus: "partially graded",
-      scoreDate: new Date("2024-06-12T07:08:23.003Z"),
+      scoreStatus: "exempt",
+      scoreDate: new Date("2024-03-19T22:34:33.693Z"),
     },
   ],
-  totalCount: 9170.26,
-  pageCount: 3776.56,
-  pageNumber: 6053.35,
-  offset: 1454.47,
-  limit: 3699.99,
+  totalCount: 6064.33,
+  pageCount: 4820.23,
+  pageNumber: 9170.26,
+  offset: 3776.56,
+  limit: 6053.35,
 };
 ```
 

@@ -11,24 +11,24 @@ let value: GetAllTermsResponseBody = {
   terms: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       title: "<value>",
       startDate: "<value>",
       endDate: "<value>",
       type: "term",
-      schoolYear: 6340.64,
+      schoolYear: 9932.39,
       org: {
-        href: "https://dreary-bourgeoisie.info/",
+        href: "https://white-freckle.biz",
         sourcedId: "<id>",
-        type: "componentResource",
+        type: "lineItem",
       },
     },
   ],
-  totalCount: 4900.33,
-  pageCount: 450.55,
-  pageNumber: 4037.55,
-  offset: 9099.24,
-  limit: 464.3,
+  totalCount: 7675.21,
+  pageCount: 6340.64,
+  pageNumber: 1784.96,
+  offset: 2079.98,
+  limit: 930.57,
 };
 ```
 

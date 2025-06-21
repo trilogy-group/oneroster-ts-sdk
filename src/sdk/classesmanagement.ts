@@ -9,7 +9,6 @@ import { classesManagementDeleteClass } from "../funcs/classesManagementDeleteCl
 import { classesManagementGetAllClasses } from "../funcs/classesManagementGetAllClasses.js";
 import { classesManagementGetCategoriesForClass } from "../funcs/classesManagementGetCategoriesForClass.js";
 import { classesManagementGetClass } from "../funcs/classesManagementGetClass.js";
-import { classesManagementGetClassesForSchool } from "../funcs/classesManagementGetClassesForSchool.js";
 import { classesManagementGetClassesForStudent } from "../funcs/classesManagementGetClassesForStudent.js";
 import { classesManagementGetClassesForTeacher } from "../funcs/classesManagementGetClassesForTeacher.js";
 import { classesManagementGetClassesForTerm } from "../funcs/classesManagementGetClassesForTerm.js";
@@ -23,6 +22,7 @@ import { classesManagementGetStudentsForClass } from "../funcs/classesManagement
 import { classesManagementGetTeachersForClass } from "../funcs/classesManagementGetTeachersForClass.js";
 import { classesManagementPostResultsForAcademicSessionForClass } from "../funcs/classesManagementPostResultsForAcademicSessionForClass.js";
 import { classesManagementUpdateClass } from "../funcs/classesManagementUpdateClass.js";
+import { schoolsManagementGetClassesForSchool } from "../funcs/schoolsManagementGetClassesForSchool.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -266,7 +266,7 @@ export class ClassesManagement extends ClientSDK {
   ): Promise<
     PageIterator<operations.GetClassesForSchoolResponse, { offset: number }>
   > {
-    return unwrapResultIterator(classesManagementGetClassesForSchool(
+    return unwrapResultIterator(schoolsManagementGetClassesForSchool(
       this,
       request,
       options,

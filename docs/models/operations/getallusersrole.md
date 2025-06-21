@@ -14,7 +14,7 @@ let value: GetAllUsersRole = {
     type: "<value>",
   },
   beginDate: "<value>",
-  endDate: "<value>",
+  endDate: null,
 };
 ```
 

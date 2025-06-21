@@ -5,21 +5,7 @@
 ```typescript
 import { GetCategoriesForClassResponse } from "@superbuilders/oneroster/models/operations";
 
-let value: GetCategoriesForClassResponse = {
-  result: {
-    categories: [
-      {
-        status: "tobedeleted",
-        title: "<value>",
-      },
-    ],
-    totalCount: 1087.52,
-    pageCount: 7052.21,
-    pageNumber: 1824.43,
-    offset: 4622.24,
-    limit: 9367.67,
-  },
-};
+let value: GetCategoriesForClassResponse = {};
 ```
 
 ## Fields

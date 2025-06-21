@@ -6,19 +6,7 @@
 import { PostResultsForAcademicSessionForClassRequestBody } from "@superbuilders/oneroster/models/operations";
 
 let value: PostResultsForAcademicSessionForClassRequestBody = {
-  results: [
-    {
-      status: "active",
-      lineItem: {
-        sourcedId: "<id>",
-      },
-      student: {
-        sourcedId: "<id>",
-      },
-      scoreStatus: "submitted",
-      scoreDate: new Date("2023-02-14T19:57:05.656Z"),
-    },
-  ],
+  results: [],
 };
 ```
 

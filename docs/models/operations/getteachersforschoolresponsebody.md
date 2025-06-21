@@ -8,40 +8,12 @@ Collection of teachers successfully retrieved
 import { GetTeachersForSchoolResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetTeachersForSchoolResponseBody = {
-  users: [
-    {
-      sourcedId: "<id>",
-      status: "active",
-      enabledUser: false,
-      givenName: "<value>",
-      familyName: "<value>",
-      roles: [
-        {
-          roleType: "secondary",
-          role: "guardian",
-          org: {
-            href: "https://amazing-lifestyle.info",
-            sourcedId: "<id>",
-            type: "<value>",
-          },
-          beginDate: "<value>",
-          endDate: "<value>",
-        },
-      ],
-      agents: [
-        {
-          href: "https://aggressive-maestro.name",
-          sourcedId: "<id>",
-          type: "student",
-        },
-      ],
-    },
-  ],
-  totalCount: 2104.28,
-  pageCount: 8421.8,
-  pageNumber: 1359.72,
-  offset: 3921.02,
-  limit: 1892.51,
+  users: [],
+  totalCount: 9175.42,
+  pageCount: 3107.47,
+  pageNumber: 9647.27,
+  offset: 279.13,
+  limit: 5256.66,
 };
 ```
 

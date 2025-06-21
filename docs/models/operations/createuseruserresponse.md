@@ -16,7 +16,7 @@ let value: CreateUserUserResponse = {
       roleType: "secondary",
       role: "proctor",
       org: {
-        href: "https://palatable-sonata.net",
+        href: "https://genuine-joy.info",
         sourcedId: "<id>",
         type: "<value>",
       },
@@ -26,9 +26,9 @@ let value: CreateUserUserResponse = {
   ],
   agents: [
     {
-      href: "https://definite-starboard.net",
+      href: "https://tepid-roundabout.net/",
       sourcedId: "<id>",
-      type: "student",
+      type: "class",
     },
   ],
 };

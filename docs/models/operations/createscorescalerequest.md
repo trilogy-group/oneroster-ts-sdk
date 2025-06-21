@@ -13,12 +13,7 @@ let value: CreateScoreScaleRequest = {
     class: {
       sourcedId: "<id>",
     },
-    scoreScaleValue: [
-      {
-        itemValueLHS: "<value>",
-        itemValueRHS: "<value>",
-      },
-    ],
+    scoreScaleValue: [],
   },
 };
 ```

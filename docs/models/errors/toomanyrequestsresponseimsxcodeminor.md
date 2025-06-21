@@ -6,14 +6,12 @@
 import { TooManyRequestsResponseImsxCodeMinor } from "@superbuilders/oneroster/models/errors";
 
 let value: TooManyRequestsResponseImsxCodeMinor = {
-  imsxCodeMinorField: [
-    {},
-  ],
+  imsxCodeMinorField: [],
 };
 ```
 
 ## Fields
 
-| Field                                                                                                                    | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `imsxCodeMinorField`                                                                                                     | [errors.TooManyRequestsResponseImsxCodeMinorField1](../../models/errors/toomanyrequestsresponseimsxcodeminorfield1.md)[] | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
+| Field                                                                                                                  | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `imsxCodeMinorField`                                                                                                   | [errors.TooManyRequestsResponseImsxCodeMinorField](../../models/errors/toomanyrequestsresponseimsxcodeminorfield.md)[] | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |

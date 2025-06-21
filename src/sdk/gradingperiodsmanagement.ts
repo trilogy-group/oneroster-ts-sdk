@@ -3,12 +3,12 @@
  */
 
 import { gradingPeriodsManagementCreateGradingPeriod } from "../funcs/gradingPeriodsManagementCreateGradingPeriod.js";
-import { gradingPeriodsManagementCreateGradingPeriodForTerm } from "../funcs/gradingPeriodsManagementCreateGradingPeriodForTerm.js";
 import { gradingPeriodsManagementDeleteGradingPeriod } from "../funcs/gradingPeriodsManagementDeleteGradingPeriod.js";
 import { gradingPeriodsManagementGetAllGradingPeriods } from "../funcs/gradingPeriodsManagementGetAllGradingPeriods.js";
 import { gradingPeriodsManagementGetGradingPeriod } from "../funcs/gradingPeriodsManagementGetGradingPeriod.js";
-import { gradingPeriodsManagementGetGradingPeriodsForTerm } from "../funcs/gradingPeriodsManagementGetGradingPeriodsForTerm.js";
 import { gradingPeriodsManagementUpdateGradingPeriod } from "../funcs/gradingPeriodsManagementUpdateGradingPeriod.js";
+import { termsManagementCreateGradingPeriodForTerm } from "../funcs/termsManagementCreateGradingPeriodForTerm.js";
+import { termsManagementGetGradingPeriodsForTerm } from "../funcs/termsManagementGetGradingPeriodsForTerm.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
@@ -117,13 +117,11 @@ export class GradingPeriodsManagement extends ClientSDK {
       { offset: number }
     >
   > {
-    return unwrapResultIterator(
-      gradingPeriodsManagementGetGradingPeriodsForTerm(
-        this,
-        request,
-        options,
-      ),
-    );
+    return unwrapResultIterator(termsManagementGetGradingPeriodsForTerm(
+      this,
+      request,
+      options,
+    ));
   }
 
   /**
@@ -136,7 +134,7 @@ export class GradingPeriodsManagement extends ClientSDK {
     request: operations.CreateGradingPeriodForTermRequest,
     options?: RequestOptions,
   ): Promise<operations.CreateGradingPeriodForTermResponse> {
-    return unwrapAsync(gradingPeriodsManagementCreateGradingPeriodForTerm(
+    return unwrapAsync(termsManagementCreateGradingPeriodForTerm(
       this,
       request,
       options,

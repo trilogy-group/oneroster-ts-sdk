@@ -11,24 +11,24 @@ let value: GetAllGradingPeriodsResponseBody = {
   gradingPeriods: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       title: "<value>",
       startDate: "<value>",
       endDate: "<value>",
-      type: "gradingPeriod",
-      schoolYear: 2126.35,
+      type: "schoolYear",
+      schoolYear: 3234.05,
       org: {
-        href: "https://acidic-tusk.info",
+        href: "https://white-freckle.biz",
         sourcedId: "<id>",
-        type: "result",
+        type: "lineItem",
       },
     },
   ],
-  totalCount: 1363.06,
-  pageCount: 6221.82,
-  pageNumber: 7302,
-  offset: 8625.55,
-  limit: 8650.97,
+  totalCount: 440.44,
+  pageCount: 2126.35,
+  pageNumber: 5914.59,
+  offset: 77.23,
+  limit: 9407.1,
 };
 ```
 

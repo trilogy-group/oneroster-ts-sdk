@@ -13,12 +13,7 @@ let value: UpdateScoreScaleRequestBody = {
     class: {
       sourcedId: "<id>",
     },
-    scoreScaleValue: [
-      {
-        itemValueLHS: "<value>",
-        itemValueRHS: "<value>",
-      },
-    ],
+    scoreScaleValue: [],
   },
 };
 ```

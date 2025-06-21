@@ -8,30 +8,12 @@ Demographics collection retrieved successfully
 import { GetAllDemographicsResponseBody } from "@superbuilders/oneroster/models/operations";
 
 let value: GetAllDemographicsResponseBody = {
-  demographics: [
-    {
-      sourcedId: "<id>",
-      status: "active",
-      birthDate: "1966-09-18",
-      sex: "male",
-      americanIndianOrAlaskaNative: "<value>",
-      asian: "<value>",
-      blackOrAfricanAmerican: "<value>",
-      nativeHawaiianOrOtherPacificIslander: "<value>",
-      white: "<value>",
-      demographicRaceTwoOrMoreRaces: "<value>",
-      hispanicOrLatinoEthnicity: "<value>",
-      countryOfBirthCode: "<value>",
-      stateOfBirthAbbreviation: "<value>",
-      cityOfBirth: "<value>",
-      publicSchoolResidenceStatus: "<value>",
-    },
-  ],
-  totalCount: 2285,
-  pageCount: 3906.29,
-  pageNumber: 4457.84,
-  offset: 2555.22,
-  limit: 5705.29,
+  demographics: [],
+  totalCount: 3552.54,
+  pageCount: 201.91,
+  pageNumber: 2285,
+  offset: 3906.29,
+  limit: 4457.84,
 };
 ```
 

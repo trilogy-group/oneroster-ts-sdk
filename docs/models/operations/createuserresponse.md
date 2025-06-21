@@ -17,9 +17,9 @@ let value: CreateUserResponse = {
     roles: [
       {
         roleType: "secondary",
-        role: "teacher",
+        role: "proctor",
         org: {
-          href: "https://swift-almighty.name/",
+          href: "https://genuine-joy.info",
           sourcedId: "<id>",
           type: "<value>",
         },
@@ -27,13 +27,7 @@ let value: CreateUserResponse = {
         endDate: "<value>",
       },
     ],
-    agents: [
-      {
-        href: "https://free-disposer.info",
-        sourcedId: "<id>",
-        type: "category",
-      },
-    ],
+    agents: [],
   },
 };
 ```

@@ -14,17 +14,11 @@ let value: Org = {
   type: "district",
   identifier: "<value>",
   parent: {
-    href: "https://eminent-creature.name/",
+    href: "https://afraid-chops.info",
     sourcedId: "<id>",
     type: "<value>",
   },
-  children: [
-    {
-      href: "https://early-teammate.org/",
-      sourcedId: "<id>",
-      type: "<value>",
-    },
-  ],
+  children: [],
 };
 ```
 

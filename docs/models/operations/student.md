@@ -13,10 +13,10 @@ let value: Student = {
   familyName: "<value>",
   roles: [
     {
-      roleType: "secondary",
-      role: "proctor",
+      roleType: "primary",
+      role: "parent",
       org: {
-        href: "https://ill-fated-soliloquy.name/",
+        href: "https://first-tenant.name",
         sourcedId: "<id>",
         type: "<value>",
       },
@@ -24,13 +24,7 @@ let value: Student = {
       endDate: "<value>",
     },
   ],
-  agents: [
-    {
-      href: "https://tired-resource.info/",
-      sourcedId: "<id>",
-      type: "scoreScale",
-    },
-  ],
+  agents: [],
 };
 ```
 

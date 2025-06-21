@@ -17,15 +17,15 @@ let value: GetAllAssessmentResultsResponseBody = {
       student: {
         sourcedId: "<id>",
       },
-      scoreDate: new Date("2024-08-24T01:33:30.766Z"),
-      scoreStatus: "submitted",
+      scoreDate: new Date("2025-08-27T19:19:54.088Z"),
+      scoreStatus: "exempt",
     },
   ],
-  totalCount: 909.86,
-  pageCount: 4926.22,
-  pageNumber: 6938.81,
-  offset: 5602.36,
-  limit: 7070.33,
+  totalCount: 4926.22,
+  pageCount: 6938.81,
+  pageNumber: 5602.36,
+  offset: 7070.33,
+  limit: 4750.02,
 };
 ```
 

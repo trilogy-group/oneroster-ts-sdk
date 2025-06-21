@@ -11,37 +11,31 @@ let value: GetAllStudentsResponseBody = {
   users: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       enabledUser: false,
       givenName: "<value>",
       familyName: "<value>",
       roles: [
         {
-          roleType: "primary",
-          role: "teacher",
+          roleType: "secondary",
+          role: "aide",
           org: {
-            href: "https://realistic-coin.com",
+            href: "https://unfinished-quart.org",
             sourcedId: "<id>",
             type: "<value>",
           },
           beginDate: "<value>",
-          endDate: "<value>",
+          endDate: null,
         },
       ],
-      agents: [
-        {
-          href: "https://jaunty-archaeology.org/",
-          sourcedId: "<id>",
-          type: "scoreScale",
-        },
-      ],
+      agents: [],
     },
   ],
-  totalCount: 9954.84,
-  pageCount: 8345.68,
-  pageNumber: 709.59,
-  offset: 2587.49,
-  limit: 4904.41,
+  totalCount: 463.79,
+  pageCount: 9395.4,
+  pageNumber: 6658.25,
+  offset: 9954.84,
+  limit: 8345.68,
 };
 ```
 

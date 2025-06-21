@@ -7,15 +7,15 @@ import { UpdateAssessmentResultRequestBody } from "@superbuilders/oneroster/mode
 
 let value: UpdateAssessmentResultRequestBody = {
   assessmentResult: {
-    status: "active",
+    status: "tobedeleted",
     assessmentLineItem: {
       sourcedId: "<id>",
     },
     student: {
       sourcedId: "<id>",
     },
-    scoreDate: new Date("2025-12-21T10:22:04.314Z"),
-    scoreStatus: "submitted",
+    scoreDate: new Date("2025-05-27T04:24:47.054Z"),
+    scoreStatus: "fully graded",
   },
 };
 ```

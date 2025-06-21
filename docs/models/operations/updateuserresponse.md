@@ -11,15 +11,15 @@ let value: UpdateUserResponse = {
   user: {
     sourcedId: "<id>",
     status: "active",
-    enabledUser: false,
+    enabledUser: true,
     givenName: "<value>",
     familyName: "<value>",
     roles: [
       {
         roleType: "primary",
-        role: "relative",
+        role: "proctor",
         org: {
-          href: "https://classic-hoof.net/",
+          href: "https://bowed-gazebo.com",
           sourcedId: "<id>",
           type: "<value>",
         },
@@ -27,13 +27,7 @@ let value: UpdateUserResponse = {
         endDate: "<value>",
       },
     ],
-    agents: [
-      {
-        href: "https://passionate-jazz.net",
-        sourcedId: "<id>",
-        type: "courseComponent",
-      },
-    ],
+    agents: [],
   },
 };
 ```

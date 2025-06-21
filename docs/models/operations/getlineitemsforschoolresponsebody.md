@@ -12,8 +12,8 @@ let value: GetLineItemsForSchoolResponseBody = {
     {
       status: "tobedeleted",
       title: "<value>",
-      assignDate: new Date("2024-07-05T05:24:44.301Z"),
-      dueDate: new Date("2024-06-03T08:42:01.042Z"),
+      assignDate: new Date("2024-06-03T08:42:01.042Z"),
+      dueDate: new Date("2025-02-13T13:30:50.872Z"),
       class: {
         sourcedId: "<id>",
       },
@@ -25,11 +25,11 @@ let value: GetLineItemsForSchoolResponseBody = {
       },
     },
   ],
-  totalCount: 7067.18,
-  pageCount: 915.72,
-  pageNumber: 3829.9,
-  offset: 2400.25,
-  limit: 8293.59,
+  totalCount: 915.72,
+  pageCount: 3829.9,
+  pageNumber: 2400.25,
+  offset: 8293.59,
+  limit: 9173.5,
 };
 ```
 

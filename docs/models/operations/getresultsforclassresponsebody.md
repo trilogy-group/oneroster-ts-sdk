@@ -10,22 +10,22 @@ import { GetResultsForClassResponseBody } from "@superbuilders/oneroster/models/
 let value: GetResultsForClassResponseBody = {
   results: [
     {
-      status: "tobedeleted",
+      status: "active",
       lineItem: {
         sourcedId: "<id>",
       },
       student: {
         sourcedId: "<id>",
       },
-      scoreStatus: "submitted",
-      scoreDate: new Date("2023-12-07T02:02:07.681Z"),
+      scoreStatus: "exempt",
+      scoreDate: new Date("2024-03-19T22:34:33.693Z"),
     },
   ],
-  totalCount: 3927.07,
-  pageCount: 3022.78,
-  pageNumber: 796.65,
-  offset: 3811.7,
-  limit: 6072.01,
+  totalCount: 9594.72,
+  pageCount: 3102.96,
+  pageNumber: 3927.07,
+  offset: 3022.78,
+  limit: 796.65,
 };
 ```
 

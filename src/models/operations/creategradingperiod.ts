@@ -194,7 +194,7 @@ export const CreateGradingPeriodAcademicSession$inboundSchema: z.ZodType<
   title: z.string(),
   startDate: z.string(),
   endDate: z.string(),
-  type: z.literal("gradingPeriod").optional(),
+  type: z.literal("gradingPeriod").default("gradingPeriod").optional(),
   parent: z.nullable(z.lazy(() => CreateGradingPeriodParent$inboundSchema))
     .optional(),
   schoolYear: z.string(),

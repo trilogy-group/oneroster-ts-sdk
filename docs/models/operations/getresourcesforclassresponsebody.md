@@ -16,11 +16,11 @@ let value: GetResourcesForClassResponseBody = {
       vendorResourceId: "<id>",
     },
   ],
-  totalCount: 7309.43,
-  pageCount: 5250.98,
-  pageNumber: 637.66,
-  offset: 8220.46,
-  limit: 4652.12,
+  totalCount: 5250.98,
+  pageCount: 637.66,
+  pageNumber: 8220.46,
+  offset: 4652.12,
+  limit: 4057.05,
 };
 ```
 

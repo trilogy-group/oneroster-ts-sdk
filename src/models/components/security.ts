@@ -3,14 +3,13 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type Security = {
-  clientID?: string | undefined;
-  clientSecret?: string | undefined;
-  tokenURL?: string | undefined;
+  oAuth2?: string | undefined;
 };
 
 /** @internal */
@@ -19,18 +18,16 @@ export const Security$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  clientID: z.string().optional(),
-  clientSecret: z.string().optional(),
-  tokenURL: z.string().default(
-    "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
-  ),
+  OAuth2: z.string().optional(),
+}).transform((v) => {
+  return remap$(v, {
+    "OAuth2": "oAuth2",
+  });
 });
 
 /** @internal */
 export type Security$Outbound = {
-  clientID?: string | undefined;
-  clientSecret?: string | undefined;
-  tokenURL: string;
+  OAuth2?: string | undefined;
 };
 
 /** @internal */
@@ -39,11 +36,11 @@ export const Security$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Security
 > = z.object({
-  clientID: z.string().optional(),
-  clientSecret: z.string().optional(),
-  tokenURL: z.string().default(
-    "https://alpha-auth-development-idp.auth.us-west-2.amazoncognito.com/oauth2/token",
-  ),
+  oAuth2: z.string().optional(),
+}).transform((v) => {
+  return remap$(v, {
+    oAuth2: "OAuth2",
+  });
 });
 
 /**

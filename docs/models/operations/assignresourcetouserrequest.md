@@ -7,11 +7,6 @@ import { AssignResourceToUserRequest } from "@superbuilders/oneroster/models/ope
 
 let value: AssignResourceToUserRequest = {
   userSourcedId: "<id>",
-  requestBody: {
-    resource: {
-      sourcedId: "<id>",
-    },
-  },
 };
 ```
 

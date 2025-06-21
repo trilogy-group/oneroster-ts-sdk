@@ -11,37 +11,19 @@ let value: GetAllUsersResponseBody = {
   users: [
     {
       sourcedId: "<id>",
-      status: "tobedeleted",
+      status: "active",
       enabledUser: false,
       givenName: "<value>",
       familyName: "<value>",
-      roles: [
-        {
-          roleType: "primary",
-          role: "student",
-          org: {
-            href: "https://magnificent-reorganisation.biz/",
-            sourcedId: "<id>",
-            type: "<value>",
-          },
-          beginDate: "<value>",
-          endDate: "<value>",
-        },
-      ],
-      agents: [
-        {
-          href: "https://massive-submitter.biz/",
-          sourcedId: "<id>",
-          type: "user",
-        },
-      ],
+      roles: [],
+      agents: [],
     },
   ],
-  totalCount: 7867.35,
-  pageCount: 9796.56,
-  pageNumber: 1659.42,
-  offset: 6606.84,
-  limit: 9389.58,
+  totalCount: 7438.29,
+  pageCount: 2249.34,
+  pageNumber: 4277.09,
+  offset: 5009.53,
+  limit: 8645.19,
 };
 ```
 
